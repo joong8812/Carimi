@@ -68,7 +68,7 @@
 </div> <!-- /navbar -->
 
 
-<br><br><br><br><br>
+<br><br>
 <div class="account-container">
 	
 	<div class="content clearfix">
@@ -92,6 +92,8 @@
 				</div> <!-- /password -->
 				
 			</div> <!-- /login-fields -->
+			
+			<div></div>
 			
 			<div class="login-actions">
 				

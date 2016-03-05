@@ -120,7 +120,7 @@
 	
 	<div class="content clearfix">
 		
-		<form name="addjoin" action="memAf.jsp" method="post">
+		<form name="addjoin" action="signupAf.do" method="post">
 		
 			<h1>Signup for Free Account</h1>			
 			

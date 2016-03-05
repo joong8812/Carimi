@@ -20,20 +20,7 @@
 <link href="<%=request.getContextPath()%>/css/pages/dashboard.css" rel="stylesheet">
 <script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script> 
 
- <% 
-//세션 확인
 
-memberDTO user=(memberDTO)session.getAttribute("login");
-
-//로그인 세션값을 user라는 공간에 담아둠
-boolean isLogin=false;
-if(user==null){
-	isLogin=false;
-}else{
-	isLogin=true;
-}
-//null이면 거짓 데이터가 들으면 참
-%>
 </head>
 
 <body>
@@ -44,7 +31,6 @@ if(user==null){
                     class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="./main.do">C A R I M I </a>
       <div class="nav-collapse">
         <ul class="nav pull-right"> 
-<%-- 	        <%if(isLogin){ %> --%>
 			<c:if test="${!empty login.id}">
 	          <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i
 	                            class="icon-cog"></i> Account <b class="caret"></b></a>
@@ -52,26 +38,28 @@ if(user==null){
 	              <li><a href="<%=request.getContextPath()%>/view/member/meminfo.jsp">Settings</a></li>  
 	            </ul>
 	          </li>
-	         </c:if>
-<%-- 	        <%}%> --%>
-	       	<%if(isLogin){ %>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-	                   class="icon-user"></i>${login.id} 로그인중 <b class="caret"></b></a>
-	              	<ul class="dropdown-menu">
-						<li><a href="logout.do">logout</a></li>
-					</ul>
-				</li>
-			<%}else{ %> 
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-	                            class="icon-user"></i> 로그인해주세요 <b class="caret"></b></a>
-	            	<ul class="dropdown-menu">
-	             		<li><a href="login.do">Login</a></li>
-	            		<li><a href="signup.do">Sign Up</a></li>
-		            </ul>
-	    	    </li>
-			<%}%>
+	        </c:if>
+			<c:choose>
+				<c:when test="${!empty login.id }">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+		                   class="icon-user"></i>${login.id} 로그인중 <b class="caret"></b></a>
+		              	<ul class="dropdown-menu">
+							<li><a href="logout.do">logout</a></li>
+						</ul>
+					</li>
+				</c:when>
+				<c:otherwise>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+		                            class="icon-user"></i> 로그인해주세요 <b class="caret"></b></a>
+		            	<ul class="dropdown-menu">
+		             		<li><a href="login.do">Login</a></li>
+		            		<li><a href="signup.do">Sign Up</a></li>
+			            </ul>
+		    	    </li>
+				</c:otherwise>
+			</c:choose>
       	</ul>
       </div>
       <!--/.nav-collapse --> 

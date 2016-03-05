@@ -68,5 +68,54 @@ public class MemberController {
 		return "signup.tiles";
 	}
 
-	
+	@RequestMapping(value = "signupAf.do", 
+			method = RequestMethod.POST)
+	public String signupAf(HttpServletRequest request, memberDTO member, 
+			Model model, String[] fav, String goo) throws Exception {
+		logger.info("Welcome MemberController signupAf! "+ new Date());
+		
+		member.setLocation(goo);
+		
+		for(int i=0; i<fav.length; i++){
+			if(i==0){
+				member.setFav1(fav[0]);	
+			}else if(i==1){
+				member.setFav1(fav[0]);
+				member.setFav2(fav[1]);
+			}
+			else if(i==2){
+				member.setFav1(fav[0]);
+				member.setFav2(fav[1]);
+				member.setFav3(fav[2]);
+			}
+			else if(i==3){
+				member.setFav1(fav[0]);
+				member.setFav2(fav[1]);
+				member.setFav3(fav[2]);
+				member.setFav4(fav[3]);
+			}
+			else if(i==4){
+				member.setFav1(fav[0]);
+				member.setFav2(fav[1]);
+				member.setFav3(fav[2]);
+				member.setFav4(fav[3]);
+				member.setFav5(fav[4]);
+			}
+			else if(i==5){
+				member.setFav1(fav[0]);
+				member.setFav2(fav[1]);
+				member.setFav3(fav[2]);
+				member.setFav4(fav[3]);
+				member.setFav5(fav[4]);
+				member.setFav6(fav[5]);
+			}
+		}
+		boolean approve = memberService.addMember(member);
+		if(approve){
+			return "login.tiles";
+		} else {
+			return "signup.tiles";
+		}
+		
+	}
 }

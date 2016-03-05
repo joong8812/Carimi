@@ -5,4 +5,5 @@ import sigma.carimi.model.memberDTO;
 public interface memberService {
 	
 	memberDTO loginMember(memberDTO member) throws Exception ;
+	boolean addMember(memberDTO member) throws Exception;
 }

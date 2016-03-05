@@ -23,4 +23,10 @@ public class memberDAO {
 		return (memberDTO)sqlSession.selectOne(ns+"loginMember",member);
 	}
 	
+	public boolean addMember(memberDTO member) throws Exception{
+		System.out.println(member.toString());
+		sqlSession.insert(ns+"addMember",member);
+		return true;
+	}
+	
 }

@@ -5,9 +5,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="Member"> 
 	
 	<select id="loginMember"
-	parameterType="sigma.carimi.model.memberDTO"
-	resultType="sigma.carimi.model.memberDTO">
-	SELECT * FROM CARD_USER 
-	WHERE ID=#{id} AND PWD=#{pwd}
+		parameterType="sigma.carimi.model.memberDTO"
+		resultType="sigma.carimi.model.memberDTO">
+		SELECT * FROM CARD_USER 
+		WHERE ID=#{id} AND PWD=#{pwd}
 	</select>
+	<insert id="addMember"
+		parameterType="sigma.carimi.model.memberDTO">
+		INSERT INTO CARD_USER(ID,PWD,NAME,AGE,SEX,LOCAL,LOCATION,JOB,EMAIL,FAV1,FAV2,FAV3,FAV4,FAV5,FAV6,MYCARD1,MYCARD2)
+			VALUES (#{id}, #{pwd}, #{name}, #{age}, #{sex}, #{local}, 
+					#{location}, #{job}, #{email}, #{fav1}, #{fav2}, 
+					#{fav3}, #{fav4}, #{fav5}, #{fav6}, #{mycard1}, #{mycard2})
+	</insert>
  </mapper>
