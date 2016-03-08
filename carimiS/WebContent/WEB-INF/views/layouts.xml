@@ -19,6 +19,13 @@
 <definition name="meminfo.tiles" extends="main.tiles">
 	<put-attribute name="content" value="/WEB-INF/views/login/meminfo.jsp" />
 </definition>
+<definition name="benefit.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/benefit/bnf_main.jsp" />
+</definition>
+<definition name="admin_bdetail.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/benefit/admin_bdetail.jsp" />
+</definition>
+
 <definition name="boardlist.tiles" extends="main.tiles">
 	<put-attribute name="content" value="/WEB-INF/views/board/boardlist.jsp" />
 </definition>

@@ -8,10 +8,11 @@ public class memberDTO {
 	private String local;
 	private String location;
 	private String job;
+	private int auth;
 	
 	public memberDTO(String id, String pwd, String name, int age, String sex, String local, String location, String job,
 			String email, String fav1, String fav2, String fav3, String fav4, String fav5, String fav6, String mycard1,
-			String mycard2) {
+			String mycard2, int auth) {
 		super();
 		this.id = id;
 		this.pwd = pwd;
@@ -30,6 +31,7 @@ public class memberDTO {
 		this.fav6 = fav6;
 		this.mycard1 = mycard1;
 		this.mycard2 = mycard2;
+		this.auth = auth;
 	}
 
 	private String email;
@@ -44,6 +46,14 @@ public class memberDTO {
 	
 	public memberDTO(){
 		
+	}
+
+	public int getAuth() {
+		return auth;
+	}
+
+	public void setAuth(int auth) {
+		this.auth = auth;
 	}
 
 	public String getId() {

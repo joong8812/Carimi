@@ -29,14 +29,12 @@ public class MemberController {
 	@Autowired
 	private memberService memberService;
 	
-	@RequestMapping(value = "main.do", 
-			method = RequestMethod.GET)
+	@RequestMapping(value = "main.do", method = RequestMethod.GET)
 	public String main(Model model) {		
 		logger.info("Welcome MemberController main! "+ new Date());
 		return "main.tiles";
 	}
-	
-	
+		
 	@RequestMapping(value = "login.do", 
 			method = RequestMethod.GET)
 	public String login(Model model) {		
@@ -59,7 +57,7 @@ public class MemberController {
 			res.setContentType("text/html;charset=UTF-8");
 			
 			res.getWriter().write("<script language='JavaScript'>");
-			res.getWriter().write("alert('¾ÆÀÌµð³ª ºñ¹Ð¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.');");
+			res.getWriter().write("alert('ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.');");
 			res.getWriter().write("history.go(-1);");
 			res.getWriter().write("</script>");
 			res.getWriter().flush(); 
@@ -156,10 +154,10 @@ public class MemberController {
 	public String meminfo(Model model, HttpServletRequest req) throws Exception{
 		memberDTO bdto = (memberDTO)req.getSession().getAttribute("login");
 		logger.info("Welcome HelloMemberController meminfo! "+ new Date());
-		System.out.println("¾ÆÀÌµð°ª : " + bdto.getId());
+		System.out.println("ï¿½ï¿½ï¿½Ìµï¿½ : " + bdto.getId());
 		memberDTO mdto = memberService.memberOne(bdto);
-		System.out.println("Áö¿ª"+ mdto.getLocal());
-		System.out.println("Áö¿ª±¸"+ mdto.getLocation());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½"+ mdto.getLocal());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+ mdto.getLocation());
 		model.addAttribute("mdto", mdto);
 		return "meminfo.tiles";
 		
@@ -169,9 +167,9 @@ public class MemberController {
 	public String meminfoAf(HttpServletRequest request, memberDTO member, 
 			Model model, String[] fav, String goo, String mode, String id) throws Exception {
 		logger.info("Welcome MemberController meminfoAf! "+ new Date());
-		System.out.println("¾ÆÀÌµð" + id);
-		System.out.println("¸ðµå" + mode);
-		System.out.println("Áö¿ª±¸" + goo);
+		System.out.println("ï¿½ï¿½ï¿½Ìµï¿½" + id);
+		System.out.println("ï¿½ï¿½ï¿½" + mode);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + goo);
 		member.setLocation(goo);
 		
 		for(int i=0; i<fav.length; i++){

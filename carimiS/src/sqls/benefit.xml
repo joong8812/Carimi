@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Benefit"> 
+	
+	<select id="getCBFList"
+		parameterType="sigma.carimi.model.benefitDTO"
+		resultType="sigma.carimi.model.benefitDTO">
+		SELECT * FROM CARD_BENEFIT 
+    			 WHERE CARDNAME LIKE #{cardname}||'%'
+    			 AND BCATEGORY = #{bcategory}
+	</select>
+	<select id="getCBFList2"
+		parameterType="hashmap"
+		resultType="sigma.carimi.model.benefitDTO">
+		SELECT * FROM CARD_BENEFIT 
+    			WHERE (CARDNAME LIKE #{cardname1}||'%'
+    			OR CARDNAME LIKE #{cardname2}||'%') AND 
+    			BCATEGORY = #{bcategory}
+	</select>
+	<select id="getCBFtenList"
+		parameterType="hashmap"
+		resultType="sigma.carimi.model.benefitDTO">
+		SELECT * FROM 	
+    			( SELECT ROW_NUMBER() OVER (ORDER BY BSEQ DESC) AS RNUM, 	
+    			 BSEQ, CARDNAME, SHOPNAME, BCATEGORY, BRATE, OPENTIME, CLOSETIME, PHONE, 
+    			 ADDRESS, FILENAME, LOCATIONX, LOCATIONY FROM CARD_BENEFIT 
+    			 WHERE (CARDNAME LIKE #{cardname1, jdbcType=VARCHAR}||'%' 
+    			 OR CARDNAME LIKE #{cardname2, jdbcType=VARCHAR}||'%') 
+    			 AND BCATEGORY = #{bcategory}) WHERE RNUM BETWEEN #{start} AND #{end}
+	</select>
+	
+	<select id="getCBF"
+		parameterType="sigma.carimi.model.benefitDTO"
+		resultType="sigma.carimi.model.benefitDTO">
+		SELECT * FROM CARD_BENEFIT 
+    			 WHERE BSEQ = #{bseq}
+	</select>
+ </mapper>

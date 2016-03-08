@@ -277,10 +277,10 @@
 			var markertype;
 			if(markObj.cardtype == 'card1'){
 
-				markertype = "../../image/m_card1.png";
+				markertype = "/CarimiS/image/m_card1.png";
 
 			} else {
-				markertype = "../../image/m_card2.png";
+				markertype = "/CarimiS/image/m_card2.png";
 			}
 			
 			  window.setTimeout(function() {
@@ -324,7 +324,7 @@
 		
 		// 드롭 마커 보기
 		function viewMarker(Arr, menu) {
-
+			
 			clearMarkers();
 			clearInfos();
 			var sel;
@@ -335,7 +335,6 @@
 			} else if(menu == 'card2'){
 				sel = Arr.card2;
 			}
-			
 			for (var i = 0; i < sel.length; i++) {
 				addMarkerWithTimeout(sel[i], i * 100);
 			}
@@ -407,6 +406,13 @@
 					}
 				}
 			} else {
+				for(var i=0; i<obj.length; i++){
+					if(obj[i].value === document.getElementById("card1").value){
+						document.getElementById("card1").value = "";
+					} else if(obj[i].value === document.getElementById("card2").value){
+						document.getElementById("card2").value = "";
+					}
+				}
 				cn.style.border = "";
 				cn.value = null;
 			}
@@ -417,12 +423,12 @@
 				if(obj[i] === chk){
 					obj[i].value = benefit;
 					var img = benefit + "_on.png"
-					obj[i].src = "/Carimi2/image/benefits/" + img;
+					obj[i].src = "/CarimiS/image/benefits/" + img;
 					document.getElementById("benefit").value = obj[i].value
 				} else {
 					obj[i].value = "";
 					var img = obj[i].getAttribute("id") + "_off.png"
-					obj[i].src = "/Carimi2/image/benefits/" + img;
+					obj[i].src = "/CarimiS/image/benefits/" + img;
 				}
 			}
 		}
