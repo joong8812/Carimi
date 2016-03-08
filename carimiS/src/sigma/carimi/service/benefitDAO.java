@@ -45,12 +45,37 @@ public class benefitDAO {
 		benefitDTO benefitDTO = (benefitDTO)sqlSession.selectOne(ns + "getCBF", bnfdto ); 
 		return benefitDTO;
 	}
-//	
-//	List<benefitDTO> getAllCBFList(String x1, String x2) throws Exception;
+
+	public List<benefitDTO> getAllCBFList(String x1, String x2) throws Exception{
+		
+		HashMap<String, String> hm = new HashMap<String, String>();
+		hm.put("x1", x1);
+		hm.put("x2", x2);
+		System.out.println("x1 = " + x1);
+		System.out.println("x2 = " + x2);
+		
+		List<benefitDTO> list = new ArrayList<benefitDTO>();
+		list=(List<benefitDTO>)
+				sqlSession.selectList(ns+"getAllCBFList", hm);
+		return list;
+	}
 //	boolean addCBF(benefitDTO bnfdto) throws Exception;
 //	boolean deleteCBF(benefitDTO bnfdto) throws Exception;
 //	boolean updateCBF(benefitDTO bnfdto) throws Exception;
-//	List<benefitDTO> getCBFtenList(int start, int end, String x1, String x2) throws Exception;
+	public List<benefitDTO> getCBFtenList(int start, int end, String x1, String x2) throws Exception{
+		
+		HashMap<String, Object> hm = new HashMap<String, Object>();
+		hm.put("start", start);
+		hm.put("end", end);
+		hm.put("x1", x1);
+		hm.put("x2", x2);
+		
+		List<benefitDTO> list = new ArrayList<benefitDTO>();
+		list=(List<benefitDTO>)
+				sqlSession.selectList(ns+"getCBFtenListA", hm);
+		
+		return list;
+	}
 //	List<benefitDTO> getCBFtenList(int start, int end, benefitDTO bnfdto) throws Exception; // ten of one card
 	public List<benefitDTO> getCBFtenList(int start, int end, benefitDTO bnfdto, benefitDTO bnfdto2) throws Exception{
 		

@@ -34,8 +34,7 @@ public class benefitServiceImpl implements benefitService{
 
 	@Override
 	public List<benefitDTO> getAllCBFList(String x1, String x2) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return benefitDAO.getAllCBFList(x1, x2);
 	}
 
 	@Override
@@ -59,7 +58,7 @@ public class benefitServiceImpl implements benefitService{
 	@Override
 	public List<benefitDTO> getCBFtenList(int start, int end, String x1, String x2) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return benefitDAO.getCBFtenList(start, end, x1, x2);
 	}
 
 	@Override

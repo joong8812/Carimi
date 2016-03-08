@@ -1,5 +1,6 @@
 package sigma.carimi.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -291,6 +292,77 @@ public class BenefitController {
 		benefitDTO bdto = benefitService.getCBF(bnfdto);
 		model.addAttribute("bdto", bdto);
 		return "admin_bdetail.tiles";
+	}
+	
+	@RequestMapping(value = "admin_page.do", 
+			method = {RequestMethod.GET, RequestMethod.POST}) 
+	public String admin_page(Model model, String s_pageno, String find, String search,
+			benefitDTO bdto) throws Exception{		
+		logger.info("Welcome BenefitController admin_page! "+ new Date());
+		System.out.println(find + "/" + search);
+		String x1 = find;
+		String x2 = search;
+		
+		if(x2 == null || x2.length() == 0){
+			x2="all";
+		}
+		
+		List<benefitDTO> benefitList = new ArrayList<benefitDTO>();
+		benefitList = benefitService.getAllCBFList(x1, x2);
+		
+		int pageno = toInt(s_pageno);
+		
+		if(pageno<1){//현재 페이지
+			pageno = 1;
+		}
+
+		int total_record = benefitList.size();		   //총 레코드 수
+		int page_per_record_cnt = 10;  //페이지 당 레코드 수
+		int group_per_page_cnt =5;     //페이지 당 보여줄 번호 수[1],[2],[3],[4],[5]
+
+		int record_end_no = pageno*page_per_record_cnt;					// n * 10
+		int record_start_no = record_end_no-(page_per_record_cnt-1);	// (n-1) * 10 + 1
+		if(record_end_no>total_record){			// 페이지 끝 번호가 모든 레코드보다 클 경우
+			record_end_no = total_record;
+		}
+
+		int total_page = total_record / page_per_record_cnt + (total_record % page_per_record_cnt>0 ? 1 : 0);
+		if(pageno>total_page){
+			pageno = total_page;
+		}
+		int group_no = pageno/group_per_page_cnt+( pageno%group_per_page_cnt>0 ? 1:0);
+
+		int page_eno = group_no*group_per_page_cnt;		
+
+		int page_sno = page_eno-(group_per_page_cnt-1);	
+
+		if(page_eno>total_page){
+			page_eno=total_page;
+		}	
+
+		int prev_pageno = page_sno-group_per_page_cnt;  // <<  *[이전]* [21],[22],[23]... [30] [다음]  >>
+
+		int next_pageno = page_sno+group_per_page_cnt;	// <<  [이전] [21],[22],[23]... [30] *[다음]*  >>
+
+		if(prev_pageno<1){
+			prev_pageno=1;
+		}
+		if(next_pageno>total_page){
+			next_pageno=total_page/group_per_page_cnt*group_per_page_cnt+1;
+		}
+		
+		List<benefitDTO> benefitTenList = benefitService.getCBFtenList(record_start_no, record_end_no ,x1, x2);
+		model.addAttribute("x1", x1);
+		model.addAttribute("x2", x2);
+		model.addAttribute("benefitTenList", benefitTenList);
+		model.addAttribute("prev_pageno", prev_pageno);
+		model.addAttribute("page_sno", page_sno);
+		model.addAttribute("page_eno", page_eno);
+		model.addAttribute("pageno", pageno);
+		model.addAttribute("next_pageno", next_pageno);
+		model.addAttribute("total_page", total_page);
+		
+		return "admin_page.tiles";
 	}
 	
 	//it can change cardname from English to Korean

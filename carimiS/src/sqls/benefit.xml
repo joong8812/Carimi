@@ -37,4 +37,48 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM CARD_BENEFIT 
     			 WHERE BSEQ = #{bseq}
 	</select>
+	
+	<select id="getAllCBFList"
+		parameterType="hashmap"
+		resultType="sigma.carimi.model.benefitDTO">
+		<choose>
+			<when test="x2 == 'all' or x2 == ''">
+				SELECT * FROM CARD_BENEFIT ORDER BY BSEQ DESC
+			</when>
+			<when test="x1 == 'address'">
+				SELECT * FROM CARD_BENEFIT WHERE LOWER(address) LIKE LOWER('%'||#{x2}||'%')
+			</when>
+			<when test="x1 == 'shopname'">
+				SELECT * FROM CARD_BENEFIT WHERE LOWER(shopname) LIKE LOWER('%'||#{x2}||'%')
+			</when>
+		</choose>
+	</select>
+	
+	<select id="getCBFtenListA"
+		parameterType="hashmap"
+		resultType="sigma.carimi.model.benefitDTO">
+    	<choose>
+    		<when test="x2 == 'all' or x2 == ''">
+    			SELECT * FROM 
+    				( SELECT ROW_NUMBER() OVER (ORDER BY  BSEQ DESC) AS RNUM, 
+    				BSEQ, CARDNAME, SHOPNAME, BCATEGORY, BRATE, OPENTIME, CLOSETIME, PHONE,
+    				ADDRESS, FILENAME, LOCATIONX, LOCATIONY FROM CARD_BENEFIT) 
+    				WHERE RNUM BETWEEN #{start} AND #{end}
+    		</when>
+    		<otherwise>
+    			<if test="x1 == 'shopname'">
+    			SELECT * FROM ( SELECT ROW_NUMBER() OVER (ORDER BY  BSEQ DESC) AS RNUM, 
+    			BSEQ, CARDNAME, SHOPNAME, BCATEGORY, BRATE, OPENTIME, CLOSETIME, PHONE, ADDRESS, 
+    			FILENAME, LOCATIONX, LOCATIONY FROM CARD_BENEFIT 
+    			WHERE LOWER(shopname) LIKE LOWER('%'||#{x2}||'%')) WHERE RNUM BETWEEN #{start} AND #{end}
+    			</if>
+    			<if test="x1 == 'address'">
+   				SELECT * FROM ( SELECT ROW_NUMBER() OVER (ORDER BY  BSEQ DESC) AS RNUM, 
+    			BSEQ, CARDNAME, SHOPNAME, BCATEGORY, BRATE, OPENTIME, CLOSETIME, PHONE, ADDRESS, 
+    			FILENAME, LOCATIONX, LOCATIONY FROM CARD_BENEFIT 
+    			WHERE LOWER(address) LIKE LOWER('%'||#{x2}||'%')) WHERE RNUM BETWEEN #{start} AND #{end}
+    			</if>
+    		</otherwise>
+    	</choose>
+	</select>
  </mapper>
