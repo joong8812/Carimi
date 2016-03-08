@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Expenditure"> 
+
+<!-- exp_write *insert-->
+<insert id="addexp" parameterType="sigma.carimi.model.expenditureDTO">
+INSERT INTO CARD_EXPENSE (SEQ, ID, WDATE, MONEYTYPE, PRICE, SHOPNAME, BCATEGORY, SCATEGORY ) 
+VALUES (card_expense_seq.nextval, #{id}, #{wdate}, #{moneytype}, #{price}, #{shopname}, #{bcategory}, #{scategory})
+</insert>
+
+<!-- getexpList *select-->
+<select id="getexpList" parameterType="sigma.carimi.model.expenditureDTO" resultType="sigma.carimi.model.expenditureDTO">
+SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE #{wdates}||'%' ORDER BY WDATE
+</select>
+
+<!-- e1list *select-->
+<select id="e1list" resultType="sigma.carimi.model.expenditureDTO">
+SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE '#{wdate}%'
+</select>
+
+<!-- e2list *select-->
+<select id="e2list" resultType="sigma.carimi.model.expenditureDTO">
+SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE '#{wdate}%' AND MONEYTYPE != 'cash'
+</select>
+
+<!-- explistU *update-->
+<update id="updexp" parameterType="sigma.carimi.model.expenditureDTO" >
+UPDATE CARD_EXPENSE SET SEQ = #{seq}, ID = #{id}, WDATE = #{wdate}, MONEYTYPE = #{moneytype}, PRICE = #{price}, SHOPNAME = #{shopname}, BCATEGORY = #{bcategory}, SCATEGORY = #{scategory} WHERE SEQ = #{seq}
+</update>
+
+<!-- explistD *delete-->
+<delete id="deleteexp" parameterType="java.lang.Integer">
+DELETE FROM CARD_EXPENSE WHERE SEQ = #{seq}
+</delete>
+
+<!-- expall *select-->
+<select id="expall" parameterType="java.lang.Integer" resultType="sigma.carimi.model.expenditureDTO">
+SELECT SEQ, ID, WDATE, MONEYTYPE, PRICE, SHOPNAME, BCATEGORY, SCATEGORY FROM CARD_EXPENSE WHERE SEQ = #{seq}
+</select>
+
+</mapper>
