@@ -73,7 +73,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="loginAf.do" method="post">
+		<form action="loginAf.do" method="post" name="login">
 		
 			<h1>Member Login</h1>		
 			
@@ -102,7 +102,7 @@
 					<label class="choice" for="Field" >Keep me signed in</label>
 				</span>
 									
-				<button class="button btn btn-success btn-large">Sign In</button>
+				<button onclick="checkfield()" class="button btn btn-success btn-large">Login</button>
 				
 			</div> <!-- .actions -->
 			
@@ -113,7 +113,21 @@
 	</div> <!-- /content -->
 	
 </div> <!-- /account-container -->
+<script>
+function checkfield(){
+	
+	if(document.login.id.value==""){ //id값이 없을 경우
+		alert("아이디를 확인하세요");
+		document.login.id.focus();     // id 텍스트박스에 커서를 위치
+		exit;
+	} else if(document.login.pwd.value==""){
+		alert("비밀번호를 확인하세요");
+		document.login.pwd.focus();
+		exit;
+	}
 
+}
+</script>
 
 
 <script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>

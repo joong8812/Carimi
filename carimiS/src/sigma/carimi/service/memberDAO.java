@@ -28,5 +28,18 @@ public class memberDAO {
 		sqlSession.insert(ns+"addMember",member);
 		return true;
 	}
+	public memberDTO memberOne(memberDTO member) throws Exception{
+		memberDTO mdto = null;
+		mdto = (memberDTO)sqlSession.selectOne(ns+"memberOne", member);
+		return mdto;
+	}
+	public boolean memUpdate(memberDTO member) throws Exception{
+		sqlSession.update(ns+"memUpdate", member);
+		return true;
+	}
+	public boolean memDelete(String id) throws Exception{
+		sqlSession.update(ns+"memDelte", id);
+		return true;
+	}
 	
 }

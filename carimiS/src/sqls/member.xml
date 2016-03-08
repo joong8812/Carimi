@@ -17,4 +17,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 					#{location}, #{job}, #{email}, #{fav1}, #{fav2}, 
 					#{fav3}, #{fav4}, #{fav5}, #{fav6}, #{mycard1}, #{mycard2})
 	</insert>
+	<select id="memberOne"
+		parameterType="sigma.carimi.model.memberDTO"
+		resultType="sigma.carimi.model.memberDTO">
+		SELECT ID, PWD, NAME, AGE, SEX, LOCAL, LOCATION, JOB, EMAIL, FAV1, FAV2, FAV3, FAV4, FAV5, FAV6, MYCARD1, MYCARD2 FROM CARD_USER
+		WHERE ID=#{id}
+	</select>
+	<update id="memUpdate"
+		parameterType="sigma.carimi.model.memberDTO">
+		UPDATE CARD_USER SET PWD=#{pwd}, NAME=#{name}, AGE=#{age}, SEX=#{age}, LOCAL=#{local}, LOCATION=#{location}, 
+		JOB=#{job}, EMAIL=#{email}, FAV1=#{fav1}, FAV2=#{fav2}, FAV3=#{fav3}, FAV4=#{fav4}, FAV5=#{fav5}, FAV6=#{fav6}, 
+		MYCARD1=#{mycard1}, MYCARD2=#{mycard2} WHERE ID = #{id}
+	</update>
+	
+	
  </mapper>

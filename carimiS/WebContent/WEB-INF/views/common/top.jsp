@@ -9,18 +9,6 @@
 <head>
 <meta charset="utf-8">
 <title>CARIMI</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
- <link href="<%=request.getContextPath()%>/css/bootstrap-responsive.min.css" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
-        rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/font-awesome.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/pages/dashboard.css" rel="stylesheet">
-<script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script> 
-
-
 </head>
 
 <body>
@@ -35,7 +23,7 @@
 	          <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i
 	                            class="icon-cog"></i> Account <b class="caret"></b></a>
 	            <ul class="dropdown-menu">
-	              <li><a href="<%=request.getContextPath()%>/view/member/meminfo.jsp">Settings</a></li>  
+	              <li><a href="meminfo.do">Settings</a></li>  
 	            </ul>
 	          </li>
 	        </c:if>
@@ -68,3 +56,5 @@
   </div>
   <!-- /navbar-inner --> 
 </div>
+</body>
+</html>

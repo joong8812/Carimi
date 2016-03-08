@@ -22,4 +22,17 @@ public class memberServiceImpl implements memberService{
 	public boolean addMember(memberDTO member) throws Exception {
 		return memberDAO.addMember(member);
 	}
+	
+	@Override
+	public memberDTO memberOne(memberDTO member) throws Exception {
+		return memberDAO.memberOne(member);
+	}
+	@Override
+	public boolean memUpdate(memberDTO member) throws Exception {
+		return memberDAO.memUpdate(member);
+	}
+	@Override
+	public boolean memDelete(String id) throws Exception {
+		return memberDAO.memDelete(id);
+	}
 }

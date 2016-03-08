@@ -16,5 +16,7 @@
 
 <definition name="signup.tiles" template="/WEB-INF/views/login/signup.jsp">
 </definition>
-
+<definition name="meminfo.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/login/meminfo.jsp" />
+</definition>
 </tiles-definitions> 
