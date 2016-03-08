@@ -57,7 +57,7 @@ public class MemberController {
 			res.setContentType("text/html;charset=UTF-8");
 			
 			res.getWriter().write("<script language='JavaScript'>");
-			res.getWriter().write("alert('���̵� ��й�ȣ�� Ȯ�����ּ���.');");
+			res.getWriter().write("alert('占쏙옙占싱듸옙 占쏙옙橘占싫ｏ옙占� 확占쏙옙占쏙옙占쌍쇽옙占쏙옙.');");
 			res.getWriter().write("history.go(-1);");
 			res.getWriter().write("</script>");
 			res.getWriter().flush(); 
@@ -149,15 +149,16 @@ public class MemberController {
 		}
 		
 	}
+
 	
 	@RequestMapping(value="meminfo.do", method={RequestMethod.GET, RequestMethod.POST})
 	public String meminfo(Model model, HttpServletRequest req) throws Exception{
 		memberDTO bdto = (memberDTO)req.getSession().getAttribute("login");
 		logger.info("Welcome HelloMemberController meminfo! "+ new Date());
-		System.out.println("���̵� : " + bdto.getId());
+		System.out.println("占쏙옙占싱듸옙 : " + bdto.getId());
 		memberDTO mdto = memberService.memberOne(bdto);
-		System.out.println("����"+ mdto.getLocal());
-		System.out.println("������"+ mdto.getLocation());
+		System.out.println("占쏙옙占쏙옙"+ mdto.getLocal());
+		System.out.println("占쏙옙占쏙옙占쏙옙"+ mdto.getLocation());
 		model.addAttribute("mdto", mdto);
 		return "meminfo.tiles";
 		
@@ -167,9 +168,9 @@ public class MemberController {
 	public String meminfoAf(HttpServletRequest request, memberDTO member, 
 			Model model, String[] fav, String goo, String mode, String id) throws Exception {
 		logger.info("Welcome MemberController meminfoAf! "+ new Date());
-		System.out.println("���̵�" + id);
-		System.out.println("���" + mode);
-		System.out.println("������" + goo);
+		System.out.println("占쏙옙占싱듸옙" + id);
+		System.out.println("占쏙옙占�" + mode);
+		System.out.println("占쏙옙占쏙옙占쏙옙" + goo);
 		member.setLocation(goo);
 		
 		for(int i=0; i<fav.length; i++){
@@ -241,4 +242,5 @@ public class MemberController {
 		
 		
 	}
+
 }

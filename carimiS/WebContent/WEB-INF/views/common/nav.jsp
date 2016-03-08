@@ -14,7 +14,7 @@
     <div class="container">
       <ul class="mainnav">
         <li class="active" ><a href="./main.do"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
-        <li><a href="#"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+        <li><a href="./analysis.do"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
         <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-facetime-video"></i><span>Benefit Tour</span><b class="caret"></b> </a>
 	        <ul class="dropdown-menu">
 	        	<c:choose>
