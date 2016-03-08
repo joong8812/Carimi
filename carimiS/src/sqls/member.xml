@@ -29,6 +29,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		JOB=#{job}, EMAIL=#{email}, FAV1=#{fav1}, FAV2=#{fav2}, FAV3=#{fav3}, FAV4=#{fav4}, FAV5=#{fav5}, FAV6=#{fav6}, 
 		MYCARD1=#{mycard1}, MYCARD2=#{mycard2} WHERE ID = #{id}
 	</update>
+	<delete id="memDelete"
+		parameterType="String">
+		DELETE CARD_USER WHERE ID=#{id}
+	</delete>
 	
 	
  </mapper>

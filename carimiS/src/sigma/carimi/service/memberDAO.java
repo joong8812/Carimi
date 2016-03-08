@@ -38,7 +38,7 @@ public class memberDAO {
 		return true;
 	}
 	public boolean memDelete(String id) throws Exception{
-		sqlSession.update(ns+"memDelte", id);
+		sqlSession.delete(ns+"memDelete", id);
 		return true;
 	}
 	

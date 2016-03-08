@@ -177,20 +177,37 @@ public class MemberController {
 		for(int i=0; i<fav.length; i++){
 			if(i==0){
 				member.setFav1(fav[0]);	
+				member.setFav2("");
+				member.setFav3("");
+				member.setFav4("");
+				member.setFav5("");
+				member.setFav6("");
 			}else if(i==1){
 				member.setFav1(fav[0]);
 				member.setFav2(fav[1]);
+				
+				member.setFav3("");
+				member.setFav4("");
+				member.setFav5("");
+				member.setFav6("");
 			}
 			else if(i==2){
 				member.setFav1(fav[0]);
 				member.setFav2(fav[1]);
 				member.setFav3(fav[2]);
+			
+				member.setFav4("");
+				member.setFav5("");
+				member.setFav6("");
 			}
 			else if(i==3){
 				member.setFav1(fav[0]);
 				member.setFav2(fav[1]);
 				member.setFav3(fav[2]);
 				member.setFav4(fav[3]);
+			
+				member.setFav5("");
+				member.setFav6("");
 			}
 			else if(i==4){
 				member.setFav1(fav[0]);
@@ -198,6 +215,8 @@ public class MemberController {
 				member.setFav3(fav[2]);
 				member.setFav4(fav[3]);
 				member.setFav5(fav[4]);
+				
+				member.setFav6("");
 			}
 			else if(i==5){
 				member.setFav1(fav[0]);
