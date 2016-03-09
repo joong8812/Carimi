@@ -198,10 +198,8 @@ public class planDTO {
 
 	@Override
 	public String toString() {
-		return "planDTO [pseq=" + pseq + ", bseq=" + bseq + ", id=" + id + ", padate=" + padate + ", patime=" + patime
-				+ ", ptitle=" + ptitle + ", pcontent=" + pcontent + ", plocal=" + plocal + ", pwdate=" + pwdate
-				+ ", plocation_x=" + plocation_x + ", plocation_y=" + plocation_y + ", pedate=" + pedate + ", petime="
-				+ petime + "]";
+		return "planDTO [bsdate=" + bsdate + ", bedate=" + bedate + ", btitle=" + btitle + ", bseq=" + bseq + "]";
 	}
 
+	
 }

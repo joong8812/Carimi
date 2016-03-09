@@ -49,119 +49,68 @@
             			<div class="widget-content">
 						<table class="table table-striped table-bordered">
 						
-						<%-- <%
-								planDTO pdto = pdao.cardPlan(new planDTO(id));
-								String mc1 = pdto.getMycard1();
-								String mc2 = pdto.getMycard2();
-								String[] e_card = {"shin1", "shin2", "guk1", "guk2", "uri1", "uri2", "ha1", "ha2", "lot1", "lot2", "sam1",
-										"sam2", "nong1", "nong2", "gi1", "gi2", "ci1", "ci2", "미보유"};
-								String[] k_card = {"신한 LOVE", "신한 Tasty", "국민 굿데이", "국민 다담", "우리 다모아할인", "우리 가득한할인", "하나 Pop", "하나 2X 알파",
-										"롯데 DC 슈프림", "롯데 DC 스마트", "삼성 S클래스", "삼성 2 v2", "농협 스마티", "농협 Take5", "기업 IBK Hi", "기업 참!좋은친구",
-										"씨티 멀티플러스", "씨티 클리어", "미보유"};
-								String mycard1 = "";
-								String mc1_shot = "";
-								String mycard2 = "";
-								String mc2_shot = "";
-
-								for (int i = 0; i < e_card.length; i++) {
-									if (e_card[i].indexOf(mc1) >= 0) {
-										mycard1 = k_card[i];
-										mc1_shot = k_card[i].substring(0, 2);
-									}
-									if (e_card[i].indexOf(mc2) >= 0) {
-										mycard2 = k_card[i];
-										mc2_shot = k_card[i].substring(0, 2);
-										System.out.println(mc2_shot);
-									}
-								}
-							%>
-							<%
-								List<planDTO> eventplan = pdao.eventPlan(new planDTO());
-
-								for (int i = 0; i < eventplan.size(); i++) {
-									planDTO pdto1 = eventplan.get(i);
-									int bseq = Integer.parseInt(pdto1.getBseq());
-							%>
-							<%
-								if (pdto1.getBtitle().contains(mc1_shot)) {
-							%>
+						<c:forEach var="cardlist" items="${cardlist }" varStatus="vs">
+							<c:if test="${cardlist ne'미보유'}">
+								<c:choose>
+									<c:when test="${vs.count eq 1 }">
+										<tr>
+											<td><font style="color: #b6aafb">${cardlist }</font></td>
+										</tr>
+									</c:when>
+									<c:otherwise>
+										<tr>
+											<td><font style="color: #f8aafb">${cardlist }</font></td>
+										</tr>
+									</c:otherwise>
+								</c:choose>
+							</c:if>
+						</c:forEach>
+						
+						<c:if test="${!empty cardevent1 }">
 							<script>				
-					cardEventArray1 = [];
-					var cardEvent1 = {};					
-					cardEvent1.title = '<%=pdto1.getBtitle()%>';
-					cardEvent1.start = '<%=pdto1.getBsdate()%>';
-					cardEvent1.end = '<%=pdto1.getBedate()%>';
-					cardEvent1.color= '#b6aafb'; 
-					cardEvent1.url= '../board/boarddetail.jsp?bseq=<%=bseq%>';
-					cardEventArray1.push(cardEvent1);				
-					</script>
-							<%
-								}
-							%>
-							<%
-								if (!mc2_shot.equals("미보유") && pdto1.getBtitle().contains(mc2_shot)) {
-							%>
-							<script>
-					cardEventArray2 = [];
-					var cardEvent2 = {};					
-					cardEvent2.title = '<%=pdto1.getBtitle()%>';
-					cardEvent2.start = '<%=pdto1.getBsdate()%>';
-					cardEvent2.end = '<%=pdto1.getBedate()%>';
-					cardEvent2.color= '#f8aafb';   // an option!
-					cardEvent2.url= '../board/boarddetail.jsp?bseq=<%=bseq%>';
-					cardEventArray2.push(cardEvent2);
-					</script>
-							<%
-								}
-							%>
-							<%
-								if (mc2_shot.equals("미보")) {
-							%>
-							<script>
-					cardEventArray2 = [];
-					var cardEvent2 = {};					
-					cardEvent2.title = '';
-					cardEvent2.start = '<%=pdto1.getBsdate()%>';
-					cardEvent2.end = '<%=pdto1.getBedate()%>';
-					cardEvent2.color= 'transparent';
-					cardEventArray2.push(cardEvent2);
-					</script>
-							<%
-								}
-							%>
-							<%
-								if (mc1_shot.equals("미보")) {
-							%>
-							<script>
-					cardEventArray1 = [];
-					var cardEvent1 = {};					
-					cardEvent1.title = '';
-					cardEvent1.start = '<%=pdto1.getBsdate()%>';
-					cardEvent1.end = '<%=pdto1.getBedate()%>';
-					cardEvent1.color= 'transparent';
-					cardEventArray1.push(cardEvent1);
-					</script>
-							<%
-								}
-								}
-							%>
-							<tr>
-								<td align="center">1</td>
-								<td><font style="color: #b6aafb"><%=mycard1%></font></td>
-							</tr>
-							<%
-								if (!mc2.equals("미보유")) {
-							%>
-							<tr>
-								<td align="center">2</td>
-								<td><font style="color: #f8aafb"><%=mycard2%></font></td>
-							</tr>
-							<%
-								}
-							%>  --%>
+								cardEventArray1 = [];
+								var cardEvent1 = {};					
+								cardEvent1.title = "${cardevent1.btitle }";
+								cardEvent1.start = "${cardevent1.bsdate }";
+								cardEvent1.end = "${cardevent1.bedate }";
+								cardEvent1.color= '#b6aafb'; 
+								cardEvent1.url= "boardDetail.do?bseq=${cardevent1.bseq }";
+								cardEventArray1.push(cardEvent1);				
+							</script>
+
+						</c:if>
+						
+						<c:if test="${!empty cardevent2 }">
+							<c:choose>
+							<c:when test="${cardevent2.btitle ne '미보유 고객을 위한 연중행사' }">	
+								<script>
+									cardEventArray2 = [];
+									var cardEvent2 = {};					
+									cardEvent2.title = "${cardevent2.btitle }";
+									cardEvent2.start = "${cardevent2.bsdate }";
+									cardEvent2.end = "${cardevent2.bedate }";
+									cardEvent2.color= '#f8aafb'; 
+									cardEvent2.url= "boardDetail.do?bseq=${cardevent2.bseq }";
+									cardEventArray1.push(cardEvent2);				
+								</script>
+							</c:when>
+							<c:otherwise>
+								<script>
+									cardEventArray2 = [];
+									var cardEvent2 = {};					
+									cardEvent2.title = "";
+									cardEvent2.start = "";
+									cardEvent2.end = "";
+									cardEvent2.color= 'transparent';
+									cardEventArray2.push(cardEvent2);
+								</script>
+							</c:otherwise>
+							</c:choose>
+						</c:if>
+					
 						</table>
 							
-							 <input type="button" value="일정쓰기" onclick="location='addplan.do'"> 
+							 <input type="button" value="일정쓰기" onclick="location='addplan.do'">
 						
 						</div>
 				</div>
@@ -185,11 +134,7 @@
 		eventObject.color= '#00ba8c';
 	 	eventObject.url = "plandetail.do?pseq=${lp.pseq}";  
 		eventArray.push(eventObject);
-		
-		alert("addOn");
 	</script>
-	
-	
 	</c:forEach>
 
 	<%
@@ -220,10 +165,10 @@
 			dayNames:['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
 			dayNamesShort:['일','월','화','수','목','금','토'],
 			buttonText: {
-				today:'Day',
-				month:'Monthly',
-				week:'Weekly',
-				day:'Daily'
+				today:'오늘',
+				month:'월간',
+				week:'주간',
+				day:'일간'
 			},
 			titleFormat: {
 				month : 'yyyy년 MMMM',
@@ -237,18 +182,13 @@
 			eventSources : [
 					{
 						events : eventArray
-					}
-					/*{
-					 	events : cardEventArray1
-					// an option!
-					// textColor: 'black' // an option!
 					},
-
+					{
+					 	events : cardEventArray1
+					},
 					{
 						events : cardEventArray2
-
-					// textColor: 'black' // an option!
-					} */ ]
+					}]
 
 			});
 

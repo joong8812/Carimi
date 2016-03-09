@@ -32,15 +32,56 @@ public class planController {
 		String id = mem.getId();
 		pdto.setId(id);
 
-		System.out.println(pdto.getId());
 		logger.info("Welcome planController= " + new Date());
 		
 		List<planDTO> listplan = planService.listPlan(pdto);
 		model.addAttribute("listplan", listplan);
 		logger.info("Welcome planController listPlan= " + new Date());
 		
-		/*List<planDTO> eventplan = planService.eventPlan(pdto);
-		model.addAttribute("eventplan", eventplan);*/
+		
+		String mc1 = mem.getMycard1();
+		String mc2 = mem.getMycard2();
+		String[] e_card = {"shin1", "shin2", "guk1", "guk2", "uri1", "uri2", "ha1", "ha2", "lot1", "lot2", "sam1",
+				"sam2", "nong1", "nong2", "gi1", "gi2", "ci1", "ci2", "미보유"};
+		String[] k_card = {"신한 LOVE", "신한 Tasty", "국민 굿데이", "국민 다담", "우리 다모아할인", "우리 가득한할인", "하나 Pop", "하나 2X 알파",
+				"롯데 DC 슈프림", "롯데 DC 스마트", "삼성 S클래스", "삼성 2 v2", "농협 스마티", "농협 Take5", "기업 IBK Hi", "기업 참!좋은친구",
+				"씨티 멀티플러스", "씨티 클리어", "미보유"};
+		String mycard1 = "";
+		String mc1_shot = "";
+		String mycard2 = "";
+		String mc2_shot = "";
+		System.out.println(e_card.length);
+		System.out.println("mc1= "+ mc1 + "/ mc2= " + mc2);
+		for (int i = 0; i < e_card.length; i++) {
+			if (e_card[i].indexOf(mc1) >= 0) {
+				mycard1 = k_card[i];
+				mc1_shot = k_card[i].substring(0, 2);
+			}
+			if (e_card[i].indexOf(mc2) >= 0) {
+				mycard2 = k_card[i];
+				mc2_shot = k_card[i].substring(0, 2);
+			}
+		}
+		
+		List<planDTO> cardevent = planService.eventPlan(pdto);
+			
+			
+		for(int i=0; i<cardevent.size(); i++){
+			if(cardevent.get(i).getBtitle().contains(mc1_shot)) {
+				model.addAttribute("cardevent1", cardevent.get(i));
+				System.out.println("cardevent1= " + cardevent.get(i));
+			}
+			if(cardevent.get(i).getBtitle().contains(mc2_shot)) {
+				model.addAttribute("cardevent2", cardevent.get(i));
+				System.out.println("cardevent2= " + cardevent.get(i));
+			}
+		
+		}
+
+		String[] cardlist = {mycard1, mycard2};
+		model.addAttribute("cardlist", cardlist);
+		logger.info("Welcome planController cardlist= " + new Date());
+		
 		
 		return "plan.tiles";
 	}

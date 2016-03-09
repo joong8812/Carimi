@@ -38,7 +38,7 @@
 							
 									<a href='updplan.do?pseq=${detailplan.pseq}'>Modify</a>&nbsp;
 									<a href='delplan.do?pseq=${detailplan.pseq}'>Delete</a>&nbsp;
-									<a href=plan.jsp>Back</a>
+									<a href=plan.do>Back</a>
 							
 								</h3>
 							</div>

@@ -45,7 +45,7 @@ public class planDAO {
 	/* 青荤格废 */
 	public List<planDTO> eventPlan(planDTO pdto) throws Exception{
 		List<planDTO> eventplan = new ArrayList<planDTO>();
-		return eventplan=(List<planDTO>)sqlSession.selectList(ns+"evepntPlan",pdto);
+		return eventplan=(List<planDTO>)sqlSession.selectList(ns+"eventPlan",pdto);
 	}
 	
 	/*	窜老格废 */
