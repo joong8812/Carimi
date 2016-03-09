@@ -18,29 +18,24 @@ public class expenditureDAO {
 		
 		private String ns = "Expenditure."; //DB Table ¿Ã∏ß
 		
+		@SuppressWarnings("unchecked")
 		public List<expenditureDTO> getexpList(expenditureDTO edto) throws Exception{
 			System.out.println("π‰∏‘"+edto.getId());
 			System.out.println("π‰∏‘"+edto.getWdates());
 			
 			List<expenditureDTO> list = new ArrayList<expenditureDTO>();
 			list = sqlsession.selectList(ns + "getexpList", edto);
-			System.out.println("getexpList="+list.size());
-			System.out.println("getexpList id="+list.get(0).getId());
-			System.out.println("getexpList Moneytype="+list.get(0).getMoneytype());
-			System.out.println("getexpList Price="+list.get(0).getPrice());
-			System.out.println("getexpList Bcategory="+list.get(0).getBcategory());
-			System.out.println("getexpList Scategory="+list.get(0).getScategory());
-			System.out.println("getexpList Seq="+list.get(0).getSeq());
-			System.out.println("getexpList Shopname="+list.get(0).getShopname());
-			System.out.println("getexpList getWdate="+list.get(0).getWdate());
+//			System.out.println("getexpList="+list.size());
+//			System.out.println("getexpList id="+list.get(0).getId());
+//			System.out.println("getexpList Moneytype="+list.get(0).getMoneytype());
+//			System.out.println("getexpList Price="+list.get(0).getPrice());
+//			System.out.println("getexpList Bcategory="+list.get(0).getBcategory());
+//			System.out.println("getexpList Scategory="+list.get(0).getScategory());
+//			System.out.println("getexpList Seq="+list.get(0).getSeq());
+//			System.out.println("getexpList Shopname="+list.get(0).getShopname());
+//			System.out.println("getexpList getWdate="+list.get(0).getWdate());
 			
 			return list;
-		}
-		
-		public List<expenditureDTO> e1list() throws Exception{
-			List<expenditureDTO> e1list = new ArrayList<expenditureDTO>();
-			e1list = (List)sqlsession.selectList(ns + "e1list");
-			return e1list;
 		}
 		
 		public expenditureDTO getexp(int seq) throws Exception{
@@ -77,6 +72,21 @@ public class expenditureDAO {
 			
 			sqlsession.update(ns + "updexp", edto);
 			return true;
+		}
+
+		@SuppressWarnings("unchecked")
+		public List<expenditureDTO> searchList(String stext) {
+			List<expenditureDTO> slist = new ArrayList<expenditureDTO>();
+			slist = sqlsession.selectList(ns + "searchList", stext);
+			
+			return slist;
+		}
+
+		@SuppressWarnings("unchecked")
+		public List<expenditureDTO> e1List(expenditureDTO edto) throws Exception{
+			List<expenditureDTO> e1list = new ArrayList<expenditureDTO>();
+			e1list = sqlsession.selectList(ns + "e1List", edto);
+			return e1list;
 		}
 
 

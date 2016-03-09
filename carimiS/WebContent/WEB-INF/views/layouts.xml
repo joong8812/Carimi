@@ -78,4 +78,28 @@
 	<put-attribute name="content" value="/WEB-INF/views/plan/updplan.jsp" />
 </definition>
 
+<definition name="explist.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/expenditure/explist.jsp" />
+</definition>
+
+<definition name="expwrite.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/expenditure/expwrite.jsp" />
+</definition>
+
+<definition name="expupdate.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/expenditure/expupdate.jsp" />
+</definition>
+
+<definition name="listsearch.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/expenditure/listsearch.jsp" />
+</definition>
+
+<definition name="monlist.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/expenditure/monlist.jsp" />
+</definition>
+
+<definition name="exp1.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/expenditure/exp_1.jsp" />
+</definition>
+
 </tiles-definitions> 

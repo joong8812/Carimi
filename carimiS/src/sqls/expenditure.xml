@@ -16,8 +16,8 @@ SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE #{wdates}||'%' ORDER 
 </select>
 
 <!-- e1list *select-->
-<select id="e1list" resultType="sigma.carimi.model.expenditureDTO">
-SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE '#{wdate}%'
+<select id="e1List" resultType="sigma.carimi.model.expenditureDTO">
+SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE #{wdates}||'%'
 </select>
 
 <!-- e2list *select-->
@@ -38,6 +38,11 @@ DELETE FROM CARD_EXPENSE WHERE SEQ = #{seq}
 <!-- expall *select-->
 <select id="expall" parameterType="java.lang.Integer" resultType="sigma.carimi.model.expenditureDTO">
 SELECT SEQ, ID, WDATE, MONEYTYPE, PRICE, SHOPNAME, BCATEGORY, SCATEGORY FROM CARD_EXPENSE WHERE SEQ = #{seq}
+</select>
+
+<!-- searchList * select-->
+<select id="searchList" parameterType="sigma.carimi.model.expenditureDTO" resultType="sigma.carimi.model.expenditureDTO">
+SELECT ID, WDATE, MONEYTYPE, PRICE, SHOPNAME, BCATEGORY, SCATEGORY FROM CARD_EXPENSE WHERE SHOPNAME LIKE '%'|| #{stext} ||'%' ORDER BY WDATE 
 </select>
 
 </mapper>

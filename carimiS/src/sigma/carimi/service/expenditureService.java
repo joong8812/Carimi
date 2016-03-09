@@ -12,5 +12,7 @@ public interface expenditureService {
 	boolean deleteexp(int seq) throws Exception;
 	expenditureDTO expall(int seq) throws Exception ;
 	boolean updexp(expenditureDTO edto) throws Exception;
+	List<expenditureDTO> searchList(String stext) throws Exception;
+	List<expenditureDTO> e1List(expenditureDTO edto) throws Exception;
 
 }

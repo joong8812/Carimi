@@ -42,4 +42,16 @@ public class expenditureServiceImple implements expenditureService{
 		public boolean updexp(expenditureDTO edto) throws Exception {
 			return expenditureDAO.updexp(edto);
 		}
+		
+		@Override
+		public List<expenditureDTO> searchList(String stext) throws Exception {
+
+			return expenditureDAO.searchList(stext);
+		}
+		
+		@Override
+		public List<expenditureDTO> e1List(expenditureDTO edto) throws Exception {
+			
+			return expenditureDAO.e1List(edto);
+		}
 }
