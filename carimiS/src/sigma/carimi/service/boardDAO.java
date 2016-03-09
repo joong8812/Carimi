@@ -26,6 +26,17 @@ public class boardDAO {
 				sqlSession.selectList(ns+"boardList", cardvalue);
 		return list;
 	}
+	public boardDTO boardDetail(int bseq)throws Exception{
+		boardDTO bdto=null;
+		bdto=(boardDTO)
+				sqlSession.selectOne(ns+"boardDetail",bseq);
+		return bdto;
+	}
+	public boolean boardwriteAf(boardDTO dto)throws Exception{
+
+				sqlSession.insert(ns+"boardwriteAf",dto);
+		return true;
+	}
 
 	
 }

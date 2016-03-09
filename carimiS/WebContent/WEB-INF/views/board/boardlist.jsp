@@ -73,22 +73,25 @@ List<boardDTO> boardlist = bdao.boardList(cardvalue);
   					<th >Coupon</th>
   				  </tr>
  			</thead>
-     	<tbody>        
-		<c:if test="${empty boardlist}">
+     	<tbody>
+    <c:choose>    
+		<c:when test="${empty boardlist}">
 			<tr>
-				<td colspan="7">작성된 글이 없습니다.</td>
+				<td colspan="7" style="text-align:center">작성된 글이 없습니다.</td>
 			</tr>
-		</c:if>
+		</c:when>
 		
 		
 	<%-- 	:forEach var="i" begin="${page_sno}" end="${page_eno }" step="1" --%>
+		<c:otherwise>
 		<c:forEach begin="${startno-1 }" items="${boardlist}" var="board"   varStatus="vs"  end="${endno-1}">
 			<tr >
+		
 				<td>${vs.count}</td> 
 				<td>${board.bwdate.substring(0,10)}</td>
 				<td>${board.id }</td>
 				<td align="left">
-					<a href='boarddetail.jsp?bseq=${board.bseq }'><!--id같이 가져감  -->
+					<a href='boardDetail.do?bseq=${board.bseq }'><!--id같이 가져감  -->
 		      		&nbsp;&nbsp;${board.btitle } 
 		   			</a>
 		   		</td>
@@ -107,15 +110,19 @@ List<boardDTO> boardlist = bdao.boardList(cardvalue);
 				</td>
 			</tr>
 		</c:forEach>
+		</c:otherwise>
+		</c:choose>	
 		 
 		   </tbody>
+		 
    </table>
    </div>
    </div>
-  
+ 
  
 
 <div style="text-align:center;">
+<c:if test="${!empty boardlist}">
 <a href="boardlist.do?pageno=1">[맨앞으로]</a>
 
 <a href="boardlist.do?pageno=${prev_pageno }">[이전]</a> 
@@ -140,10 +147,9 @@ List<boardDTO> boardlist = bdao.boardList(cardvalue);
 <a href="boardlist.do?pageno=${next_pageno}" >[다음]</a>
 
 <a href="boardlist.do?pageno=${total_page}">[맨뒤로]</a>
-</div>
-					
-					
-						
+</c:if>
+</div>		 
+				
 				</div> 
 				<!-- /widget -->
 	      		

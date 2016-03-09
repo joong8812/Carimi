@@ -9,6 +9,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT BSEQ, BWDATE, ID, BTITLE, BCONTENT, BFILENAME, BSDATE, BEDATE FROM CARD_BOARD WHERE BSELECT LIKE '%'||#{cardvalue}
 		ORDER BY BSEQ DESC 
 	</select>
-	
+	<select id="boardDetail"
+		parameterType="int"
+		resultType="sigma.carimi.model.boardDTO">
+		select bseq, bwdate, id, btitle, bcontent, bfilename,  bsdate, bedate 
+	    from card_board  where bseq =  #{bseq}
+	</select>
+	<insert id="boardwriteAf"
+		parameterType="sigma.carimi.model.boardDTO">
+		INSERT INTO CARD_BOARD(BSEQ, BWDATE, ID, BTITLE, BCONTENT, BFILENAME, BSDATE, BEDATE,BREAD,BSELECT) 
+		VALUES (CARD_BOARD_SEQ.NEXTVAL, SYSDATE, #{id}, #{btitle}, #{bcontent}, #{bfilename, jdbcType=VARCHAR}, #{bsdate}, #{bedate},0,#{bselect})
+	</insert>
 	
  </mapper>

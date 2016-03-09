@@ -23,4 +23,15 @@ public class boardServiceImpl implements boardService{
 	public List<boardDTO> boardList(String cardvalue) throws Exception {
 		return boardDAO.boardList(cardvalue);
 	}
+	
+	@Override
+	@Transactional(readOnly=true)
+	public boardDTO boardDetail(int bseq) throws Exception {
+		return boardDAO.boardDetail(bseq);
+	}
+	@Override
+	@Transactional(readOnly=true)
+	public boolean boardwriteAf(boardDTO dto) throws Exception {
+		return boardDAO.boardwriteAf(dto);
+	}
 }

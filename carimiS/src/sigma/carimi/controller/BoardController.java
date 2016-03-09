@@ -118,4 +118,44 @@ public class BoardController {
 		System.out.println("page_eno!!!" + page_eno);
 		return "boardlist.tiles";
 	}
+	
+	@RequestMapping(value = "boardDetail.do", 
+			method = {RequestMethod.GET,
+			RequestMethod.POST})
+	public String boardDetail(boardDTO bbs,Model model, int bseq) throws Exception {
+		logger.info("Welcome MemberController boardDetail! "+ new Date());
+		
+		boardDTO dto=boardService.boardDetail(bseq);
+		model.addAttribute("boardDetail",dto);
+		
+		return "boardDetail.tiles";
+	}
+	
+	@RequestMapping(value = "boardwrite.do", 
+			method = {RequestMethod.GET,
+			RequestMethod.POST})
+	public String boardwrite(Model model) throws Exception {
+		logger.info("Welcome MemberController boardwrite! "+ new Date());
+		
+		return "boardwrite.tiles";
+	}
+	@RequestMapping(value="boardwriteAf.do", method={RequestMethod.GET, RequestMethod.POST})
+	public String writeBBS_ok(Model model, boardDTO bdto, HttpServletResponse res,
+			String id)throws Exception{
+		logger.info("Welcome MemberController boardwriteAF! "+ new Date());
+		System.out.println("IDIDIDIDID" + id);
+		System.out.println("내용값!!!!!!!!!!!!!!!" + bdto.getBcontent());
+		System.out.println("ID값!!!!!!!!!!!!!!!" + bdto.getId());
+		boolean clear =  boardService.boardwriteAf(bdto);
+		if(clear==true){
+			return "redirect:/boardlist.do";
+		}
+		res.setContentType("text/html;charset=UTF-8");
+		res.getWriter().write("<script language='JavaScript'>");
+		res.getWriter().write("alert('�벑濡� �떎�뙣');");
+		res.getWriter().write("</script>");
+		
+		return "boardwrite.tiles";
+		
+	}
 }
