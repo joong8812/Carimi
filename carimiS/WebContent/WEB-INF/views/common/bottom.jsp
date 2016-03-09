@@ -12,46 +12,43 @@
   <div class="extra-inner">
     <div class="container">
       <div class="row">
-                    <div class="span3">
+                    <div class="span2">
                         <h4>
-                            About Free Admin Template</h4>
+                            Card Reports</h4>
                         <ul>
-                            <li><a href="javascript:;">EGrappler.com</a></li>
-                            <li><a href="javascript:;">Web Development Resources</a></li>
-                            <li><a href="javascript:;">Responsive HTML5 Portfolio Templates</a></li>
-                            <li><a href="javascript:;">Free Resources and Scripts</a></li>
+                            <li><a href="javascript:navClick('nav_analysis', 'analysis.do');">Card Reports</a></li>
                         </ul>
                     </div>
                     <!-- /span3 -->
-                    <div class="span3">
+                    <div class="span2">
                         <h4>
-                            Support</h4>
+                            Card Benefit Tour</h4>
                         <ul>
-                            <li><a href="javascript:;">Frequently Asked Questions</a></li>
-                            <li><a href="javascript:;">Ask a Question</a></li>
-                            <li><a href="javascript:;">Video Tutorial</a></li>
-                            <li><a href="javascript:;">Feedback</a></li>
+                            <li><a href="javascript:navClick('nav_benefit', 'benefit.do');">Card Benefit Tour</a></li>
                         </ul>
                     </div>
                     <!-- /span3 -->
-                    <div class="span3">
+                    <div class="span2">
                         <h4>
-                            Something Legal</h4>
+                            Card Expenditure</h4>
                         <ul>
-                            <li><a href="javascript:;">Read License</a></li>
-                            <li><a href="javascript:;">Terms of Use</a></li>
-                            <li><a href="javascript:;">Privacy Policy</a></li>
+                            <li><a href="javascript:navClick('nav_explist', 'explist.do');">Card Expenditure</a></li>
                         </ul>
                     </div>
                     <!-- /span3 -->
-                    <div class="span3">
+                    <div class="span2">
                         <h4>
-                            Open Source jQuery Plugins</h4>
+                           Schedule</h4>
                         <ul>
-                            <li><a href="http://www.egrappler.com">Open Source jQuery Plugins</a></li>
-                            <li><a href="http://www.egrappler.com;">HTML5 Responsive Tempaltes</a></li>
-                            <li><a href="http://www.egrappler.com;">Free Contact Form Plugin</a></li>
-                            <li><a href="http://www.egrappler.com;">Flat UI PSD</a></li>
+                            <li><a href="javascript:navClick('nav_plan', 'plan.do');">Schedule</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span2">
+                        <h4>
+                           Notice</h4>
+                        <ul>
+                            <li><a href="javascript:navClick('nav_notice', 'boardlist.do');">Notice</a></li>
                         </ul>
                     </div>
                     <!-- /span3 -->
@@ -67,7 +64,7 @@
   <div class="footer-inner">
     <div class="container">
       <div class="row">
-        <div class="span12"> &copy; 2013 <a href="http://www.egrappler.com/">Bootstrap Responsive Admin Template</a>. </div>
+        <div class="span12"> &copy; 2016 <a href="http://choi7435.dothome.co.kr/">SIGMA Corporation</a>. </div>
         <!-- /span12 --> 
       </div>
       <!-- /row --> 
@@ -82,8 +79,12 @@
 <!-- Placed at the end of the document so the pages load faster --> 
 
 
-
-
+<script>
+function navClick(url, gourl){
+ 	 window.name = url;
+	location.href = gourl;
+}
+</script>
     
 </body>
 </html>

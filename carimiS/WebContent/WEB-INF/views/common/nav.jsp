@@ -14,38 +14,40 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="" id="main"><a href="javascript:navClick('main')"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
-        <li id="analysis"><a href="javascript:navClick('analysis')"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-        <li id="benefit" class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-facetime-video"></i><span>Benefit Tour</span><b class="caret"></b> </a>
+        <li class="" id="nav_main"><a href="javascript:navClick('nav_main', 'main.do')">
+        	<i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li id="nav_analysis"><a href="javascript:navClick('nav_analysis', 'analysis.do')">
+        	<i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+        <li id="nav_benefit" class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-facetime-video"></i><span>Benefit Tour</span><b class="caret"></b> </a>
 	        <ul class="dropdown-menu">
 	        	<c:choose>
 	        		<c:when test="${login.auth eq 1 }">
-	        			<li><a href="javascript:navClick('benefit')">Service</a></li>
-            			<li><a href="javascript:navClick2('benefit', 'admin_page.do')">Admin</a></li>
+	        			<li><a href="javascript:navClick('nav_benefit', 'benefit.do')">Service</a></li>
+            			<li><a href="javascript:navClick('nav_benefit', 'admin_page.do')">Admin</a></li>
 	        		</c:when>
 	        		<c:otherwise>
-	        			<li><a href="javascript:navClick('benefit')">Service</a></li>
+	        			<li><a href="javascript:navClick('nav_benefit', 'benefit.do')">Service</a></li>
 	        		</c:otherwise>
 	        	</c:choose>
 	        </ul>
         </li>
 
-		<li id="explist"><a href="javascript:navClick('explist')"><i class="icon-bar-chart"></i><span>Expenditure</span></a></li>
-		<li id="plan"><a href="javascript:navClick('plan')"><i class="icon-calendar"></i><span>Schedule</span> </a> </li>
+		<li id="nav_explist"><a href="javascript:navClick('nav_explist', 'explist.do')"><i class="icon-bar-chart"></i><span>Expenditure</span></a></li>
+		<li id="nav_plan"><a href="javascript:navClick('nav_plan', 'plan.do')"><i class="icon-calendar"></i><span>Schedule</span> </a> </li>
 		
-        <li class="dropdown" id="boardlist"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-bell"></i><span>Notice</span> <b class="caret"></b></a>
+        <li class="dropdown" id="nav_boardlist"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-bell"></i><span>Notice</span> <b class="caret"></b></a>
            <ul class="dropdown-menu">
    		    <c:choose>
 	        		<c:when test="${login.auth eq 1 }">
-	        			<li><a href="javascript:navClick('boardlist')">List</a></li>
-            			<li><a href="javascript:navClick2('boardlist', 'boardwrite.do')">Write</a></li>
+	        			<li><a href="javascript:navClick('nav_boardlist', 'boardlist.do')">List</a></li>
+            			<li><a href="javascript:navClick2('nav_boardlist', 'boardwrite.do')">Write</a></li>
 	        		</c:when>
 	        		<c:otherwise>
-	        			<li><a href="javascript:navClick('boardlist')">List</a></li>
+	        			<li><a href="javascript:navClick('nav_boardlist', 'boardlist.do')">List</a></li>
 	        		</c:otherwise>
 	        	</c:choose>
            </ul>
-        </li>
+        </li> 
       </ul>
     </div>
     <!-- /container --> 
@@ -55,7 +57,7 @@
 <script>
 var navname = window.name;
 var id = document.getElementById(navname);
-if(navname === 'benefit' || navname === 'boardlist'){
+if(navname === 'nav_benefit' || navname === 'nav_boardlist'){
 	id.setAttribute('class', 'active dropdown');	
 } else {
 	id.setAttribute('class', 'active');
@@ -64,11 +66,8 @@ if(navname === 'benefit' || navname === 'boardlist'){
 </script>
 
 <script>
-function navClick(url){
-	 window.name = url;
-	location.href = url + ".do";
-}
-function navClick2(url, gourl){
+
+function navClick(url, gourl){
  	 window.name = url;
 	location.href = gourl;
 }
