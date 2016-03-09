@@ -16,7 +16,8 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="./main.do">C A R I M I </a>
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a>
+                    <a class="brand" href="javascript:navClick('main')">C A R I M I </a>
       <div class="nav-collapse">
         <ul class="nav pull-right"> 
 			<c:if test="${!empty login.id}">
@@ -56,5 +57,14 @@
   </div>
   <!-- /navbar-inner --> 
 </div>
+
+<script>
+function navClick(url){
+	var id = document.getElementById(url);
+	id.setAttribute('class', 'active');
+	 window.name = url;
+	location.href = url + ".do";
+}
+</script>
 </body>
 </html>

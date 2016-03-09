@@ -56,7 +56,6 @@ public class MemberController {
 			request.getSession().setAttribute("login", login);
 			String[] url = prevurl.split("/");
 			return "redirect:/" + url[url.length-1];
-//			return "redirect:/main.do";
 		}
 			res.setContentType("text/html;charset=UTF-8");
 			

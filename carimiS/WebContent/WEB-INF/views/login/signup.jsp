@@ -85,7 +85,7 @@
 				<span class="icon-bar"></span>
 			</a>
 			
-			<a class="brand" href="main.do">
+			<a class="brand" href="javascript:navClick('main')">
 				C A R I M I			
 			</a>		
 			
@@ -98,7 +98,7 @@
 						
 					</li>
 					<li class="">						
-						<a href="main.do" class="">
+						<a href="javascript:navClick('main')" class="">
 							<i class="icon-chevron-left"></i>
 							Back to Homepage
 						</a>
@@ -951,6 +951,12 @@ function checkfield(){
 	} 
 
 	document.addjoin.submit();
+}
+</script>
+<script>
+function navClick(url){
+	 window.name = url;
+	location.href = url + ".do";
 }
 </script>
 </body>
