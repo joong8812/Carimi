@@ -37,22 +37,26 @@ public class MemberController {
 		
 	@RequestMapping(value = "login.do", 
 			method = RequestMethod.GET)
-	public String login(Model model) {		
+	public String login(Model model, HttpServletRequest request) {		
 		logger.info("Welcome MemberController login! "+ new Date());
+		String prevurl = request.getHeader("referer");
+		model.addAttribute("prevurl", prevurl);
 		return "login.tiles";
 	}
 	
 	@RequestMapping(value = "loginAf.do", 
 			method = RequestMethod.POST)
-	public String loginAf(HttpServletRequest request, HttpServletResponse res, memberDTO member, Model model) throws Exception {
+	public String loginAf(HttpServletRequest request, HttpServletResponse res, 
+			memberDTO member, Model model, String prevurl) throws Exception {
 		logger.info("Welcome MemberController loginAf! "+ new Date());
 	
 		memberDTO login = null;
 		login = memberService.loginMember(member);
 		if(login!=null && !login.getId().equals("")){
 			request.getSession().setAttribute("login", login);
-			
-			return "redirect:/main.do";
+			String[] url = prevurl.split("/");
+			return "redirect:/" + url[url.length-1];
+//			return "redirect:/main.do";
 		}
 			res.setContentType("text/html;charset=UTF-8");
 			
@@ -71,6 +75,8 @@ public class MemberController {
 	public String logout(HttpServletRequest request, Model model) {		
 		logger.info("Welcome MemberController logout! "+ new Date());
 		request.getSession().invalidate();
+		String prevurl = request.getHeader("referer");
+		model.addAttribute("prevurl", prevurl);
 		return "login.tiles";
 	}
 	

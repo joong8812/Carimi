@@ -39,14 +39,12 @@ public class benefitServiceImpl implements benefitService{
 
 	@Override
 	public boolean addCBF(benefitDTO bnfdto) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
+		return benefitDAO.addCBF(bnfdto);
 	}
 
 	@Override
 	public boolean deleteCBF(benefitDTO bnfdto) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
+		return benefitDAO.deleteCBF(bnfdto);
 	}
 
 	@Override

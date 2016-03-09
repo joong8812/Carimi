@@ -59,8 +59,16 @@ public class benefitDAO {
 				sqlSession.selectList(ns+"getAllCBFList", hm);
 		return list;
 	}
-//	boolean addCBF(benefitDTO bnfdto) throws Exception;
-//	boolean deleteCBF(benefitDTO bnfdto) throws Exception;
+	
+	public boolean addCBF(benefitDTO bnfdto) throws Exception{
+		sqlSession.insert(ns+"addCBF",bnfdto);
+		return true;
+	};
+	
+	public boolean deleteCBF(benefitDTO bnfdto) throws Exception{
+		sqlSession.delete(ns+"delCBF", bnfdto);
+		return true;
+	}
 //	boolean updateCBF(benefitDTO bnfdto) throws Exception;
 	public List<benefitDTO> getCBFtenList(int start, int end, String x1, String x2) throws Exception{
 		

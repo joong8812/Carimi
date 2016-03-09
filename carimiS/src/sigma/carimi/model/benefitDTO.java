@@ -26,7 +26,7 @@ public class benefitDTO {
 	}
 	
 	public benefitDTO(int bseq, String cardname, String shopname, String bcategory, int brate, String opentime,
-			String closetime, String phone, String address, String filename, String location_x, String location_y) {
+			String closetime, String phone, String address, String filename, String locationx, String locationy) {
 		super();
 		this.bseq = bseq;
 		this.cardname = cardname;

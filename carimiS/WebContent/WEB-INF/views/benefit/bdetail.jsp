@@ -21,13 +21,6 @@
 }
 </style>
 
-<c:if test="${login.auth eq 0 or empty login }">
-	<script>	
-		alert("관리자만 접속 가능합니다!");
-		location.href="main.do";
-	</script>
-</c:if>
-
 <div class="main">
 	<div class="main-inner">
 	    <div class="container">

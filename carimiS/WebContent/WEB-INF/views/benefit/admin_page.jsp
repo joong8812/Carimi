@@ -15,7 +15,7 @@
 	<!-- /widget-header -->
 
 	<div class="shortcuts">
-		<a href="admin_bwrite.jsp" class="shortcut"><i
+		<a href="admin_bwrite.do" class="shortcut"><i
 			class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">가맹점 등록</span> 
 		</a>
 		<!-- /shortcuts -->
@@ -51,14 +51,14 @@
 							<c:choose>
 								<c:when test="${empty benefitTenList }">
 									<tr>
-										<td colspan="9">작성된 글이 없습니다</td>
+										<td colspan="11" style="text-align:center">검색 결과가 없습니다</td>
 									</tr>
 								</c:when>
 								<c:otherwise>
 									<c:forEach items="${benefitTenList }" var="bdto" varStatus="vs">
 										<tr>
 											<td>${bdto.bseq }</td>
-											<td>${bdto.cardname }</td>
+											<td>${kcardnames[vs.count-1] }</td>
 											<td>${bdto.shopname }</td>
 											<td>${bdto.bcategory }</td>
 											<td>${bdto.brate }</td>
@@ -82,38 +82,50 @@
 		</div>
 	</div>
 </div>
-<div style="text-align: center">
-	<form action="admin_page.do" method="GET">
-		<select name="find" style="width: 100px">
-<!-- 			<option value="brate">혜택 -->
-			<option value="address">주소
-			<option value="shopname">매장이름
-<!-- 			<option value="cardname">카드이름 -->
-		</select> <input type="text" name="search">
-		<button style="margin-top: -9px" type="submit" class="btn">검색</button>
-	</form>
-</div>
-<div style="text-align: center">
-	<a href="admin_page.do?s_pageno=1">[맨앞으로]</a> <a
-		href="admin_page.do?s_pageno=${prev_pageno }">[이전]</a>
 
-	<c:forEach var="i" begin="${page_sno }" end="${page_eno }" step="1">
-		<a href="admin_page.do?s_pageno=${i }&find=${x1 }&search=${x2 }">
-			<c:choose>
-				<c:when test="${pageno eq i }">
-					[${i }]
-				</c:when>
-				<c:otherwise>
-					${i }
-				</c:otherwise>
-			</c:choose>
-		</a>
-			<%--	콤마	 --%>
-		<c:if test="${i < page_eno }">
-			,
-		</c:if>
- 	</c:forEach>
+	<div style="text-align: center">
+		<form action="admin_page.do" method="GET">
+			<select name="find" style="width: 100px">
+	<!-- 			<option value="brate">혜택 -->
+				<option value="address">주소
+				<option value="shopname">매장이름
+	<!-- 			<option value="cardname">카드이름 -->
+			</select> <input type="text" name="search">
+			<button style="margin-top: -9px" type="submit" class="btn">검색</button>
+		</form>
+	</div>
+<c:if test="${!empty benefitTenList }">
+	<div style="text-align: center">
+		<a href="admin_page.do?s_pageno=1">[맨앞으로]</a> <a
+			href="admin_page.do?s_pageno=${prev_pageno }">[이전]</a>
+	
+		<c:forEach var="i" begin="${page_sno }" end="${page_eno }" step="1">
+			<a href="admin_page.do?s_pageno=${i }&find=${x1 }&search=${x2 }">
+				<c:choose>
+					<c:when test="${pageno eq i }">
+						[${i }]
+					</c:when>
+					<c:otherwise>
+						${i }
+					</c:otherwise>
+				</c:choose>
+			</a>
+				<%--	콤마	 --%>
+			<c:if test="${i < page_eno }">
+				,
+			</c:if>
+	 	</c:forEach>
+	
+		<a href="admin_page.do?s_pageno=${next_pageno }">[다음]</a> <a
+			href="admin_page.do?s_pageno=${total_page }">[맨뒤로]</a>
+	</div>
+</c:if>
 
-	<a href="admin_page.do?s_pageno=${next_pageno }">[다음]</a> <a
-		href="admin_page.do?s_pageno=${total_page }">[맨뒤로]</a>
-</div>
+<script>
+function delChk(bseq){
+	var chk = confirm("정말 삭제 하시겠습니까?");
+	if(chk){
+		location.href = "admin_bdel.do?bseq=" + bseq;
+	}
+}
+</script>

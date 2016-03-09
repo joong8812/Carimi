@@ -81,4 +81,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     		</otherwise>
     	</choose>
 	</select>
+	
+	<insert id="addCBF" parameterType="sigma.carimi.model.benefitDTO">
+		INSERT INTO CARD_BENEFIT VALUES(CARD_BENEFIT_SEQ.NEXTVAL,
+   			 #{cardname}, #{shopname}, #{bcategory}, #{brate},
+   			 #{opentime}, #{closetime}, #{phone}, #{address},
+   			 #{filename}, #{locationx}, #{locationy})
+	</insert>
+	
+	<delete id="delCBF" parameterType="sigma.carimi.model.benefitDTO">
+		DELETE FROM CARD_BENEFIT
+    			WHERE BSEQ = #{bseq}
+	</delete>
  </mapper>

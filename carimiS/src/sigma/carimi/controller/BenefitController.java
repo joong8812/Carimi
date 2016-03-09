@@ -1,9 +1,18 @@
 package sigma.carimi.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.jsp.JspWriter;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.slf4j.Logger;
@@ -293,13 +302,20 @@ public class BenefitController {
 		model.addAttribute("bdto", bdto);
 		return "admin_bdetail.tiles";
 	}
+	@RequestMapping(value = "bdetail.do", 
+			method = {RequestMethod.GET}) 
+	public String bdetail(Model model, benefitDTO bnfdto) throws Exception{		
+		logger.info("Welcome BenefitController bdetail! "+ new Date());
+		benefitDTO bdto = benefitService.getCBF(bnfdto);
+		model.addAttribute("bdto", bdto);
+		return "bdetail.tiles";
+	}
 	
 	@RequestMapping(value = "admin_page.do", 
 			method = {RequestMethod.GET, RequestMethod.POST}) 
 	public String admin_page(Model model, String s_pageno, String find, String search,
 			benefitDTO bdto) throws Exception{		
 		logger.info("Welcome BenefitController admin_page! "+ new Date());
-		System.out.println(find + "/" + search);
 		String x1 = find;
 		String x2 = search;
 		
@@ -352,6 +368,7 @@ public class BenefitController {
 		}
 		
 		List<benefitDTO> benefitTenList = benefitService.getCBFtenList(record_start_no, record_end_no ,x1, x2);
+
 		model.addAttribute("x1", x1);
 		model.addAttribute("x2", x2);
 		model.addAttribute("benefitTenList", benefitTenList);
@@ -362,8 +379,154 @@ public class BenefitController {
 		model.addAttribute("next_pageno", next_pageno);
 		model.addAttribute("total_page", total_page);
 		
+		String[] kcardnames = new String[10];
+		for(int i=0; i<benefitTenList.size(); i++){
+			benefitDTO t_bdto = benefitTenList.get(i);
+			kcardnames[i] = changeNames(t_bdto.getCardname().substring(0, t_bdto.getCardname().indexOf("_")));
+		}
+		model.addAttribute("kcardnames", kcardnames);
+		
 		return "admin_page.tiles";
 	}
+
+	@RequestMapping(value = "admin_bwrite.do", 
+			method = {RequestMethod.GET}) 
+	public String admin_bwrite(Model model) throws Exception{		
+		logger.info("Welcome BenefitController admin_bwrite! "+ new Date());
+		
+		String[] cardnames = {"신한카드love", "신한카드tasty", "국민카드goodday", "국민카드ddam", "우리카드damoa",
+				"우리카드gadeuk", "하나카드pop", "하나카드2xa", "롯데카드dcsu", "롯데카드dcsm", "삼성카드sclass",
+				"삼성카드2v2", "농협카드smarty", "농협카드take5", "기업카드ibkhi", "기업카드cham", "씨티카드mul",
+				"씨티카드cle"};
+		String[] cardvalues = {"si_love", "si_tasty", "ku_goodday", "ku_ddam", "w_damoa", "w_gadeuk", "h_pop",
+				"h_2xa", "l_dcsu", "l_dcsm", "sa_sclass", "sa_2v2", "n_smarty", "n_take5", "ki_ibkhi", "ki_charm",
+				"ci_mul", "ci_cle"};
+		String[] bcategory ={"주유", "쇼핑", "대형마트", "편의점", "외식", "카페/베이커리", "영화", "대중교통",
+				"통신", "교육", "문화", "레저", "의료", "뷰티", "포인트캐시백"};
+		String[] bvalues = {"oil", "shop", "mart", "cvs", "eou", "cafe", "movie", "tra", "tel", "edu", "cul",
+				"lei", "medi", "bea", "poi"};
+		String[] times = {"오전 12:00", "오전 12:30", "오전 1:00", "오전 1:30", "오전 2:00", "오전 2:30",
+				"오전 3:00", "오전 3:30", "오전 4:00", "오전 4:30", "오전 5:00", "오전 5:30", "오전 6:00", "오전 6:30",
+				"오전 7:00", "오전 7:30", "오전 8:00", "오전 8:30", "오전 9:00", "오전 9:30", "오전 10:00", "오전 10:30",
+				"오전 11:00", "오전 11:30", "오후 12:00", "오후 12:30", "오후 1:00", "오후 1:30", "오후 2:00", "오후 2:30",
+				"오후 3:00", "오후 3:30", "오후 4:00", "오후 4:30", "오후 5:00", "오후 5:30", "오후 6:00", "오후 6:30",
+				"오후 7:00", "오후 7:30", "오후 8:00", "오후 8:30", "오후 9:00", "오후 9:30", "오후 10:00", "오후 10:30",
+				"오후 11:00", "오후 11:30"};
+		
+		model.addAttribute("cardnames", cardnames);
+		model.addAttribute("cardvalues", cardvalues);
+		model.addAttribute("bcategory", bcategory);
+		model.addAttribute("bvalues", bvalues);
+		model.addAttribute("times", times);
+
+		return "admin_bwrite.tiles";
+	}
+	@RequestMapping(value = "admin_bwriteAf.do", 
+			method = {RequestMethod.POST}) 
+	public String admin_bwriteAf(HttpServletRequest request, Model model) throws Exception{		
+		logger.info("Welcome BenefitController admin_bwriteAf! "+ new Date());
+		
+		JspWriter out = null;
+		
+		String fupload = request.getSession().getServletContext().getRealPath("/" ) + "bupload";
+		String yourTempDirectory = fupload;
+
+		int yourMaxRequestSize = 100 * 1024 * 1024;
+		int yourMaxMemorySize = 100 * 1024;
+
+		String cardname = "";
+		String shopname = "";
+		String bcategory = "";
+		String brate = "";
+		String opentime = "";
+		String closetime = "";
+		String p1 = "";
+		String p2 = "";
+		String p3 = "";
+		String address = "";
+		String locationx = "";
+		String locationy = "";
+		String filename = null;
+
+		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+		if(isMultipart){
+			DiskFileItemFactory factory = new DiskFileItemFactory();
+			
+			factory.setSizeThreshold(yourMaxMemorySize);
+			factory.setRepository(new File(yourTempDirectory));
+			
+			ServletFileUpload upload = new ServletFileUpload(factory);
+			upload.setSizeMax(yourMaxRequestSize);
+			
+			List<FileItem> items = upload.parseRequest(request);
+			
+			Iterator<FileItem> iter = items.iterator();
+			
+			while(iter.hasNext()){
+				FileItem item = iter.next();
+				
+				if(item.isFormField()){
+					processFormField(item, out);
+					if(item.getFieldName().equals("cardname")){
+						cardname = item.getString("utf-8");
+					}else if(item.getFieldName().equals("shopname")){
+						shopname = item.getString("utf-8");
+					}else if(item.getFieldName().equals("bcategory")){
+						bcategory = item.getString("utf-8");
+					}else if(item.getFieldName().equals("brate")){
+						brate = item.getString("utf-8");
+					}else if(item.getFieldName().equals("opentime")){
+						opentime = item.getString("utf-8");
+					}else if(item.getFieldName().equals("closetime")){
+						closetime = item.getString("utf-8");
+					}else if(item.getFieldName().equals("p1")){
+						p1 = item.getString("utf-8");
+					}else if(item.getFieldName().equals("p2")){
+						p2 = item.getString("utf-8");
+					}else if(item.getFieldName().equals("p3")){
+						p3 = item.getString("utf-8");
+					}else if(item.getFieldName().equals("address")){
+						address = item.getString("utf-8");
+					}else if(item.getFieldName().equals("locationx")){
+						locationx = item.getString("utf-8");
+					}else {
+						locationy  = item.getString("utf-8");
+					}
+				} else {
+					if(item.getFieldName().equals("fileload")){
+						int idx = item.getName().lastIndexOf("\\");
+						if(idx==-1){
+							idx = item.getName().lastIndexOf("/");
+						}
+						filename = item.getName().substring(idx + 1);
+					}
+					processUploadedFile(item, fupload, out);
+				}
+
+			}
+		} else {
+			System.out.println("isMultipart가 아님");
+		}
+
+		String phone = p1 + "-" + p2 + "-" + p3;
+		int irate = Integer.parseInt(brate);
+		
+		benefitService.addCBF(new benefitDTO(0, cardname, shopname, bcategory,
+				irate, opentime, closetime, phone, address, 
+				filename, locationx, locationy));
+		
+		return "admin_bwriteAf.tiles";
+	}
+	@RequestMapping(value = "admin_bdel.do", 
+			method = {RequestMethod.GET}) 
+	public String admin_bdel(Model model, benefitDTO bnfdto) throws Exception{		
+		logger.info("Welcome BenefitController admin_bdel! "+ new Date());
+		
+		benefitService.deleteCBF(bnfdto);
+		
+		return "admin_bdel.tiles";
+	}
+	
 	
 	//it can change cardname from English to Korean
 	String[] changeNames(String[] cards, String benefit){
@@ -383,6 +546,19 @@ public class BenefitController {
 		}
 		return t_cards;
 	}
+	String changeNames(String ecard){
+		String[] e_cards = {"si", "ku", "w", "h", "l",
+				"sa", "n", "ki", "ci"};
+		String[] k_cards = {"신한카드", "국민카드", "우리카드", "하나카드", "롯데카드",
+							"삼성카드", "농협카드", "기업카드", "씨티카드"};
+		String rt_card = null;
+		for(int i=0; i<e_cards.length; i++){
+			if(e_cards[i].equals(ecard)){
+				rt_card = k_cards[i];
+			}
+		}
+		return rt_card;
+	}
 	
 	public Integer toInt(String x){
 		int a = 0;
@@ -390,5 +566,39 @@ public class BenefitController {
 			a = Integer.parseInt(x);
 		}catch(Exception e){}
 		return a;
+	}
+	
+	public void processFormField(FileItem item,JspWriter out) throws IOException{
+		
+	    String name = item.getFieldName();
+	    String value = "";
+	    try{
+	    	value = item.getString("utf-8");
+	    }catch(Exception ee){
+	    	value = item.getString();
+	    } 
+}
+
+	public void processUploadedFile(FileItem fileItem, String dir,JspWriter out) throws IOException{
+		    String fieldName = fileItem.getFieldName();
+		    String fileName = fileItem.getName();
+		    String contentType = fileItem.getContentType();
+		    long sizeInBytes = fileItem.getSize();
+		    System.out.println("size: "+sizeInBytes);
+		    	// 업로드한 파일이 존재하는 경우
+	            if (sizeInBytes > 0) {
+	                int idx = fileName.lastIndexOf("\\");
+	                if (idx == -1) {
+	                    idx = fileName.lastIndexOf("/");
+	                }
+	                fileName = fileName.substring(idx + 1);
+	                try {
+	                    File uploadedFile = new File(dir, fileName);
+	                    fileItem.write(uploadedFile);
+	                    
+	                } catch(Exception ex) {
+	                    // 예외 처리
+	                }
+	            }
 	}
 }

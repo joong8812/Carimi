@@ -16,18 +16,36 @@
 
 <definition name="signup.tiles" template="/WEB-INF/views/login/signup.jsp">
 </definition>
+
 <definition name="meminfo.tiles" extends="main.tiles">
 	<put-attribute name="content" value="/WEB-INF/views/login/meminfo.jsp" />
 </definition>
+
 <definition name="benefit.tiles" extends="main.tiles">
 	<put-attribute name="content" value="/WEB-INF/views/benefit/bnf_main.jsp" />
 </definition>
-<definition name="admin_bdetail.tiles" extends="main.tiles">
-	<put-attribute name="content" value="/WEB-INF/views/benefit/admin_bdetail.jsp" />
+
+
+<definition name="bdetail.tiles" extends="benefit.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/benefit/bdetail.jsp" />
 </definition>
 
 <definition name="admin_page.tiles" extends="main.tiles">
 	<put-attribute name="content" value="/WEB-INF/views/benefit/admin_page.jsp" />
+</definition>
+
+<definition name="admin_bdetail.tiles" extends="admin_page.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/benefit/admin_bdetail.jsp" />
+</definition>
+
+<definition name="admin_bwrite.tiles" extends="admin_page.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/benefit/admin_bwrite.jsp" />
+</definition>
+
+<definition name="admin_bwriteAf.tiles" template="/WEB-INF/views/benefit/admin_bwriteAf.jsp">
+</definition>
+
+<definition name="admin_bdel.tiles" template="/WEB-INF/views/benefit/admin_bdel.jsp">
 </definition>
 
 <definition name="analysis.tiles" extends="main.tiles">

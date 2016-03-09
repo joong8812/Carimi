@@ -101,7 +101,7 @@
 					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
 					<label class="choice" for="Field" >Keep me signed in</label>
 				</span>
-									
+				<input type="hidden" name="prevurl" value="${prevurl }">									
 				<button onclick="checkfield()" class="button btn btn-success btn-large">Login</button>
 				
 			</div> <!-- .actions -->
