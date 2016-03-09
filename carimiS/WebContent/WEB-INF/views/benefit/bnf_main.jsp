@@ -375,7 +375,7 @@
 													    			</div>
 													    			<div class="rlistgroup" >
 													    				<div class="rlistgroup2">
-													    				<a href="admin_bdetail.jsp?bseq=${bten2.bseq }">${bten2.shopname }</a><br>
+													    				<a href="admin_bdetail.do?bseq=${bten2.bseq }">${bten2.shopname }</a><br>
 													    					${bten2.brate } 원 할인
 													    				</div>
 													    			</div>
@@ -392,7 +392,7 @@
 													    			</div>
 													    			<div class="rlistgroup" >
 													    				<div class="rlistgroup2">
-													    				<a href="admin_bdetail.jsp?bseq=${bten2.bseq }">${bten2.shopname }</a><br>
+													    				<a href="admin_bdetail.do?bseq=${bten2.bseq }">${bten2.shopname }</a><br>
 													    					${bten2.brate } % 할인
 													    				</div>
 													    			</div>
