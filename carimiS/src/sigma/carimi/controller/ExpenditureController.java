@@ -669,10 +669,6 @@ public class ExpenditureController {
 			edto.setId(id);
 			edto.setWdates(sf3);
 			
-			int categorylist;
-
-			String[][] sumprice = null;
-			
 			List<expenditureDTO> e1list = expenditureService.e1List(edto);
 			
 			model.addAttribute("e1list", e1list);
@@ -682,10 +678,13 @@ public class ExpenditureController {
 			model.addAttribute("sf3", sf3);
 			model.addAttribute("id", id);
 			
+			int categorylist;
+
+			String[][] sumprice = null;
+			
 			categorylist = e1list.size();
 			sumprice = new String[categorylist][2];
-			
-			
+
 			int sumoil=0;
 			int sumshop=0;
 			int summart=0;
@@ -706,39 +705,38 @@ public class ExpenditureController {
 			expenditureDTO exp = e1list.get(j);
 			String date = e1list.get(j).getWdate().substring(0, 7);
 
-			sumprice[j][0] = exp.getBcategory();
-			sumprice[j][1] = Integer.toString(exp.getPrice());
-			if (date.equals(sf3)) {
-				if (sumprice[j][0].equals("oil")) {
+				sumprice[j][0] = exp.getBcategory(); // bcategory ¿Ã∏ßµÈ 
+				sumprice[j][1] = Integer.toString(exp.getPrice()); // price
+				
+				if (date.equals(sf3)&&sumprice[j][0].equals("oil")) {
 					sumoil = sumoil + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("shop")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("shop")) {
 					sumshop = sumshop + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("mart")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("mart")) {
 					summart = summart + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("cvs")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("cvs")) {
 					sumcvs = sumcvs + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("eou")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("eou")) {
 					sumeou = sumeou + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("cafe")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("cafe")) {
 					sumcafe = sumcafe + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("movie")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("movie")) {
 					summovie = summovie + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("tra")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("tra")) {
 					sumtra = sumtra + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("tel")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("tel")) {
 					sumtel = sumtel + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("edu")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("edu")) {
 					sumedu = sumedu + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("cul")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("cul")) {
 					sumcul = sumcul + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("lei")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("lei")) {
 					sumlei = sumlei + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("medi")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("medi")) {
 					summedi = summedi + Integer.parseInt(sumprice[j][1]);
-				} else if (sumprice[j][0].equals("bea")) {
+				} else if (date.equals(sf3)&&sumprice[j][0].equals("bea")) {
 					sumbea = sumbea + Integer.parseInt(sumprice[j][1]);
 				}
-			}
 		}
 			
 		model.addAttribute("sumoil", sumoil);
