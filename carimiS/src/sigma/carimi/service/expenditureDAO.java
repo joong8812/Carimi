@@ -13,15 +13,15 @@ import org.springframework.stereotype.Repository;
 public class expenditureDAO {
 
 		
-		@Autowired /*ÀÚµ¿»ý¼º ÈÄ ¿¬°á*/
+		@Autowired /*ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
 		private SqlSession sqlsession;
 		
-		private String ns = "Expenditure."; //DB Table ÀÌ¸§
+		private String ns = "Expenditure."; //DB Table ï¿½Ì¸ï¿½
 		
 		@SuppressWarnings("unchecked")
 		public List<expenditureDTO> getexpList(expenditureDTO edto) throws Exception{
-			System.out.println("¹ä¸Ô"+edto.getId());
-			System.out.println("¹ä¸Ô"+edto.getWdates());
+			System.out.println("ï¿½ï¿½ï¿½"+edto.getId());
+			System.out.println("ï¿½ï¿½ï¿½"+edto.getWdates());
 			
 			List<expenditureDTO> list = new ArrayList<expenditureDTO>();
 			list = sqlsession.selectList(ns + "getexpList", edto);
@@ -51,7 +51,7 @@ public class expenditureDAO {
 		
 		public boolean deleteexp(int seq) throws Exception{
 			sqlsession.delete(ns + "deleteexp", seq);
-			System.out.println("µ¹·Á¹ÞÀ½");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			return true;
 		}
 
@@ -87,6 +87,13 @@ public class expenditureDAO {
 			List<expenditureDTO> e1list = new ArrayList<expenditureDTO>();
 			e1list = sqlsession.selectList(ns + "e1List", edto);
 			return e1list;
+		}
+		
+		public List<expenditureDTO> yearList(expenditureDTO edto) throws Exception{
+			List<expenditureDTO> edtolist = new ArrayList<expenditureDTO>();
+			edtolist = (List<expenditureDTO>)
+							sqlsession.selectList(ns + "edtolist", edto);
+			return edtolist;
 		}
 
 

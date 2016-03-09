@@ -45,4 +45,10 @@ SELECT SEQ, ID, WDATE, MONEYTYPE, PRICE, SHOPNAME, BCATEGORY, SCATEGORY FROM CAR
 SELECT ID, WDATE, MONEYTYPE, PRICE, SHOPNAME, BCATEGORY, SCATEGORY FROM CARD_EXPENSE WHERE SHOPNAME LIKE '%'|| #{stext} ||'%' ORDER BY WDATE 
 </select>
 
+<select id="edtolist"
+	parameterType="sigma.carimi.model.expenditureDTO"
+	resultType="sigma.carimi.model.expenditureDTO">
+	SELECT * FROM CARD_EXPENSE WHERE ID = #{id}
+</select>
+
 </mapper>

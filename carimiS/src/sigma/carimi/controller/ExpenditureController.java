@@ -1,5 +1,7 @@
 package sigma.carimi.controller;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -48,7 +50,7 @@ public class ExpenditureController {
 				int_month = Integer.parseInt(month);
 			}
 			
-			// ¿ùÀÌ 0ÀÌ°Å³ª 13ÀÏ  °æ¿ì  Ã³¸®ÇØÁÖ±â
+			// ï¿½ï¿½ï¿½ï¿½ 0ï¿½Ì°Å³ï¿½ 13ï¿½ï¿½  ï¿½ï¿½ï¿½  Ã³ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
 			if (int_month < 1) {
 				int_month = 12;
 				int_year--;
@@ -58,8 +60,8 @@ public class ExpenditureController {
 				int_year++;
 			}
 
-			String sf = String.format("%d³â %d¿ù", int_year, int_month);
-			String sf2 = String.format("%d³â ", int_year);
+			String sf = String.format("%dï¿½ï¿½ %dï¿½ï¿½", int_year, int_month);
+			String sf2 = String.format("%dï¿½ï¿½ ", int_year);
 			String syear = Integer.toString(int_year);
 			String smonth = Integer.toString(int_month);
 			
@@ -120,10 +122,10 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // Ã¹³¯·Î ¼ÂÆÃ
+			cal.set(year, month - 1, 1); // Ã¹ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			String sf = String.format("%d³â %d¿ù", year, month);
-			String sf2 = String.format("%d³â ", year);
+			String sf = String.format("%dï¿½ï¿½ %dï¿½ï¿½", year, month);
+			String sf2 = String.format("%dï¿½ï¿½ ", year);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -223,10 +225,10 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // Ã¹³¯·Î ¼ÂÆÃ
+			cal.set(year, month - 1, 1); // Ã¹ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			String sf = String.format("%d³â %d¿ù", year, month);
-			String sf2 = String.format("%d³â ", year);
+			String sf = String.format("%dï¿½ï¿½ %dï¿½ï¿½", year, month);
+			String sf2 = String.format("%dï¿½ï¿½ ", year);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -311,7 +313,7 @@ public class ExpenditureController {
 				int_month = Integer.parseInt(month);
 			}
 			
-			// ¿ùÀÌ 0ÀÌ°Å³ª 13ÀÏ  °æ¿ì  Ã³¸®ÇØÁÖ±â
+			// ï¿½ï¿½ï¿½ï¿½ 0ï¿½Ì°Å³ï¿½ 13ï¿½ï¿½  ï¿½ï¿½ï¿½  Ã³ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
 			if (int_month < 1) {
 				int_month = 12;
 				int_year--;
@@ -321,8 +323,8 @@ public class ExpenditureController {
 				int_year++;
 			}
 			
-			String sf = String.format("%d³â %d¿ù", int_year, int_month);
-			String sf2 = String.format("%d³â ", int_year);
+			String sf = String.format("%dï¿½ï¿½ %dï¿½ï¿½", int_year, int_month);
+			String sf2 = String.format("%dï¿½ï¿½ ", int_year);
 			String syear = Integer.toString(int_year);
 			String smonth = Integer.toString(int_month);
 			
@@ -389,10 +391,10 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // Ã¹³¯·Î ¼ÂÆÃ
+			cal.set(year, month - 1, 1); // Ã¹ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			String sf = String.format("%d³â %d¿ù", year, month);
-			String sf2 = String.format("%d³â ", year);
+			String sf = String.format("%dï¿½ï¿½ %dï¿½ï¿½", year, month);
+			String sf2 = String.format("%dï¿½ï¿½ ", year);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -449,9 +451,9 @@ public class ExpenditureController {
 					expenditureDTO exp = e1list.get(j);
 					String date = e1list.get(j).getWdate().substring(0, 7);
 					if (date.equals(sf3)) {
-						sumprice[j][0] = exp.getBcategory(); // bcategory ÀÌ¸§µé 
+						sumprice[j][0] = exp.getBcategory(); // bcategory ï¿½Ì¸ï¿½ï¿½ï¿½ 
 						sumprice[j][1] = Integer.toString(exp.getPrice()); // price
-						sumscate[j][0] = exp.getScategory(); // scategory ÀÌ¸§µé
+						sumscate[j][0] = exp.getScategory(); // scategory ï¿½Ì¸ï¿½ï¿½ï¿½
 						sumscate[j][1] = Integer.toString(exp.getPrice()); // price       
 
 						if (sumprice[j][0].equals("oil")) {
@@ -485,7 +487,7 @@ public class ExpenditureController {
 						}
 					}
 				}
-				// sumscate µ·À» »ç¿ëÇÑ ¼¼ºÎÄ«Å×°í¸®¿¡ ÀÌ¸§µéÀ» Á¶»çÇÏ¿© ³»°¡ ¿øÇÏ´Â ÀÌ¸§À» °®´Â Ç×¸ñÀÇ °¡°ÝÀ» »Ì¾Æ³»¼­ sumres¿¡ ´õÇØÁØ´Ù.  
+				// sumscate ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä«ï¿½×°ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¾Æ³ï¿½ï¿½ï¿½ sumresï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.  
 				double sumres = 0;
 				double sumfast = 0;
 				double sumliq = 0;
@@ -651,10 +653,10 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // Ã¹³¯·Î ¼ÂÆÃ
+			cal.set(year, month - 1, 1); // Ã¹ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			String sf = String.format("%d³â %d¿ù", year, month);
-			String sf2 = String.format("%d³â ", year);
+			String sf = String.format("%dï¿½ï¿½ %dï¿½ï¿½", year, month);
+			String sf2 = String.format("%dï¿½ï¿½ ", year);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -705,7 +707,7 @@ public class ExpenditureController {
 			expenditureDTO exp = e1list.get(j);
 			String date = e1list.get(j).getWdate().substring(0, 7);
 
-				sumprice[j][0] = exp.getBcategory(); // bcategory ÀÌ¸§µé 
+				sumprice[j][0] = exp.getBcategory(); // bcategory ï¿½Ì¸ï¿½ï¿½ï¿½ 
 				sumprice[j][1] = Integer.toString(exp.getPrice()); // price
 				
 				if (date.equals(sf3)&&sumprice[j][0].equals("oil")) {
@@ -757,6 +759,173 @@ public class ExpenditureController {
 		model.addAttribute("sumcvs", sumcvs);
 		
 			return "exp1.tiles";
+		}
+		
+		@RequestMapping(value="yearlist.do", method={RequestMethod.GET,RequestMethod.POST})
+		public String yearlist(Model model, HttpServletRequest request, String syear, String smonth)throws Exception{
+			logger.info("Welcome ExpenditureController yearlist! "+ new Date());
+			
+			int sumoil=0;
+			int sumshop=0;
+			int summart=0;
+			int sumcvs=0;
+			int sumeou=0;
+			int sumcafe=0;
+			int summovie=0;
+			int sumtra=0;
+			int sumtel=0;
+			int sumedu=0;
+			int sumcul=0;
+			int sumlei=0;
+			int summedi=0;
+			int sumbea=0;
+			int sumpoi=0;
+
+			int categorylist;
+			String[][] sumprice = null;
+			memberDTO mem = (memberDTO)request.getSession().getAttribute("login");
+			expenditureDTO edto = new expenditureDTO(mem.getId());
+			List<expenditureDTO> yearlist = expenditureService.yearList(edto);
+			
+			Calendar cal = Calendar.getInstance();
+			cal.set(Calendar.DATE, 1);
+			String eyear = syear;
+			String emonth = smonth;
+			
+			int year = cal.get(Calendar.YEAR);
+			if(!(eyear == null || eyear.trim().equalsIgnoreCase(""))){
+				year = Integer.parseInt(eyear);
+			}
+
+			int month = cal.get(Calendar.MONTH) + 1;
+			if(!(emonth == null ||  emonth.trim().equalsIgnoreCase(""))){
+				month = Integer.parseInt(emonth);
+			}
+
+			if (month < 1) {
+				month = 12;
+				year--;
+			}
+			if (month > 12) {
+				month = 1;
+				year++;
+			}
+
+			cal.set(year, month - 1, 1);
+
+			String sf = String.format("%dë…„ %dì›”", year, month);
+			String sf2 = String.format("%dë…„ ", year);
+
+			String sleft = String.format("yearlist.do?syear=%d", year - 1);
+			String sright = String.format("yearlist.do?syear=%d", year + 1);
+			
+			model.addAttribute("sf2", sf2);
+			model.addAttribute("sleft", sleft);
+			model.addAttribute("sright", sright);
+
+
+			categorylist = yearlist.size();
+
+			sumprice = new String[categorylist][2];
+			NumberFormat formatter = new DecimalFormat("#,###");
+	
+			for(int j=0;j<yearlist.size();j++)
+			{   
+				expenditureDTO exp = yearlist.get(j);
+				
+				sumprice[j][0] = exp.getBcategory();
+				sumprice[j][1] = Integer.toString(exp.getPrice());
+				
+			   if(sumprice[j][0].equals("oil"))
+			   {
+			      sumoil = sumoil + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("shop"))
+			   {
+				  sumshop = sumshop + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("mart"))
+			   {
+			      summart = summart + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("cvs"))
+			   {
+				  sumcvs = sumcvs + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("eou"))
+			   {
+				  sumeou = sumeou + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("cafe"))
+			   {
+				  sumcafe = sumcafe + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("movie"))
+			   {
+				  summovie = summovie + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("tra"))
+			   {
+				  sumtra = sumtra + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("tel"))
+			   {
+				  sumtel = sumtel + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("edu"))
+			   {
+				  sumedu = sumedu + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("cul"))
+			   {
+				  sumcul = sumcul + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("lei"))
+			   {
+				  sumlei = sumlei + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("medi"))
+			   {
+				  summedi = summedi + Integer.parseInt(sumprice[j][1]);
+			   }
+			   else if(sumprice[j][0].equals("bea"))
+			   {
+				  sumbea = sumbea + Integer.parseInt(sumprice[j][1]);
+			   }
+			}
+			 
+		   System.out.println("sumshop = " + sumshop);
+		   System.out.println("sumoil = " + sumoil);
+		   System.out.println("sumcafe = " + sumcafe);
+		   System.out.println("sumbea = " + sumbea);
+		   System.out.println("summart = " + summart);
+		   System.out.println("sumcvs = " + sumcvs);
+		   System.out.println("sumeou = " + sumeou);
+		   System.out.println("summovie = " + summovie);
+		   System.out.println("sumtra = " + sumtra);
+		   System.out.println("sumtel = " + sumtel);
+		   System.out.println("sumedu = " + sumedu);
+		   System.out.println("sumcul = " + sumcul);
+		   System.out.println("sumlei = " + sumlei);
+		   System.out.println("summedi = " + summedi);
+		   
+		   
+		   model.addAttribute("sumshop", sumshop);
+		   model.addAttribute("sumoil", sumoil);
+		   model.addAttribute("sumcafe", sumcafe);
+		   model.addAttribute("sumbea", sumbea);
+		   model.addAttribute("summart", summart);
+		   model.addAttribute("sumcvs", sumcvs);
+		   model.addAttribute("sumeou", sumeou);
+		   model.addAttribute("summovie", summovie);
+		   model.addAttribute("sumtra", sumtra);
+		   model.addAttribute("sumtel", sumtel);
+		   model.addAttribute("sumedu", sumedu);
+		   model.addAttribute("sumcul", sumcul);
+		   model.addAttribute("sumlei", sumlei);
+		   model.addAttribute("summedi", summedi);
+			   
+			return "yearlist.tiles";
 		}
 
 }

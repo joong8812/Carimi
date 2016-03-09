@@ -54,4 +54,9 @@ public class expenditureServiceImple implements expenditureService{
 			
 			return expenditureDAO.e1List(edto);
 		}
+
+		@Override
+		public List<expenditureDTO> yearList(expenditureDTO edto) throws Exception {
+			return expenditureDAO.yearList(edto);
+		}
 }
