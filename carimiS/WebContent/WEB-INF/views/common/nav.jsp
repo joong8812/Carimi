@@ -40,7 +40,7 @@
    		    <c:choose>
 	        		<c:when test="${login.auth eq 1 }">
 	        			<li><a href="javascript:navClick('nav_boardlist', 'boardlist.do')">List</a></li>
-            			<li><a href="javascript:navClick2('nav_boardlist', 'boardwrite.do')">Write</a></li>
+            			<li><a href="javascript:navClick('nav_boardlist', 'boardwrite.do')">Write</a></li>
 	        		</c:when>
 	        		<c:otherwise>
 	        			<li><a href="javascript:navClick('nav_boardlist', 'boardlist.do')">List</a></li>
