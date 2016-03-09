@@ -36,12 +36,12 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>filedown</servlet-name>
-		<servlet-class>sist.co.help.FileDownloader</servlet-class>
+	   	<servlet-name>filedown</servlet-name>
+	   	<servlet-class>sigma.carimi.help.FileDownloader</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>filedown</servlet-name>
-		<url-pattern>/filedown</url-pattern>
+	    <servlet-name>filedown</servlet-name>
+	    <url-pattern>/filedown</url-pattern>
 	</servlet-mapping>
 
 

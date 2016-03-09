@@ -1,12 +1,16 @@
 package sigma.carimi.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.jsp.JspWriter;
 
+import org.apache.tomcat.util.http.fileupload.FileItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +20,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
+import java.io.IOException;
 
+
+import org.apache.tomcat.util.http.fileupload.FileItem;
+import java.util.Iterator;
+import org.apache.tomcat.util.http.fileupload.RequestContext;
+
+import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
+
+import sigma.carimi.model.benefitDTO;
 import sigma.carimi.model.boardDTO;
-
 import sigma.carimi.service.boardService;
 
 @Controller
@@ -29,7 +43,39 @@ public class BoardController {
 	
 	@Autowired
 	private boardService boardService;
-	
+	public void processFormField(FileItem item,JspWriter out) throws IOException{
+		   
+	       String name = item.getFieldName();
+	       String value = "";
+	       try{
+	          value = item.getString("utf-8");
+	       }catch(Exception ee){
+	          value = item.getString();
+	       } 
+	}
+
+	public void processUploadedFile(FileItem fileItem, String dir,JspWriter out) throws IOException{
+	       String fieldName = fileItem.getFieldName();
+	       String fileName = fileItem.getName();
+	       String contentType = fileItem.getContentType();
+	       long sizeInBytes = fileItem.getSize();
+	       System.out.println("size: "+sizeInBytes);
+	          // 업로드한 파일이 존재하는 경우
+	            if (sizeInBytes > 0) {
+	                int idx = fileName.lastIndexOf("\\");
+	                if (idx == -1) {
+	                    idx = fileName.lastIndexOf("/");
+	                }
+	                fileName = fileName.substring(idx + 1);
+	                try {
+	                    File uploadedFile = new File(dir, fileName);
+	                    fileItem.write(uploadedFile);
+	                    
+	                } catch(Exception ex) {
+	                    // 예외 처리
+	                }
+	            }
+	}
 	
 	public Integer toInt(String x){
 
@@ -140,22 +186,100 @@ public class BoardController {
 		return "boardwrite.tiles";
 	}
 	@RequestMapping(value="boardwriteAf.do", method={RequestMethod.GET, RequestMethod.POST})
-	public String writeBBS_ok(Model model, boardDTO bdto, HttpServletResponse res,
-			String id)throws Exception{
+	public String boardwriteAf(Model model, HttpServletResponse res, HttpServletRequest request
+			)throws Exception{
 		logger.info("Welcome MemberController boardwriteAF! "+ new Date());
-		System.out.println("IDIDIDIDID" + id);
-		System.out.println("내용값!!!!!!!!!!!!!!!" + bdto.getBcontent());
-		System.out.println("ID값!!!!!!!!!!!!!!!" + bdto.getId());
-		boolean clear =  boardService.boardwriteAf(bdto);
+		JspWriter out = null;
+		
+		String fupload = request.getSession().getServletContext().getRealPath("/" )+"upload";
+
+		System.out.println("파일업로드 경로" + fupload);
+
+		String yourTempDirecory = fupload;
+
+		int yourMaxRequestSize = 100 * 1024 * 1024;
+		int yourMaxMemorySize = 100 * 1024;
+
+			String id = "";
+			String bcontent = "";
+			String btitle = "";
+			String bsdate="";
+			String bedate="";
+			String bselect="";
+			String bfilename = null;
+			boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+			if(isMultipart){
+				DiskFileItemFactory factory = new DiskFileItemFactory();
+				
+				factory.setSizeThreshold(yourMaxMemorySize);
+				factory.setRepository(new File(yourTempDirecory));
+				
+				ServletFileUpload upload = new ServletFileUpload(factory);
+				upload.setSizeMax(yourMaxRequestSize);
+				
+				List<FileItem> items = upload.parseRequest(new ServletRequestContext(request));
+				
+				Iterator<FileItem> iter = items.iterator();
+						
+				while(iter.hasNext()){
+					FileItem item = iter.next();
+					
+					if(item.isFormField()){
+						processFormField(item, out);
+						if(item.getFieldName().equals("id")){
+							id = item.getString("utf-8");
+						}else if(item.getFieldName().equals("btitle")){
+							btitle =item.getString("utf-8");
+						}else if(item.getFieldName().equals("bcontent")){
+							bcontent=item.getString("utf-8");
+						}else if(item.getFieldName().equals("bsdate")){
+							bsdate=item.getString("utf-8");
+						}else if(item.getFieldName().equals("bedate")){
+							bedate=item.getString("utf-8");
+						}else if(item.getFieldName().equals("bselect")){
+							bselect=item.getString("utf-8");
+						}
+							
+					}else{
+						if(item.getFieldName().equals("fileload")){
+							int idx = item.getName().lastIndexOf("\\");
+							if(idx == -1){
+								idx = item.getName().lastIndexOf("/");
+							}
+							bfilename = item.getName().substring(idx + 1);
+						}
+						processUploadedFile(item, fupload, out);
+					}
+				}
+						
+			}else{
+				System.out.println("isMultipart 가 아님 ");
+			}
+			boolean clear=boardService.boardwriteAf(new boardDTO
+					(0, id, btitle, bcontent, bsdate, bedate, bselect, bfilename));
+			
+		 
 		if(clear==true){
 			return "redirect:/boardlist.do";
 		}
-		res.setContentType("text/html;charset=UTF-8");
-		res.getWriter().write("<script language='JavaScript'>");
-		res.getWriter().write("alert('�벑濡� �떎�뙣');");
-		res.getWriter().write("</script>");
+	
 		
 		return "boardwrite.tiles";
 		
+	}
+	@RequestMapping(value="boarddelete.do", method={RequestMethod.GET, RequestMethod.POST})
+	public String boarddelete(Model model,int bseq,HttpServletResponse res)throws Exception{
+		
+		boolean clear =  boardService.boarddelete(bseq);
+		if(clear){
+		res.setContentType("text/html;charset=UTF-8");
+		res.getWriter().write("<script language='JavaScript'>");
+		res.getWriter().write("alert('삭제되었습니다!');");
+		res.getWriter().write("location.href='boardlist.do'");
+		res.getWriter().write("</script>");
+		res.getWriter().flush(); 
+	
+		}
+		return "bbsDetail.tiles";
 	}
 }

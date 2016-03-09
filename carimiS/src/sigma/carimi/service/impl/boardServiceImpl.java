@@ -34,4 +34,9 @@ public class boardServiceImpl implements boardService{
 	public boolean boardwriteAf(boardDTO dto) throws Exception {
 		return boardDAO.boardwriteAf(dto);
 	}
+	@Override
+	@Transactional(readOnly=true)
+	public boolean boarddelete(int bseq) throws Exception {
+		return boardDAO.boarddelete(bseq);
+	}
 }

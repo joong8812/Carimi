@@ -17,8 +17,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<insert id="boardwriteAf"
 		parameterType="sigma.carimi.model.boardDTO">
-		INSERT INTO CARD_BOARD(BSEQ, BWDATE, ID, BTITLE, BCONTENT, BFILENAME, BSDATE, BEDATE,BREAD,BSELECT) 
-		VALUES (CARD_BOARD_SEQ.NEXTVAL, SYSDATE, #{id}, #{btitle}, #{bcontent}, #{bfilename, jdbcType=VARCHAR}, #{bsdate}, #{bedate},0,#{bselect})
+		INSERT INTO CARD_BOARD(BSEQ, BWDATE, ID, BTITLE, BCONTENT, BFILENAME, BSDATE, BEDATE, BREAD, BSELECT) 
+		VALUES (CARD_BOARD_SEQ.NEXTVAL, SYSDATE, #{id}, #{btitle}, #{bcontent}, #{bfilename, jdbcType=VARCHAR}, #{bsdate}, #{bedate}, 0, #{bselect})
 	</insert>
-	
+	<delete id="boarddelete"
+		parameterType="int">
+		delete from card_board where bseq=#{bseq} 
+	 </delete>
  </mapper>

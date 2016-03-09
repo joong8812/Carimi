@@ -22,19 +22,18 @@ public class boardDTO implements Serializable{
 		this.readrank = readrank;
 	}
 	public boardDTO(){}
-	public boardDTO(int bseq, String bwdate, String id,
-			String btitle, String bcontent, String bfilename,
-			String bsdate, String bedate){
+	public boardDTO(int bseq,  String id, String btitle, String bcontent, 
+			 String bsdate, String bedate, String bselect, String bfilename){
 		super();
 		
 		this.bseq = bseq;
-		this.bwdate = bwdate;
 		this.id = id;
 		this.btitle = btitle;
 		this.bcontent = bcontent;
-		this.bfilename=bfilename;
 		this.bsdate=bsdate;
 		this.bedate=bedate;
+		this.bselect=bselect;
+		this.bfilename=bfilename;
 	}
 	public boardDTO( int readrank, String bselect) {
 		super();

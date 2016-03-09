@@ -104,7 +104,7 @@ List<boardDTO> boardlist = bdao.boardList(cardvalue);
 					</c:when>
 					<c:otherwise>
 					<input class="btn btn-info btn-default " type="button" name="btnDown" value="다운로드"
-					onclick="javascript:document.location.href='/Carimi/filedown?bfilename=${board.bfilename }&pdsid=${board.bseq }'"/>
+					onclick="javascript:document.location.href='/CarimiS/filedown?bfilename=${board.bfilename }&pdsid=${board.bseq }'"/>
 					</c:otherwise>
 				</c:choose>
 				</td>

@@ -37,6 +37,13 @@ public class boardDAO {
 				sqlSession.insert(ns+"boardwriteAf",dto);
 		return true;
 	}
+	
+	public boolean boarddelete(int bseq) throws Exception{
+		
+		sqlSession.delete(ns+"boarddelete", bseq);
+		return true;
+		
+	}
 
 	
 }

@@ -69,7 +69,7 @@
 							<div class="tab-content">
 								<div class="tab-pane active" id="formcontrols">
 								<form class="form-horizontal"
-								 name="boardform" onsubmit="submitContents(this);" 
+								 name="boardform" onsubmit="submitContents(this);" enctype="multipart/form-data"
 action="boardwriteAf.do" method="post">
 									<fieldset>
 										

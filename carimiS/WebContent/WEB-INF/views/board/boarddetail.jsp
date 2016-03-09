@@ -93,7 +93,7 @@ action="boardupload.jsp" method="post" enctype="multipart/form-data">
 										 <button class="btn btn-success btn-block"
 																 type="button" name="btnDown" 
 										onclick="javascript:document.location.href=
-										'boarddel.jsp?bseq=${boardDetail.bseq }&id=${boardDetail.id }'"><span class="glyphicon glyphicon-off"></span>삭제</button>
+										'boarddelete.do?bseq=${boardDetail.bseq }&id=${boardDetail.id }'"><span class="glyphicon glyphicon-off"></span>삭제</button>
 										</c:when>
 									     	<c:otherwise>
 									     <p style="text-align:center;">글의 삭제는 관리자만 가능합니다.</p>
