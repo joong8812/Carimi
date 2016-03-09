@@ -28,7 +28,7 @@
 	        	</c:choose>
 	        </ul>
         </li>
-		<li><a href="#"><i class="icon-calendar"></i><span>Schedule</span> </a> </li>
+		<li><a href="./plan.do"><i class="icon-calendar"></i><span>Schedule</span> </a> </li>
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-bell"></i><span>Notice</span> <b class="caret"></b></a>
            <ul class="dropdown-menu">
    		    <c:choose>

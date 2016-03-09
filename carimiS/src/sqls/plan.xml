@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Plan">
+
+	<!-- 추가 -->
+	<insert id="addPlan" parameterType="sigma.carimi.model.planDTO">
+		INSERT INTO CARD_PLAN(PSEQ, ID, PADATE, PATIME, PTITLE, PCONTENT, PLOCAL, PWDATE, BSEQ, PLOCATION_X, PLOCATION_Y, PETIME, PEDATE)
+		VALUES (card_plan_seq.nextval, #{id}, #{padate}, #{patime}, #{ptitle}, #{pcontent}, #{plocal}, SYSDATE, (select max(bseq) from card_board where id = #{id}),
+				#{plocation_x}, #{plocation_y}, #{petime}, #{pedate})
+	</insert>
+	
+	<!-- 수정 -->
+	<update id="updPlan" parameterType="sigma.carimi.model.planDTO">
+		UPDATE CARD_PLAN SET PADATE= #{padate}, PATIME= #{patime}, PTITLE= #{ptitle}, PCONTENT= #{pcontent}, PLOCAL= #{plocal}, PLOCATION_X= #{plocation_x}, 
+			PLOCATION_y= #{plocation_y}, PETIME= #{petime}, PEDATE= #{pedate} WHERE PSEQ= #{pseq}
+	</update>
+
+	<!-- 삭제 -->
+	<delete id="delPlan" parameterType="sigma.carimi.model.planDTO">
+		DELETE CARD_PLAN WHERE PSEQ= #{pseq}
+	</delete>
+	
+	<!-- 리스트 -->
+	<select id="listPlan" parameterType="sigma.carimi.model.planDTO" resultType="sigma.carimi.model.planDTO">
+		SELECT PSEQ, ID, PADATE, PATIME, PTITLE, PCONTENT, PLOCAL, PLOCATION_X, PLOCATION_Y, PEDATE, PETIME FROM CARD_PLAN 
+			WHERE ID= #{id, jdbcType=VARCHAR} ORDER BY PATIME
+	</select>
+	
+	<!-- 내용 -->
+	<select id="selPlan" parameterType="sigma.carimi.model.planDTO" resultType="sigma.carimi.model.planDTO">
+		SELECT PSEQ, ID, PADATE, PATIME, PTITLE, PCONTENT, PLOCAL, PLOCATION_X, PLOCATION_Y, PEDATE, PETIME FROM CARD_PLAN
+			WHERE PSEQ= #{pseq}
+	</select>
+	
+	<!-- 보유카드 -->
+	<select id="cardPlan" parameterType="sigma.carimi.model.planDTO" resultType="sigma.carimi.model.planDTO">
+		SELECT MYCARD1, MYCARD2 FROM CARD_USER WHERE ID= #{id}
+	</select>
+	
+	<!-- 카드행사 -->
+	<select id="eventPlan" parameterType="sigma.carimi.model.planDTO" resultType="sigma.carimi.model.planDTO">
+		SELECT BTITLE, BSDATE, BEDATE, BSEQ FROM CARD_BOARD
+	</select>
+	
+</mapper>
