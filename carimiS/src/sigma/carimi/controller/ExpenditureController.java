@@ -662,12 +662,16 @@ public class ExpenditureController {
 			}
 			String sf3 = syear + "-" + smonth;
 			System.out.println("sf3="+sf3);
-			String sleft = String.format("/CarimiS/monlist.do?year=%d&month=%d", year, month - 1);
-			String sright = String.format("/CarimiS/monlist.do?year=%d&month=%d", year, month + 1);
+			String sleft = String.format("/CarimiS/exp_1.do?year=%d&month=%d", year, month - 1);
+			String sright = String.format("/CarimiS/exp_1.do?year=%d&month=%d", year, month + 1);
 			
 			expenditureDTO edto = new expenditureDTO();
 			edto.setId(id);
 			edto.setWdates(sf3);
+			
+			int categorylist;
+
+			String[][] sumprice = null;
 			
 			List<expenditureDTO> e1list = expenditureService.e1List(edto);
 			
@@ -678,6 +682,82 @@ public class ExpenditureController {
 			model.addAttribute("sf3", sf3);
 			model.addAttribute("id", id);
 			
+			categorylist = e1list.size();
+			sumprice = new String[categorylist][2];
+			
+			
+			int sumoil=0;
+			int sumshop=0;
+			int summart=0;
+			int sumcvs=0;
+			int sumeou=0;
+			int sumcafe=0;
+			int summovie=0;
+			int sumtra=0;
+			int sumtel=0;
+			int sumedu=0;
+			int sumcul=0;
+			int sumlei=0;
+			int summedi=0;
+			int sumbea=0;
+			int sumpoi=0;
+					
+		for (int j = 0; j < e1list.size(); j++) {
+			expenditureDTO exp = e1list.get(j);
+			String date = e1list.get(j).getWdate().substring(0, 7);
+
+			sumprice[j][0] = exp.getBcategory();
+			sumprice[j][1] = Integer.toString(exp.getPrice());
+			if (date.equals(sf3)) {
+				if (sumprice[j][0].equals("oil")) {
+					sumoil = sumoil + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("shop")) {
+					sumshop = sumshop + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("mart")) {
+					summart = summart + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("cvs")) {
+					sumcvs = sumcvs + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("eou")) {
+					sumeou = sumeou + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("cafe")) {
+					sumcafe = sumcafe + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("movie")) {
+					summovie = summovie + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("tra")) {
+					sumtra = sumtra + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("tel")) {
+					sumtel = sumtel + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("edu")) {
+					sumedu = sumedu + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("cul")) {
+					sumcul = sumcul + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("lei")) {
+					sumlei = sumlei + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("medi")) {
+					summedi = summedi + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("bea")) {
+					sumbea = sumbea + Integer.parseInt(sumprice[j][1]);
+				}
+			}
+		}
+			
+		model.addAttribute("sumoil", sumoil);
+		model.addAttribute("sumshop", sumshop);
+		model.addAttribute("summart", summart);
+		model.addAttribute("sumcvs", sumcvs);
+		model.addAttribute("sumeou", sumeou);
+		model.addAttribute("sumcafe", sumcafe);
+		model.addAttribute("summovie", summovie);
+		model.addAttribute("sumtra", sumtra);
+		model.addAttribute("sumtel", sumtel);
+		model.addAttribute("sumedu", sumedu);
+		model.addAttribute("sumcul", sumcul);
+		model.addAttribute("sumlei", sumlei);
+		model.addAttribute("summedi", summedi);
+		model.addAttribute("sumbea", sumbea);
+		model.addAttribute("summart", summart);
+		model.addAttribute("sumcvs", sumcvs);
+		
 			return "exp1.tiles";
 		}
 

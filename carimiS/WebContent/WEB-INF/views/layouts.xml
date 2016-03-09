@@ -98,8 +98,19 @@
 	<put-attribute name="content" value="/WEB-INF/views/expenditure/monlist.jsp" />
 </definition>
 
+<definition name="yearlist.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/expenditure/yearlist.jsp" />
+</definition>
+
 <definition name="exp1.tiles" extends="main.tiles">
 	<put-attribute name="content" value="/WEB-INF/views/expenditure/exp_1.jsp" />
 </definition>
 
+<definition name="exp2.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/expenditure/exp_2.jsp" />
+</definition>
+
+<definition name="exp3.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/expenditure/exp_3.jsp" />
+</definition>
 </tiles-definitions> 

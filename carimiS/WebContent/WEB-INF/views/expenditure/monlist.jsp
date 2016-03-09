@@ -113,6 +113,9 @@ System.out.println("(double)(sumres/sumeou)*100= " + (double)(sumres/sumeou)*100
 							<form action="exp_1.do" method="post">
 								<input type="submit" value="지출 분석" id="submit">
 							</form>
+							<form action="explist.do" method="post">
+								<input type="submit" value="지출목록 보기" id="submit">
+							</form>
 							<form action="expwrite.do" method="post">
 								<input type="submit" value="지출내역 쓰기" id="submit">
 							</form>
@@ -160,66 +163,66 @@ System.out.println("(double)(sumres/sumeou)*100= " + (double)(sumres/sumeou)*100
 												colorByPoint : true,
 												data : [ {
 													name : 'Eat-out',
-													y : <%=(sumeou)/(totalsum)*100%>,
+													y : ('${sumeou}'/'${totalsum}')*100,
 													drilldown : 'Eat-out'
 												}, {
 													name : 'Movie',
-													y : <%=(summovie/totalsum)*100%>,
+													y : ('${summovie}'/'${totalsum}')*100,
 													drilldown : 'Movie'
 												}, {
 													name : 'Leisure',
-													y : <%=(sumlei/totalsum)*100%>,
+													y : ('${sumlei}'/'${totalsum}')*100,
 													drilldown : 'Leisure'
 												}, {
 													name : 'Shopping',
-													y : <%=(sumshop/totalsum)*100%>,
+													y : ('${sumshop}'/'${totalsum}')*100,
 													drilldown : 'Shopping'
 												}, {
 													name : 'Telecom',
-													y : <%=(sumtel/totalsum)*100%>,
+													y : ('${sumtel}'/'${totalsum}')*100,
 													drilldown : null
 												}, {
 													name : 'Transportaion',
-													y : <%=(sumtra/totalsum)*100%>,
+													y : ('${sumtra}'/'${totalsum}')*100,
 													drilldown : null
 												}, {
 													name : 'Education',
-													y : <%=(sumedu/totalsum)*100%>,
+													y : ('${sumedu}'/'${totalsum}')*100,
 													drilldown : null
 												}
 												, {
 													name : 'Oil',
-													y : <%=(sumoil/totalsum)*100%>,
+													y : ('${sumoil}'/'${totalsum}')*100,
 													drilldown : null
 												}
 												, {
 													name : 'Mart',
-													y : <%=(summart/totalsum)*100%>,
+													y : ('${summart}'/'${totalsum}')*100,
 													drilldown : null
 												}
 												, {
 													name : 'CVS',
-													y : <%=(sumcvs/totalsum)*100%>,
+													y : ('${sumcvs}'/'${totalsum}')*100,
 													drilldown : null
 												}
 												, {
 													name : 'Cafe',
-													y : <%=(sumcafe/totalsum)*100%>,
+													y : ('${sumcafe}'/'${totalsum}')*100,
 													drilldown : null
 												}
 												,  {
 													name : 'Culture',
-													y : <%=(sumcul/totalsum)*100%>,
+													y : ('${sumcul}'/'${totalsum}')*100,
 													drilldown : null
 												}
 												, {
 													name : 'Medical',
-													y : <%=(summedi/totalsum)*100%>,
+													y : ('${summedi}'/'${totalsum}')*100,
 													drilldown : null
 												}
 												, {
 													name : 'Beauty',
-													y : <%=(sumbea/totalsum)*100%>,
+													y : ('${sumbea}'/'${totalsum}')*100,
 													drilldown : null
 												}]
 											} ],
@@ -229,43 +232,43 @@ System.out.println("(double)(sumres/sumeou)*100= " + (double)(sumres/sumeou)*100
 															name : 'Eat-out',
 															id : 'Eat-out',
 															data : [
-																	[ 'Restaurant', <%= (sumres/sumeou)*100%> ],
-																	[ 'Fastfood', <%= (sumfast/sumeou)*100%> ],
-																	[ 'Liquor', <%= (sumliq/sumeou)*100%> ],
-																	[ 'etc', <%= (sumeetc/sumeou)*100%> ] ]
+																	[ 'Restaurant', ('${sumres}'/'${sumeou}')*100 ],
+																	[ 'Fastfood',  ('${sumfast}'/'${sumeou}')*100 ],
+																	[ 'Liquor',  ('${sumliq}'/'${sumeou}')*100],
+																	[ 'etc', ('${sumeetc}'/'${sumeou}')*100 ] ]
 														},
 														{
 															name : 'Movie',
 															id : 'Movie',
 															data : [
-																	[ 'CGV', <%= (sumcgv/summovie)*100%> ],
-																	[ 'Lotte cinema', <%= (sumlotte/summovie)*100%> ],
-																	[ 'Megabox', <%= (summega/summovie)*100%> ],
-																	[ 'Primus', <%= (sumpri/summovie)*100%> ],
-																	[ 'etc', <%= (summetc/summovie)*100%> ] ]
+																	[ 'CGV', ('${sumcgv}'/'${summovie}')*100 ],
+																	[ 'Lotte cinema', ('${sumlotte}'/'${summovie}')*100],
+																	[ 'Megabox',  ('${summega}'/'${summovie}')*100],
+																	[ 'Primus', ('${sumpri}'/'${summovie}')*100 ],
+																	[ 'etc', ('${summetc}'/'${summovie}')*100 ] ]
 														},
 														{
 															name : 'Leisure',
 															id : 'Leisure',
 															data : [
-																	[ 'Resort', <%= (sumresort/sumlei)*100%> ],
-																	[ 'Amusement park', <%= (sumamuse/sumlei)*100%> ],
-																	[ 'Travel agency', <%= (sumtravel/sumlei)*100%> ],
-																	[ 'Hotel', <%= (sumhotel/sumlei)*100%> ],
-																	[ 'Golf', <%= (sumgolf/sumlei)*100%> ],
-																	[ 'Airline', <%= (sumair/sumlei)*100%> ],
-																	[ 'etc', <%= (sumletc/sumlei)*100%> ] ]
+																	[ 'Resort', ('${sumresort}'/'${sumlei}')*100 ],
+																	[ 'Amusement park',  ('${sumamuse}'/'${sumlei}')*100],
+																	[ 'Travel agency',  ('${sumtravel}'/'${sumlei}')*100 ],
+																	[ 'Hotel',  ('${sumhotel}'/'${sumlei}')*100 ],
+																	[ 'Golf', ('${sumgolf}'/'${sumlei}')*100 ],
+																	[ 'Airline',  ('${sumair}'/'${sumlei}')*100 ],
+																	[ 'etc',  ('${sumletc}'/'${sumlei}')*100 ] ]
 														},
 														{
 															name : 'Shopping',
 															id : 'Shopping',
 															data : [
-																	[ 'Department store', <%= (sumdep/sumshop)*100%> ],
-																	[ 'Outlet', <%= (sumout/sumshop)*100%> ],
-																	[ 'Duty Free Shop', <%= (sumduty/sumshop)*100%> ],
-																	[ 'Internet shopping', <%= (suminter/sumshop)*100%> ],
-																	[ 'Homeshopping', <%= (sumhome/sumshop)*100%> ],
-																	[ 'etc', <%= (sumsetc/sumshop)*100%> ]
+																	[ 'Department store',  ('${sumdep}'/'${sumshop}')*100],
+																	[ 'Outlet', ('${sumout}'/'${sumshop}')*100 ],
+																	[ 'Duty Free Shop',  ('${sumduty}'/'${sumshop}')*100],
+																	[ 'Internet shopping',  ('${suminter}'/'${sumshop}')*100],
+																	[ 'Homeshopping',  ('${sumhome}'/'${sumshop}')*100 ],
+																	[ 'etc',  ('${sumsetc}'/'${sumshop}')*100]
 																   ]
 														}]
 											}
@@ -285,8 +288,4 @@ System.out.println("(double)(sumres/sumeou)*100= " + (double)(sumres/sumeou)*100
 		</div>
 	</div>
 </div>
-<script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
-
-<script src="<%=request.getContextPath()%>/js/signin.js"></script>
 
