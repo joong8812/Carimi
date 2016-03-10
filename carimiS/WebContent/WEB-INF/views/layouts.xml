@@ -55,6 +55,10 @@
    <put-attribute name="content" value="/WEB-INF/views/analysis/analysis.jsp" />
 </definition>
 
+<definition name="analysisAF.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/analysis/analysisAF.jsp" />
+</definition>
+
 <definition name="boardlist.tiles" extends="main.tiles">
 	<put-attribute name="content" value="/WEB-INF/views/board/boardlist.jsp" />
 </definition>

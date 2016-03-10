@@ -1,11 +1,34 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.List" %>
 <%@page import="java.util.ArrayList" %>
 <%@page import="sigma.carimi.service.*" %>
 <%@page import="sigma.carimi.model.*" %>
+<%@page import="sigma.carimi.controller.*" %>
 <%@page import="java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
+<script type="text/javascript">
+ var Array = [];
+
+</script>
+
+<%--
+<% for(int i=0;i<sort1.length;i++){ %>
+	<script type="text/javascript">
+	var Object = {};
+	Object.title = '<%= sort1.get(i).getTitle %>'
+	Object.c
+	Array.push('<%= sort1.get(i).getTitle %>');	
+	</script>
+<% } %>
+--%>
+
+[ {title: "1111", content: "222"}, {title: "1111", content: "222"}, {title: "1111", content: "222"}]
+
+
+
+
 <%
 System.out.println(request.getParameter("a1"));
 System.out.println(request.getParameter("b1"));
@@ -52,6 +75,8 @@ System.out.println(request.getParameter("b1"));
 		CARDDAO dao;
 		List<CARDDTOSltd> CARDinformList;
 	%>
+	
+	
 	
 	<%
 		stra1 = request.getParameterValues("a1");		// 연회비 0
@@ -239,6 +264,10 @@ System.out.println(request.getParameter("b1"));
 			        	colorByPoint:'true',
 			            name: '<%=strc1[0]%>',
 			            data: [
+			                   
+			                   
+			                   
+			                   
 								<%	
 									for(int i=0;i<sort1.length;i++){
 										if(i!=sort1.length-1){
@@ -1178,4 +1207,3 @@ System.out.println(request.getParameter("b1"));
 </body>
 </html>
 
- --%>

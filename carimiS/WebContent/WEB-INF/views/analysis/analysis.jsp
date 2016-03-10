@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <title>Analysis</title>
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
 	<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="<%=request.getContextPath()%>/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
@@ -14,30 +14,6 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
 	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css">
 	<link href="<%=request.getContextPath()%>/css/pages/signin.css" rel="stylesheet" type="text/css">
-	<style>
-	#header {
-		background-color: white;
-		color: black;
-		text-align: left;
-		height: 80px;
-		border: 1px solid #F2E6D9;
-	}
-	#wrapperDiv {
-		width: 100%;
-		height:1800px;
-		background-color: #ffffff;
-	}
-	#sidebar {
-		background-color: #F2E6D9;
-		width: 270px;
-		height:1800px;
-		float:left;
-	}
-	#contents {
-		height: 100%;
-		float:left;
-	}
-	</style>
 	<%
 	String a1 = request.getParameter("a1");
 	String b1 = request.getParameter("b1");
@@ -48,7 +24,7 @@
 	function imgCbox(N, tabstop)
 	{
 	    var objs, cboxes, Img, Span, A;
-	    objs = document.getElementsByTagName("INPUT");
+	    objs = document.getElementsByTagName("INPUT"); //인풋 이름 달린 애들
 	    if (N == undefined) return false;
 	    if (tabstop == undefined) tabstop = true;
 	
@@ -125,7 +101,7 @@
               <h3>혜택 정보 팡팡!</h3> 
         	</div>
 			<div class="control-group">	
-			   <FORM  name="fr" ACTION="/WEB-INF/views/analysis/analysis.jsp" METHOD="post" onsubmit="return check()">
+			   <FORM ACTION="analysisAF.do" METHOD="POST" onsubmit="return check()">
 		        <div class="controls">
                 <div class="accordion" id="accordion2">
                    <div class="accordion-group">
@@ -137,23 +113,23 @@
                      <div id="collapseOne" class="accordion-body collapse in">
                        <div class="accordion-inner" style="text-align:center;">
                     	
-                         <span><input type="checkbox" name="a1" value="0" offsrc="/Carimi2/image/analysis/an_1.png" onsrc="/Carimi2/image/analysis/an_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_only1(this)" type="checkbox" name="a1" value="5000" offsrc="/Carimi2/image/analysis/an_2.png" onsrc="/Carimi2/image/analysis/an_2_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_only1(this)"  type="checkbox" name="a1" value="10000" offsrc="/Carimi2/image/analysis/an_3.png" onsrc="/Carimi2/image/analysis/an_3_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_only1(this)" type="checkbox" name="a1" value="15000" offsrc="/Carimi2/image/analysis/an_4.png" onsrc="/Carimi2/image/analysis/an_4_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_only1(this)" type="checkbox" name="a1" value="20000" offsrc="/Carimi2/image/analysis/an_5.png" onsrc="/Carimi2/image/analysis/an_5_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_only1(this)" type="checkbox" name="a1" value="1" offsrc="/Carimi2/image/analysis/an_6.png" onsrc="/Carimi2/image/analysis/an_6_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         	 <span><input type="checkbox" name="a1" value="0" offsrc="/CarimiS/image/analysis/an_1.png" onsrc="/CarimiS/image/analysis/an_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_only1(this)" type="checkbox" name="a1" value="5000" checked="checked" offsrc="/CarimiS/image/analysis/an_2.png" onsrc="/CarimiS/image/analysis/an_2_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_only1(this)"  type="checkbox" name="a1" value="10000" offsrc="/CarimiS/image/analysis/an_3.png" onsrc="/CarimiS/image/analysis/an_3_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_only1(this)" type="checkbox" name="a1" value="15000" offsrc="/CarimiS/image/analysis/an_4.png" onsrc="/CarimiS/image/analysis/an_4_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_only1(this)" type="checkbox" name="a1" value="20000" offsrc="/CarimiS/image/analysis/an_5.png" onsrc="/CarimiS/image/analysis/an_5_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_only1(this)" type="checkbox" name="a1" value="1" offsrc="/CarimiS/image/analysis/an_6.png" onsrc="/CarimiS/image/analysis/an_6_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							 <script>imgCbox("a1");</script>
 							 <script>chk_only1("a1")</script>
 							 <br> <br>
 							 							 
-					    	 <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="0" offsrc="/Carimi2/image/analysis/an_1.png" onsrc="/Carimi2/image/analysis/an_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="100000" offsrc="/Carimi2/image/analysis/an_s_1.png" onsrc="/Carimi2/image/analysis/an_s_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="200000" offsrc="/Carimi2/image/analysis/an_s_2.png" onsrc="/Carimi2/image/analysis/an_s_2_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="300000" offsrc="/Carimi2/image/analysis/an_s_3.png" onsrc="/Carimi2/image/analysis/an_s_3_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="400000" offsrc="/Carimi2/image/analysis/an_s_4.png" onsrc="/Carimi2/image/analysis/an_s_4_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="500000" offsrc="/Carimi2/image/analysis/an_s_5.png" onsrc="/Carimi2/image/analysis/an_s_5_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_only2(this)"  type="checkbox" name="b1" value="1" offsrc="/Carimi2/image/analysis/an_6.png" onsrc="/Carimi2/image/analysis/an_6_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					    	  <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="0" offsrc="/CarimiS/image/analysis/an_1.png" onsrc="/CarimiS/image/analysis/an_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="100000" offsrc="/CarimiS/image/analysis/an_s_1.png" onsrc="/CarimiS/image/analysis/an_s_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="200000" offsrc="/CarimiS/image/analysis/an_s_2.png" onsrc="/CarimiS/image/analysis/an_s_2_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="300000" offsrc="/CarimiS/image/analysis/an_s_3.png" onsrc="/CarimiS/image/analysis/an_s_3_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="400000" offsrc="/CarimiS/image/analysis/an_s_4.png" onsrc="/CarimiS/image/analysis/an_s_4_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  <span><input onclick="chk_only2(this)" type="checkbox" name="b1" value="500000" checked="checked" offsrc="/CarimiS/image/analysis/an_s_5.png" onsrc="/CarimiS/image/analysis/an_s_5_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  <span><input onclick="chk_only2(this)"  type="checkbox" name="b1" value="1" offsrc="/CarimiS/image/analysis/an_6.png" onsrc="/CarimiS/image/analysis/an_6_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							 <script>imgCbox("b1");</script>
 
                        </div>
@@ -168,25 +144,25 @@
                      <div id="collapseTwo" class="accordion-body collapse in">
                        <div class="accordion-inner" >
                          <p style="text-align:center;">
-							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="bea" offsrc="/Carimi2/image/benefits/bea_off.png" onsrc="/Carimi2/image/benefits/bea_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="cafe" offsrc="/Carimi2/image/benefits/cafe_off.png" onsrc="/Carimi2/image/benefits/cafe_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="cul" offsrc="/Carimi2/image/benefits/cul_off.png" onsrc="/Carimi2/image/benefits/cul_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="cvs" offsrc="/Carimi2/image/benefits/cvs_off.png" onsrc="/Carimi2/image/benefits/cvs_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="edu" offsrc="/Carimi2/image/benefits/edu_off.png" onsrc="/Carimi2/image/benefits/edu_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="eou" offsrc="/Carimi2/image/benefits/eou_off.png" onsrc="/Carimi2/image/benefits/eou_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="lei" offsrc="/Carimi2/image/benefits/lei_off.png" onsrc="/Carimi2/image/benefits/lei_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="mart" offsrc="/Carimi2/image/benefits/mart_off.png" onsrc="/Carimi2/image/benefits/mart_on.png"></span>
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="bea" checked="checked" offsrc="/CarimiS/image/benefits/bea_off.png" onsrc="/CarimiS/image/benefits/bea_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="cafe" checked="checked" offsrc="/CarimiS/image/benefits/cafe_off.png" onsrc="/CarimiS/image/benefits/cafe_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="cul" checked="checked" offsrc="/CarimiS/image/benefits/cul_off.png" onsrc="/CarimiS/image/benefits/cul_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="cvs" checked="checked" offsrc="/CarimiS/image/benefits/cvs_off.png" onsrc="/CarimiS/image/benefits/cvs_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="edu" checked="checked" offsrc="/CarimiS/image/benefits/edu_off.png" onsrc="/CarimiS/image/benefits/edu_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="eou" checked="checked" offsrc="/CarimiS/image/benefits/eou_off.png" onsrc="/CarimiS/image/benefits/eou_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="lei" offsrc="/CarimiS/image/benefits/lei_off.png" onsrc="/CarimiS/image/benefits/lei_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="mart" offsrc="/CarimiS/image/benefits/mart_off.png" onsrc="/CarimiS/image/benefits/mart_on.png"></span>
 							 <br>							 
-							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="medi" offsrc="/Carimi2/image/benefits/medi_off.png" onsrc="/Carimi2/image/benefits/medi_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="movie" offsrc="/Carimi2/image/benefits/movie_off.png" onsrc="/Carimi2/image/benefits/movie_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="oil" offsrc="/Carimi2/image/benefits/oil_off.png" onsrc="/Carimi2/image/benefits/oil_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="poi" offsrc="/Carimi2/image/benefits/poi_off.png" onsrc="/Carimi2/image/benefits/poi_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="shop" offsrc="/Carimi2/image/benefits/shop_off.png" onsrc="/Carimi2/image/benefits/shop_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="tel" offsrc="/Carimi2/image/benefits/tel_off.png" onsrc="/Carimi2/image/benefits/tel_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							  <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="tra" offsrc="/Carimi2/image/benefits/tra_off.png" onsrc="/Carimi2/image/benefits/tra_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="medi" offsrc="/CarimiS/image/benefits/medi_off.png" onsrc="/CarimiS/image/benefits/medi_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="movie" offsrc="/CarimiS/image/benefits/movie_off.png" onsrc="/CarimiS/image/benefits/movie_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="oil" offsrc="/CarimiS/image/benefits/oil_off.png" onsrc="/CarimiS/image/benefits/oil_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="poi" offsrc="/CarimiS/image/benefits/poi_off.png" onsrc="/CarimiS/image/benefits/poi_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="shop" offsrc="/CarimiS/image/benefits/shop_off.png" onsrc="/CarimiS/image/benefits/shop_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="tel" offsrc="/CarimiS/image/benefits/tel_off.png" onsrc="/CarimiS/image/benefits/tel_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 <span><input onclick="chk_six(this)" type="checkbox" name="c1" value="tra" offsrc="/CarimiS/image/benefits/tra_off.png" onsrc="/CarimiS/image/benefits/tra_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							 <script>imgCbox("c1");</script>
-							 	<input type="submit" class="btn" value="분석!">
-							 </p>
+							 <input type="submit" class="btn" value="분석!">
+						 </p>
                        </div>
                      </div>
                    </div>
@@ -194,20 +170,7 @@
 			</div> <!-- /controls -->	
 			</FORM>
 		</div> <!-- /control-group -->
-		  
-					   <%if(a1 != null && b1 != null && c1!=null){%>
-		    			<jsp:include page="/WEB-INF/views/analysis/analysisAF.jsp">
-							<jsp:param value="<%=a1%>" name="a1"/>
-								<jsp:param value="<%=b1 %>" name="b1"/>
-								<jsp:param value="<%=c1[0] %>" name="c1"/>
-								<jsp:param value="<%=c1[1] %>" name="c1"/>
-								<jsp:param value="<%=c1[2] %>" name="c1"/>
-								<jsp:param value="<%=c1[3] %>" name="c1"/>
-								<jsp:param value="<%=c1[4] %>" name="c1"/>
-								<jsp:param value="<%=c1[5] %>" name="c1"/>
-							</jsp:include>
-					<%} %>
-		          <!-- /widget --> 
+ 		  				<li><a href="analysisAF.do">analysisAF</a></li> 
 		        </div>
 		        <!--/span5  -->
 			    </div>
@@ -219,69 +182,7 @@
 	<script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
 	<script src="<%=request.getContextPath()%>/js/signin.js"></script>
-	<script>
-	function check() {
-			var obj = document.getElementsByName("a1");
-			var count = 0;
-			var count1 =0;
-			for(var i=0; i<obj.length; i++){
-				if(obj[i].checked === false){
-					count1++;
-					if(count1>5){
-					alert("실적이 없습니다!");
-					return false;
-					}
-				}
-				if(obj[i].checked === true){
-					count++;
-					if(count > 1){
-						alert("실적을 하나 이상 선택 할 수 없습니다!");
-						return false;
-					}
-				}	
-			}
-			
-			var obj1 = document.getElementsByName("b1");
-			var count1 = 0;
-			var count11 =0;
-			for(var i=0; i<obj.length; i++){
-				if(obj1[i].checked === false){
-					count11++;
-					if(count11>6){
-					alert("연회비가 없습니다!");
-					return false;
-					}
-				}
-				if(obj1[i].checked === true){
-					count1++;
-					if(count1 > 1){
-						alert("연회비를 하나 이상 선택 할 수 없습니다!");
-						return false;
-					}
-				}	
-			}
-		
-		var obj2 = document.getElementsByName("c1");
-			var count2 = 0;
-			var count12 =0;
-			for(var i=0; i<obj2.length; i++){
-				if(obj2[i].checked === false){
-					count12++;
-					if(count12>9){
-					alert("혜택을 6개 선택하세요!");
-					return false;
-					}
-				}
-				if(obj2[i].checked === true){
-					count2++;
-					if(count2 > 6){
-						alert("혜택을 6개 이상 선택 할 수 없습니다");
-						return false;
-					}
-				}
-			} 
-	}
-	</script>
+	
 
 </body>
 </html>
