@@ -72,7 +72,7 @@
 							</form>
 						</div>
 					</div>
-					<div class="widget-content pull-left" style="margin-left: 25px;">
+					<div class="widget-content pull-left" style="margin-left: 25px; width:82%">
 						<table>
 							<col width=52%>
 							<tr>
@@ -103,7 +103,7 @@
 							</tr>
 						</table>
 
-						<table class="table table-striped table-bordered pull-right">
+						<table class="table table-striped table-bordered" style="width:70%; margin:auto">
 
 							<tr>
 								<th>TYPE</th>
@@ -113,133 +113,133 @@
 							<tbody>
 								<c:if test="${empty e2list}">
 									<tr>
-										<td colspan="3" align="center">작성된 글이 없습니다.</td>
+										<td colspan="2" align="center">작성된 글이 없습니다.</td>
 									</tr>
 								</c:if>
 
 								<c:if test="${not empty e2list}">
 									<c:if test="${sumshin1 != 0}">
 										<tr>
-											<td>신한 LOVE <img src="CarimiS/image/si_love.jpg"
+											<td>신한 LOVE <img src="/CarimiS/image/si_love.jpg"
 												width="22px"></td>
 											<td>${sumshin1}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumshin2 != 0}">
 										<tr>
-											<td>신한 TASTY <img src="CarimiS/image/si_tasty.png"
+											<td>신한 TASTY <img src="/CarimiS/image/si_tasty.png"
 												width="22px"></td>
 											<td>${sumshin2}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumguk1 != 0}">
 										<tr>
-											<td>국민 굿데이 <img src="CarimiS/image/ku_goodday.png"
+											<td>국민 굿데이 <img src="/CarimiS/image/ku_goodday.png"
 												width="22px"></td>
 											<td>${sumguk1}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumguk2 != 0}">
 										<tr>
-											<td>국민 다담 <img src="CarimiS/image/ku_ddam.png"
+											<td>국민 다담 <img src="/CarimiS/image/ku_ddam.png"
 												width="22px"></td>
 											<td>${sumguk2}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumuri1 != 0}">
 										<tr>
-											<td>우리 다모아 <img src="CarimiS/image/w_damoa.jpg"
+											<td>우리 다모아 <img src="/CarimiS/image/w_damoa.jpg"
 												width="22px" height="22px" /></td>
 											<td>${sumuri1}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumuri2 != 0}">
 										<tr>
-											<td>우리 가득한 <img src="CarimiS/image/w_gadeuk.jpg"
+											<td>우리 가득한 <img src="/CarimiS/image/w_gadeuk.jpg"
 												width="22px" height="22px" /></td>
 											<td>${sumuri2}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumha1 != 0}">
 										<tr>
-											<td>하나 2x@ <img src="CarimiS/image/h_2xa.png" width="22px"
+											<td>하나 2x@ <img src="/CarimiS/image/h_2xa.png" width="22px"
 												height="22px" /></td>
 											<td>${sumha1}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumha2 != 0}">
 										<tr>
-											<td>하나 POP <img src="CarimiS/image/h_pop.png" width="22px"
+											<td>하나 POP <img src="/CarimiS/image/h_pop.png" width="22px"
 												height="22px" /></td>
 											<td>${sumha2}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumlot1 != 0}">
 										<tr>
-											<td>롯데 DC 슈프림 <img src="CarimiS/image/l_dcsm.png"
+											<td>롯데 DC 슈프림 <img src="/CarimiS/image/l_dcsm.png"
 												width="22px" height="22px" /></td>
 											<td>${sumlot1}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumlot2 != 0}">
 										<tr>
-											<td>롯데 DC 슈프림 <img src="CarimiS/image/l_dcsu.png"
+											<td>롯데 DC 슈프림 <img src="/CarimiS/image/l_dcsu.png"
 												width="22px" height="22px" /></td>
 											<td>${sumlot2}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumsam1 != 0}">
 										<tr>
-											<td>삼성 S클래스 <img src="CarimiS/image/sa_sclass.png"
+											<td>삼성 S클래스 <img src="/CarimiS/image/sa_sclass.png"
 												width="22px" height="22px" /></td>
 											<td>${sumsam1}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumsam2 != 0}">
 										<tr>
-											<td>삼성 2 V2 <img src="CarimiS/image/sa_2v2.png"
+											<td>삼성 2 V2 <img src="/CarimiS/image/sa_2v2.png"
 												width="22px" height="22px" /></td>
 											<td>${sumsam2}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumnong1 != 0}">
 										<tr>
-											<td>농협 스마티<img src="CarimiS/image/n_smarty.png"
+											<td>농협 스마티<img src="/CarimiS/image/n_smarty.png"
 												width="22px" height="22px" /></td>
 											<td>${sumnong1}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumnong2 != 0}">
 										<tr>
-											<td>농협 TAKE 5<img src="CarimiS/image/n_take5.png"
+											<td>농협 TAKE 5<img src="/CarimiS/image/n_take5.png"
 												width="22px" height="22px" /></td>
 											<td>${sumnong2}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumgi1 != 0}">
 										<tr>
-											<td>기업 참좋은<img src="CarimiS/image/ki_cham.gif"
+											<td>기업 참좋은<img src="/CarimiS/image/ki_cham.gif"
 												width="22px" height="22px" /></td>
 											<td>${sumgi1}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumgi2 != 0}">
 										<tr>
-											<td>기업 IBK HI<img src="CarimiS/image/ki_ibkhi.jpg"
+											<td>기업 IBK HI<img src="/CarimiS/image/ki_ibkhi.jpg"
 												width="22px" height="22px" /></td>
 											<td>${sumgi2}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumci1 != 0}">
 										<tr>
-											<td>씨티 클리어<img src="CarimiS/image/ci_cle.png" width="22px"
+											<td>씨티 클리어<img src="/CarimiS/image/ci_cle.png" width="22px"
 												height="22px" /></td>
 											<td>${sumci1}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumci2 != 0}">
 										<tr>
-											<td>씨티 멀티<img src="CarimiS/image/ci_mul.png" width="22px"
+											<td>씨티 멀티<img src="/CarimiS/image/ci_mul.png" width="22px"
 												height="22px" /></td>
 											<td>${sumci2}원</td>
 										</tr>

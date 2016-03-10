@@ -15,6 +15,10 @@
 
 <fmt:requestEncoding value="UTF-8" />
 
+<style>
+
+</style>
+
 <%!int sumoil = 0;
 	int sumshop = 0;
 	int summart = 0;
@@ -69,7 +73,7 @@
 						</div>
 					</div>
 					
-					<div class="widget-content pull-left" style="margin-left: 25px;">
+					<div class="widget-content pull-left" style="margin-left:25px; width:82%">
 						<table>
 							<col width=52%>
 							<tr>
@@ -100,7 +104,7 @@
 							</tr>
 						</table>
 
-						<table class="table table-striped table-bordered pull-right">
+						<table class="table table-striped table-bordered" style="width:70%;margin:auto">
 
 							<tr>
 								<th>BCATEGORY</th>
@@ -110,7 +114,7 @@
 							<tbody>
 								<c:if test="${empty e1list}">
 									<tr>
-										<td colspan="3" align="center">작성된 글이 없습니다.</td>
+										<td colspan="2" align="center">작성된 글이 없습니다.</td>
 									</tr>
 								</c:if>
 
@@ -200,7 +204,6 @@
 											<td>${sumbea}원</td>
 										</tr>
 									</c:if>
-
 								</c:if>
 							<tbody>
 						</table>

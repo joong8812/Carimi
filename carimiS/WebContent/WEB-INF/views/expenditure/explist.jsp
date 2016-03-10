@@ -43,7 +43,7 @@
 					<i class="icon-credit-card"></i>
 					<h3>${id}'S EXPENDITURE LIST</h3>
 				</div>
-				<div class="widget-conetent">
+				<div class="widget-conetent" >
 					<div class="widget-content pull-left">
 						<div>
 							<form action="monlist.do" method="post">
@@ -63,7 +63,7 @@
 							</form>
 						</div>
 					</div>
-					<div class="widget-content pull-left" style="margin-left: 25px;">
+					<div class="widget-content pull-left" style="margin-left: 25px; width:82.5%">
 						<form action="listsearch.do" method="post">
 							<table>
 								<col width=52%>
@@ -79,7 +79,7 @@
 								</tr>
 							</table>
 						</form>
-						<table class="table table-striped table-bordered pull-right">
+						<table class="table table-striped table-bordered pull-right" style="width:100%;" >
 							<tr>
 								<th>#</th>
 								<th>DATE</th>
