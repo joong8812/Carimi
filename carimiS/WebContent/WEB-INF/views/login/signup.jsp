@@ -116,7 +116,7 @@
 
 
 
-<div class="account-container register">
+<div class="account-container register" style="width:55%">
 	
 	<div class="content clearfix">
 		
@@ -127,49 +127,16 @@
 			<div class="login-fields">
 				
 				<p>Create your free account:</p>
-				
-						
-				<div class="field">
+				<table>
+				<tr>
+					<td><div class="field">
 					<label for="usr">ID : </label>
     				<input type="text" class="login" id="id" name="id" placeholder="ID">
-    			</div>
-    			<div class="field">
-					<label for="pwd">Password:</label>
-					<input type="password" class="login" name="pwd" id="pwd" placeholder="Password">
-				</div>
-				<div class="field">							
-					<label for="name">이름 : </label>
-					<input type="text" class="login" id="name" name="name" placeholder="User Name"/>
-				</div>
-				
-				<div class="field">							
-					<label for="age">나이 : </label>
-					<input type="text" class="login" id="age" name="age" placeholder="Age"/>
-				</div>
-				<div class="field">
-					<label for="email">Email : </label>
-    				<input type="text" class="form-control" name="email" id="email" placeholder="E-Mail">
-				</div>		
-					
-					<p>성별</p>
-				<span class="login-checkbox">
-					<input onclick="chk_only2(this)" id="Field24" name="sex" type="checkbox" class="field login-checkbox" value="man" />
-					<label class="choice" for="Field24">남자</label>
-				</span>
-				<span class="login-checkbox" >
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</span>
-				<span class="login-checkbox" >
-					<input onclick="chk_only2(this)" id="Field34" name="sex" type="checkbox" class="field login-checkbox" value="woman"/>
-					<label class="choice" for="Field34">여자</label>
-			
-				</span>
-			
-				
-    							
+    			</div></td>
+    			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    			</td>
+					<td>		
     							지역&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<select  id="local" name="local" >
@@ -181,8 +148,15 @@
 									<option value="jeonnam">전남</option>		<option value="jeonbuk">전북</option>	<option value="gyeongnam">경남</option>
 									<option value="gyeongbuk">경북</option>	<option value="jeju">제주</option>
 								</select>
-								
-								<div id="location1">
+							</td>
+				</tr>
+				<tr>
+					<td><div class="field">
+					<label for="pwd">Password:</label>
+					<input type="password" class="login" name="pwd" id="pwd" placeholder="Password">
+				</div></td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td> <div id="location1">
 									지역구(서울)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     							
     							<select class="form-control" id="loca1" name="location" >
@@ -501,9 +475,16 @@
 									<option value="jeju">제주시</option>
 									<option value="seogwipo">서귀포시</option>																																												
 								</select>
-								</div>
-								
-								보유카드1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</div></td>
+				</tr>
+				<tr>
+					<td>	<div class="field">							
+					<label for="name">이름 : </label>
+					<input type="text" class="login" id="name" name="name" placeholder="User Name"/>
+				</div>
+				</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>보유카드1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     							
 								<select class="form-control" id="mycard1" name="mycard1" >
 									<option>미보유</option>
@@ -525,9 +506,15 @@
 									<option value="gi2">기업2</option>
 									<option value="ci1">씨티1</option>
 									<option value="ci2">씨티2</option>
-								</select>
-								
-								보유카드2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</select></td>
+				</tr>
+				<tr>
+					<td><div class="field">							
+					<label for="age">나이 : </label>
+					<input type="text" class="login" id="age" name="age" placeholder="Age"/>
+				</div></td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td> 	보유카드2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     							
 								<select class="form-control" id="mycard2" name="mycard2" >
 									<option>미보유</option>
@@ -549,11 +536,15 @@
 									<option value="gi2">기업2</option>
 									<option value="ci1">씨티1</option>
 									<option value="ci2">씨티2</option>
-								</select>
-								
-								
-    							
-    							직업&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</select></td>
+				</tr>
+				<tr>
+					<td><div class="field">
+					<label for="email">Email : </label>
+    				<input type="text" class="form-control" name="email" id="email" placeholder="E-Mail">
+				</div>	</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td> 직업&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<select class="form-control" id="job" name="job" >
 									<option value="cs">회사원</option>
@@ -566,11 +557,29 @@
 									<option value="pf">전문직</option>
 									<option value="hw">주부</option>
 									<option value="etc">기타</option>
-								</select>
-				
-				
+								</select></td>
+				</tr>
+				<tr>
+					<td><div class="field">		
+					<p>성별</p>
+				<span class="login-checkbox">
+					<input onclick="chk_only2(this)" id="Field24" name="sex" type="checkbox" class="field login-checkbox" value="man" />
+					<label class="choice" for="Field24">남자</label>
+				</span>
+				<span class="login-checkbox" >
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span>
+				<span class="login-checkbox" >
+					<input onclick="chk_only2(this)" id="Field34" name="sex" type="checkbox" class="field login-checkbox" value="woman"/>
+					<label class="choice" for="Field34">여자</label>
 			
-    				<p>관심사(최대 6개)</p>
+				</span>
+			</div></td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td><p>관심사(최대 6개)</p>
     				<span class="login-checkbox" style="display:inline;">
 						<input onclick="chk_six(this)" id="favf1" name="fav" type="checkbox" class="field login-checkbox" value="oil"  />
 						<label class="choice" for="favf1">주유&nbsp;</label>
@@ -633,7 +642,26 @@
 						<span class="login-checkbox" style="display:inline;">
 						<input onclick="chk_six(this)" id="favf8" name="fav" type="checkbox" class="field login-checkbox" value="cafe"  />
 						<label class="choice" for="favf8">카페/베이커리&nbsp;</label>
-					</span>			
+					</span>		</td>
+				</tr>
+				</table>
+						
+				
+				
+    						
+								
+								
+								
+								
+							
+								
+								
+    							
+    							
+				
+				
+			
+    					
 							
 								
 					
