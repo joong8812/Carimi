@@ -765,27 +765,27 @@ public class ExpenditureController {
 		public String yearlist(Model model, HttpServletRequest request, String syear, String smonth)throws Exception{
 			logger.info("Welcome ExpenditureController yearlist! "+ new Date());
 			
-			int sumoil=0;
-			int sumshop=0;
-			int summart=0;
-			int sumcvs=0;
-			int sumeou=0;
-			int sumcafe=0;
-			int summovie=0;
-			int sumtra=0;
-			int sumtel=0;
-			int sumedu=0;
-			int sumcul=0;
-			int sumlei=0;
-			int summedi=0;
-			int sumbea=0;
-			int sumpoi=0;
+			int[] sumoil=new int[12];
+			int[] sumshop=new int[12];
+			int[] summart=new int[12];
+			int[] sumcvs=new int[12];
+			int[] sumeou=new int[12];
+			int[] sumcafe=new int[12];
+			int[] summovie=new int[12];
+			int[] sumtra=new int[12];
+			int[] sumtel=new int[12];
+			int[] sumedu=new int[12];
+			int[] sumcul=new int[12];
+			int[] sumlei=new int[12];
+			int[] summedi=new int[12];
+			int[] sumbea=new int[12];
+			int[] sumpoi=new int[12];
 
 			int categorylist;
 			String[][] sumprice = null;
 			memberDTO mem = (memberDTO)request.getSession().getAttribute("login");
 			expenditureDTO edto = new expenditureDTO(mem.getId());
-			List<expenditureDTO> yearlist = expenditureService.yearList(edto);
+			
 			
 			Calendar cal = Calendar.getInstance();
 			cal.set(Calendar.DATE, 1);
@@ -819,6 +819,8 @@ public class ExpenditureController {
 			String sleft = String.format("yearlist.do?syear=%d", year - 1);
 			String sright = String.format("yearlist.do?syear=%d", year + 1);
 			
+			List<expenditureDTO> yearlist = expenditureService.yearList(edto, year);
+			
 			model.addAttribute("sf2", sf2);
 			model.addAttribute("sleft", sleft);
 			model.addAttribute("sright", sright);
@@ -827,89 +829,77 @@ public class ExpenditureController {
 			categorylist = yearlist.size();
 
 			sumprice = new String[categorylist][2];
-			NumberFormat formatter = new DecimalFormat("#,###");
+//			NumberFormat formatter = new DecimalFormat("#,###");
 	
 			for(int j=0;j<yearlist.size();j++)
 			{   
 				expenditureDTO exp = yearlist.get(j);
+				
+				String wdate = yearlist.get(j).getWdate();
+				String[] splWdate = wdate.split("-");
+				int wmonth = Integer.parseInt(splWdate[splWdate.length - 2])-1;
 				
 				sumprice[j][0] = exp.getBcategory();
 				sumprice[j][1] = Integer.toString(exp.getPrice());
 				
 			   if(sumprice[j][0].equals("oil"))
 			   {
-			      sumoil = sumoil + Integer.parseInt(sumprice[j][1]);
+			      sumoil[wmonth] = sumoil[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("shop"))
 			   {
-				  sumshop = sumshop + Integer.parseInt(sumprice[j][1]);
+				  sumshop[wmonth] = sumshop[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("mart"))
 			   {
-			      summart = summart + Integer.parseInt(sumprice[j][1]);
+			      summart[wmonth] = summart[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("cvs"))
 			   {
-				  sumcvs = sumcvs + Integer.parseInt(sumprice[j][1]);
+				  sumcvs[wmonth] = sumcvs[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("eou"))
 			   {
-				  sumeou = sumeou + Integer.parseInt(sumprice[j][1]);
+				  sumeou[wmonth] = sumeou[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("cafe"))
 			   {
-				  sumcafe = sumcafe + Integer.parseInt(sumprice[j][1]);
+				  sumcafe[wmonth] = sumcafe[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("movie"))
 			   {
-				  summovie = summovie + Integer.parseInt(sumprice[j][1]);
+				  summovie[wmonth] = summovie[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("tra"))
 			   {
-				  sumtra = sumtra + Integer.parseInt(sumprice[j][1]);
+				  sumtra[wmonth] = sumtra[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("tel"))
 			   {
-				  sumtel = sumtel + Integer.parseInt(sumprice[j][1]);
+				  sumtel[wmonth] = sumtel[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("edu"))
 			   {
-				  sumedu = sumedu + Integer.parseInt(sumprice[j][1]);
+				  sumedu[wmonth] = sumedu[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("cul"))
 			   {
-				  sumcul = sumcul + Integer.parseInt(sumprice[j][1]);
+				  sumcul[wmonth] = sumcul[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("lei"))
 			   {
-				  sumlei = sumlei + Integer.parseInt(sumprice[j][1]);
+				  sumlei[wmonth] = sumlei[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("medi"))
 			   {
-				  summedi = summedi + Integer.parseInt(sumprice[j][1]);
+				  summedi[wmonth] = summedi[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			   else if(sumprice[j][0].equals("bea"))
 			   {
-				  sumbea = sumbea + Integer.parseInt(sumprice[j][1]);
+				  sumbea[wmonth] = sumbea[wmonth] + Integer.parseInt(sumprice[j][1]);
 			   }
 			}
-			 
-		   System.out.println("sumshop = " + sumshop);
-		   System.out.println("sumoil = " + sumoil);
-		   System.out.println("sumcafe = " + sumcafe);
-		   System.out.println("sumbea = " + sumbea);
-		   System.out.println("summart = " + summart);
-		   System.out.println("sumcvs = " + sumcvs);
-		   System.out.println("sumeou = " + sumeou);
-		   System.out.println("summovie = " + summovie);
-		   System.out.println("sumtra = " + sumtra);
-		   System.out.println("sumtel = " + sumtel);
-		   System.out.println("sumedu = " + sumedu);
-		   System.out.println("sumcul = " + sumcul);
-		   System.out.println("sumlei = " + sumlei);
-		   System.out.println("summedi = " + summedi);
-		   
-		   
+			
 		   model.addAttribute("sumshop", sumshop);
 		   model.addAttribute("sumoil", sumoil);
 		   model.addAttribute("sumcafe", sumcafe);

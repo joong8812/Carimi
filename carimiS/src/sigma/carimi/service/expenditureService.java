@@ -14,6 +14,6 @@ public interface expenditureService {
 	boolean updexp(expenditureDTO edto) throws Exception;
 	List<expenditureDTO> searchList(String stext) throws Exception;
 	List<expenditureDTO> e1List(expenditureDTO edto) throws Exception;
-	List<expenditureDTO> yearList(expenditureDTO edto) throws Exception;
+	List<expenditureDTO> yearList(expenditureDTO edto, int year) throws Exception;
 
 }

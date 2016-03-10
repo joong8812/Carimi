@@ -46,9 +46,9 @@ SELECT ID, WDATE, MONEYTYPE, PRICE, SHOPNAME, BCATEGORY, SCATEGORY FROM CARD_EXP
 </select>
 
 <select id="edtolist"
-	parameterType="sigma.carimi.model.expenditureDTO"
+	parameterType="hashmap"
 	resultType="sigma.carimi.model.expenditureDTO">
-	SELECT * FROM CARD_EXPENSE WHERE ID = #{id}
+	SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE #{year}||'%'
 </select>
 
 </mapper>

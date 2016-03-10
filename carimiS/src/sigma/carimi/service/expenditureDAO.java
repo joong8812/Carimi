@@ -1,6 +1,7 @@
 package sigma.carimi.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import sigma.carimi.model.expenditureDTO;
@@ -89,10 +90,15 @@ public class expenditureDAO {
 			return e1list;
 		}
 		
-		public List<expenditureDTO> yearList(expenditureDTO edto) throws Exception{
+		public List<expenditureDTO> yearList(expenditureDTO edto, int year) throws Exception{
+			
+			HashMap<String, Object> hm = new HashMap<String, Object>();
+			hm.put("id", edto.getId());
+			hm.put("year", year);
+			
 			List<expenditureDTO> edtolist = new ArrayList<expenditureDTO>();
 			edtolist = (List<expenditureDTO>)
-							sqlsession.selectList(ns + "edtolist", edto);
+							sqlsession.selectList(ns + "edtolist", hm);
 			return edtolist;
 		}
 

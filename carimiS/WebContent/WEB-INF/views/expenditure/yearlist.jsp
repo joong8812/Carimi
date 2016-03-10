@@ -70,6 +70,7 @@ background-color:white;
 
 
 <div class="main-inner">
+
 	<div class="container">
 		<div class="row">
 			<div class="widget">
@@ -111,12 +112,86 @@ background-color:white;
 				</table> 
 		<br>
 		
-		<input type="hidden" id="sumshop" value="${sumshop }">
+		<script>
+		function ss(){
+			return 60;
+		}
+		</script>
 
 		<div
 			style="width: 200%; padding: 5px; margin: auto;">
 			<script type="text/javascript">
 				$(function() {
+					var sumshop = new Array();
+					<c:forEach items="${sumshop}" var="sshop">
+						sumshop.push("${sshop}");
+					</c:forEach>
+					
+					var sumoil = new Array();
+					<c:forEach items="${sumoil}" var="sshop">
+						sumoil.push("${sshop}");
+					</c:forEach>
+					
+					var sumbea = new Array();
+					<c:forEach items="${sumbea}" var="sshop">
+						sumbea.push("${sshop}");
+					</c:forEach>
+					
+					var summart = new Array();
+					<c:forEach items="${summart}" var="sshop">
+						summart.push("${sshop}");
+					</c:forEach>
+					
+					var sumcvs = new Array();
+					<c:forEach items="${sumcvs}" var="sshop">
+						sumcvs.push("${sshop}");
+					</c:forEach>
+					
+					var sumeou = new Array();
+					<c:forEach items="${sumeou}" var="sshop">
+						sumeou.push("${sshop}");
+					</c:forEach>
+					
+					var summovie = new Array();
+					<c:forEach items="${summovie}" var="sshop">
+						summovie.push("${sshop}");
+					</c:forEach>
+					
+					var sumtra = new Array();
+					<c:forEach items="${sumtra}" var="sshop">
+						sumtra.push("${sshop}");
+					</c:forEach>
+					
+					var sumtel = new Array();
+					<c:forEach items="${sumtel}" var="sshop">
+						sumtel.push("${sshop}");
+					</c:forEach>
+					
+					var sumedu = new Array();
+					<c:forEach items="${sumedu}" var="sshop">
+						sumedu.push("${sshop}");
+					</c:forEach>
+					
+					var sumcul = new Array();
+					<c:forEach items="${sumcul}" var="sshop">
+						sumcul.push("${sshop}");
+					</c:forEach>
+					
+					var sumlei = new Array();
+					<c:forEach items="${sumlei}" var="sshop">
+						sumlei.push("${sshop}");
+					</c:forEach>
+					
+					var summedi = new Array();
+					<c:forEach items="${summedi}" var="sshop">
+						summedi.push("${sshop}");
+					</c:forEach>
+					
+					var sumcafe = new Array();
+					<c:forEach items="${sumcafe}" var="sshop">
+						sumcafe.push("${sshop}");
+					</c:forEach>
+					
 					$('#container').highcharts(
 							{
 
@@ -160,86 +235,100 @@ background-color:white;
 								series : [
 										{
 											name : 'Shopping',
-											data : [ 5, '${sumshop}' , 4, 7, 2, 6, 8, 9, 3,
-													5, 4, 1 ],
+											data : [ sumshop[0]*1, sumshop[1]*1, sumshop[2]*1, sumshop[3]*1,
+											         sumshop[4]*1, sumshop[5]*1, sumshop[6]*1, sumshop[7]*1, 
+											         sumshop[8]*1, sumshop[9]*1, sumshop[10]*1, sumshop[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'Oil',
-											data : [ 3, '${sumoil}', 4, 2, 5, 6, 3, 8, 1,
-													4, 5, 9 ],
+											data : [ sumoil[0]*1, sumoil[1]*1, sumoil[2]*1, sumoil[3]*1, 
+											         sumoil[4]*1, sumoil[5]*1, sumoil[6]*1, sumoil[7]*1, 
+											         sumoil[8]*1, sumoil[9]*1, sumoil[10]*1, sumoil[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'Cafe',
-											data : [ 2, '${sumcafe}', 6, 2, 1, 2, 1, 3, 6,
-													4, 1, 2 ],
+											data : [ sumcafe[0]*1, sumcafe[1]*1, sumcafe[2]*1, sumcafe[3]*1, 
+											         sumcafe[4]*1, sumcafe[5]*1, sumcafe[6]*1, sumcafe[7]*1, 
+											         sumcafe[8]*1, sumcafe[9]*1, sumcafe[10]*1, sumcafe[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'Beauty',
-											data : [ 3, '${sumbea}', 4, 4, 3, 2, 4, 8, 4,
-													3, 2, 1 ],
+											data : [ sumbea[0]*1, sumbea[1]*1, sumbea[2]*1, sumbea[3]*1, 
+											         sumbea[4]*1, sumbea[5]*1, sumbea[6]*1, sumbea[7]*1, 
+											         sumbea[8]*1, sumbea[9]*1, sumbea[10]*1, sumbea[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'Mart',
-											data : [ 3, '${summart}', 4, 2, 5, 6, 4, 1, 5,
-													2, 1, 1 ],
+											data : [ summart[0]*1, summart[1]*1, summart[2]*1, summart[3]*1, 
+											         summart[4]*1, summart[5]*1, summart[6]*1, summart[7]*1, 
+											         summart[8]*1, summart[9]*1, summart[10]*1, summart[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'CVS',
-											data : [ 2, '${sumcvs}', 6, 2, 1, 2, 1, 5, 9,
-													6, 8, 4 ],
+											data : [ sumcvs[0]*1, sumcvs[1]*1, sumcvs[2]*1, sumcvs[3]*1, 
+											         sumcvs[4]*1, sumcvs[5]*1, sumcvs[6]*1, sumcvs[7]*1, 
+											         sumcvs[8]*1, sumcvs[9]*1, sumcvs[10]*1, sumcvs[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'eat-out',
-											data : [ 3, '${sumeou}', 4, 4, 3, 2, 6, 4, 4,
-													3, 5, 1 ],
+											data : [ sumeou[0]*1, sumeou[1]*1, sumeou[2]*1, sumeou[3]*1, 
+											         sumeou[4]*1, sumeou[5]*1, sumeou[6]*1, sumeou[7]*1, 
+											         sumeou[8]*1, sumeou[9]*1, sumeou[10]*1, sumeou[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'Movie',
-											data : [ 3, '${summovie}', 4, 2, 5, 8, 9, 2, 5,
-													1, 6, 3 ],
+											data : [ summovie[0]*1, summovie[1]*1, summovie[2]*1, summovie[3]*1, 
+											         summovie[4]*1, summovie[5]*1, summovie[6]*1, summovie[7]*1, 
+											         summovie[8]*1, summovie[9]*1, summovie[10]*1, summovie[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'Transportaion',
-											data : [ 2, '${sumtra}', 6, 2, 1, 5, 4, 4, 6,
-													3, 1, 2 ],
+											data : [ sumtra[0]*1, sumtra[1]*1, sumtra[2]*1, sumtra[3]*1, 
+											         sumtra[4]*1, sumtra[5]*1, sumtra[6]*1, sumtra[7]*1, 
+											         sumtra[8]*1, sumtra[9]*1, sumtra[10]*1, sumtra[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'Telecom',
-											data : [ 3, '${sumtel}', 4, 4, 3, 6, 2, 5, 1,
-													2, 2, 3 ],
+											data : [ sumtel[0]*1, sumtel[1]*1, sumtel[2]*1, sumtel[3]*1, 
+											         sumtel[4]*1, sumtel[5]*1, sumtel[6]*1, sumtel[7]*1, 
+											         sumtel[8]*1, sumtel[9]*1, sumtel[10]*1, sumtel[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'Education',
-											data : [ 3, '${sumedu}', 4, 4, 3, 7, 4, 1, 5,
-													1, 2, 2 ],
+											data : [ sumedu[0]*1, sumedu[1]*1, sumedu[2]*1, sumedu[3]*1, 
+											         sumedu[4]*1, sumedu[5]*1, sumedu[6]*1, sumedu[7]*1, 
+											         sumedu[8]*1, sumedu[9]*1, sumedu[10]*1, sumedu[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'Culture',
-											data : [ 3, '${sumcul}', 4, 2, 5, 3, 2, 2, 1,
-													5, 4, 1 ],
+											data : [ sumcul[0]*1, sumcul[1]*1, sumcul[2]*1, sumcul[3]*1, 
+											         sumcul[4]*1, sumcul[5]*1, sumcul[6]*1, sumcul[7]*1, 
+											         sumcul[8]*1, sumcul[9]*1, sumcul[10]*1, sumcul[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'Leisure',
-											data : [ 2, '${sumlei}', 6, 2, 1, 6, 4, 5, 4,
-													2, 1, 1 ],
+											data : [ sumlei[0]*1, sumlei[1]*1, sumlei[2]*1, sumlei[3]*1, 
+											         sumlei[4]*1, sumlei[5]*1, sumlei[6]*1, sumlei[7]*1, 
+											         sumlei[8]*1, sumlei[9]*1, sumlei[10]*1, sumlei[11]*1 ],
 											stack : 'month'
 										},
 										{
 											name : 'Medical',
-											data : [ 3, '${summedi}', 4, 4, 3, 2, 3, 5, 4,
-													1, 4, 1 ],
+											data : [ summedi[0]*1, summedi[1]*1, summedi[2]*1, summedi[3]*1, 
+											         summedi[4]*1, summedi[5]*1, summedi[6]*1, summedi[7]*1, 
+											         summedi[8]*1, summedi[9]*1, summedi[10]*1, summedi[11]*1 ],
 											stack : 'month'
 										}]
 							});
