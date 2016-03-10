@@ -30,7 +30,6 @@
 		</script>
 	</c:if>
 
-
 		<div class="main-inner">
 			<div class="container">
 				<div class="row">

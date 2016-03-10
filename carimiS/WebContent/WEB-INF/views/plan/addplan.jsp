@@ -117,7 +117,12 @@
 			<div class="span12">
 			<div class="widget">
 				<div class="widget-header">
-					<i class="icon-calendar"></i><h3>DAILY SCHEDULE INPUT</h3>
+					<i class="icon-calendar"></i><h3>DAILY SCHEDULE WRITE</h3>
+					<div class="pull-right">
+								<h3>
+									<a href=plan.do>LIST</a>
+								</h3>
+							</div>
 				</div>
 				<div class="widget-content">		
 			<form action="addplanAf.do" method="post">

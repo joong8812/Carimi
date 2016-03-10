@@ -35,10 +35,9 @@
 						<h3>DAILY SCHEDULE INFOMATION</h3>				
 							<div class="pull-right">
 								<h3>
-							
-									<a href='updplan.do?pseq=${detailplan.pseq}'>Modify</a>&nbsp;
-									<a href='delplan.do?pseq=${detailplan.pseq}'>Delete</a>&nbsp;
-									<a href=plan.do>Back</a>
+									<a href='updplan.do?pseq=${detailplan.pseq}'>MODIFY</a>&nbsp;
+									<a href='delplan.do?pseq=${detailplan.pseq}'>DELETE</a>&nbsp;
+									<a href=plan.do>LIST</a>
 							
 								</h3>
 							</div>

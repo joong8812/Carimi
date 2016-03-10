@@ -113,12 +113,27 @@
 		date = "0" + date;
 	}
 %>
+<div class="main-inner">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+			<div class="widget">
+				<div class="widget-header">
+					<i class="icon-calendar"></i>
+					<h3>DAILY SCHEDULE MODIFY</h3>
+					<div class="pull-right">
+								<h3>
+									<a href='addplan.do'>WRITE</a>&nbsp;
+									<a href='delplan.do?pseq=${detailplan.pseq}'>DELETE</a>&nbsp;
+									<a href=plan.do>LIST</a>
+							
+								</h3>
+							</div>
+				</div>
+				<div class="widget-content">		
+			<form action="updplanaf.do?pseq=${updplan.pseq }" method="post">
+			<table class="table table-striped table-bordered">
 
-<div class="container">
-	<div class="col-sm-11 text-left">
-		<form action="updplanaf.do?pseq=${updplan.pseq }" method="post">
-		
-			<table class=table>
 				<tr>
 					<td hidden name="pseq" value=${updplan.pseq }></td>
 					<td>ID</td>
@@ -185,6 +200,7 @@
 				</td>
 			</table>
 		</form>
+		</div></div></div></div>
 	</div>
 </div>
 </html>
