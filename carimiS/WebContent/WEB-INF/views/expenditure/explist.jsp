@@ -95,7 +95,7 @@
 							<tbody>
 								<c:if test="${empty explist}">
 									<tr>
-										<td colspan="3" align="center">작성된 글이 없습니다.</td>
+										<td colspan="9" align="center">작성된 글이 없습니다.</td>
 									</tr>
 								</c:if>
 

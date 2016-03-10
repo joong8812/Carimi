@@ -60,7 +60,7 @@
 					</div>
 
 
-					<div class="widget-content pull-left" style="margin-left: 25px;">
+					<div class="widget-content pull-left" style="margin-left:25px; width:82%">
 						<table>
 							<col width=52%>
 							<tr>
@@ -75,7 +75,7 @@
 							</tr>
 						</table>
 
-						<table class="table table-striped table-bordered pull-right">
+						<table class="table table-striped table-bordered" style="width:70%;margin:auto">
 							<tr>
 								<th>#</th>
 								<th>DATE</th>
