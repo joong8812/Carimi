@@ -941,7 +941,6 @@ public class ExpenditureController {
 			int[] sumlei=new int[12];
 			int[] summedi=new int[12];
 			int[] sumbea=new int[12];
-			int[] sumpoi=new int[12];
 
 			int categorylist;
 			String[][] sumprice = null;
@@ -975,8 +974,9 @@ public class ExpenditureController {
 
 			cal.set(year, month - 1, 1);
 
-			String sf = String.format("%d�뀈 %d�썡", year, month);
-			String sf2 = String.format("%d�뀈 ", year);
+//			String sf = String.format("%d년 %d월", year, month);
+			String sf2 = String.format("%d년 ", year);
+
 
 			String sleft = String.format("yearlist.do?syear=%d", year - 1);
 			String sright = String.format("yearlist.do?syear=%d", year + 1);

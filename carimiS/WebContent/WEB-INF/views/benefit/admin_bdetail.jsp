@@ -37,6 +37,9 @@
 	      			<div class="widget-header">
 	      				<i class="icon-th-list"></i>
 	      				<h3>Detail Benefit</h3>
+	      				<div style="float:right; padding-right:10px">
+	      				<button class="btn" onclick="javascript:history.go(-1);">목록보기</button>
+	      				</div>
 	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">

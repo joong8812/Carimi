@@ -331,7 +331,12 @@ function checkfield(){
 
 <script src="<%=request.getContextPath()%>/js/signin.js"></script>
 
-
+<script>
+function navClick(url, gourl){
+ 	 window.name = url;
+	location.href = gourl;
+}
+</script>
 </body>
 
  </html>

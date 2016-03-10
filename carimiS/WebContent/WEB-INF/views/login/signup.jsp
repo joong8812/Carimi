@@ -116,7 +116,7 @@
 
 
 
-<div class="account-container register" style="width:55%">
+<div class="account-container register" style="width:90%">
 	
 	<div class="content clearfix">
 		

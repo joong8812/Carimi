@@ -5,7 +5,6 @@
 <fmt:requestEncoding value="utf-8"/>
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
-<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
 <script src="<%=request.getContextPath()%>/js/search.js"></script> 
 <script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
  
@@ -99,6 +98,9 @@
         	<div class="widget">
             	<div class="widget-header"> <i class="icon-bookmark"></i>
               		<h3>Important Shortcuts</h3>
+         			<div style="float:right; padding-right:10px">
+  			  			<button class="btn" onclick="javascript:location.href='benefit.do'">초기화</button>
+					</div>
             	</div>
            		 <!-- /widget-header -->
 	            <div class="widget-content" >
@@ -170,7 +172,7 @@
 																<input type="hidden" value="${cards[0] }" name="cards"/>
 																<input type="hidden" value="${cards[1] }" name="cards"/>
 																<input type="hidden" value="${pageno2 }" name="pageno2"/>
-																	<input type="hidden" value="" name="act2"/>
+																<input type="hidden" value="" name="act2"/>
 																<input type="hidden" value="${benefit }" name="benefit"/>
 																<input type="image" src="/CarimiS/image/arrows/ll.png" value="맨앞으로">
 															</form>
@@ -187,7 +189,7 @@
 																<input type="image" src="/CarimiS/image/arrows/l.png" value="이전">
 															</form>	
 																<c:forEach var="i" begin="${page_sno }" end="${page_eno  }" step="1">
-																	<form id="_allnum" action="benefit.do" method="post">
+																	<form id="_allnum"  method="post">
 																		<input type="hidden" value="${i }" name="pageno"/> 
 																		<input type="hidden" value="${pageno1 }" name="pageno1"/>
 																		<input type="hidden" value="active" name="act0"/>
@@ -197,14 +199,14 @@
 																		<input type="hidden" value="${pageno2 }" name="pageno2"/>
 																		<input type="hidden" value="" name="act2"/>
 																		<input type="hidden" value="${benefit }" name="benefit"/>
-																			<c:choose>
-																				<c:when test="${pageno eq i }">
-																					<input class=" btn-danger" type="submit" value="[${i }]"/>
-																				</c:when>
-																				<c:otherwise>
-																					<input class=" btn-danger" type="submit" value="${i }"/>
-																				</c:otherwise>
-																			</c:choose>
+																		<c:choose>
+																			<c:when test="${pageno eq i }">
+																				<input class=" btn-danger" type="submit" value="[${i }]"/>
+																			</c:when>
+																			<c:otherwise>
+																				<input class=" btn-danger" type="submit" value="${i }"/>
+																			</c:otherwise>
+																		</c:choose>
 																	</form>
 																</c:forEach>
 															<form action="benefit.do" method="post">
@@ -255,7 +257,7 @@
 													    			</div>
 													    			<div class="rlistgroup" >
 													    				<div class="rlistgroup2">
-													    				<a href="bdetail.jsp?bseq=${bten1.bseq }">${bten1.shopname }</a><br>
+													    				<a href="bdetail.do?bseq=${bten1.bseq }">${bten1.shopname }</a><br>
 													    				${bten1.brate } 원 할인
 													    				</div>
 													    			</div>
@@ -272,7 +274,7 @@
 													    			</div>
 													    			<div class="rlistgroup" >
 													    				<div class="rlistgroup2">
-														    				<a href="bdetail.jsp?bseq=${bten1.bseq }">${bten1.shopname }</a><br>
+														    				<a href="bdetail.do?bseq=${bten1.bseq }">${bten1.shopname }</a><br>
 														    				${bten1.brate } % 할인
 													    				</div>
 													    			</div>
@@ -612,6 +614,9 @@
 	       			<input type="hidden" name="benefit" id="benefit"/>
 	       			<input type="hidden" name="cards" id="card1"/>
 	       			<input type="hidden" name="cards" id="card2"/>
+	       			<input type="hidden" name="lx" id="lx" value="${lx }"/>
+	       			<input type="hidden" name="ly" id="ly" value="${ly }"/>
+	       			<input type="hidden" name="mzoom" id="mzoom" value="${mzoom }"/>
 					<input type="submit" id="_btnSearch" class="btn btn-default" value="검색"/>
           		</form>
          	 </div>
@@ -634,9 +639,8 @@ $("#_btnSearch").click(function(){
 		alert("카드 2개 와 혜택 1개를 꼭 선택 해주세요!");
 		return false;
 	}
-	
-	
 });
+
 </script>
 
 <c:if test="${!empty searchBtnClick }">

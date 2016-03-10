@@ -38,11 +38,12 @@ public class BenefitController {
 	@RequestMapping(value = "benefit.do", 
 			method = {RequestMethod.GET, RequestMethod.POST}) 
 	public String benefit(Model model, String[] cards, String benefit, String userchk,
-			String pageno, String pageno1, String pageno2 , String act0, String act1, String act2) throws Exception{		
+			String pageno, String pageno1, String pageno2 , String act0, String act1, String act2,
+			String lx, String ly, String mzoom) throws Exception{		
 		logger.info("Welcome BenefitController benefit! "+ new Date());
 		
 		String[] active = {"active", null, null};
-		
+
 		active[0] = act0;
 		active[1] = act1;
 		active[2] = act2;
@@ -118,6 +119,9 @@ public class BenefitController {
 			int total_page = total_record / page_per_record_cnt + (total_record % page_per_record_cnt>0 ? 1 : 0);
 			int total_page1 = total_record1 / page_per_record_cnt + (total_record1 % page_per_record_cnt>0 ? 1 : 0);
 			int total_page2 = total_record2 / page_per_record_cnt + (total_record2 % page_per_record_cnt>0 ? 1 : 0);
+			model.addAttribute("total_page", total_page);
+			model.addAttribute("total_page1", total_page1);
+			model.addAttribute("total_page2", total_page2);
 			
 			if(i_pageno>total_page){
 				i_pageno = total_page;
@@ -290,6 +294,14 @@ public class BenefitController {
 		model.addAttribute("act0", act0);
 		model.addAttribute("act1", act1);
 		model.addAttribute("act2", act2);
+		System.out.println("----------");
+		System.out.println("lx = " + lx);
+		System.out.println("ly = " + ly);
+		model.addAttribute("lx", lx);
+		model.addAttribute("ly", ly);
+		System.out.println("mzoom = " + mzoom);
+		System.out.println("----------");
+		model.addAttribute("mzoom", mzoom);
 		
 		return "benefit.tiles";
 	}

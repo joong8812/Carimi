@@ -8,7 +8,7 @@
 		var myLatlng;
 		// 사용자 입력을 위해 변수 1개 추가
 		var geocoder; 
-		var marker;
+		var marker, initZoom;
 		var contentString, infowindow;
 		var startLat = null;
 		var startLng = null;
@@ -17,41 +17,44 @@
 
 		function initialize() {
 			
+			var nlocationx = document.getElementById("lx").value;
+			var nlocationy = document.getElementById("ly").value;
+			var mzoom = document.getElementById("mzoom").value;
+
 			geocoder = new google.maps.Geocoder();
-			myLatlng = new google.maps.LatLng(37.552067, 126.937251);
+			if(nlocationx === "" && nlocationy === ""){
+				myLatlng = new google.maps.LatLng(37.552067, 126.937251);
+			} else {
+				myLatlng = new google.maps.LatLng(nlocationy*1, nlocationx*1);
+			}
+			if(mzoom === ""){
+				initZoom = 16;
+			} else {
+				initZoom = mzoom*1;
+			}
 //			navigator.geolocation.getCurrentPosition(showPosition);
 			var myOptions = {
-				zoom: 16,
+				zoom: initZoom,
 				center: myLatlng,
 				scaleControl:true,
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
 			map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
 			
-			
-//			places = new google.maps.places.PlacesService(map);
-//			google.maps.event.addListener(map, 'tilesloaded', tilesLoaded);
-//			autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
-//			google.maps.event.addListener(autocomplete, 'place_changed', function () {
-//				showSelectedPlace();
-//			});
-//			
-//			usersearch = new google.maps.places.Autocomplete(document.getElementById('usersearch'));
-//			google.maps.event.addListener(usersearch, 'place_changed', function () {
-//				showSelectedPlace();
-//			});
-//			
 			//------------------------------------------------마커 관련
 			
 			 google.maps.event.addListener(map, 'click', function(event) {
 				    placeMarker(event.latLng);
 				  });
 			 
-//			contentString = '<div style="width:100px;height:50px;">쌍용교육센터</div>';
-//			infowindow = new google.maps.InfoWindow({
-//				content: contentString,
-//				size: new google.maps.Size(200,100)
-//			});
+			 google.maps.event.addListener(map, 'zoom_changed', function() {
+				    zoomLevel = map.getZoom();
+				    if (zoomLevel == 0) {
+				      map.setZoom(10);
+				    }
+				    document.getElementById("mzoom").value = zoomLevel;
+				    map.setCenter(new google.maps.LatLng(getLocation_y(), getLocation_x()));
+				  }); 
 			
 			marker = new google.maps.Marker({
 				position: myLatlng,
@@ -64,12 +67,6 @@
 			//infowindow.open(map, marker);
 			google.maps.event.addListener(marker, 'click', function() {
 				infowindow.open(map, marker);
-
-//				if (marker.getAnimation() != null) {
-//					marker.setAnimation(null);
-//				} else {
-//					marker.setAnimation(google.maps.Animation.BOUNCE);
-//				}
 			});
 
 			marker.setMap(map);
@@ -79,10 +76,13 @@
 			  geocodePosition(myLatlng);
 	
 			  movingMouse();
-  
 		}
 
 
+		//if you click on map, place marker :)
+		function placeMarker(location) {
+			addMark(location.lat(), location.lng());
+		}
 		
 		function geocodePosition(pos) {
 			  geocoder.geocode({
@@ -179,21 +179,14 @@
 		        'address': address  
 		    }, function(results, status){  
 		        if (status == google.maps.GeocoderStatus.OK) {  
-		            map.setCenter(results[0].geometry.location);  
+		            
 		            addMark(results[0].geometry.location.lat(), results[0].geometry.location.lng());  
 		                          
 		            for(var i in  results){  
-//		                r.innerHTML += results[i].formatted_address+',';  
 		                var li = document.createElement('li');  
 		                var a = document.createElement('a');  
-//		                a.href = "javascript:addMark(" + marker.position.lat() + ", " + marker.position.lng() + ");";
-//		                a.href = "javascript:addMark(" + results[i].geometry.position.Pa + 
-//		                ", " + results[i].geometry.position.Qa + ");";  
-//		                a.href = "javascript:clickAddress(" + results[i].geometry.location + ", "
-//		                		+ results[i].formatted_address + ");";
 		                a.href = "javascript:resultMarker("+ results[i].geometry.location.lat() + ", " +
-		                			results[i].geometry.location.lng() + ");";
-		                
+		                			results[i].geometry.location.lng() + ");";		                
 		                a.innerHTML = results[i].formatted_address;
 		                
 		                li.appendChild(a);  
@@ -207,7 +200,6 @@
 		
 		// 사용자 검색을 위한 코드 추가 
 		function resultMarker(lat, lng){
-			map.setCenter(new google.maps.LatLng(lat, lng));
 			addMark(lat, lng);
 		}
 		  
@@ -225,6 +217,12 @@
 				infowindow.open(map, marker);
 			});
 		    
+		    map.setCenter(new google.maps.LatLng(lat, lng));  
+		    
+		    document.getElementById("lx").value = lng;
+			document.getElementById("ly").value = lat;
+			document.getElementById("mzoom").value = map.getZoom();
+		    
 		  //Update current position info.
 		    updateMarkerPosition(new google.maps.LatLng(lat, lng));
 		    geocodePosition(new google.maps.LatLng(lat, lng));
@@ -238,6 +236,7 @@
 		    if (navigator.geolocation) {
 		    	alert("현재 위치로 이동합니다.");
 		        navigator.geolocation.getCurrentPosition(showPosition);
+			    document.getElementById("mzoom").value = map.getZoom();
 		    } else {
 		        alert("Geolocation is not supported by this browser.");
 		    }
@@ -248,6 +247,8 @@
 			myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 			map.setCenter(myLatlng);
 			addMark(position.coords.latitude, position.coords.longitude);
+			 document.getElementById("lx").value = position.coords.longitude;
+			 document.getElementById("ly").value = position.coords.latitude;
 		}
 		
 		function movingMouse(){
@@ -264,10 +265,10 @@
 			  google.maps.event.addListener(marker, 'dragend', function() {
 			    //updateMarkerStatus('Drag ended');
 			    geocodePosition(marker.getPosition());
+			    map.setCenter(new google.maps.LatLng(getLocation_y(), getLocation_x()));
 			    
 			    document.getElementById("lx").value = getLocation_x();
 			    document.getElementById("ly").value = getLocation_y();
-
 			  });
 		}
 		
@@ -354,6 +355,14 @@
 				infowindows[i].close(map, markers[i]);
 			}
 		}
+		
+		function getLocation_x(){
+			return marker.getPosition().lng();
+		}
+		function getLocation_y(){
+			return marker.getPosition().lat();
+		}
+
 		
 		//--------------------------------------------
 

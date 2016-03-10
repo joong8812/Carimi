@@ -6,7 +6,6 @@
 <fmt:requestEncoding value="utf-8"/>
     
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
-<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/CarimiS/js/savelocation.js"></script>
 
 <style>
@@ -31,7 +30,10 @@
 <div class="container">
 	<div class="widget">
     	<div class="widget-header"> <i class="icon-camera-retro "></i>
-              <h3>가맹점 등록</h3>
+			<h3>가맹점 등록</h3>
+				<div style="float:right; padding-right:10px">
+  			  		<button class="btn" onclick="javascript:history.go(-1);">목록보기</button>
+				</div>
        </div>
    	   <div class="widget-content">
     		<form class="form-horizontal" id="_regiForm" name="_regiForm">

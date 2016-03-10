@@ -88,6 +88,7 @@ function movingMouse(){
 	  google.maps.event.addListener(marker, 'dragend', function() {
 	    //updateMarkerStatus('Drag ended');
 	    geocodePosition(marker.getPosition());
+	    
 	    document.getElementById("lx").value = getLocation_x();
 	    document.getElementById("ly").value = getLocation_y();
 	  });
