@@ -644,14 +644,7 @@
 				
 			</div> <!-- /login-fields -->
 			<div class="login-actions">
-				
-				<span class="login-checkbox" style="margin-top: 32px;">
-					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
-					<label class="choice" for="Field">Keep me signed in</label>
-				</span>
-									
-				<button type="button" onclick="checkfield()" class="button btn btn-success btn-large">Sign In</button>
-				
+				<button style="width:100%" type="button" onclick="checkfield()" class="button btn btn-success btn-large">Sign In</button>				
 			</div> 
 			
 		</form>

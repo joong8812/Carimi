@@ -12,7 +12,7 @@
 	<div class="main-inner">
 		<div class="container">
 	      <div class="row">
-	 	      	<div class="span10">      		
+	 	      	<div class="span12">      		
 	           		<div class="widget "> 
 
 

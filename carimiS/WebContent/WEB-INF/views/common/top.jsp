@@ -44,7 +44,7 @@
 		                            class="icon-user"></i> 로그인해주세요 <b class="caret"></b></a>
 		            	<ul class="dropdown-menu">
 		             		<li><a href="login.do">Login</a></li>
-		            		<li><a href="signup.do">Sign Up</a></li>
+		            		<li><a href="sign.do">Sign Up</a></li>
 			            </ul>
 		    	    </li>
 				</c:otherwise>

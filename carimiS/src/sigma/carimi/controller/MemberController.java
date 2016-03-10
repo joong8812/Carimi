@@ -78,9 +78,15 @@ public class MemberController {
 		model.addAttribute("prevurl", prevurl);
 		return "login.tiles";
 	}
+	@RequestMapping(value = "sign.do", 
+			method = {RequestMethod.GET, RequestMethod.POST})
+	public String sign(Model model) {		
+		logger.info("Welcome MemberController sign! "+ new Date());
+		return "sign.tiles";
+	}
 	
 	@RequestMapping(value = "signup.do", 
-			method = RequestMethod.GET)
+			method = {RequestMethod.GET, RequestMethod.POST})
 	public String signup(Model model) {		
 		logger.info("Welcome MemberController signup! "+ new Date());
 		return "signup.tiles";

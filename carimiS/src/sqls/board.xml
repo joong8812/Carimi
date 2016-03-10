@@ -24,4 +24,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		parameterType="int">
 		delete from card_board where bseq=#{bseq} 
 	 </delete>
+	 <update id="readcount"
+	 	parameterType="int">
+	 	UPDATE CARD_BOARD SET BREAD = BREAD + 1 WHERE BSEQ=#{bseq};
+	 </update>
  </mapper>

@@ -14,6 +14,9 @@
 <definition name="login.tiles" template="/WEB-INF/views/login/login.jsp">
 </definition>
 
+<definition name="sign.tiles" template="/WEB-INF/views/login/sign.jsp">
+</definition>
+
 <definition name="signup.tiles" template="/WEB-INF/views/login/signup.jsp">
 </definition>
 

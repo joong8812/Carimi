@@ -66,8 +66,8 @@ action="boardupload.jsp" method="post" enctype="multipart/form-data">
 										
 										<div class="control-group">											
 											<label class="control-label" for="lastname">Content</label>
-											<div class="controls">
-													${boardDetail.bcontent }
+											<div class="controls" >
+												<pre>	${boardDetail.bcontent }</pre>
 											
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
@@ -76,15 +76,18 @@ action="boardupload.jsp" method="post" enctype="multipart/form-data">
 										<div class="control-group">											
 											<label class="control-label" for="coupon">Coupon</label>
 											<div class="controls">
+											
 											<c:choose>
-								   			<c:when test="${empty board.bfilename}">
-												쿠폰없음
+								   			<c:when test="${empty boardDetail.bfilename}">
+												<pre>쿠폰없음</pre>
 											</c:when>
 											<c:otherwise>
-											<input class="btn btn-info btn-default " type="button" name="btnDown" value="다운로드"
-											onclick="javascript:document.location.href='/Carimi/filedown?bfilename=${board.bfilename }&pdsid=${board.bseq }'"/>
+											
+											<pre><input class="btn btn-info btn-default " type="button" name="btnDown" value="다운로드"
+											onclick="javascript:document.location.href='/Carimi/filedown?bfilename=${board.bfilename }&pdsid=${board.bseq }'"/></pre>
 											</c:otherwise>
 										</c:choose>
+										
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 									<div class="form-actions">
