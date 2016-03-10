@@ -36,6 +36,9 @@ public class ExpenditureController {
 			logger.info("Welcome ExpenditureController explist! "+ new Date());
 			
 			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
+			if(mem==null){
+				return "explist.tiles";
+			}
 			String id = mem.getId();
 			System.out.println("id="+id);
 						

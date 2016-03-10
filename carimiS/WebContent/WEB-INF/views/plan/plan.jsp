@@ -22,6 +22,13 @@
 		src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script
 		src='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.js'></script>
+		
+	<c:if test="${empty login}">
+		<script>
+			alert("로그인 해야 가능한 서비스 입니다");
+			location.href="login.do";
+		</script>
+	</c:if>
 
 
 		<div class="main-inner">

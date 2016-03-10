@@ -32,8 +32,9 @@ public class planController {
 		
 		memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
 		if(mem == null) {
-			
+			return "plan.tiles";
 		}
+		
 		String id = mem.getId();
 		pdto.setId(id);
 
