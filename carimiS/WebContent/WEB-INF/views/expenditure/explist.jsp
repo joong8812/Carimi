@@ -109,7 +109,7 @@
 											<td>${exp.scategory}</td>
 											<td>${exp.shopname}</td>
 											<td>${exp.price}</td>
-											<td style="text-align:center"><a href="expupdate.do?seq=${exp.seq}"><i class=icon-edit></i></a></td>
+											<td style="text-align:center"><a href="expupdate.do?seq=${exp.seq}&month=${month}&year=${year}"><i class=icon-edit></i></a></td>
 											<td style="text-align:center"><a href="explistD.do?seq=${exp.seq}"><i class=icon-remove></i></a></td>
 										</tr>
 									</c:forEach>

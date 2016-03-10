@@ -40,7 +40,7 @@
 						<div>
 							<form action="monlist.do" method="post">
 								<script>
-									alert("btn 눌림");
+
 								</script>
 								<input type="submit" value="월간 보고서" id="submit"> <input
 									type="hidden" id="id" name="id" value='${id}'> <input

@@ -25,6 +25,11 @@ SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE #{wdates}||'%'
 SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE #{wdates}||'%' AND MONEYTYPE != 'cash'
 </select>
 
+<!-- e3list *select-->
+<select id="e3List" resultType="sigma.carimi.model.expenditureDTO">
+SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE #{wdates}||'%'
+</select>
+
 <!-- explistU *update-->
 <update id="updexp" parameterType="sigma.carimi.model.expenditureDTO" >
 UPDATE CARD_EXPENSE SET SEQ = #{seq}, ID = #{id}, WDATE = #{wdate}, MONEYTYPE = #{moneytype}, PRICE = #{price}, SHOPNAME = #{shopname}, BCATEGORY = #{bcategory}, SCATEGORY = #{scategory} WHERE SEQ = #{seq}

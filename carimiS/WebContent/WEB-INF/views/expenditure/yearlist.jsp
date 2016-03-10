@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <fmt:requestEncoding value="UTF-8" />
@@ -12,62 +12,6 @@
 	href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
 	
 <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-
-<style>
-#header {
-	background-color: white;
-	color: black;
-	text-align: left;
-	padding: 5px;
-	height: 80px;
-	border: 1px solid #F2E6D9;
-}
-
-#wrapperDiv {
-	width: 100%;
-	height: 570px;
-	background-color: #ffffff;
-}
-
-#nav {
-	line-height: 20px;
-	background-color: #F2E6D9;
-	margin: 10px;
-	width: 230px;
-	height: 570px;
-	float: left;
-	padding: 20px;
-}
-
-.center {
-	width: 44%;
-	padding: 5px;
-	height: 50px;
-	float: left;
-}
-
-.center div div div {border:none; background:none;}
-.center div div {border:none; background:none;}
-.ui-datepicker-title {margin:0 2.3em 0 0 !important; text-align:left !important;}
-
-#submit {
-	background-color: #b6e2ed;
-}
-.ui-datepicker-calendar,.ui-datepicker-month {
-	display: none;
-}
-div.ui-datepicker-header 
-a.ui-datepicker-prev,div.ui-datepicker-header 
-a.ui-datepicker-next
-{
-    display: none;  
-}
-div.ui-widget-header,div.ui-helper-clearfix,div.ui-widget-content{
-background-color:white;
-}
-</style>
-
-
 
 <div class="main-inner">
 
@@ -91,6 +35,9 @@ background-color:white;
 	
 							<form action="exp_1.do" method="post">
 								<input type="submit" value="지출 분석" id="submit">
+							</form>
+							<form action="explist.do" method="post">
+								<input type="submit" value="지출목록 보기" id="submit">
 							</form>
 							<form action="exp_write.do" method="post">
 								<input type="submit" value="지출내역 쓰기" id="submit">

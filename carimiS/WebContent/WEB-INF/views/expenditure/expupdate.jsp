@@ -73,7 +73,7 @@
 						<div>
 							<form action="monlist.do" method="post">
 								<script>
-									alert("btn 눌림");
+
 								</script>
 								<input type="submit" value="월간 보고서" id="submit"> <input
 									type="hidden" id="id" name="id" value='${id}'> <input
@@ -170,7 +170,10 @@
 										size="50" /></td>
 								</tr>
 								<tr>
-									<td colspan="2" align="center"><input type="submit"
+									<td colspan="2" align="center">
+									<input type = "hidden" name = "year" value = '${year}'>
+									<input type = "hidden" name = "month" value = '${month}'>
+									<input type="submit"
 										style="font-size: 9pt; height: 25; width: 40;" value="수정하기"
 										id="submit" /></td>
 								</tr>

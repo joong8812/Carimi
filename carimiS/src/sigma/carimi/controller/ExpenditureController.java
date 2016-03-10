@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -53,7 +54,6 @@ public class ExpenditureController {
 				int_month = Integer.parseInt(month);
 			}
 			
-			// 占쏙옙占쏙옙 0占싱거놂옙 13占쏙옙  占쏙옙占�  처占쏙옙占쏙옙占쌍깍옙
 			if (int_month < 1) {
 				int_month = 12;
 				int_year--;
@@ -63,8 +63,7 @@ public class ExpenditureController {
 				int_year++;
 			}
 
-			String sf = String.format("%d占쏙옙 %d占쏙옙", int_year, int_month);
-			String sf2 = String.format("%d占쏙옙 ", int_year);
+			String sf = String.format("%d년 %d월", int_year, int_month);
 			String syear = Integer.toString(int_year);
 			String smonth = Integer.toString(int_month);
 			
@@ -125,10 +124,9 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // 첫占쏙옙占쏙옙 占쏙옙占쏙옙
+			cal.set(year, month - 1, 1); 
 
-			String sf = String.format("%d占쏙옙 %d占쏙옙", year, month);
-			String sf2 = String.format("%d占쏙옙 ", year);
+			String sf = String.format("%d년 %d월", year, month);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -178,19 +176,22 @@ public class ExpenditureController {
 			
 			boolean isS = expenditureService.addexp(new expenditureDTO(id,wdate,moneytype,bcategory,scategory,shopname,price));
 			model.addAttribute("isS", isS);
-			
+
 			return "redirect:/explist.do";
 		}
 		
 		@RequestMapping(value="explistD.do", method={RequestMethod.GET,RequestMethod.POST})
-		public String explistD(Model model, HttpSession session, HttpServletRequest request, int seq)throws Exception{
+		public void explistD(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response, int seq)throws Exception{
 			logger.info("Welcome ExpenditureController explistD! "+ new Date());
 		
 			System.out.println("delete_seq="+ seq);
 			boolean isS = expenditureService.deleteexp(seq);
 			model.addAttribute("isS", isS);
 			
-			return "redirect:/explist.do";
+			String url = request.getHeader("referer");
+		      System.out.println(url);
+
+		         response.sendRedirect(url);
 		}
 		
 		@RequestMapping(value="expupdate.do", method={RequestMethod.GET,RequestMethod.POST})
@@ -205,7 +206,8 @@ public class ExpenditureController {
 			cal.set(Calendar.DATE, 1);
 			String eyear = request.getParameter("year");
 			String emonth = request.getParameter("month");
-			System.out.println(emonth);
+			System.out.println("expupdate.do eyear="+eyear);
+			System.out.println("expupdate.do emonth="+emonth);
 
 			int year = cal.get(Calendar.YEAR);
 			System.out.println("year="+year);
@@ -228,10 +230,9 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // 첫占쏙옙占쏙옙 占쏙옙占쏙옙
+			cal.set(year, month - 1, 1); 
 
-			String sf = String.format("%d占쏙옙 %d占쏙옙", year, month);
-			String sf2 = String.format("%d占쏙옙 ", year);
+			String sf = String.format("%d년 %d월", year, month);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -262,7 +263,7 @@ public class ExpenditureController {
 		}
 		
 		@RequestMapping(value="updsave.do", method={RequestMethod.POST})
-		public String updsave(expenditureDTO edto, Model model, HttpSession session, HttpServletRequest request)throws Exception{
+		public void updsave(expenditureDTO edto, Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response)throws Exception{
 			logger.info("Welcome ExpenditureController updsave! "+ new Date());
 		
 			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
@@ -274,6 +275,11 @@ public class ExpenditureController {
 			String moneytype = request.getParameter("moneytype");
 			String bcategory = request.getParameter("bcategory");
 			String scategory = "";
+			String wyear = request.getParameter("year");
+			String wmonth = request.getParameter("month");
+			System.out.println("updsave.to wyear="+wyear);
+			System.out.println("updsave.to wmonth="+wmonth);
+			
 			if (request.getParameter("sca") != null && !request.getParameter("sca").equals("")) {
 				scategory = request.getParameter("sca");
 			}			
@@ -294,7 +300,10 @@ public class ExpenditureController {
 			boolean isS = expenditureService.updexp(edto2);
 			model.addAttribute("isS", isS);
 			
-			return "redirect:/explist.do";
+			String url = "http://localhost:8090/CarimiS/explist.do?year="+wyear+"&month="+wmonth;
+		      System.out.println(url);
+
+		         response.sendRedirect(url);
 		}
 		
 		@RequestMapping(value="listsearch.do", method={RequestMethod.GET,RequestMethod.POST})
@@ -316,7 +325,6 @@ public class ExpenditureController {
 				int_month = Integer.parseInt(month);
 			}
 			
-			// 占쏙옙占쏙옙 0占싱거놂옙 13占쏙옙  占쏙옙占�  처占쏙옙占쏙옙占쌍깍옙
 			if (int_month < 1) {
 				int_month = 12;
 				int_year--;
@@ -326,8 +334,7 @@ public class ExpenditureController {
 				int_year++;
 			}
 			
-			String sf = String.format("%d占쏙옙 %d占쏙옙", int_year, int_month);
-			String sf2 = String.format("%d占쏙옙 ", int_year);
+			String sf = String.format("%d년 %d월", int_year, int_month);
 			String syear = Integer.toString(int_year);
 			String smonth = Integer.toString(int_month);
 			
@@ -394,10 +401,9 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // 첫占쏙옙占쏙옙 占쏙옙占쏙옙
+			cal.set(year, month - 1, 1); 
 
-			String sf = String.format("%d占쏙옙 %d占쏙옙", year, month);
-			String sf2 = String.format("%d占쏙옙 ", year);
+			String sf = String.format("%d년 %d월", year, month);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -454,9 +460,9 @@ public class ExpenditureController {
 					expenditureDTO exp = e1list.get(j);
 					String date = e1list.get(j).getWdate().substring(0, 7);
 					if (date.equals(sf3)) {
-						sumprice[j][0] = exp.getBcategory(); // bcategory 占싱몌옙占쏙옙 
+						sumprice[j][0] = exp.getBcategory(); // bcategory 
 						sumprice[j][1] = Integer.toString(exp.getPrice()); // price
-						sumscate[j][0] = exp.getScategory(); // scategory 占싱몌옙占쏙옙
+						sumscate[j][0] = exp.getScategory(); // scategory 
 						sumscate[j][1] = Integer.toString(exp.getPrice()); // price       
 
 						if (sumprice[j][0].equals("oil")) {
@@ -490,7 +496,7 @@ public class ExpenditureController {
 						}
 					}
 				}
-				// sumscate 占쏙옙占쏙옙 占쏙옙占쏙옙占� 占쏙옙占쏙옙카占쌓곤옙占쏙옙 占싱몌옙占쏙옙占쏙옙 占쏙옙占쏙옙占싹울옙 占쏙옙占쏙옙 占쏙옙占싹댐옙 占싱몌옙占쏙옙 占쏙옙占쏙옙 占쌓몌옙占쏙옙 占쏙옙占쏙옙占쏙옙 占싱아놂옙占쏙옙 sumres占쏙옙 占쏙옙占쏙옙占쌔댐옙.  
+
 				double sumres = 0;
 				double sumfast = 0;
 				double sumliq = 0;
@@ -656,10 +662,10 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // 첫占쏙옙占쏙옙 占쏙옙占쏙옙
+			cal.set(year, month - 1, 1); 
 
-			String sf = String.format("%d占쏙옙 %d占쏙옙", year, month);
-			String sf2 = String.format("%d占쏙옙 ", year);
+			String sf = String.format("%d년 %d월", year, month);
+			String sf2 = String.format("%d년 ", year);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -710,7 +716,7 @@ public class ExpenditureController {
 			expenditureDTO exp = e1list.get(j);
 			String date = e1list.get(j).getWdate().substring(0, 7);
 
-				sumprice[j][0] = exp.getBcategory(); // bcategory 占싱몌옙占쏙옙 
+				sumprice[j][0] = exp.getBcategory(); // bcategory 
 				sumprice[j][1] = Integer.toString(exp.getPrice()); // price
 				
 				if (date.equals(sf3)&&sumprice[j][0].equals("oil")) {
@@ -923,6 +929,215 @@ public class ExpenditureController {
 		return "exp2.tiles";
 	}
 		
+		@RequestMapping(value="exp_3.do", method={RequestMethod.GET,RequestMethod.POST})
+		public String exp_3(Model model, HttpSession session, HttpServletRequest request)throws Exception{
+			logger.info("Welcome ExpenditureController exp_3! "+ new Date());
+		
+			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
+			String id = mem.getId();
+			System.out.println("id="+id);
+			
+			Calendar cal = Calendar.getInstance();
+			cal.set(Calendar.DATE, 1);
+			String eyear = request.getParameter("year");
+			String emonth = request.getParameter("month");
+			System.out.println(emonth);
+
+			int year = cal.get(Calendar.YEAR);
+			System.out.println("year="+year);
+			if (!(eyear == null || eyear.trim().equalsIgnoreCase(""))) {
+				year = Integer.parseInt(eyear);
+			}
+			System.out.println("year2="+year);
+			int month = cal.get(Calendar.MONTH) + 1;
+			System.out.println("month="+month);
+			if (!(emonth == null || emonth.trim().equalsIgnoreCase(""))) {
+				month = Integer.parseInt(emonth);
+			}
+			System.out.println("month2="+month);
+			if (month < 1) {
+				month = 12;
+				year--;
+			}
+			if (month > 12) {
+				month = 1;
+				year++;
+			}
+
+			cal.set(year, month - 1, 1); 
+
+			String sf = String.format("%d년 %d월", year, month);
+			String sf2 = String.format("%d년 ", year);
+			String syear = Integer.toString(year);
+			String smonth = Integer.toString(month);
+			if (smonth.length() != 2) {
+				smonth = "0" + smonth;
+			}
+			String sf3 = syear + "-" + smonth;
+			System.out.println("sf3="+sf3);
+			String sleft = String.format("/CarimiS/exp_3.do?year=%d&month=%d", year, month - 1);
+			String sright = String.format("/CarimiS/exp_3.do?year=%d&month=%d", year, month + 1);
+			
+			expenditureDTO edto = new expenditureDTO();
+			edto.setId(id);
+			edto.setWdates(sf3);
+			
+			List<expenditureDTO> e3list = expenditureService.e3List(edto);
+			
+			model.addAttribute("e3list", e3list);
+			model.addAttribute("sf", sf);
+			model.addAttribute("sleft", sleft);
+			model.addAttribute("sright", sright);
+			model.addAttribute("sf3", sf3);
+			model.addAttribute("id", id);
+			
+			int categorylist;
+			String[][] sumprice = null;
+			
+			categorylist = e3list.size();
+			sumprice = new String[categorylist][2];
+			
+			int sum1=0;
+			int sum2=0;
+			int sum3=0;
+			int sum4=0;
+			int sum5=0;
+			int sum6=0;
+			int sum7=0;
+			int sum8=0;
+			int sum9=0;
+			int sum10=0;
+			int sum11=0;
+			int sum12=0;
+			int sum13=0;
+			int sum14=0;
+			int sum15=0;
+			int sum16=0;
+			int sum17=0;
+			int sum18=0;
+			int sum19=0;
+			int sum20=0;
+			int sum21=0;
+			int sum22=0;
+			int sum23=0;
+			int sum24=0;
+			int sum25=0;
+			int sum26=0;
+			int sum27=0;
+			int sum28=0;
+			int sum29=0;
+			int sum30=0;
+			int sum31=0;
+			 
+				for (int j = 0; j < e3list.size(); j++) {
+					expenditureDTO exp = e3list.get(j);
+					String date = e3list.get(j).getWdate().substring(0, 7);
+
+				sumprice[j][0] = exp.getWdate();
+				sumprice[j][1] = Integer.toString(exp.getPrice());
+				
+					if (date.equals(sf3)) {
+						if (sumprice[j][0].substring(8, 10).equals("01")) {
+							sum1 = sum1 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("02")) {
+							sum2 = sum2 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("03")) {
+							sum3 = sum3 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("04")) {
+							sum4 = sum4 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("05")) {
+							sum5 = sum5 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("06")) {
+							sum6 = sum6 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("07")) {
+							sum7 = sum7 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("08")) {
+							sum8 = sum8 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("09")) {
+							sum9 = sum9 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("10")) {
+							sum10 = sum10 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("11")) {
+							sum11 = sum11 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("12")) {
+							sum12 = sum12 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("13")) {
+							sum13 = sum13 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("14")) {
+							sum14 = sum14 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("15")) {
+							sum15 = sum15 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("16")) {
+							sum16 = sum16 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("17")) {
+							sum17 = sum17 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("18")) {
+							sum18 = sum18 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("19")) {
+							sum19 = sum19 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("20")) {
+							sum20 = sum20 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("21")) {
+							sum21 = sum21 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("22")) {
+							sum22 = sum22 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("23")) {
+							sum23 = sum23 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("24")) {
+							sum24 = sum24 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("25")) {
+							sum25 = sum25 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("26")) {
+							sum26 = sum26 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("27")) {
+							sum27 = sum27 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("28")) {
+							sum28 = sum28 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("29")) {
+							sum29 = sum29 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("30")) {
+							sum30 = sum30 + Integer.parseInt(sumprice[j][1]);
+						} else if (sumprice[j][0].substring(8, 10).equals("31")) {
+							sum31 = sum31 + Integer.parseInt(sumprice[j][1]);
+						}
+					}
+				}
+				
+				model.addAttribute("sum1", sum1);
+				model.addAttribute("sum2", sum2);
+				model.addAttribute("sum3", sum3);
+				model.addAttribute("sum4", sum4);
+				model.addAttribute("sum5", sum5);
+				model.addAttribute("sum6", sum6);
+				model.addAttribute("sum7", sum7);
+				model.addAttribute("sum8", sum8);
+				model.addAttribute("sum9", sum9);
+				model.addAttribute("sum10", sum10);
+				model.addAttribute("sum11", sum11);
+				model.addAttribute("sum12", sum12);
+				model.addAttribute("sum13", sum13);
+				model.addAttribute("sum14", sum14);
+				model.addAttribute("sum15", sum15);
+				model.addAttribute("sum16", sum16);
+				model.addAttribute("sum17", sum17);
+				model.addAttribute("sum18", sum18);
+				model.addAttribute("sum19", sum19);
+				model.addAttribute("sum20", sum20);
+				model.addAttribute("sum21", sum21);
+				model.addAttribute("sum22", sum22);
+				model.addAttribute("sum23", sum23);
+				model.addAttribute("sum24", sum24);
+				model.addAttribute("sum25", sum25);
+				model.addAttribute("sum26", sum26);
+				model.addAttribute("sum27", sum27);
+				model.addAttribute("sum28", sum28);
+				model.addAttribute("sum29", sum29);
+				model.addAttribute("sum30", sum30);
+				model.addAttribute("sum31", sum31);
+				
+			return "exp3.tiles";
+		}
+		
 		@RequestMapping(value="yearlist.do", method={RequestMethod.GET,RequestMethod.POST})
 		public String yearlist(Model model, HttpServletRequest request, String syear, String smonth)throws Exception{
 			logger.info("Welcome ExpenditureController yearlist! "+ new Date());
@@ -974,7 +1189,7 @@ public class ExpenditureController {
 
 			cal.set(year, month - 1, 1);
 
-//			String sf = String.format("%d년 %d월", year, month);
+			String sf = String.format("%d년 %d월", year, month);
 			String sf2 = String.format("%d년 ", year);
 
 

@@ -88,7 +88,7 @@
 					<div class="widget-content pull-left">
 						<div>
 							<form action="monlist.do" method="post">
-							<script>alert("btn 눌림");</script>
+
 								<input type="submit" value="월간 보고서" id="submit">
 								<input type="hidden" id="id" name="id" value='${id}'>
 								<input type="hidden" id="wdate" name="wdate" value='${wdate}'>
@@ -223,11 +223,17 @@
 								</tr>
 
 								<tr>
-									<td colspan="2" align="center"><input type="hidden"
+								
+									<td colspan="2" align="center">
+
+									<input type="hidden"
 										id="sca" name="sca" /> <input type="submit"
 										style="font-size: 9pt; height: 25; width: 40;" value="지출내역 입력"
-										id="submit" /></td>
+										id="submit" />
+										</td>
+										
 								</tr>
+								
 							</table>
 
 						</form>

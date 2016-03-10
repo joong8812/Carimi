@@ -60,6 +60,12 @@ public class expenditureServiceImple implements expenditureService{
 			
 			return expenditureDAO.e2List(edto);
 		}
+		
+		@Override
+		public List<expenditureDTO> e3List(expenditureDTO edto) throws Exception {
+			
+			return expenditureDAO.e3List(edto);
+		}
 
 		@Override
 		public List<expenditureDTO> yearList(expenditureDTO edto, int year) throws Exception {

@@ -143,7 +143,7 @@ System.out.println("(double)(sumres/sumeou)*100= " + (double)(sumres/sumeou)*100
 												type : 'pie'
 											},
 											title : {
-												text : 'Monthly Consumption. February, 2016'
+												text : ''
 											},
 											plotOptions : {
 												series : {
@@ -280,12 +280,12 @@ System.out.println("(double)(sumres/sumeou)*100= " + (double)(sumres/sumeou)*100
 							<script src="https://code.highcharts.com/modules/data.js"></script>
 							<script src="https://code.highcharts.com/modules/drilldown.js"></script>
 
-							<div id="container"
-								style="min-width: 480px; width: 100%; max-width: 100%; height: 500px;"></div>
+							<div id="container" style="min-width: 480px; width:100%; max-width:100%; height: 500px;"></div>
 						</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 
