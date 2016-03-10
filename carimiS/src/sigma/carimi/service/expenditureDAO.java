@@ -102,5 +102,12 @@ public class expenditureDAO {
 			return edtolist;
 		}
 
+		@SuppressWarnings("unchecked")
+		public List<expenditureDTO> e2List(expenditureDTO edto) {
+			List<expenditureDTO> e2list = new ArrayList<expenditureDTO>();
+			e2list = sqlsession.selectList(ns + "e2List", edto);
+			return e2list;
+		}
+
 
 }

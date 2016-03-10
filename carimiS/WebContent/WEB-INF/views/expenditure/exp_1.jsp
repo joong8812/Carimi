@@ -15,8 +15,7 @@
 
 <fmt:requestEncoding value="UTF-8" />
 
-<%!
-	int sumoil = 0;
+<%!int sumoil = 0;
 	int sumshop = 0;
 	int summart = 0;
 	int sumcvs = 0;
@@ -35,8 +34,7 @@
 	int categorylist;
 	String[][] sumprice = null;
 
-	expenditureDTO exp;
-	%>
+	expenditureDTO exp;%>
 
 
 <div class="main-inner">
@@ -119,147 +117,90 @@
 
 								<c:if test="${not empty e1list}">
 
-
-<%-- 										<%
-											if (${sumoil} != 0) {
-										%> --%>
+									<c:if test="${sumoil != 0}">
 										<tr>
 											<td><i class="icon-tint"></i> OIL</td>
 											<td>${sumoil}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (sumshop != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${sumshop != 0}">
 										<tr>
 											<td><i class="icon-gift"></i> SHOPPING</td>
 											<td>${sumshop}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (summart != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${summart != 0}">
 										<tr>
 											<td><i class="icon-shopping-cart"></i> MART</td>
 											<td>${summart}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (sumcvs != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${sumcvs != 0}">
 										<tr>
 											<td><i class="icon-barcode"></i> CVS</td>
 											<td>${sumcvs}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (sumeou != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${sumeou != 0}">
 										<tr>
 											<td><i class="icon-leaf"></i> EAT-OUT</td>
 											<td>${sumeou}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (sumcafe != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${sumcafe != 0}">
 										<tr>
 											<td><i class="icon-glass"></i> CAFE/BAKERY</td>
 											<td>${sumcafe}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (summovie != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${summovie != 0}">
 										<tr>
 											<td><i class="icon-film"></i> MOVIE</td>
 											<td>${summovie}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (sumtra != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${sumtra != 0}">
 										<tr>
 											<td><i class="icon-truck"></i> TRANSPORTATION</td>
 											<td>${sumtra}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (sumtel != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${sumtel != 0}">
 										<tr>
 											<td><i class="icon-phone"></i> TELECOM</td>
 											<td>${sumtel}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (sumedu != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${sumedu != 0}">
 										<tr>
 											<td><i class="icon-book"></i> EDUCATION</td>
 											<td>${sumedu}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (sumcul != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${sumcul != 0}">
 										<tr>
 											<td><i class="icon-picture"></i> CULTURE</td>
 											<td>${sumcul}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (sumlei != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${sumlei != 0}">
 										<tr>
 											<td><i class="icon-plane"></i> LEISURE</td>
 											<td>${sumlei}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (summedi != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${summedi != 0}">
 										<tr>
 											<td><i class="icon-user-md"></i> MEDICAL</td>
 											<td>${summedi}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%>
-										<%
-											if (sumbea != 0) {
-										%> --%>
+									</c:if>
+									<c:if test="${sumbea != 0}">
 										<tr>
 											<td><i class="icon-magic"></i> BEAUTY</td>
 											<td>${sumbea}원</td>
 										</tr>
-<%-- 										<%
-											}
-										%> --%>
+									</c:if>
 
 								</c:if>
 							<tbody>

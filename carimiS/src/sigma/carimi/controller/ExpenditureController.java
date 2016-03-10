@@ -53,7 +53,7 @@ public class ExpenditureController {
 				int_month = Integer.parseInt(month);
 			}
 			
-			// ���� 0�̰ų� 13��  ���  ó�����ֱ�
+			// 占쏙옙占쏙옙 0占싱거놂옙 13占쏙옙  占쏙옙占�  처占쏙옙占쏙옙占쌍깍옙
 			if (int_month < 1) {
 				int_month = 12;
 				int_year--;
@@ -63,8 +63,8 @@ public class ExpenditureController {
 				int_year++;
 			}
 
-			String sf = String.format("%d�� %d��", int_year, int_month);
-			String sf2 = String.format("%d�� ", int_year);
+			String sf = String.format("%d占쏙옙 %d占쏙옙", int_year, int_month);
+			String sf2 = String.format("%d占쏙옙 ", int_year);
 			String syear = Integer.toString(int_year);
 			String smonth = Integer.toString(int_month);
 			
@@ -125,10 +125,10 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // ù���� ����
+			cal.set(year, month - 1, 1); // 첫占쏙옙占쏙옙 占쏙옙占쏙옙
 
-			String sf = String.format("%d�� %d��", year, month);
-			String sf2 = String.format("%d�� ", year);
+			String sf = String.format("%d占쏙옙 %d占쏙옙", year, month);
+			String sf2 = String.format("%d占쏙옙 ", year);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -228,10 +228,10 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // ù���� ����
+			cal.set(year, month - 1, 1); // 첫占쏙옙占쏙옙 占쏙옙占쏙옙
 
-			String sf = String.format("%d�� %d��", year, month);
-			String sf2 = String.format("%d�� ", year);
+			String sf = String.format("%d占쏙옙 %d占쏙옙", year, month);
+			String sf2 = String.format("%d占쏙옙 ", year);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -316,7 +316,7 @@ public class ExpenditureController {
 				int_month = Integer.parseInt(month);
 			}
 			
-			// ���� 0�̰ų� 13��  ���  ó�����ֱ�
+			// 占쏙옙占쏙옙 0占싱거놂옙 13占쏙옙  占쏙옙占�  처占쏙옙占쏙옙占쌍깍옙
 			if (int_month < 1) {
 				int_month = 12;
 				int_year--;
@@ -326,8 +326,8 @@ public class ExpenditureController {
 				int_year++;
 			}
 			
-			String sf = String.format("%d�� %d��", int_year, int_month);
-			String sf2 = String.format("%d�� ", int_year);
+			String sf = String.format("%d占쏙옙 %d占쏙옙", int_year, int_month);
+			String sf2 = String.format("%d占쏙옙 ", int_year);
 			String syear = Integer.toString(int_year);
 			String smonth = Integer.toString(int_month);
 			
@@ -394,10 +394,10 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // ù���� ����
+			cal.set(year, month - 1, 1); // 첫占쏙옙占쏙옙 占쏙옙占쏙옙
 
-			String sf = String.format("%d�� %d��", year, month);
-			String sf2 = String.format("%d�� ", year);
+			String sf = String.format("%d占쏙옙 %d占쏙옙", year, month);
+			String sf2 = String.format("%d占쏙옙 ", year);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -454,9 +454,9 @@ public class ExpenditureController {
 					expenditureDTO exp = e1list.get(j);
 					String date = e1list.get(j).getWdate().substring(0, 7);
 					if (date.equals(sf3)) {
-						sumprice[j][0] = exp.getBcategory(); // bcategory �̸��� 
+						sumprice[j][0] = exp.getBcategory(); // bcategory 占싱몌옙占쏙옙 
 						sumprice[j][1] = Integer.toString(exp.getPrice()); // price
-						sumscate[j][0] = exp.getScategory(); // scategory �̸���
+						sumscate[j][0] = exp.getScategory(); // scategory 占싱몌옙占쏙옙
 						sumscate[j][1] = Integer.toString(exp.getPrice()); // price       
 
 						if (sumprice[j][0].equals("oil")) {
@@ -490,7 +490,7 @@ public class ExpenditureController {
 						}
 					}
 				}
-				// sumscate ���� ����� ����ī�װ��� �̸����� �����Ͽ� ���� ���ϴ� �̸��� ���� �׸��� ������ �̾Ƴ��� sumres�� �����ش�.  
+				// sumscate 占쏙옙占쏙옙 占쏙옙占쏙옙占� 占쏙옙占쏙옙카占쌓곤옙占쏙옙 占싱몌옙占쏙옙占쏙옙 占쏙옙占쏙옙占싹울옙 占쏙옙占쏙옙 占쏙옙占싹댐옙 占싱몌옙占쏙옙 占쏙옙占쏙옙 占쌓몌옙占쏙옙 占쏙옙占쏙옙占쏙옙 占싱아놂옙占쏙옙 sumres占쏙옙 占쏙옙占쏙옙占쌔댐옙.  
 				double sumres = 0;
 				double sumfast = 0;
 				double sumliq = 0;
@@ -656,10 +656,10 @@ public class ExpenditureController {
 				year++;
 			}
 
-			cal.set(year, month - 1, 1); // ù���� ����
+			cal.set(year, month - 1, 1); // 첫占쏙옙占쏙옙 占쏙옙占쏙옙
 
-			String sf = String.format("%d�� %d��", year, month);
-			String sf2 = String.format("%d�� ", year);
+			String sf = String.format("%d占쏙옙 %d占쏙옙", year, month);
+			String sf2 = String.format("%d占쏙옙 ", year);
 			String syear = Integer.toString(year);
 			String smonth = Integer.toString(month);
 			if (smonth.length() != 2) {
@@ -710,7 +710,7 @@ public class ExpenditureController {
 			expenditureDTO exp = e1list.get(j);
 			String date = e1list.get(j).getWdate().substring(0, 7);
 
-				sumprice[j][0] = exp.getBcategory(); // bcategory �̸��� 
+				sumprice[j][0] = exp.getBcategory(); // bcategory 占싱몌옙占쏙옙 
 				sumprice[j][1] = Integer.toString(exp.getPrice()); // price
 				
 				if (date.equals(sf3)&&sumprice[j][0].equals("oil")) {
@@ -764,6 +764,165 @@ public class ExpenditureController {
 			return "exp1.tiles";
 		}
 		
+		@RequestMapping(value="exp_2.do", method={RequestMethod.GET,RequestMethod.POST})
+		public String exp_2(Model model, HttpSession session, HttpServletRequest request)throws Exception{
+			logger.info("Welcome ExpenditureController exp_2! "+ new Date());
+		
+			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
+			String id = mem.getId();
+			System.out.println("id="+id);
+			
+			Calendar cal = Calendar.getInstance();
+			cal.set(Calendar.DATE, 1);
+			String eyear = request.getParameter("year");
+			String emonth = request.getParameter("month");
+			System.out.println(emonth);
+
+			int year = cal.get(Calendar.YEAR);
+			System.out.println("year="+year);
+			if (!(eyear == null || eyear.trim().equalsIgnoreCase(""))) {
+				year = Integer.parseInt(eyear);
+			}
+			System.out.println("year2="+year);
+			int month = cal.get(Calendar.MONTH) + 1;
+			System.out.println("month="+month);
+			if (!(emonth == null || emonth.trim().equalsIgnoreCase(""))) {
+				month = Integer.parseInt(emonth);
+			}
+			System.out.println("month2="+month);
+			if (month < 1) {
+				month = 12;
+				year--;
+			}
+			if (month > 12) {
+				month = 1;
+				year++;
+			}
+
+			cal.set(year, month - 1, 1); // 첫날로 셋팅
+
+			String sf = String.format("%d년 %d월", year, month);
+			String sf2 = String.format("%d년 ", year);
+			String syear = Integer.toString(year);
+			String smonth = Integer.toString(month);
+			if (smonth.length() != 2) {
+				smonth = "0" + smonth;
+			}
+			String sf3 = syear + "-" + smonth;
+			System.out.println("sf3="+sf3);
+			String sleft = String.format("/CarimiS/exp_2.do?year=%d&month=%d", year, month - 1);
+			String sright = String.format("/CarimiS/exp_2.do?year=%d&month=%d", year, month + 1);
+			
+			expenditureDTO edto = new expenditureDTO();
+			edto.setId(id);
+			edto.setWdates(sf3);
+			
+			List<expenditureDTO> e2list = expenditureService.e2List(edto);
+			
+			model.addAttribute("e2list", e2list);
+			model.addAttribute("sf", sf);
+			model.addAttribute("sleft", sleft);
+			model.addAttribute("sright", sright);
+			model.addAttribute("sf3", sf3);
+			model.addAttribute("id", id);
+			
+			int categorylist;
+			String[][] sumprice = null;
+			
+			categorylist = e2list.size();
+			sumprice = new String[categorylist][2];
+			
+			int sumshin1=0;
+			int sumshin2=0;
+			int sumguk1=0;
+			int sumguk2=0;
+			int sumuri1=0;
+			int sumuri2=0;
+			int sumha1=0;
+			int sumha2=0;
+			int sumlot1=0;
+			int sumlot2=0;
+			int sumsam1=0;
+			int sumsam2=0;
+			int sumnong1=0;
+			int sumnong2=0;
+			int sumgi1=0;
+			int sumgi2=0;
+			int sumci1=0;
+			int sumci2=0;
+			
+		for (int j = 0; j < e2list.size(); j++) {
+			
+			expenditureDTO exp = e2list.get(j);
+			String date = e2list.get(j).getWdate().substring(0, 7);
+			
+			sumprice[j][0] = exp.getMoneytype();
+			sumprice[j][1] = Integer.toString(exp.getPrice());
+
+			if (date.equals(sf3)) {
+
+				if (sumprice[j][0].equals("shin1")) {
+					sumshin1 = sumshin1 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("shin2")) {
+					sumshin2 = sumshin2 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("guk1")) {
+					sumguk1 = sumguk1 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("guk2")) {
+					sumguk2 = sumguk2 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("uri1")) {
+					sumuri1 = sumuri1 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("uri2")) {
+					sumuri2 = sumuri2 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("ha1")) {
+					sumha1 = sumha1 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("ha2")) {
+					sumha2 = sumha2 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("lot1")) {
+					sumlot1 = sumlot1 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("lot2")) {
+					sumlot2 = sumlot2 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("sam1")) {
+					sumsam1 = sumsam1 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("sam2")) {
+					sumsam2 = sumsam2 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("nong1")) {
+					sumnong1 = sumnong1 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("nong2")) {
+					sumnong2 = sumnong2 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("gi1")) {
+					sumgi1 = sumgi1 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("gi2")) {
+					sumgi2 = sumgi2 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("ci1")) {
+					sumci1 = sumci1 + Integer.parseInt(sumprice[j][1]);
+				} else if (sumprice[j][0].equals("ci2")) {
+					sumci2 = sumci2 + Integer.parseInt(sumprice[j][1]);
+				}
+			}
+		}
+
+		model.addAttribute("sumshin1", sumshin1);
+		model.addAttribute("sumshin2", sumshin2);
+		model.addAttribute("sumguk1", sumguk1);
+		model.addAttribute("sumguk2", sumguk2);
+		model.addAttribute("sumuri1", sumuri1);
+		model.addAttribute("sumuri2", sumuri2);
+		model.addAttribute("sumha1", sumha1);
+		model.addAttribute("sumha2", sumha2);
+		model.addAttribute("sumlot1", sumlot1);
+		model.addAttribute("sumlot2", sumlot2);
+		model.addAttribute("sumsam1", sumsam1);
+		model.addAttribute("sumsam2", sumsam2);
+		model.addAttribute("sumnong1", sumnong1);
+		model.addAttribute("sumnong2", sumnong2);
+		model.addAttribute("sumgi1", sumgi1);
+		model.addAttribute("sumgi2", sumgi2);
+		model.addAttribute("sumci1", sumci1);
+		model.addAttribute("sumci2", sumci2);
+
+		return "exp2.tiles";
+	}
+		
 		@RequestMapping(value="yearlist.do", method={RequestMethod.GET,RequestMethod.POST})
 		public String yearlist(Model model, HttpServletRequest request, String syear, String smonth)throws Exception{
 			logger.info("Welcome ExpenditureController yearlist! "+ new Date());
@@ -816,8 +975,8 @@ public class ExpenditureController {
 
 			cal.set(year, month - 1, 1);
 
-			String sf = String.format("%d년 %d월", year, month);
-			String sf2 = String.format("%d년 ", year);
+			String sf = String.format("%d�뀈 %d�썡", year, month);
+			String sf2 = String.format("%d�뀈 ", year);
 
 			String sleft = String.format("yearlist.do?syear=%d", year - 1);
 			String sright = String.format("yearlist.do?syear=%d", year + 1);

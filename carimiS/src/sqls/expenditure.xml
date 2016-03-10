@@ -21,8 +21,8 @@ SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE #{wdates}||'%'
 </select>
 
 <!-- e2list *select-->
-<select id="e2list" resultType="sigma.carimi.model.expenditureDTO">
-SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE '#{wdate}%' AND MONEYTYPE != 'cash'
+<select id="e2List" resultType="sigma.carimi.model.expenditureDTO">
+SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE #{wdates}||'%' AND MONEYTYPE != 'cash'
 </select>
 
 <!-- explistU *update-->
