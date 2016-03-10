@@ -104,8 +104,7 @@
 						</table>
 
 						<table class="table table-striped table-bordered pull-right">
-							<col width="10%" />
-							<col width="10%" />
+
 							<tr>
 								<th>TYPE</th>
 								<th>PRICE</th>

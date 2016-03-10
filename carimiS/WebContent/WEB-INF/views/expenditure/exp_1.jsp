@@ -68,6 +68,7 @@
 							</form>
 						</div>
 					</div>
+					
 					<div class="widget-content pull-left" style="margin-left: 25px;">
 						<table>
 							<col width=52%>
@@ -99,10 +100,8 @@
 							</tr>
 						</table>
 
-
 						<table class="table table-striped table-bordered pull-right">
-							<col width="10%" />
-							<col width="10%" />
+
 							<tr>
 								<th>BCATEGORY</th>
 								<th>PRICE</th>

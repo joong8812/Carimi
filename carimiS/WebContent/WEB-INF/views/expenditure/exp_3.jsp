@@ -219,7 +219,7 @@ expenditureDTO exp;
 			<script src="https://code.highcharts.com/highcharts.js"></script>
 			<script src="https://code.highcharts.com/modules/exporting.js"></script>
 		
-			<div id="container" style="min-width: 480px; width:100%; max-width:100%; height: 500px;"></div>
+	<div id="container" style="min-width: 400px; width:85%; max-width:85%; height: 500px;"></div>
 
 					</div>
 				</div>
