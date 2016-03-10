@@ -14,6 +14,8 @@ import sigma.carimi.service.*;
 import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 @Controller
 public class planController {
@@ -29,6 +31,9 @@ public class planController {
 	public String plan(planDTO pdto, Model model, HttpServletRequest request) throws Exception {
 		
 		memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
+		if(mem == null) {
+			
+		}
 		String id = mem.getId();
 		pdto.setId(id);
 
@@ -42,10 +47,10 @@ public class planController {
 		String mc1 = mem.getMycard1();
 		String mc2 = mem.getMycard2();
 		String[] e_card = {"shin1", "shin2", "guk1", "guk2", "uri1", "uri2", "ha1", "ha2", "lot1", "lot2", "sam1",
-				"sam2", "nong1", "nong2", "gi1", "gi2", "ci1", "ci2", "¹Ìº¸À¯"};
-		String[] k_card = {"½ÅÇÑ LOVE", "½ÅÇÑ Tasty", "±¹¹Î ±Âµ¥ÀÌ", "±¹¹Î ´Ù´ã", "¿ì¸® ´Ù¸ğ¾ÆÇÒÀÎ", "¿ì¸® °¡µæÇÑÇÒÀÎ", "ÇÏ³ª Pop", "ÇÏ³ª 2X ¾ËÆÄ",
-				"·Ôµ¥ DC ½´ÇÁ¸²", "·Ôµ¥ DC ½º¸¶Æ®", "»ï¼º SÅ¬·¡½º", "»ï¼º 2 v2", "³óÇù ½º¸¶Æ¼", "³óÇù Take5", "±â¾÷ IBK Hi", "±â¾÷ Âü!ÁÁÀºÄ£±¸",
-				"¾¾Æ¼ ¸ÖÆ¼ÇÃ·¯½º", "¾¾Æ¼ Å¬¸®¾î", "¹Ìº¸À¯"};
+				"sam2", "nong1", "nong2", "gi1", "gi2", "ci1", "ci2", "ë¯¸ë³´ìœ "};
+		String[] k_card = {"ì‹ í•œ LOVE", "ì‹ í•œ Tasty", "êµ­ë¯¼ êµ¿ë°ì´", "êµ­ë¯¼ ë‹¤ë‹´", "ìš°ë¦¬ ë‹¤ëª¨ì•„í• ì¸", "ìš°ë¦¬ ê°€ë“í•œí• ì¸", "í•˜ë‚˜ Pop", "í•˜ë‚˜ 2X ì•ŒíŒŒ",
+				"ë¡¯ë° DC ìŠˆí”„ë¦¼", "ë¡¯ë° DC ìŠ¤ë§ˆíŠ¸", "ì‚¼ì„± Sí´ë˜ìŠ¤", "ì‚¼ì„± 2 v2", "ë†í˜‘ ìŠ¤ë§ˆí‹°", "ë†í˜‘ Take5", "ê¸°ì—… IBK Hi", "ê¸°ì—… ì°¸!ì¢‹ì€ì¹œêµ¬",
+				"ì”¨í‹° ë©€í‹°í”ŒëŸ¬ìŠ¤", "ì”¨í‹° í´ë¦¬ì–´", "ë¯¸ë³´ìœ "};
 		String mycard1 = "";
 		String mc1_shot = "";
 		String mycard2 = "";

@@ -13,12 +13,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
-
 <body>
 	<script src="//fb.me/react-with-addons-0.14.3.js"></script>
 	<script src="//fb.me/react-dom-0.14.3.js"></script>
-	<!-- <link href='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.css' rel='stylesheet' /> -->
-	<!-- <link href='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.print.css' rel='stylesheet' media='print' /> -->
 	<script
 		src='//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
 	<script
