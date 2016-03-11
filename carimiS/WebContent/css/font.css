@@ -13,10 +13,12 @@ input,
 text,
 select,
 textarea,
+script,
 p,
 body{
 	font-family: fcocoa;
-	font-weight: light;
+	font-weight: normal;
+	font-size:15px;
 	margin: 0;
 
 }

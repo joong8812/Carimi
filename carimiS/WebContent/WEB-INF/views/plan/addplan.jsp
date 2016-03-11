@@ -117,10 +117,10 @@
 			<div class="span12">
 			<div class="widget">
 				<div class="widget-header">
-					<i class="icon-calendar"></i><h3>DAILY SCHEDULE WRITE</h3>
+					<i class="icon-calendar"></i><h3>일정 쓰기</h3>
 					<div class="pull-right">
 								<h3>
-									<a href=plan.do>LIST</a>
+									<a href=plan.do>목록</a>
 								</h3>
 							</div>
 				</div>

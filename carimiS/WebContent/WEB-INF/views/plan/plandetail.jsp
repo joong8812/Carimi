@@ -36,12 +36,12 @@
 				
 					<div class="widget-header">
 						<i class="icon-calendar"></i>
-						<h3>DAILY SCHEDULE INFOMATION</h3>				
+						<h3>일정 자세히 보기</h3>				
 							<div class="pull-right">
 								<h3>
-									<a href='updplan.do?pseq=${detailplan.pseq}'>MODIFY</a>&nbsp;
-									<a href='delplan.do?pseq=${detailplan.pseq}'>DELETE</a>&nbsp;
-									<a href=plan.do>LIST</a>
+									<a href='updplan.do?pseq=${detailplan.pseq}'>수정</a>&nbsp;
+									<a href='delplan.do?pseq=${detailplan.pseq}'>삭제</a>&nbsp;
+									<a href=plan.do>목록</a>
 							
 								</h3>
 							</div>

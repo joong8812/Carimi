@@ -2,6 +2,9 @@
 <%@ page import="sigma.carimi.service.*"%>
 <%@page import="sigma.carimi.model.*"%>
 <%@page import="java.util.Calendar"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<fmt:requestEncoding value="utf-8"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +13,6 @@
 			location.href="plan.do";
 		</script>
 </c:if>
-
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/Carimi/js/savelocation.js"></script>
@@ -125,12 +127,12 @@
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-calendar"></i>
-					<h3>DAILY SCHEDULE MODIFY</h3>
+					<h3>일정 수정하기</h3>
 					<div class="pull-right">
 								<h3>
-									<a href='addplan.do'>WRITE</a>&nbsp;
-									<a href='delplan.do?pseq=${detailplan.pseq}'>DELETE</a>&nbsp;
-									<a href=plan.do>LIST</a>
+									<a href='addplan.do'>쓰기</a>&nbsp;
+									<a href='delplan.do?pseq=${detailplan.pseq}'>삭제</a>&nbsp;
+									<a href=plan.do>목록</a>
 							
 								</h3>
 							</div>

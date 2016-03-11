@@ -41,7 +41,7 @@
 						<div class="widget">
 						<div class="widget-header">
 							<i class="icon-calendar"></i>
-							<h3>DAILY SCHEDULE INFOMATION</h3>
+							<h3>일정관리 & 카드행사</h3>
 						</div>
 						<div class="widget-body">
 							<div id=calendar></div>
@@ -51,7 +51,7 @@
 					<div class="span3">
 						
 						<div class="widget-header"> <i class="icon-credit-card"></i>
-              				<h3>CARD LIST</h3>
+              				<h3>내 카드 목록</h3>
             			</div>
             			<div class="widget-content">
 						<table class="table table-striped table-bordered">
