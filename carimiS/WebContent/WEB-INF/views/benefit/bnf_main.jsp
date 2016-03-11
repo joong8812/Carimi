@@ -7,9 +7,10 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 <script src="<%=request.getContextPath()%>/js/search.js"></script> 
 <script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
- 
+
 
 <style>
+
 #map_canvas{
 	width: 100%;
 	height: 400px;
@@ -73,7 +74,7 @@
 				<div class="pull-right" style="background-color:; ">
 					<div  style="background-color:; ">
 						<input class="" type="text" size="10px" id="address" placeholder="위치검색">
-						<button type="button" class="btn btn-default btn-sm" style="margin-bottom:10px"
+						<button type="button" class="btn btn-default btn-sm nps" style="margin-bottom:10px"
 						onclick="codeAddress()">확인</button>
 					</div >
 				</div>

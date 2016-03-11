@@ -1,0 +1,12 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+.nps{font-family: 'Nanum Pen Script', serif;}
+.jhs{font-family: 'Jeju Hallasan', serif;}
+.ntskr{font-family: 'Noto Sans KR', sans-serif;}
+.ngt{font-family: 'Nanum Gothic', serif;};
+
+body{
+	font-family: 'Nanum Gothic', serif;
+}

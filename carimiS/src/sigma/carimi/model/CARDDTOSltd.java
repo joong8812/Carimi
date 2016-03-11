@@ -3,17 +3,17 @@ package sigma.carimi.model;
 public class CARDDTOSltd {
 	private String CARDNAME;
 	private String IMG;
-	private int sel1;
-	private int sel2;
-	private int sel3;
-	private int sel4;
-	private int sel5;
-	private int sel6;
+	private double sel1;
+	private double sel2;
+	private double sel3;
+	private double sel4;
+	private double sel5;
+	private double sel6;
 	private int sel7;
 	private int sel8;
 	
 	public CARDDTOSltd(){}
-	public CARDDTOSltd(String CARDNAME, String IMG, int sel1, int sel2, int sel3, int sel4, int sel5,int sel6,int sel7, int sel8)
+	public CARDDTOSltd(String CARDNAME, String IMG, double sel1, double sel2, double sel3, double sel4, double sel5,double sel6,int sel7, int sel8)
 	{
 		super();
 		
@@ -40,40 +40,41 @@ public class CARDDTOSltd {
 	public void setIMG(String IMG) {
 		this.IMG = IMG;
 	}
-	public int getSel1() {
+	
+	public double getSel1() {
 		return sel1;
 	}
-	public void setSel1(int sel1) {
+	public void setSel1(double sel1) {
 		this.sel1 = sel1;
 	}
-	public int getSel2() {
+	public double getSel2() {
 		return sel2;
 	}
-	public void setSel2(int sel2) {
+	public void setSel2(double sel2) {
 		this.sel2 = sel2;
 	}
-	public int getSel3() {
+	public double getSel3() {
 		return sel3;
 	}
-	public void setSel3(int sel3) {
+	public void setSel3(double sel3) {
 		this.sel3 = sel3;
 	}
-	public int getSel4() {
+	public double getSel4() {
 		return sel4;
 	}
-	public void setSel4(int sel4) {
+	public void setSel4(double sel4) {
 		this.sel4 = sel4;
 	}
-	public int getSel5() {
+	public double getSel5() {
 		return sel5;
 	}
-	public void setSel5(int sel5) {
+	public void setSel5(double sel5) {
 		this.sel5 = sel5;
 	}
-	public int getSel6() {
+	public double getSel6() {
 		return sel6;
 	}
-	public void setSel6(int sel6) {
+	public void setSel6(double sel6) {
 		this.sel6 = sel6;
 	}
 	public int getSel7() {

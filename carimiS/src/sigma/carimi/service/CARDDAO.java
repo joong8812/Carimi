@@ -1,11 +1,14 @@
 package sigma.carimi.service;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import sigma.carimi.help.cardHelp;
 import sigma.carimi.model.CARDDTO;
 import sigma.carimi.model.CARDDTOCond;
 import sigma.carimi.model.CARDDTOSltd;
@@ -41,9 +44,30 @@ public class CARDDAO {
 		List<CARDDTOSltd> CARDinformList= new ArrayList<CARDDTOSltd>();
 		//List<CARDDTO> allList = (List<CARDDTO>)sqlsession.selectList(ns + "getCARDinformList", ccond);
 		
-//		List<CARDDTO> allList = (List<CARDDTO>)sqlsession.selectList(ns + "getCARDinformList", ccond);
 		List<CARDDTO> allList = (List<CARDDTO>)sqlsession.selectList(ns + "getCARDinformList", ccond);
+
 		System.out.println("전체 카드리스트 사이즈가 얼마나 될까???? : "+ allList.size());
+		
+		cardHelp ch = new cardHelp();
+
+		for(int i=0; i<allList.size(); i++){
+			CARDDTO cddto = allList.get(i);
+			CARDDTOSltd cdsltd = new CARDDTOSltd();
+			cdsltd.setCARDNAME(cddto.getCARDNAME());
+			cdsltd.setIMG(cddto.getIMG());
+			cdsltd.setSel1(ch.getCardBenefit(cddto, ccond.getC11()));
+			cdsltd.setSel2(ch.getCardBenefit(cddto, ccond.getC12()));
+			cdsltd.setSel3(ch.getCardBenefit(cddto, ccond.getC13()));
+			cdsltd.setSel4(ch.getCardBenefit(cddto, ccond.getC14()));
+			cdsltd.setSel5(ch.getCardBenefit(cddto, ccond.getC15()));
+			cdsltd.setSel6(ch.getCardBenefit(cddto, ccond.getC16()));
+			cdsltd.setSel7(cddto.getAFEE());
+			cdsltd.setSel8(cddto.getCRIT());
+			CARDinformList.add(cdsltd);
+		}
+		for(int i=0; i<CARDinformList.size(); i++){
+			System.out.println(CARDinformList.get(i).toString());
+		}
 		
 //		
 //		String[][] cols = new String[15][2];
@@ -84,9 +108,6 @@ public class CARDDAO {
 //		}
 //		//CARDNAME IMG Sel1 Sel2 Sel3 Sel4 Sel5 Sel6 Sel7(afee) Sel8(crit)
 //		
-		for(int i=0;i<allList.size();i++){
-			System.out.println(allList.get(i).toString());
-		}
 		return CARDinformList;
 	}
 }

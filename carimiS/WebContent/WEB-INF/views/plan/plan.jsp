@@ -11,6 +11,10 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/textcss.css">
+<style>
+
+</style>
 </head>
 
 <body>
@@ -140,7 +144,7 @@
 		eventArray.push(eventObject);
 	</script>
 	</c:forEach>
-
+	
 	<%
 		Calendar cal = Calendar.getInstance();
 		String year = Integer.toString(cal.get(Calendar.YEAR));

@@ -66,20 +66,20 @@ public class AnalysisController {
 		ccond.setC15(c15);
 		ccond.setC16(c16);
 		
-		System.out.println("ÄÁÆ®·Ñ·¯ : " +a1);
-		System.out.println("ÄÁÆ®·Ñ·¯ : " +b1);
-		System.out.println("ÄÁÆ®·Ñ·¯ : " +c11);
-		System.out.println("ÄÁÆ®·Ñ·¯ : " +c12);
-		System.out.println("ÄÁÆ®·Ñ·¯ : " +c13);
-		System.out.println("ÄÁÆ®·Ñ·¯ : " +c14);
-		System.out.println("ÄÁÆ®·Ñ·¯ : " +c15);
-		System.out.println("ÄÁÆ®·Ñ·¯ : " +c16);
+		System.out.println("ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ : " +a1);
+		System.out.println("ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ : " +b1);
+		System.out.println("ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ : " +c11);
+		System.out.println("ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ : " +c12);
+		System.out.println("ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ : " +c13);
+		System.out.println("ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ : " +c14);
+		System.out.println("ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ : " +c15);
+		System.out.println("ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ : " +c16);
 		
 		
 		//List<CARDDTOSltd> CARDinformList;
 		//CARDinformList = CARDService.getCARDinformList(c1[0],c1[1],c1[2],c1[3],c1[4],c1[5],a1,b1);
 		List<CARDDTOSltd> CARDinformList = CARDService.getCARDinformList(ccond);
-		// ¾Æ·¡ÀÇ °ÍµéÀº CARDinformList·ÎºÎÅÍ ¹Þ¾Æ ¿Â °ÍÀ» member¸¦ ÅëÇØ µî·ÏÇÏ¿© analysisAF¿¡¼­ »ç¿ë ÇÒ ¼ö ÀÖ°Ô ÇØÁØ´Ù.
+		// ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½Íµï¿½ï¿½ï¿½ CARDinformListï¿½Îºï¿½ï¿½ï¿½ ï¿½Þ¾ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ memberï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ analysisAFï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½Ø´ï¿½.
 		
 		
 //		model.addAttribute("CARDNAME", CARDNAME);
@@ -93,7 +93,13 @@ public class AnalysisController {
 //		model.addAttribute("sel7",sel7);
 //		model.addAttribute("sel8",sel8);
 		
-		System.out.println(" ¿©±â´Â analysis controller!!! list " + CARDinformList.get(0));
+		System.out.println(" ï¿½ï¿½ï¿½ï¿½ï¿½ analysis controller!!! list " + CARDinformList.get(0));
+		int arr[][] = new int[1][2];
+		arr[0][0] = 1;
+		arr[0][1] = 2;
+		
+		model.addAttribute("cinfolist", CARDinformList);
+		model.addAttribute("arr", arr);
 		
 		return "analysisAF.tiles";
 	}

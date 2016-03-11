@@ -57,7 +57,7 @@
 </definition>
 
 <definition name="analysisAF.tiles" extends="main.tiles">
-	<put-attribute name="content" value="/WEB-INF/views/analysis/analysisAF.jsp" />
+	<put-attribute name="content" value="/WEB-INF/views/analysis/test.jsp" />
 </definition>
 
 <definition name="boardlist.tiles" extends="main.tiles">

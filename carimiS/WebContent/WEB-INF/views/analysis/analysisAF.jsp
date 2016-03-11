@@ -101,16 +101,7 @@
 </head>
 
 <body bgcolor="white">
-	${CARDNAME}<br>
-	${IMG}<br>
-	${Sel1}<br>
-	${Sel2}<br>
-	${Sel3}<br>
-	${Sel4}<br>
-	${Sel5}<br>
-	${Sel6}<br>
-	${Sel7}<br>
-	${Sel8}
+	
 
 
 	<!-- ##### ##### ##### ##### ##### analysisAF FROM CARIMI2 ##### ##### ##### ##### ##### -->
@@ -947,7 +938,7 @@
 										
 										for(int i=0;i<CARDinformList.size();i++){
 											CARDDTOSltd cards = CARDinformList.get(i);
-											sort5[i][0] = cards.getSel7();						//혜택정보:sort1[0][0]
+											sort5[i][0] = (double)cards.getSel7();						//혜택정보:sort1[0][0]
 											sort5[i][1] = 1000*cards.getSel7()/cards.getSel1();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
 											sort5[i][2] = i+0.0;									//인덱스:sort1[0][2]
 										}
@@ -1074,7 +1065,7 @@
 										
 										for(int i=0;i<CARDinformList.size();i++){
 											CARDDTOSltd cards = CARDinformList.get(i);
-											sort6[i][0] = cards.getSel8();						//혜택정보:sort1[0][0]
+											sort6[i][0] = (double)cards.getSel8();						//혜택정보:sort1[0][0]
 											sort6[i][1] = 1000*cards.getSel8()/cards.getSel1();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
 											sort6[i][2] = i+0.0;									//인덱스:sort1[0][2]
 										}
