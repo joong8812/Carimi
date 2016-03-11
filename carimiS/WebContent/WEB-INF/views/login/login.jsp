@@ -19,7 +19,9 @@
     
 <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css">
 <link href="<%=request.getContextPath()%>/css/pages/signin.css" rel="stylesheet" type="text/css">
-
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>
+		
+		<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.cookie.js"></script>
 </head>
 
 <body>
@@ -98,11 +100,12 @@
 			<div class="login-actions">
 				
 				<span class="login-checkbox" style="margin-top: 32px;">
-					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
-					<label class="choice" for="Field" >Keep me signed in</label>
+					<input id="saveid" name="saveid" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+					<label class="choice" for="saveid" >Save ID</label>
 				</span>
-				<input type="hidden" name="prevurl" value="${prevurl }">									
-				<button onclick="checkfield()" class="button btn btn-success btn-large">Login</button>
+				<input type="hidden" name="prevurl" value="${prevurl }">
+													
+				<button type="button" onclick="checkfield()" class="button btn btn-success btn-large">Login</button>
 				
 			</div> <!-- .actions -->
 			
@@ -125,7 +128,7 @@ function checkfield(){
 		document.login.pwd.focus();
 		exit;
 	}
-
+		document.login.submit();
 }
 </script>
 <script>
@@ -134,9 +137,34 @@ function navClick(url, gourl){
 	location.href = gourl;
 }
 </script>
+<script type="text/javascript">
+			
+			//id저장
+	        var user_id = $.cookie("user_id");
+			//alert(user_id);
+	        if (user_id != null) {
+	        	$("#id").val(user_id);
+	            $("#saveid").prop("checked",true);
+	        }			
+			
+			$("#saveid").click(function () {
+
+			    if ($(this).prop("checked")) {
+			    	//alert('cookie');
+			        if ($("#id").val() == "") {
+			            $(this).prop("checked", false);
+			            alert("아이디를 입력해 주십시요.");
+			        } else {
+			            $.cookie("user_id", $("#id").val(), { path:"/", expires:365 });//쿠키 유지 일수 지정
+			        }
+			    } else {
+			    	$.cookie("user_id", null, { path:"/", expires:-1 });
+			    }
+			});			
+
+		</script>
 
 
-<script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
 
 <script src="<%=request.getContextPath()%>/js/signin.js"></script>

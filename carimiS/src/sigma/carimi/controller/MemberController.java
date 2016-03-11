@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import sigma.carimi.model.memberDTO;
 import sigma.carimi.service.memberService;
@@ -32,8 +34,22 @@ public class MemberController {
 	@RequestMapping(value = "main.do", method = RequestMethod.GET)
 	public String main(Model model) {		
 		logger.info("Welcome MemberController main! "+ new Date());
+		  HttpServletRequest req = ((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes()).getRequest();
+
+	        String ip = req.getHeader("X-FORWARDED-FOR");
+
+	        if (ip == null)
+
+	            ip = req.getRemoteAddr();
+
+	         
+
+	        model.addAttribute("clientIP", ip);
+
+	       
 		return "main.tiles";
 	}
+	
 		
 	@RequestMapping(value = "login.do", 
 			method = RequestMethod.GET)

@@ -32,7 +32,7 @@
 				<c:when test="${!empty login.id }">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-		                   class="icon-user"></i>${login.id} 로그인중 <b class="caret"></b></a>
+		                   class="icon-user"></i>${login.id} 로그인중 ${clientIP } IP<b class="caret"></b></a>
 		              	<ul class="dropdown-menu">
 							<li><a href="logout.do">logout</a></li>
 						</ul>

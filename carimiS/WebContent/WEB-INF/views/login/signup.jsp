@@ -116,49 +116,157 @@
 
 
 
+<<<<<<< .mine
+<div class="account-container register" >
+=======
 <div class="account-container register" style="width:90%">
+>>>>>>> .r40
 	
 	<div class="content clearfix">
 		
-		<form name="addjoin" action="signupAf.do" method="post">
+		<form name="addjoin" action="signAf.do" method="post">
 		
 			<h1>Signup for Free Account</h1>			
 			
 			<div class="login-fields">
 				
 				<p>Create your free account:</p>
-				<table>
-				<tr>
-					<td><div class="field">
+				
+						
+				<div class="field">
 					<label for="usr">ID : </label>
     				<input type="text" class="login" id="id" name="id" placeholder="ID">
-    			</div></td>
-    			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    			</td>
-					<td>		
-    							지역&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<select  id="local" name="local" >
-									<option value="non">지역선택</option>
-									<option value="seoul">서울</option>	<option value="incheon">인천</option>	<option value="busan">부산</option>
-									<option value="daejeon">대전</option>	<option value="daegu">대구</option>	<option value="ulsan">울산</option>
-									<option value="gwangju">광주</option>	<option value="sejong">세종</option>	<option value="gg">경기</option>
-									<option value="gangwon">강원</option>		<option value="chungnam">충남</option>	<option value="chungbuk">충북</option>
-									<option value="jeonnam">전남</option>		<option value="jeonbuk">전북</option>	<option value="gyeongnam">경남</option>
-									<option value="gyeongbuk">경북</option>	<option value="jeju">제주</option>
-								</select>
-							</td>
-				</tr>
-				<tr>
-					<td><div class="field">
+    			</div>
+    			<div class="field">
 					<label for="pwd">Password:</label>
 					<input type="password" class="login" name="pwd" id="pwd" placeholder="Password">
-				</div></td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td> <div id="location1">
-									지역구(서울)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</div>
+				<div class="field">							
+					<label for="name">이름 : </label>
+					<input type="text" class="login" id="name" name="name" placeholder="User Name"/>
+				</div>
+				
+				<div class="field">							
+					<label for="age">나이 : </label>
+					<input type="text" class="login" id="age" name="age" placeholder="Age"/>
+				</div>
+				<div class="field">
+					<label for="email">Email : </label>
+    				<input type="text" class="form-control" name="email" id="email" placeholder="E-Mail">
+				</div>		
+				<div class="field">	
+					<p>성별</p>
+					<div class="pull-left">
+				<span class="login-checkbox">
+					<input onclick="chk_only2(this)" id="Field24" name="sex" type="checkbox" class="field login-checkbox" value="man" />
+					<label class="choice" for="Field24">남자</label>
+				</span>
+				</div>
+				<div class="pull-right">
+				<span class="login-checkbox"  >
+					<input onclick="chk_only2(this)" id="Field34" name="sex" type="checkbox" class="field login-checkbox" value="woman"/>
+					<label class="choice" for="Field34">여자</label>
+				</span>
+				</div>
+				</div>
+				<br>
+					<div class="field">
+						<p class="pull-left">보유카드1</p>
+    							<div class="pull-right">
+								<select class="form-control" id="mycard1" name="mycard1" >
+									<option>미보유</option>
+									<option value="shin1">신한1</option>
+									<option value="shin2">신한2</option>
+									<option value="guk1">국민1</option>
+									<option value="guk2">국민2</option>
+									<option value="uri1">우리1</option>
+									<option value="uri2">우리2</option>
+									<option value="ha1">하나1</option>
+									<option value="ha2">하나2</option>
+									<option value="lot1">롯데1</option>
+									<option value="lot2">롯데2</option>
+									<option value="sam1">삼성1</option>
+									<option value="sam2">삼성2</option>
+									<option value="nong1">농협1</option>
+									<option value="nong2">농협2</option>
+									<option value="gi1">기업1</option>
+									<option value="gi2">기업2</option>
+									<option value="ci1">씨티1</option>
+									<option value="ci2">씨티2</option>
+								</select>
+								</div>
+							</div>
+							<br>
+					
+							
+							<div class="field">
+								<p class="pull-left">보유카드2</p>
     							
+    							<div class="pull-right">
+								<select class="form-control" id="mycard2" name="mycard2" >
+									<option>미보유</option>
+									<option value="shin1">신한1</option>
+									<option value="shin2">신한2</option>
+									<option value="guk1">국민1</option>
+									<option value="guk2">국민2</option>
+									<option value="uri1">우리1</option>
+									<option value="uri2">우리2</option>
+									<option value="ha1">하나1</option>
+									<option value="ha2">하나2</option>
+									<option value="lot1">롯데1</option>
+									<option value="lot2">롯데2</option>
+									<option value="sam1">삼성1</option>
+									<option value="sam2">삼성2</option>
+									<option value="nong1">농협1</option>
+									<option value="nong2">농협2</option>
+									<option value="gi1">기업1</option>
+									<option value="gi2">기업2</option>
+									<option value="ci1">씨티1</option>
+									<option value="ci2">씨티2</option>
+								</select>
+								</div>
+								</div>
+    							<br>
+    							
+    							<div class="field">
+    							<p class="pull-left">직업</p>
+    							<div class="pull-right">
+								<select class="form-control" id="job" name="job" >
+									<option value="cs">회사원</option>
+									<option value="ue">무직</option>
+									<option value="svc">서비스</option>
+									<option value="std">학생</option>
+									<option value="se">자영업</option>
+									<option value="sd">군인</option>
+									<option value="po">공무원</option>
+									<option value="pf">전문직</option>
+									<option value="hw">주부</option>
+									<option value="etc">기타</option>
+								</select>
+								</div>
+					</div>
+					<br>
+					
+					<div class="field">
+						<p class="pull-left">지역</p>
+						<div class="pull-right">
+					<select  id="local" name="local" >
+						<option value="non">지역선택</option>
+						<option value="seoul">서울</option>	<option value="incheon">인천</option>	<option value="busan">부산</option>
+						<option value="daejeon">대전</option>	<option value="daegu">대구</option>	<option value="ulsan">울산</option>
+						<option value="gwangju">광주</option>	<option value="sejong">세종</option>	<option value="gg">경기</option>
+						<option value="gangwon">강원</option>		<option value="chungnam">충남</option>	<option value="chungbuk">충북</option>
+						<option value="jeonnam">전남</option>		<option value="jeonbuk">전북</option>	<option value="gyeongnam">경남</option>
+						<option value="gyeongbuk">경북</option>	<option value="jeju">제주</option>
+					</select>
+					</div>
+				</div>	
+				<br>
+				
+						<div id="location1">
+							
+									<p class="pull-left">지역구(서울)</p>
+    							<div class="pull-right">
     							<select class="form-control" id="loca1" name="location" >
 									<option value="gangnam">강남구</option>
 									<option value="gangdong">강동구</option>		
@@ -187,9 +295,14 @@
 									<option value="jongro">종로구</option>
 								</select>
 								</div>
+								</div>
 								
+								
+								
+									
 								<div id="location2">
-									지역구(인천)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<p class="pull-left">지역구(인천)</p>
+									<div class="pull-right">
     							<select class="form-control" id="loca2" name="location" >
 									<option value="ganghwa">강화군</option>
 									<option value="gyeyang">계양군</option>
@@ -203,9 +316,10 @@
 									<option value="junggu">중구</option>
 								</select>
 								</div>
-								
+								</div>
 								<div id="location3">
-								지역구(부산)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(부산)</p>
+								<div class="pull-right">
     							<select class="form-control" id="loca3" name="location" >
 									<option value="gangseo">강서구</option>
 									<option value="geumjeong">금정구</option>
@@ -225,9 +339,10 @@
 									<option value="haeundae">해운대구</option>
 								</select>
 								</div>
-								
+								</div>
 								<div id="location4">
-								지역구(대전)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(대전)</p>
+								<div class="pull-right">
     							<select class="form-control" id="loca4" name="location" >
 									<option value="dong">동구</option>
 									<option value="jung">중구</option>
@@ -236,9 +351,11 @@
 									<option value="daedeok">대덕구</option>
 								</select>
 								</div>
-								
+								</div>
 								<div id="location5">
-								지역구(대구)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(대구)</p>
+								
+								<div class="pull-right">
     							<select class="form-control"  id="loca5"name="location" >
 									<option value="dong">동구</option>
 									<option value="jung">중구</option>
@@ -250,9 +367,10 @@
 									<option value="dalseong">달성군</option>
 								</select>
 								</div>
-								
+								</div>
 								<div id="location6">
-								지역구(울산)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(울산)</p>
+								<div class="pull-right">
     							<select class="form-control"  id="loca6"name="location" >
 									<option value="dong">동구</option>
 									<option value="jung">중구</option>
@@ -261,9 +379,10 @@
 									<option value="ulju">울주군</option>									
 								</select>
 								</div>
-								
+								</div>
 								<div id="location7">
-								지역구(광주)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(광주)</p>
+								<div class="pull-right">
     							<select class="form-control" id="loca7" name="location" >
 									<option value="dong">동구</option>
 									<option value="seo">서구</option>
@@ -272,9 +391,10 @@
 									<option value="gwangsan">광산구</option>									
 								</select>
 								</div>
-								
+								</div>
 								<div id="location8">
-								지역구(경기)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(경기)</p>
+								<div class="pull-right">
     							<select class="form-control" id="loca8" name="location" >
 									<option value="gapyeong">가평군</option>
 									<option value="goyang">고양시</option>
@@ -309,9 +429,10 @@
 									<option value="hwaseong">화성시</option>									
 								</select>
 								</div>
-								
+								</div>
 								<div id="location9">
-								지역구(강원)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(강원)</p>
+								<div class="pull-right">
     							<select class="form-control" id="loca9" name="location" >
 									<option value="gangneung">강릉시</option>
 									<option value="goseong">고성군</option>
@@ -333,9 +454,10 @@
 									<option value="hwacheon">화천군</option>																	
 								</select>
 								</div>
-								
+								</div>
 								<div id="location10">
-								지역구(충남)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(충남)</p>
+								<div class="pull-right">
     							<select class="form-control" id="loca10" name="location" >
 									<option value="gyeryong">계룡시</option>
 									<option value="gongju">공주시</option>
@@ -354,9 +476,10 @@
 									<option value="hongseong">홍성시</option>																		
 								</select>
 								</div>
-								
+								</div>
 								<div id="location11">
-								지역구(충북)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(충북)</p>
+								<div class="pull-right">
     							<select class="form-control" id="loca11" name="location" >
 									<option value="goesan">괴산군</option>
 									<option value="danyang">단양군</option>
@@ -371,8 +494,10 @@
 									<option value="chungju">충주시</option>																											
 								</select>
 								</div>
+								</div>
 								<div id="location12">
-								지역구(전남)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(전남)</p>
+								<div class="pull-right">
     							<select class="form-control" id="loca12" name="location" >
 									<option value="goesan">강진군</option>
 									<option value="danyang">고흥군</option>
@@ -398,8 +523,10 @@
 									<option value="chungju">화순군</option>																											
 								</select>
 								</div>
+								</div>
 								<div id="location13">
-								지역구(전북)&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(전북)</p>
+								<div class="pull-right">
     							<select class="form-control" id="loca13" name="location" >
 									<option value="gochang">고창군</option>
 									<option value="gunsan">군산시</option>
@@ -417,8 +544,10 @@
 									<option value="jinan">진안군</option>																																				
 								</select>
 								</div>
+								</div>
 								<div id="location14">
-								지역구(경남)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(경남)</p>
+								<div class="pull-right">
     							<select class="form-control" id="loca14" name="location" >
 									<option value="geoje">거제시</option>
 									<option value="geochang">거창군</option>
@@ -440,8 +569,10 @@
 									<option value="hapcheon">합천군</option>																																				
 								</select>
 								</div>
+								</div>
 								<div id="location15">
-								지역구(경북)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(경북)</p>
+								<div class="pull-right">
     							<select class="form-control" id="loca15" name="location" >
 									<option value="geoje">포항시</option>
 									<option value="geochang">경주시</option>
@@ -468,118 +599,23 @@
 									<option value="ulleung">울릉군</option>																																				
 								</select>
 								</div>
+								</div>
 								<div id="location16">
-								지역구(제주)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<p class="pull-left">지역구(제주)</p>
+								<div class="pull-right">
     							
     							<select class="form-control" id="loca16" name="location" >
 									<option value="jeju">제주시</option>
 									<option value="seogwipo">서귀포시</option>																																												
 								</select>
-								</div></td>
-				</tr>
-				<tr>
-					<td>	<div class="field">							
-					<label for="name">이름 : </label>
-					<input type="text" class="login" id="name" name="name" placeholder="User Name"/>
-				</div>
-				</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>보유카드1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    							
-								<select class="form-control" id="mycard1" name="mycard1" >
-									<option>미보유</option>
-									<option value="shin1">신한1</option>
-									<option value="shin2">신한2</option>
-									<option value="guk1">국민1</option>
-									<option value="guk2">국민2</option>
-									<option value="uri1">우리1</option>
-									<option value="uri2">우리2</option>
-									<option value="ha1">하나1</option>
-									<option value="ha2">하나2</option>
-									<option value="lot1">롯데1</option>
-									<option value="lot2">롯데2</option>
-									<option value="sam1">삼성1</option>
-									<option value="sam2">삼성2</option>
-									<option value="nong1">농협1</option>
-									<option value="nong2">농협2</option>
-									<option value="gi1">기업1</option>
-									<option value="gi2">기업2</option>
-									<option value="ci1">씨티1</option>
-									<option value="ci2">씨티2</option>
-								</select></td>
-				</tr>
-				<tr>
-					<td><div class="field">							
-					<label for="age">나이 : </label>
-					<input type="text" class="login" id="age" name="age" placeholder="Age"/>
-				</div></td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td> 	보유카드2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    							
-								<select class="form-control" id="mycard2" name="mycard2" >
-									<option>미보유</option>
-									<option value="shin1">신한1</option>
-									<option value="shin2">신한2</option>
-									<option value="guk1">국민1</option>
-									<option value="guk2">국민2</option>
-									<option value="uri1">우리1</option>
-									<option value="uri2">우리2</option>
-									<option value="ha1">하나1</option>
-									<option value="ha2">하나2</option>
-									<option value="lot1">롯데1</option>
-									<option value="lot2">롯데2</option>
-									<option value="sam1">삼성1</option>
-									<option value="sam2">삼성2</option>
-									<option value="nong1">농협1</option>
-									<option value="nong2">농협2</option>
-									<option value="gi1">기업1</option>
-									<option value="gi2">기업2</option>
-									<option value="ci1">씨티1</option>
-									<option value="ci2">씨티2</option>
-								</select></td>
-				</tr>
-				<tr>
-					<td><div class="field">
-					<label for="email">Email : </label>
-    				<input type="text" class="form-control" name="email" id="email" placeholder="E-Mail">
-				</div>	</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td> 직업&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<select class="form-control" id="job" name="job" >
-									<option value="cs">회사원</option>
-									<option value="ue">무직</option>
-									<option value="svc">서비스</option>
-									<option value="std">학생</option>
-									<option value="se">자영업</option>
-									<option value="sd">군인</option>
-									<option value="po">공무원</option>
-									<option value="pf">전문직</option>
-									<option value="hw">주부</option>
-									<option value="etc">기타</option>
-								</select></td>
-				</tr>
-				<tr>
-					<td><div class="field">		
-					<p>성별</p>
-				<span class="login-checkbox">
-					<input onclick="chk_only2(this)" id="Field24" name="sex" type="checkbox" class="field login-checkbox" value="man" />
-					<label class="choice" for="Field24">남자</label>
-				</span>
-				<span class="login-checkbox" >
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</span>
-				<span class="login-checkbox" >
-					<input onclick="chk_only2(this)" id="Field34" name="sex" type="checkbox" class="field login-checkbox" value="woman"/>
-					<label class="choice" for="Field34">여자</label>
-			
-				</span>
-			</div></td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td><p>관심사(최대 6개)</p>
+								</div>
+								</div>
+							
+								
+					
+				<br><br>	
+				<div class="field">  
+    				<p>관심사(최대 6개)</p>
     				<span class="login-checkbox" style="display:inline;">
 						<input onclick="chk_six(this)" id="favf1" name="fav" type="checkbox" class="field login-checkbox" value="oil"  />
 						<label class="choice" for="favf1">주유&nbsp;</label>
@@ -642,27 +678,8 @@
 						<span class="login-checkbox" style="display:inline;">
 						<input onclick="chk_six(this)" id="favf8" name="fav" type="checkbox" class="field login-checkbox" value="cafe"  />
 						<label class="choice" for="favf8">카페/베이커리&nbsp;</label>
-					</span>		</td>
-				</tr>
-				</table>
-						
-				
-				
-    						
-								
-								
-								
-								
-							
-								
-								
-    							
-    							
-				
-				
-			
-    					
-							
+					</span>			 
+						</div>	
 								
 					
 							<input type="hidden" id="goo" name="goo" />

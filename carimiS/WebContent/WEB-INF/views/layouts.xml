@@ -21,6 +21,7 @@
 </definition>
 
 <definition name="meminfo.tiles" extends="main.tiles">
+
 	<put-attribute name="content" value="/WEB-INF/views/login/meminfo.jsp" />
 </definition>
 
