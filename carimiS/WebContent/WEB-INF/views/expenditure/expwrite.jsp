@@ -26,21 +26,6 @@
 <title>exp_write</title>
 
 <style>
-
-.ui-datepicker {
-	font-size: 12px;
-	width: 170px;
-}
-
-.ui-datepicker select.ui-datepicker-month {
-	width: 30%;
-	font-size: 11px;
-}
-
-.ui-datepicker select.ui-datepicker-year {
-	width: 40%;
-	font-size: 11px;
-}
 #scategory1{display:none;float:none;margin:10px 0;line-height:1.4} 
 #scategory1.open{display:block}
 #scategory1.close{display:none; float:none;margin:10px 0;line-height:1.4}
@@ -79,7 +64,7 @@
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-credit-card"></i>
-					<h3>${id} 'S EXPENDITURE LIST</h3>
+					<h3>${id}님의 지출 내역 작성하기</h3>
 				</div>
 				<div class="widget-conetent">
 					<div class="widget-content pull-left">
@@ -109,38 +94,38 @@
 							<table>
 								<col width=52%>
 								<tr>
-									<td>WDATE</td>
+									<td>날짜</td>
 									<td><input type="text" id="datepicker" name="wdate" /></td>
 								</tr>
 								<tr>
-									<td>TYPE</td>
+									<td>현금/카드</td>
 									<td><select id="moneytype" name="moneytype">
-											<option>현금/카드</option>
+											<option>선택</option>
 											<option value="cash">현금</option>
-											<option value="shin1">신한1</option>
-											<option value="shin2">신한2</option>
-											<option value="guk1">국민1</option>
-											<option value="guk2">국민2</option>
-											<option value="uri1">우리1</option>
-											<option value="uri2">우리2</option>
-											<option value="ha1">하나1</option>
-											<option value="ha2">하나2</option>
-											<option value="lot1">롯데1</option>
-											<option value="lot2">롯데2</option>
-											<option value="sam1">삼성1</option>
-											<option value="sam2">삼성2</option>
-											<option value="nong1">농협1</option>
-											<option value="nong2">농협2</option>
-											<option value="gi1">기업1</option>
-											<option value="gi2">기업2</option>
-											<option value="ci1">씨티1</option>
-											<option value="ci2">씨티2</option>
+											<option value="shin1">신한 LOVE</option>
+											<option value="shin2">신한 TASTY</option>
+											<option value="guk1">국민 굿데이</option>
+											<option value="guk2">국민 다담</option>
+											<option value="uri1">우리 다모아</option>
+											<option value="uri2">우리 가득한</option>
+											<option value="ha1">하나 2x@</option>
+											<option value="ha2">하나 POP</option>
+											<option value="lot1">롯데 DC 슈프림</option>
+											<option value="lot2">롯데 DC 스마트</option>
+											<option value="sam1">삼성 S클래스</option>
+											<option value="sam2">삼성 2 V2</option>
+											<option value="nong1">농협 스마티</option>
+											<option value="nong2">농협 TAKE 5</option>
+											<option value="gi1">기업 참좋은</option>
+											<option value="gi2">기업 IBK HI</option>
+											<option value="ci1">씨티 클리어</option>
+											<option value="ci2">씨티 멀티</option>
 									</select></td>
 								</tr>
 								<tr>
-									<td>BCATEGORY</td>
+									<td>카테고리</td>
 									<td><select id="bcategory" name="bcategory">
-											<option>카테고리</option>
+											<option>선택</option>
 											<option value="oil">주유</option>
 											<option value="shop">쇼핑</option>
 											<option value="mart">대형마트</option>
@@ -158,12 +143,12 @@
 									</select></td>
 								</tr>
 								<tr>
-									<td>SCATEGORY</td>
+									<td>세부카테고리</td>
 									<td>
 										<!-- eou -->
 										<div id="scategory1">
 											<select id="sca1" name="scategory">
-												<option>세부카테고리</option>
+												<option>선택</option>
 												<option value="restaurant">레스토랑</option>
 												<option value="fastfood">패스트푸드</option>
 												<option value="liquor">주류</option>
@@ -172,7 +157,7 @@
 										</div> <!-- movie -->
 										<div id="scategory2">
 											<select id="sca2" name="scategory">
-												<option>세부카테고리</option>
+												<option>선택</option>
 												<option value="cgv">CGV</option>
 												<option value="lotte">Lotte cinema</option>
 												<option value="megabox">Megabox</option>
@@ -182,7 +167,7 @@
 										</div> <!-- lei -->
 										<div id="scategory3">
 											<select id="sca3" name="scategory">
-												<option>세부카테고리</option>
+												<option>선택</option>
 												<option value="resort">리조트</option>
 												<option value="amusement">테마파크</option>
 												<option value="travel">여행사</option>
@@ -194,7 +179,7 @@
 										</div> <!-- shop -->
 										<div id="scategory4">
 											<select id="sca4" name="scategory">
-												<option>세부카테고리</option>
+												<option>선택</option>
 												<option value="department">백화점</option>
 												<option value="outlet">아울렛</option>
 												<option value="dutyfree">면세점</option>
@@ -211,18 +196,17 @@
 									</td>
 								</tr>
 								<tr>
-									<td>SHOPNAME</td>
+									<td>사용처</td>
 									<td><input type="text" name="shopname" size="50" /></td>
 								</tr>
 								<tr>
-									<td>PRICE</td>
+									<td>금액</td>
 									<td><input type="text" name="price" size="50" /></td>
 								</tr>
 
 								<tr>
-								
 									<td colspan="2" align="center">
-
+<br>
 									<input type="hidden"
 										id="sca" name="sca" /> <input type="submit"
 										style="font-size: 9pt; height: 25; width: 40;" value="지출내역 입력"
@@ -282,7 +266,6 @@ $('#bcategory').change(function(){
 			
 		}
 		else if(selector[selector.selectedIndex].value=="movie" ){
-			alert(selector[selector.selectedIndex].value);
 			for(var i=1; i<22;  i++){
 				$('#scategory'+i).removeClass('close');
 				$('#scategory'+i).removeClass('open');
@@ -290,7 +273,6 @@ $('#bcategory').change(function(){
 			$('#scategory2').addClass('open');
 		}
 		else if(selector[selector.selectedIndex].value=="lei" ){
-			alert(selector[selector.selectedIndex].value);
 			for(var i=1; i<22;  i++){
 				$('#scategory'+i).removeClass('close');
 				$('#scategory'+i).removeClass('open');
@@ -298,7 +280,6 @@ $('#bcategory').change(function(){
 			$('#scategory3').addClass('open');
 		}
 		else if(selector[selector.selectedIndex].value=="shop" ){
-			alert(selector[selector.selectedIndex].value);
 			for(var i=1; i<22;  i++){
 				$('#scategory'+i).removeClass('close');
 				$('#scategory'+i).removeClass('open');

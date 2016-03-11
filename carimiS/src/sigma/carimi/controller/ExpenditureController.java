@@ -146,6 +146,7 @@ public class ExpenditureController {
 			model.addAttribute("page_sno",page_sno);
 			model.addAttribute("pageno",pageno2);
 			model.addAttribute("page_eno",page_eno);
+			model.addAttribute("total_page",total_page);
 			
 			return "explist.tiles";
 			
@@ -348,7 +349,7 @@ public class ExpenditureController {
 		}
 		
 		@RequestMapping(value="listsearch.do", method={RequestMethod.GET,RequestMethod.POST})
-		public String listsearch(expenditureDTO edto, Model model, HttpSession session, HttpServletRequest request, String year, String month, String stext)throws Exception{
+		public String listsearch(expenditureDTO edto, Model model, HttpSession session, HttpServletRequest request, String pageno, String year, String month, String stext)throws Exception{
 			logger.info("Welcome ExpenditureController listsearch! "+ new Date());
 		
 			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
@@ -392,14 +393,61 @@ public class ExpenditureController {
 			edto.setWdates(sf3);
 			List<expenditureDTO> getsearchlist = expenditureService.searchList(stext);
 			model.addAttribute("getsearchlist", getsearchlist);
+			
+			int pageno2=toInt(pageno);
+			if(pageno2<1){
+
+				pageno2 = 1;
+
+			}
+			int total_record = getsearchlist.size();	
+			
+			int page_per_record_cnt = 10; 
+			int group_per_page_cnt =5;									
+			int endno = pageno2*page_per_record_cnt;				
+
+			int startno = endno-(page_per_record_cnt-1);
+			System.out.println("startno" + startno);
+			if(endno>total_record){
+
+				endno = total_record;
+			}
+			int total_page = total_record / page_per_record_cnt + (total_record % page_per_record_cnt>0 ? 1 : 0);
+			if(pageno2>total_page){
+				pageno2 = total_page;
+			}
+			int group_no = pageno2/group_per_page_cnt+( pageno2%group_per_page_cnt>0 ? 1:0);
+			int page_eno = group_no*group_per_page_cnt;
+			int page_sno = page_eno-(group_per_page_cnt-1);	
+
+			if(page_eno>total_page){
+				page_eno=total_page;
+			}	
+			int prev_pageno = page_sno-group_per_page_cnt;		
+			int next_pageno = page_sno+group_per_page_cnt;
+			if(prev_pageno<1){
+				prev_pageno=1;
+			}
+			if(next_pageno>total_page){
+				next_pageno=total_page/group_per_page_cnt*group_per_page_cnt+1;
+			}
 	
 			model.addAttribute("year", int_year);
 			model.addAttribute("month", int_month);			
 			model.addAttribute("stext", text);
 			model.addAttribute("sf", sf);
 			model.addAttribute("sf3", sf3);
-
 			model.addAttribute("id", id);
+			
+			model.addAttribute("prev_pageno",prev_pageno);	
+			model.addAttribute("next_pageno",next_pageno);
+			
+			model.addAttribute("endno", endno);
+			model.addAttribute("startno",startno);
+			model.addAttribute("page_sno",page_sno);
+			model.addAttribute("pageno",pageno2);
+			model.addAttribute("page_eno",page_eno);
+			model.addAttribute("total_page",total_page);
 
 			return "listsearch.tiles";
 		}

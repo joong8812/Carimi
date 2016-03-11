@@ -33,15 +33,12 @@
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-credit-card"></i>
-					<h3>${id}'S EXPENDITURE LIST</h3>
+					<h3>${id}님의 지출 리스트에서 검색된 결과</h3>
 				</div>
 				<div class="widget-conetent">
 					<div class="widget-content pull-left">
 						<div>
 							<form action="monlist.do" method="post">
-								<script>
-
-								</script>
 								<input type="submit" value="월간 보고서" id="submit"> <input
 									type="hidden" id="id" name="id" value='${id}'> <input
 									type="hidden" id="wdate" name="wdate" value='${wdate}'>
@@ -78,12 +75,12 @@
 						<table class="table table-striped table-bordered" style="width:70%;margin:auto">
 							<tr>
 								<th>#</th>
-								<th>DATE</th>
-								<th>TYPE</th>
-								<th>BCATEGORY</th>
-								<th>SCATEGORY</th>
-								<th>SHOPNAME</th>
-								<th>PRICE</th>
+								<th>날짜</th>
+								<th>현금/카드</th>
+								<th>카테고리</th>
+								<th>세부카테고리</th>
+								<th>사용처</th>
+								<th>금액</th>
 							</tr>
 
 							<tbody>

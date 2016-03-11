@@ -20,7 +20,7 @@
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-credit-card"></i>
-					<h3>&nbsp;${login.id } &nbsp;'S YEARLY CHARTS
+					<h3>${login.id}님의 연간 보고서
 					</h3>
 				</div>
 				<div class="widget-conetent">

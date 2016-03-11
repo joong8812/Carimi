@@ -90,7 +90,7 @@ totalsum = sumoil + sumshop + summart + sumcvs + sumeou + sumcafe + summovie + s
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-credit-card"></i>
-					<h3>${id}'S MONTHLY CHART</h3>
+					<h3>${id}님의 월간 보고서</h3>
 				</div>
 				<div class="widget-conetent">
 					<div class="widget-content pull-left">

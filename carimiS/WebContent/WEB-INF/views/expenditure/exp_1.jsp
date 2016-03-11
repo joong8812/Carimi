@@ -33,7 +33,6 @@
 	int sumlei = 0;
 	int summedi = 0;
 	int sumbea = 0;
-	int sumpoi = 0;
 
 	int categorylist;
 	String[][] sumprice = null;
@@ -47,7 +46,7 @@
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-credit-card"></i>
-					<h3>${id}'S EXPENDITURE ANALYSIS</h3>
+					<h3>${id}님의  지출 분석 팡!</h3>
 				</div>
 				<div class="widget-conetent">
 					<div class="widget-content pull-left">
@@ -107,8 +106,8 @@
 						<table class="table table-striped table-bordered" style="width:70%;margin:auto">
 								<col width=50%>
 							<tr>
-								<th>BCATEGORY</th>
-								<th>PRICE</th>
+								<th>카테고리</th>
+								<th>금액</th>
 							</tr>
 
 							<tbody>
@@ -122,85 +121,85 @@
 
 									<c:if test="${sumoil != 0}">
 										<tr>
-											<td><i class="icon-tint"></i> OIL</td>
+											<td><i class="icon-tint"></i> 주유</td>
 											<td>${sumoil}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumshop != 0}">
 										<tr>
-											<td><i class="icon-gift"></i> SHOPPING</td>
+											<td><i class="icon-gift"></i> 쇼핑</td>
 											<td>${sumshop}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${summart != 0}">
 										<tr>
-											<td><i class="icon-shopping-cart"></i> MART</td>
+											<td><i class="icon-shopping-cart"></i> 대형마트</td>
 											<td>${summart}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumcvs != 0}">
 										<tr>
-											<td><i class="icon-barcode"></i> CVS</td>
+											<td><i class="icon-barcode"></i> 편의점</td>
 											<td>${sumcvs}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumeou != 0}">
 										<tr>
-											<td><i class="icon-leaf"></i> EAT-OUT</td>
+											<td><i class="icon-leaf"></i> 외식</td>
 											<td>${sumeou}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumcafe != 0}">
 										<tr>
-											<td><i class="icon-glass"></i> CAFE/BAKERY</td>
+											<td><i class="icon-glass"></i> 카페/베이커리</td>
 											<td>${sumcafe}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${summovie != 0}">
 										<tr>
-											<td><i class="icon-film"></i> MOVIE</td>
+											<td><i class="icon-film"></i> 영화</td>
 											<td>${summovie}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumtra != 0}">
 										<tr>
-											<td><i class="icon-truck"></i> TRANSPORTATION</td>
+											<td><i class="icon-truck"></i> 교통</td>
 											<td>${sumtra}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumtel != 0}">
 										<tr>
-											<td><i class="icon-phone"></i> TELECOM</td>
+											<td><i class="icon-phone"></i> 통신</td>
 											<td>${sumtel}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumedu != 0}">
 										<tr>
-											<td><i class="icon-book"></i> EDUCATION</td>
+											<td><i class="icon-book"></i> 교육</td>
 											<td>${sumedu}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumcul != 0}">
 										<tr>
-											<td><i class="icon-picture"></i> CULTURE</td>
+											<td><i class="icon-picture"></i> 문화</td>
 											<td>${sumcul}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumlei != 0}">
 										<tr>
-											<td><i class="icon-plane"></i> LEISURE</td>
+											<td><i class="icon-plane"></i> 레저</td>
 											<td>${sumlei}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${summedi != 0}">
 										<tr>
-											<td><i class="icon-user-md"></i> MEDICAL</td>
+											<td><i class="icon-user-md"></i> 의료</td>
 											<td>${summedi}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumbea != 0}">
 										<tr>
-											<td><i class="icon-magic"></i> BEAUTY</td>
+											<td><i class="icon-magic"></i> 뷰티</td>
 											<td>${sumbea}원</td>
 										</tr>
 									</c:if>

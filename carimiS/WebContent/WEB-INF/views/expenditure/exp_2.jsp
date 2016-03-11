@@ -15,7 +15,8 @@
 
 <fmt:requestEncoding value="UTF-8" />
 
-<%!int sumcash = 0;
+<%!
+	int sumcash = 0;
 	int sumshin1 = 0;
 	int sumshin2 = 0;
 	int sumguk1 = 0;
@@ -37,7 +38,8 @@
 
 	int categorylist;
 	String[][] sumprice = null;
-	expenditureDTO exp;%>
+	expenditureDTO exp;
+%>
 
 <title>exp_2</title>
 
@@ -47,7 +49,7 @@
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-credit-card"></i>
-					<h3>${id}'S EXPENDITURE ANALYSIS</h3>
+					<h3>${id}님의 지출 분석 팡팡!</h3>
 				</div>
 				<div class="widget-conetent">
 					<div class="widget-content pull-left">
@@ -106,8 +108,8 @@
 						<table class="table table-striped table-bordered" style="width:70%; margin:auto">
 							<col width=50%>
 							<tr>
-								<th>TYPE</th>
-								<th>PRICE</th>
+								<th>카드</th>
+								<th>금액</th>
 							</tr>
 
 							<tbody>
@@ -176,14 +178,14 @@
 									</c:if>
 									<c:if test="${sumlot1 != 0}">
 										<tr>
-											<td>롯데 DC 슈프림 <img src="/CarimiS/image/l_dcsm.png"
+											<td>롯데 DC 슈프림 <img src="/CarimiS/image/l_dcsu.png"
 												width="22px" height="22px" /></td>
 											<td>${sumlot1}원</td>
 										</tr>
 									</c:if>
 									<c:if test="${sumlot2 != 0}">
 										<tr>
-											<td>롯데 DC 슈프림 <img src="/CarimiS/image/l_dcsu.png"
+											<td>롯데 DC 스마트 <img src="/CarimiS/image/l_dcsm.png"
 												width="22px" height="22px" /></td>
 											<td>${sumlot2}원</td>
 										</tr>
