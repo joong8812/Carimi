@@ -36,7 +36,7 @@
 				
 					<div class="widget-header">
 						<i class="icon-calendar"></i>
-						<h3>일정 자세히 보기</h3>				
+						<h3>${login.id } &nbsp;님의 일정 자세히 보기</h3>				
 							<div class="pull-right">
 								<h3>
 									<a href='updplan.do?pseq=${detailplan.pseq}'>수정</a>&nbsp;

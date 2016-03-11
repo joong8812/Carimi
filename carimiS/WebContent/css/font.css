@@ -10,7 +10,9 @@ src:local(※),
 body,
 button,
 input,
-text,
+file,
+textarea,
+
 select,
 textarea,
 script,
@@ -20,5 +22,4 @@ body{
 	font-weight: normal;
 	font-size:15px;
 	margin: 0;
-
 }

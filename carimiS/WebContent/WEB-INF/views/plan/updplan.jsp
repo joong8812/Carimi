@@ -127,7 +127,7 @@
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-calendar"></i>
-					<h3>일정 수정하기</h3>
+					<h3>${login.id } &nbsp;님의 일정 수정하기</h3>
 					<div class="pull-right">
 								<h3>
 									<a href='addplan.do'>쓰기</a>&nbsp;

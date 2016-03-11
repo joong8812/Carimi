@@ -17,6 +17,7 @@
 <link href="<%=request.getContextPath()%>/css/font-awesome.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/font.css" />
+
 <link href="<%=request.getContextPath()%>/css/pages/dashboard.css" rel="stylesheet">
  <script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script> 
 </head>
