@@ -2,8 +2,13 @@
 <!DOCTYPE mapper 
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="analysis"> 
+<mapper namespace="card"> 
 	
+<select id="getCARDinformList" parameterType="sigma.carimi.model.CARDDTOCond" resultType="sigma.carimi.model.CARDDTOSltd">
 
+<!-- SELECT #{c11}, #{c12}, #{c13}, #{c14}, #{c15}, #{c16} FROM CARD_LIST WHERE AFEE <![CDATA[<=]]> #{a1} AND CRIT <![CDATA[>=]]> #{b1} -->
+SELECT #{c11}, #{c12}, #{c13}, #{c14}, #{c15}, #{c16} FROM CARD_LIST WHERE AFEE <![CDATA[<=]]> 50000 AND CRIT <![CDATA[>=]]> 500000
+<!-- SELECT OIL, SHOP, MART, CVS, EOU, CAFE FROM CARD_LIST WHERE AFEE <![CDATA[<=]]> 50000 AND CRIT <![CDATA[>=]]> 500000 -->
+</select>
 	
- </mapper>
+</mapper>

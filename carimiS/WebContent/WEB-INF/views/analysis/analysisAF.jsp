@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@page import="java.util.List" %>
 <%@page import="java.util.ArrayList" %>
 <%@page import="sigma.carimi.service.*" %>
@@ -7,90 +8,133 @@
 <%@page import="java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>분석제안</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/font-awesome.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/css/pages/signin.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/css/pages/dashboard.css" rel="stylesheet">
 
-<script type="text/javascript">
- var Array = [];
+<!-- ##### ##### ##### ##### ##### Select Menu FROM Analysis.jsp ##### ##### ##### ##### ##### -->
+<script>
+	function imgCbox(N, tabstop) {
+		var objs, cboxes, Img, Span, A;
+		objs = document.getElementsByTagName("INPUT"); //인풋 이름 달린 애들
+		if (N == undefined)
+			return false;
+		if (tabstop == undefined)
+			tabstop = true;
 
+		for (var i = 0; i < objs.length; i++) {
+			if (objs[i].type != "checkbox" || objs[i].name != N)
+				continue;
+			if (imgCbox.Objs[N] == undefined) {
+				imgCbox.Objs[N] = [];
+				imgCbox.Imgs[N] = [];
+				imgCbox.ImgObjs[N] = [];
+			}
+
+			var len = imgCbox.Objs[N].length;
+			imgCbox.Objs[N][len] = objs[i];
+			imgCbox.Imgs[N][len] = {};
+
+			// for image cache
+			(Img = new Image()).src = objs[i].getAttribute("onsrc");
+			imgCbox.Imgs[N][len]["on"] = Img;
+
+			(Img = new Image()).src = objs[i].getAttribute("offsrc");
+			imgCbox.Imgs[N][len]["off"] = Img;
+
+			// image element
+			Img = document.createElement("IMG");
+			Img.src = objs[i].checked ? objs[i].getAttribute("onsrc") : objs[i]
+					.getAttribute("offsrc");
+			Img.style.borderWidth = "0px";
+			Img.onclick = new Function("imgCbox.onclick('" + N + "','" + len
+					+ "')");
+			imgCbox.ImgObjs[N][len] = Img;
+
+			// anchor element for tab stop
+			A = document.createElement("A");
+			if (tabstop) {
+				A.href = "javascript:;";
+				A.onkeypress = new Function("evt",
+						"if(evt==undefined)evt=event;if(evt.keyCode==13){ imgCbox.onclick('"
+								+ N + "','" + len + "'); }");
+			}
+			A.style.borderWidth = "0px";
+			A.appendChild(Img);
+
+			// insert object
+			Span = objs[i].parentNode;
+			Span.style.display = "none";
+			Span.parentNode.insertBefore(A, Span);
+		}
+	}
+	imgCbox.onclick = function(N, idx) {
+		var C = imgCbox.Objs[N][idx];
+		var I = imgCbox.ImgObjs[N][idx];
+
+		C.checked = !C.checked;
+		I.src = imgCbox.Imgs[N][idx][C.checked ? "on" : "off"].src;
+		if (C.checked) {
+			divOpen('popup');
+
+		} else
+			divClose('popup');
+		// fire event
+		if (C.onclick != undefined || C.onclick != null)
+			C.onclick();
+	}
+	imgCbox.Objs = {};
+	imgCbox.Imgs = {};
+	imgCbox.ImgObjs = {};
 </script>
+<!-- ##### ##### ##### ##### ##### Select Menu FROM Analysis.jsp ##### ##### ##### ##### ##### -->
 
-<%--
-<% for(int i=0;i<sort1.length;i++){ %>
-	<script type="text/javascript">
-	var Object = {};
-	Object.title = '<%= sort1.get(i).getTitle %>'
-	Object.c
-	Array.push('<%= sort1.get(i).getTitle %>');	
-	</script>
-<% } %>
---%>
+</head>
 
-[ {title: "1111", content: "222"}, {title: "1111", content: "222"}, {title: "1111", content: "222"}]
+<body bgcolor="white">
+	${CARDNAME}<br>
+	${IMG}<br>
+	${Sel1}<br>
+	${Sel2}<br>
+	${Sel3}<br>
+	${Sel4}<br>
+	${Sel5}<br>
+	${Sel6}<br>
+	${Sel7}<br>
+	${Sel8}
 
 
-
-
-<%
-System.out.println(request.getParameter("a1"));
-System.out.println(request.getParameter("b1"));
-%>
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
-	<link href="<%=request.getContextPath()%>/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-	<link href="<%=request.getContextPath()%>/css/font-awesome.css" rel="stylesheet">
-	<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet">
-	<link href="<%=request.getContextPath()%>/css/pages/dashboard.css" rel="stylesheet">
-	<script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>
-	
-	<title>분석제안</title>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<style type="text/css">
-			#container1 {
-			    height: 500px; 
-			    min-width: 310px; 
-			    max-width: 800px;
-			    margin: 0 auto;
-			}
-			#container2 {
-			    height: 500px; 
-			    min-width: 310px; 
-			    max-width: 800px;
-			    margin: 0 auto;
-			}
-			table,th,th{
-				border:1px,solid black;
-				border-collapse:collapse;
-			}
-	</style>
-	</head>
-	<body bgcolor="white">
+	<!-- ##### ##### ##### ##### ##### analysisAF FROM CARIMI2 ##### ##### ##### ##### ##### -->
 	<%!
-		// 전역변수로 만들어서 쓰자 다른데에서도 쓰게
 		String[] stra1;
 		String[] strb1;
 		String[] strc1;
 		CARDDAO dao;
 		List<CARDDTOSltd> CARDinformList;
 	%>
-	
-	
-	
 	<%
 		stra1 = request.getParameterValues("a1");		// 연회비 0
 		strb1 = request.getParameterValues("b1");		// 전월 실적 0
 		strc1 = request.getParameterValues("c1");		// 혜택들 6가지 0~5
-		System.out.println(strc1.length);
+		
 	%>
 		<H2>집중분석</H2>
 		<div id="analysis">
     	</div>
-    	
     	<%
-	    	dao = CARDDAO.getInstance();
-	    	CARDinformList = dao.getCARDinformlist(strc1[0],strc1[1],strc1[2],strc1[3],strc1[4],strc1[5],stra1[0],strb1[0]);
+    		// 여기에서 dao의 정보들을 받아온다. 이러한 형태로 컨트롤러의 자료를 받아오면 된다.
+	    	//dao = CARDDAO.getInstance();	// dao의 메소드를 불러오기 위해 인스턴스 형성
+	    	//CARDinformList = dao.getCARDinformlist(strc1[0],strc1[1],strc1[2],strc1[3],strc1[4],strc1[5],stra1[0],strb1[0]);
+	    	// 위의 조건을 불러 일으킨 녀석을 그냥 불러와서 쓰면 될 것 같은데 ...
     	%>
 		총 <%= CARDinformList.size() %> 개의 카드가 검색되었습니다.
 		<br><br>
@@ -106,9 +150,6 @@ System.out.println(request.getParameter("b1"));
 		   Double[][] sort5 = null;
 		   Double[][] sort6 = null;
 		   String[][] sortname = null;
-		   String[] gold = null;
-		   String[] silver = null;
-		   String[] bronze = null;
 		 %>
 		
 		<!-- 변수에 필요한 정보들 저장 -->
@@ -156,7 +197,6 @@ System.out.println(request.getParameter("b1"));
 			}
 		}
    		%>
-   		
 		<%
 		if(strc1.length==6){
 			out.print("선택한 혜택 : ");
@@ -166,10 +206,179 @@ System.out.println(request.getParameter("b1"));
 		    out.println("<br><br>");
 	  	}
 		%>
-   		
-   			
-		<!-- ########## Drawing ########## -->
-		<script type="text/javascript">
+	<!-- ##### ##### ##### ##### ##### analysisAF FROM CARIMI2 ##### ##### ##### ##### ##### -->
+
+	<div class="main">
+		<div class="main-inner">
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<div class="widget">
+							<div class="widget-header">
+								<i class="icon-th-list"></i>
+								<h3>혜택 정보 팡팡!</h3>
+							</div>
+							<div class="control-group">
+								<FORM ACTION="analysisAF.do" METHOD="POST"
+									onsubmit="return check()">
+									<div class="controls">
+										<div class="accordion" id="accordion2">
+											<div class="accordion-group">
+												<div class="accordion-heading">
+													<a class="accordion-toggle" data-toggle="collapse"
+														data-parent="#accordion2" href="#collapseOne"> 연회비와
+														실적기준을 선택해주세요 </a>
+												</div>
+												<div id="collapseOne" class="accordion-body collapse in">
+													<div class="accordion-inner" style="text-align: center;">
+
+														<span><input type="checkbox" name="a1" value="0"
+															offsrc="/CarimiS/image/analysis/an_1.png"
+															onsrc="/CarimiS/image/analysis/an_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<span><input onclick="chk_only1(this)"
+															type="checkbox" name="a1" value="5000" checked="checked"
+															offsrc="/CarimiS/image/analysis/an_2.png"
+															onsrc="/CarimiS/image/analysis/an_2_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<span><input onclick="chk_only1(this)"
+															type="checkbox" name="a1" value="10000"
+															offsrc="/CarimiS/image/analysis/an_3.png"
+															onsrc="/CarimiS/image/analysis/an_3_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<span><input onclick="chk_only1(this)"
+															type="checkbox" name="a1" value="15000"
+															offsrc="/CarimiS/image/analysis/an_4.png"
+															onsrc="/CarimiS/image/analysis/an_4_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<span><input onclick="chk_only1(this)"
+															type="checkbox" name="a1" value="20000"
+															offsrc="/CarimiS/image/analysis/an_5.png"
+															onsrc="/CarimiS/image/analysis/an_5_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<span><input onclick="chk_only1(this)"
+															type="checkbox" name="a1" value="1"
+															offsrc="/CarimiS/image/analysis/an_6.png"
+															onsrc="/CarimiS/image/analysis/an_6_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<script>
+															imgCbox("a1");
+														</script>
+														<script>
+															chk_only1("a1")
+														</script>
+														<br> <br> <span><input
+															onclick="chk_only2(this)" type="checkbox" name="b1"
+															value="0" offsrc="/CarimiS/image/analysis/an_1.png"
+															onsrc="/CarimiS/image/analysis/an_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<span><input onclick="chk_only2(this)"
+															type="checkbox" name="b1" value="100000"
+															offsrc="/CarimiS/image/analysis/an_s_1.png"
+															onsrc="/CarimiS/image/analysis/an_s_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<span><input onclick="chk_only2(this)"
+															type="checkbox" name="b1" value="200000"
+															offsrc="/CarimiS/image/analysis/an_s_2.png"
+															onsrc="/CarimiS/image/analysis/an_s_2_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<span><input onclick="chk_only2(this)"
+															type="checkbox" name="b1" value="300000"
+															offsrc="/CarimiS/image/analysis/an_s_3.png"
+															onsrc="/CarimiS/image/analysis/an_s_3_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<span><input onclick="chk_only2(this)"
+															type="checkbox" name="b1" value="400000"
+															offsrc="/CarimiS/image/analysis/an_s_4.png"
+															onsrc="/CarimiS/image/analysis/an_s_4_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<span><input onclick="chk_only2(this)"
+															type="checkbox" name="b1" value="500000"
+															checked="checked"
+															offsrc="/CarimiS/image/analysis/an_s_5.png"
+															onsrc="/CarimiS/image/analysis/an_s_5_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<span><input onclick="chk_only2(this)"
+															type="checkbox" name="b1" value="1"
+															offsrc="/CarimiS/image/analysis/an_6.png"
+															onsrc="/CarimiS/image/analysis/an_6_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<script>
+															imgCbox("b1");
+														</script>
+
+													</div>
+												</div>
+											</div>
+											<div class="accordion-group">
+												<div class="accordion-heading">
+													<a class="accordion-toggle" data-toggle="collapse"
+														data-parent="#accordion2" href="#collapseTwo"> 비교하고 싶은
+														혜택 6개를 선택하세요 </a>
+												</div>
+												<div id="collapseTwo" class="accordion-body collapse in">
+													<div class="accordion-inner">
+														<p style="text-align: center;">
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="bea" checked="checked"
+																offsrc="/CarimiS/image/benefits/bea_off.png"
+																onsrc="/CarimiS/image/benefits/bea_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="cafe" checked="checked"
+																offsrc="/CarimiS/image/benefits/cafe_off.png"
+																onsrc="/CarimiS/image/benefits/cafe_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="cul" checked="checked"
+																offsrc="/CarimiS/image/benefits/cul_off.png"
+																onsrc="/CarimiS/image/benefits/cul_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="cvs" checked="checked"
+																offsrc="/CarimiS/image/benefits/cvs_off.png"
+																onsrc="/CarimiS/image/benefits/cvs_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="edu" checked="checked"
+																offsrc="/CarimiS/image/benefits/edu_off.png"
+																onsrc="/CarimiS/image/benefits/edu_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="eou" checked="checked"
+																offsrc="/CarimiS/image/benefits/eou_off.png"
+																onsrc="/CarimiS/image/benefits/eou_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="lei"
+																offsrc="/CarimiS/image/benefits/lei_off.png"
+																onsrc="/CarimiS/image/benefits/lei_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="mart"
+																offsrc="/CarimiS/image/benefits/mart_off.png"
+																onsrc="/CarimiS/image/benefits/mart_on.png"></span> <br>
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="medi"
+																offsrc="/CarimiS/image/benefits/medi_off.png"
+																onsrc="/CarimiS/image/benefits/medi_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="movie"
+																offsrc="/CarimiS/image/benefits/movie_off.png"
+																onsrc="/CarimiS/image/benefits/movie_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="oil"
+																offsrc="/CarimiS/image/benefits/oil_off.png"
+																onsrc="/CarimiS/image/benefits/oil_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="poi"
+																offsrc="/CarimiS/image/benefits/poi_off.png"
+																onsrc="/CarimiS/image/benefits/poi_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="shop"
+																offsrc="/CarimiS/image/benefits/shop_off.png"
+																onsrc="/CarimiS/image/benefits/shop_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="tel"
+																offsrc="/CarimiS/image/benefits/tel_off.png"
+																onsrc="/CarimiS/image/benefits/tel_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<span><input onclick="chk_six(this)"
+																type="checkbox" name="c1" value="tra"
+																offsrc="/CarimiS/image/benefits/tra_off.png"
+																onsrc="/CarimiS/image/benefits/tra_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+															<script>
+																imgCbox("c1");
+															</script>
+															<input type="submit" class="btn" value="분석!">
+														</p>
+													</div>
+													
+												</div>
+												
+											</div>
+											<!-- ##### ##### ##### Drawing GRAPHS HERE ##### ##### ##### -->
+											
+											<script type="text/javascript">
 			$(function () {
 				// ############################################# 1번 혜택 #############################################
 				$('#container1').highcharts({
@@ -264,10 +473,6 @@ System.out.println(request.getParameter("b1"));
 			        	colorByPoint:'true',
 			            name: '<%=strc1[0]%>',
 			            data: [
-			                   
-			                   
-			                   
-			                   
 								<%	
 									for(int i=0;i<sort1.length;i++){
 										if(i!=sort1.length-1){
@@ -947,12 +1152,12 @@ System.out.println(request.getParameter("b1"));
 	
 	      <div class="row">
 	      <div class="span12">      		
-	   <div class="widget widget-table action-table">
+	   	  <div class="widget widget-table action-table">
      
             <!-- /widget-header -->
             <div class="widget-content">
-              <table class="table table-striped table-bordered">
-	      <table border="1" style="width:100%">
+            <table class="table table-striped table-bordered">
+	      	<table border="1" style="width:100%">
 	<tr align="center" style="font-size:12px;">
 	<td><b><%=strc1[0]%>&nbsp 1위</b></td>
 	<td><b><%=strc1[1]%>&nbsp 1위</b></td>
@@ -1013,197 +1218,216 @@ System.out.println(request.getParameter("b1"));
             <!-- /widget-header -->
             <div class="widget-content">
               <table class="table table-striped table-bordered">
+	
 	<!-- ########## 혜택 1 ########## -->
+			<tr>
+				<th width="150"><%out.println(" "+strc1[0]+"혜택 1위!! : <br>"+sortname[sort1[0][2].intValue()][0]);%></th>
+				<th width="200">
+		 		<%for(int i=0;i<CARDinformList.size();i++){
+		 			if(newcard[i][0].equals(sortname[sort1[0][2].intValue()][0])){
+		 		%><img src="<%=newcard[i][1]%>" style="width:190px"><%
+		 				}
+		 		}%>
+				</th>
+				<th width="380">
+				<%for(int i=0;i<CARDinformList.size();i++){
+		 			if(newcard[i][0].equals(sortname[sort1[0][2].intValue()][0])){
+		 		%>
+				연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
+				기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
+				대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
+				연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
+				<%}}%>
+		 		</th>
+			</tr>
+			<tr>
+				<td colspan="3">
+				<div id="container1" style="height:400px"></div>
+				</td>
+			</tr>
 	
-	
-	<tr>
-		<th width="150"><%out.println(" "+strc1[0]+"혜택 1위!! : <br>"+sortname[sort1[0][2].intValue()][0]);%></th>
-		<th width="200">
- 		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort1[0][2].intValue()][0])){
- 		%><img src="<%=newcard[i][1]%>" style="width:190px"><%
- 				}
- 		}%>
-		</th>
-		<th width="380">
-		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort1[0][2].intValue()][0])){
- 		%>
-		연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
-		기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
-		대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
-		연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
-		<%}}%>
- 		</th>
-	</tr>
-	<tr>
-		<td colspan="3">
-		<div id="container1" style="height:400px"></div>
-		</td>
-	</tr>
 	<!-- ########## 혜택 2 ########## -->
-	<tr>
-		<th width="150"><%out.println(" "+strc1[1]+"혜택 1위!! : <br>"+sortname[sort2[0][2].intValue()][0]);%></th>
-		<th width="200">
- 		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort2[0][2].intValue()][0])){
- 		%> <img src="<%=newcard[i][1]%>" style="width:190px" ><%
- 				}
- 		}%>
-		</th>
-		<th width="380">
-		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort2[0][2].intValue()][0])){
- 		%>
-		연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
-		기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
-		대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
-		연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
-		<%}}%>
- 		</th>
-	</tr>
-	<tr>
-		<td colspan="3">
-		<div id="container3" style="height:400px"></div>
-		</td>
-	</tr>
+			<tr>
+				<th width="150"><%out.println(" "+strc1[1]+"혜택 1위!! : <br>"+sortname[sort2[0][2].intValue()][0]);%></th>
+				<th width="200">
+		 		<%for(int i=0;i<CARDinformList.size();i++){
+		 			if(newcard[i][0].equals(sortname[sort2[0][2].intValue()][0])){
+		 		%> <img src="<%=newcard[i][1]%>" style="width:190px" ><%
+		 				}
+		 		}%>
+				</th>
+				<th width="380">
+				<%for(int i=0;i<CARDinformList.size();i++){
+		 			if(newcard[i][0].equals(sortname[sort2[0][2].intValue()][0])){
+		 		%>
+				연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
+				기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
+				대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
+				연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
+				<%}}%>
+		 		</th>
+			</tr>
+			<tr>
+				<td colspan="3">
+				<div id="container3" style="height:400px"></div>
+				</td>
+			</tr>
 	
 	<!-- ########## 혜택 3 ########## -->
-	<tr>
-		<th width="150"><%out.println(" "+strc1[2]+"혜택 1위!! : <br>"+sortname[sort3[0][2].intValue()][0]);%></th>
-		<th width="200">
- 		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort3[0][2].intValue()][0])){
- 		%> <img src="<%=newcard[i][1]%>" style="width:190px" ><%
- 				}
- 		}%>
-		</th>
-		<th width="380">
-		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort3[0][2].intValue()][0])){
- 		%>
-		연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
-		기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
-		대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
-		연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
-		<%}}%>
- 		</th>
-	</tr>
-	<tr>
-		<td colspan="3">
-		<div id="container4" style="height:400px"></div>
-		</td>
-	</tr>
-	</table>
+		<tr>
+			<th width="150"><%out.println(" "+strc1[2]+"혜택 1위!! : <br>"+sortname[sort3[0][2].intValue()][0]);%></th>
+			<th width="200">
+	 		<%for(int i=0;i<CARDinformList.size();i++){
+	 			if(newcard[i][0].equals(sortname[sort3[0][2].intValue()][0])){
+	 		%> <img src="<%=newcard[i][1]%>" style="width:190px" ><%
+	 				}
+	 		}%>
+			</th>
+			<th width="380">
+			<%for(int i=0;i<CARDinformList.size();i++){
+	 			if(newcard[i][0].equals(sortname[sort3[0][2].intValue()][0])){
+	 		%>
+			연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
+			기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
+			대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
+			연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
+			<%}}%>
+	 		</th>
+		</tr>
+		<tr>
+			<td colspan="3">
+			<div id="container4" style="height:400px"></div>
+			</td>
+		</tr>
+		</table>
+			</div>
+		<!--/widget content  -->
 		</div>
-	<!--/widget content  -->
-	</div>
-	<!--/widget -->
-	</div>
-	<!--span  -->
-	<div class="span6">      		
-	           	<div class="widget widget-table action-table">
-     
-            <!-- /widget-header -->
-            <div class="widget-content">
-              <table class="table table-striped table-bordered">
-	<tr>
-		<th width="150"><%out.println(" "+strc1[3]+"혜택 1위!! : <br>"+sortname[sort4[0][2].intValue()][0]);%></th>
-		<th width="200">
- 		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort4[0][2].intValue()][0])){
- 		%> <img src="<%=newcard[i][1]%>" style="width:190px" ><%
- 				}
- 		}%>
-		</th>
-		<th width="380">
-		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort4[0][2].intValue()][0])){
- 		%>
-		연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
-		기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
-		대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
-		연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
-		<%}}%>
- 		</th>
-	</tr>
-	<tr>
-		<td colspan="3">
-		<div id="container2" style="height:400px"></div>
-		</td>
-	</tr>
+		<!--/widget -->
+		</div>
+		<!--span  -->
+		<div class="span6">      		
+		           	<div class="widget widget-table action-table">
+	     
+	            <!-- /widget-header -->
+	            <div class="widget-content">
+	              <table class="table table-striped table-bordered">
+		
+	<!-- ########## 혜택 4 ########## -->
+		<tr>
+			<th width="150"><%out.println(" "+strc1[3]+"혜택 1위!! : <br>"+sortname[sort4[0][2].intValue()][0]);%></th>
+			<th width="200">
+	 		<%for(int i=0;i<CARDinformList.size();i++){
+	 			if(newcard[i][0].equals(sortname[sort4[0][2].intValue()][0])){
+	 		%> <img src="<%=newcard[i][1]%>" style="width:190px" ><%
+	 				}
+	 		}%>
+			</th>
+			<th width="380">
+			<%for(int i=0;i<CARDinformList.size();i++){
+	 			if(newcard[i][0].equals(sortname[sort4[0][2].intValue()][0])){
+	 		%>
+			연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
+			기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
+			대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
+			연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
+			<%}}%>
+	 		</th>
+		</tr>
+		<tr>
+			<td colspan="3">
+			<div id="container2" style="height:400px"></div>
+			</td>
+		</tr>
 	
 	<!-- ########## 혜택 5 ########## -->
-	<tr>
-		<th width="150"><%out.println(" "+strc1[4]+"혜택 1위!! : <br>"+sortname[sort5[0][2].intValue()][0]);%></th>
-		<th width="200">
- 		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort5[0][2].intValue()][0])){
- 		%> <img src="<%=newcard[i][1]%>" style="width:190px" ><%
- 				}
- 		}%>
-		</th>
-		<th width="380">
-		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort5[0][2].intValue()][0])){
- 		%>
-		연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
-		기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
-		대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
-		연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
-		<%}}%>
- 		</th>
-	</tr>
-	<tr>
-		<td colspan="3">
-		<div id="container5" style="height:400px"></div>
-		</td>
-	</tr>
+		<tr>
+			<th width="150"><%out.println(" "+strc1[4]+"혜택 1위!! : <br>"+sortname[sort5[0][2].intValue()][0]);%></th>
+			<th width="200">
+	 		<%for(int i=0;i<CARDinformList.size();i++){
+	 			if(newcard[i][0].equals(sortname[sort5[0][2].intValue()][0])){
+	 		%> <img src="<%=newcard[i][1]%>" style="width:190px" ><%
+	 				}
+	 		}%>
+			</th>
+			<th width="380">
+			<%for(int i=0;i<CARDinformList.size();i++){
+	 			if(newcard[i][0].equals(sortname[sort5[0][2].intValue()][0])){
+	 		%>
+			연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
+			기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
+			대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
+			연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
+			<%}}%>
+	 		</th>
+		</tr>
+		<tr>
+			<td colspan="3">
+			<div id="container5" style="height:400px"></div>
+			</td>
+		</tr>
 	<!-- ########## 혜택 6 ########## -->
-	<tr>
-		<th width="150"><%out.println(" "+strc1[5]+"혜택 1위!! : <br>"+sortname[sort6[0][2].intValue()][0]);%></th>
-		<th width="200">
- 		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort6[0][2].intValue()][0])){
- 		%> <img src="<%=newcard[i][1]%>" style="width:190px" ><%
- 				}
- 		}%>
-		</th>
-		<th width="380">
-		<%for(int i=0;i<CARDinformList.size();i++){
- 			if(newcard[i][0].equals(sortname[sort6[0][2].intValue()][0])){
- 		%>
-		연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
-		기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
-		대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
-		연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
-		<%}}%>
- 		</th>
-	</tr>
-	<tr>
-		<td colspan="3">
-		<div id="container6" style="height:400px"></div>
-		</td>
-	</tr>
+		<tr>
+			<th width="150"><%out.println(" "+strc1[5]+"혜택 1위!! : <br>"+sortname[sort6[0][2].intValue()][0]);%></th>
+			<th width="200">
+	 		<%for(int i=0;i<CARDinformList.size();i++){
+	 			if(newcard[i][0].equals(sortname[sort6[0][2].intValue()][0])){
+	 		%> <img src="<%=newcard[i][1]%>" style="width:190px" ><%
+	 				}
+	 		}%>
+			</th>
+			<th width="380">
+			<%for(int i=0;i<CARDinformList.size();i++){
+	 			if(newcard[i][0].equals(sortname[sort6[0][2].intValue()][0])){
+	 		%>
+			연회비 : <%=(int)Double.parseDouble(newcard[i][2])%> <br>
+			기준실적 : <%=(int)Double.parseDouble(newcard[i][3])%><br>
+			대중교통혜택 : <%=(int)Double.parseDouble(newcard[i][4])%><br>
+			연회비 1000원당 혜택 : <%=1000*Double.parseDouble(newcard[i][4])/Double.parseDouble(newcard[i][2])%>
+			<%}}%>
+	 		</th>
+		</tr>
+		<tr>
+			<td colspan="3">
+			<div id="container6" style="height:400px"></div>
+			</td>
+		</tr>
 	</table>
+									<!-- ##### ##### ##### Drawing GRAPHS HERE ##### ##### ##### -->
+									
+									
+									
+										</div>
+										
+									</div>
+									
+									<!-- /controls -->
+								</FORM>
+								
+							</div>
+							
+							<!-- /control-group -->
+						</div>
+						
+						<!--/span5  -->
+					</div>
+					
+				</div>
+				
+				<!-- /row -->
+			</div>
+			
+			<!-- /container -->
+		</div>
+		
+		<!-- /main-inner -->
 	</div>
-	<!--/widget content  -->
-	</div>
-	<!--/widget -->
-	</div>
-	<!--span  -->
-	</div>    	
+	
+	<!-- /main -->
 
-	</div>
-	</div>
-	
-	
-
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
-	<script src="https://code.highcharts.com/modules/exporting.js"></script>
-	
-	
+	<script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
+	<script src="<%=request.getContextPath()%>/js/signin.js"></script>
 </body>
 </html>
 
