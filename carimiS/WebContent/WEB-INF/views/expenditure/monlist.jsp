@@ -82,12 +82,6 @@ double sumsetc = 0;
 
 <%    
 totalsum = sumoil + sumshop + summart + sumcvs + sumeou + sumcafe + summovie + sumtra + sumtel + sumedu + sumcul + sumlei + summedi + sumbea;
-System.out.println("totalsum= " + totalsum); 
-System.out.println("sumeou= " + sumeou); 
-System.out.println("sumeou/totalsum= " + sumeou/totalsum);
-System.out.println("sumres= " + sumres);
-System.out.println("sumfast= " + sumfast);
-System.out.println("(double)(sumres/sumeou)*100= " + (double)(sumres/sumeou)*100);
 %>
 
 <div class="main-inner">
@@ -96,7 +90,7 @@ System.out.println("(double)(sumres/sumeou)*100= " + (double)(sumres/sumeou)*100
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-credit-card"></i>
-					<h3>${id}'S EXPENDITURE LIST</h3>
+					<h3>${id}'S MONTHLY CHART</h3>
 				</div>
 				<div class="widget-conetent">
 					<div class="widget-content pull-left">

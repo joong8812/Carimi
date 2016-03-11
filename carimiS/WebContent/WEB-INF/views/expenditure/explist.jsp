@@ -123,7 +123,7 @@
 		</div>
 	</div>
 </div>
-<script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>
+<%-- <script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
 
-<script src="<%=request.getContextPath()%>/js/signin.js"></script>
+<script src="<%=request.getContextPath()%>/js/signin.js"></script> --%>

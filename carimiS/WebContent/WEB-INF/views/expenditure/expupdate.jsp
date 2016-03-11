@@ -156,8 +156,8 @@
 								</tr>
 								<tr>
 									<td class="td">N_SCATEGORY</td>
-									<td><input type="text" name="scategory"
-										value='${edto.scategory}' size="50" /></td>
+									<td><input type="text" name="scategory" value='${edto.scategory}'
+										size="50" /></td>
 								</tr>
 								<tr>
 									<td class="td">N_SHOPNAME</td>

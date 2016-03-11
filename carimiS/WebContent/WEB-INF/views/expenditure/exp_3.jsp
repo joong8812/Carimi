@@ -71,7 +71,7 @@ expenditureDTO exp;
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-credit-card"></i>
-					<h3>${id}'S EXPENDITURELIST</h3>
+					<h3>${id}'S EXPENDITURE ANALYSIS</h3>
 				</div>
 				<div class="widget-conetent">
 					<div class="widget-content pull-left">

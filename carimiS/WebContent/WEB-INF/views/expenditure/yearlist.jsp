@@ -27,19 +27,21 @@
 					<div class="widget-content pull-left">
 						<div>
 							<form action="monlist.do" method="post">
-								<input type="submit" value="월간 보고서" id="submit">
+								<input type="submit" value="월간 보고서" id="submit"> <input
+									type="hidden" id="id" name="id" value='${id}'> <input
+									type="hidden" id="wdate" name="wdate" value='${wdate}'>
 							</form>
 							<form action="yearlist.do" method="post">
 								<input type="submit" value="연간 보고서" id="submit">
 							</form>
-	
+
 							<form action="exp_1.do" method="post">
 								<input type="submit" value="지출 분석" id="submit">
 							</form>
 							<form action="explist.do" method="post">
 								<input type="submit" value="지출목록 보기" id="submit">
 							</form>
-							<form action="exp_write.do" method="post">
+							<form action="expwrite.do" method="post">
 								<input type="submit" value="지출내역 쓰기" id="submit">
 							</form>
 						</div>
@@ -147,7 +149,7 @@
 								},
 
 								title : {
-									text : 'Total Card Consumption'
+									text : ''
 								},
 
 								xAxis : {

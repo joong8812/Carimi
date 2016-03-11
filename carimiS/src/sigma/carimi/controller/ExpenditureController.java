@@ -41,7 +41,6 @@ public class ExpenditureController {
 				return "explist.tiles";
 			}
 			String id = mem.getId();
-			System.out.println("id="+id);
 						
 			Calendar cal = Calendar.getInstance();
 			int int_year = cal.get(Calendar.YEAR);
@@ -95,26 +94,23 @@ public class ExpenditureController {
 		
 			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
 			String id = mem.getId();
-			System.out.println("id="+id);
 			
 			Calendar cal = Calendar.getInstance();
 			cal.set(Calendar.DATE, 1);
 			String eyear = request.getParameter("year");
 			String emonth = request.getParameter("month");
-			System.out.println(emonth);
 
 			int year = cal.get(Calendar.YEAR);
-			System.out.println("year="+year);
+
 			if (!(eyear == null || eyear.trim().equalsIgnoreCase(""))) {
 				year = Integer.parseInt(eyear);
 			}
-			System.out.println("year2="+year);
+
 			int month = cal.get(Calendar.MONTH) + 1;
-			System.out.println("month="+month);
+
 			if (!(emonth == null || emonth.trim().equalsIgnoreCase(""))) {
 				month = Integer.parseInt(emonth);
 			}
-			System.out.println("month2="+month);
 			if (month < 1) {
 				month = 12;
 				year--;
@@ -133,7 +129,6 @@ public class ExpenditureController {
 				smonth = "0" + smonth;
 			}
 			String sf3 = syear + "-" + smonth;
-			System.out.println("sf3="+sf3);
 
 			String wyear = request.getParameter("year");
 			String wmonth = request.getParameter("month");
@@ -165,14 +160,6 @@ public class ExpenditureController {
 			String scategory = request.getParameter("sca");
 			String shopname = request.getParameter("shopname");
 			int price = Integer.parseInt(request.getParameter("price"));
-
-			System.out.println("af_id="+ id);
-			System.out.println("af_wdate="+ wdate);
-			System.out.println("af_moneytype="+ moneytype);
-			System.out.println("af_price="+ price);
-			System.out.println("af_shopname="+ shopname);
-			System.out.println("af_bcategory="+ bcategory);
-			System.out.println("af_scategory="+ scategory);
 			
 			boolean isS = expenditureService.addexp(new expenditureDTO(id,wdate,moneytype,bcategory,scategory,shopname,price));
 			model.addAttribute("isS", isS);
@@ -200,27 +187,24 @@ public class ExpenditureController {
 		
 			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
 			String id = mem.getId();
-			System.out.println("id="+id);
 			
 			Calendar cal = Calendar.getInstance();
 			cal.set(Calendar.DATE, 1);
 			String eyear = request.getParameter("year");
 			String emonth = request.getParameter("month");
-			System.out.println("expupdate.do eyear="+eyear);
-			System.out.println("expupdate.do emonth="+emonth);
 
 			int year = cal.get(Calendar.YEAR);
-			System.out.println("year="+year);
+
 			if (!(eyear == null || eyear.trim().equalsIgnoreCase(""))) {
 				year = Integer.parseInt(eyear);
 			}
-			System.out.println("year2="+year);
+
 			int month = cal.get(Calendar.MONTH) + 1;
-			System.out.println("month="+month);
+
 			if (!(emonth == null || emonth.trim().equalsIgnoreCase(""))) {
 				month = Integer.parseInt(emonth);
 			}
-			System.out.println("month2="+month);
+
 			if (month < 1) {
 				month = 12;
 				year--;
@@ -248,9 +232,6 @@ public class ExpenditureController {
 			expenditureDTO edto = expenditureService.expall(seq);
 			edto.setId(id);
 			edto.setWdates(sf3);
-			System.out.println("uf_seq="+ seq);
-			System.out.println("uf_id="+ id);
-			System.out.println("expupdate.to="+edto.getSeq());
 			
 			model.addAttribute("edto", edto);
 
@@ -270,15 +251,12 @@ public class ExpenditureController {
 			String id = mem.getId();
 
 			int seq = Integer.parseInt(request.getParameter("seq"));
-			System.out.println("updsave.to="+seq);
 			String wdate = request.getParameter("wdate");
 			String moneytype = request.getParameter("moneytype");
 			String bcategory = request.getParameter("bcategory");
-			String scategory = "";
+			String scategory = request.getParameter("scategory");
 			String wyear = request.getParameter("year");
 			String wmonth = request.getParameter("month");
-			System.out.println("updsave.to wyear="+wyear);
-			System.out.println("updsave.to wmonth="+wmonth);
 			
 			if (request.getParameter("sca") != null && !request.getParameter("sca").equals("")) {
 				scategory = request.getParameter("sca");
@@ -312,7 +290,6 @@ public class ExpenditureController {
 		
 			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
 			String id = mem.getId();
-			System.out.println("id="+id);
 						
 			Calendar cal = Calendar.getInstance();
 			int int_year = cal.get(Calendar.YEAR);
@@ -342,9 +319,7 @@ public class ExpenditureController {
 				smonth = "0" + smonth;
 			}
 			
-			String sf3 = syear + "-" + smonth;
-			System.out.println("sf3="+sf3);
-			
+			String sf3 = syear + "-" + smonth;	
 			
 			String text = "";
 			if (stext != null && !stext.equals("")) {
@@ -372,26 +347,24 @@ public class ExpenditureController {
 		
 			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
 			String id = mem.getId();
-			System.out.println("id="+id);
 			
 			Calendar cal = Calendar.getInstance();
 			cal.set(Calendar.DATE, 1);
 			String eyear = request.getParameter("year");
 			String emonth = request.getParameter("month");
-			System.out.println(emonth);
 
 			int year = cal.get(Calendar.YEAR);
-			System.out.println("year="+year);
+
 			if (!(eyear == null || eyear.trim().equalsIgnoreCase(""))) {
 				year = Integer.parseInt(eyear);
 			}
-			System.out.println("year2="+year);
+
 			int month = cal.get(Calendar.MONTH) + 1;
-			System.out.println("month="+month);
+
 			if (!(emonth == null || emonth.trim().equalsIgnoreCase(""))) {
 				month = Integer.parseInt(emonth);
 			}
-			System.out.println("month2="+month);
+
 			if (month < 1) {
 				month = 12;
 				year--;
@@ -410,7 +383,7 @@ public class ExpenditureController {
 				smonth = "0" + smonth;
 			}
 			String sf3 = syear + "-" + smonth;
-			System.out.println("sf3="+sf3);
+
 			String sleft = String.format("/CarimiS/monlist.do?year=%d&month=%d", year, month - 1);
 			String sright = String.format("/CarimiS/monlist.do?year=%d&month=%d", year, month + 1);
 			
@@ -633,26 +606,24 @@ public class ExpenditureController {
 		
 			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
 			String id = mem.getId();
-			System.out.println("id="+id);
 			
 			Calendar cal = Calendar.getInstance();
 			cal.set(Calendar.DATE, 1);
 			String eyear = request.getParameter("year");
 			String emonth = request.getParameter("month");
-			System.out.println(emonth);
 
 			int year = cal.get(Calendar.YEAR);
-			System.out.println("year="+year);
+
 			if (!(eyear == null || eyear.trim().equalsIgnoreCase(""))) {
 				year = Integer.parseInt(eyear);
 			}
-			System.out.println("year2="+year);
+
 			int month = cal.get(Calendar.MONTH) + 1;
-			System.out.println("month="+month);
+
 			if (!(emonth == null || emonth.trim().equalsIgnoreCase(""))) {
 				month = Integer.parseInt(emonth);
 			}
-			System.out.println("month2="+month);
+
 			if (month < 1) {
 				month = 12;
 				year--;
@@ -672,7 +643,7 @@ public class ExpenditureController {
 				smonth = "0" + smonth;
 			}
 			String sf3 = syear + "-" + smonth;
-			System.out.println("sf3="+sf3);
+
 			String sleft = String.format("/CarimiS/exp_1.do?year=%d&month=%d", year, month - 1);
 			String sright = String.format("/CarimiS/exp_1.do?year=%d&month=%d", year, month + 1);
 			
@@ -776,26 +747,24 @@ public class ExpenditureController {
 		
 			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
 			String id = mem.getId();
-			System.out.println("id="+id);
 			
 			Calendar cal = Calendar.getInstance();
 			cal.set(Calendar.DATE, 1);
 			String eyear = request.getParameter("year");
 			String emonth = request.getParameter("month");
-			System.out.println(emonth);
 
 			int year = cal.get(Calendar.YEAR);
-			System.out.println("year="+year);
+
 			if (!(eyear == null || eyear.trim().equalsIgnoreCase(""))) {
 				year = Integer.parseInt(eyear);
 			}
-			System.out.println("year2="+year);
+
 			int month = cal.get(Calendar.MONTH) + 1;
-			System.out.println("month="+month);
+
 			if (!(emonth == null || emonth.trim().equalsIgnoreCase(""))) {
 				month = Integer.parseInt(emonth);
 			}
-			System.out.println("month2="+month);
+
 			if (month < 1) {
 				month = 12;
 				year--;
@@ -815,7 +784,7 @@ public class ExpenditureController {
 				smonth = "0" + smonth;
 			}
 			String sf3 = syear + "-" + smonth;
-			System.out.println("sf3="+sf3);
+
 			String sleft = String.format("/CarimiS/exp_2.do?year=%d&month=%d", year, month - 1);
 			String sright = String.format("/CarimiS/exp_2.do?year=%d&month=%d", year, month + 1);
 			
@@ -935,26 +904,24 @@ public class ExpenditureController {
 		
 			memberDTO mem = (memberDTO) request.getSession().getAttribute("login");
 			String id = mem.getId();
-			System.out.println("id="+id);
 			
 			Calendar cal = Calendar.getInstance();
 			cal.set(Calendar.DATE, 1);
 			String eyear = request.getParameter("year");
 			String emonth = request.getParameter("month");
-			System.out.println(emonth);
 
 			int year = cal.get(Calendar.YEAR);
-			System.out.println("year="+year);
+
 			if (!(eyear == null || eyear.trim().equalsIgnoreCase(""))) {
 				year = Integer.parseInt(eyear);
 			}
-			System.out.println("year2="+year);
+
 			int month = cal.get(Calendar.MONTH) + 1;
-			System.out.println("month="+month);
+
 			if (!(emonth == null || emonth.trim().equalsIgnoreCase(""))) {
 				month = Integer.parseInt(emonth);
 			}
-			System.out.println("month2="+month);
+
 			if (month < 1) {
 				month = 12;
 				year--;
@@ -974,7 +941,7 @@ public class ExpenditureController {
 				smonth = "0" + smonth;
 			}
 			String sf3 = syear + "-" + smonth;
-			System.out.println("sf3="+sf3);
+			
 			String sleft = String.format("/CarimiS/exp_3.do?year=%d&month=%d", year, month - 1);
 			String sright = String.format("/CarimiS/exp_3.do?year=%d&month=%d", year, month + 1);
 			
@@ -1193,8 +1160,8 @@ public class ExpenditureController {
 			String sf2 = String.format("%d년 ", year);
 
 
-			String sleft = String.format("yearlist.do?syear=%d", year - 1);
-			String sright = String.format("yearlist.do?syear=%d", year + 1);
+			String sleft = String.format("/CarimiS/yearlist.do?syear=%d", year - 1);
+			String sright = String.format("/CarimiS/yearlist.do?syear=%d", year + 1);
 			
 			List<expenditureDTO> yearlist = expenditureService.yearList(edto, year);
 			
@@ -1206,7 +1173,6 @@ public class ExpenditureController {
 			categorylist = yearlist.size();
 
 			sumprice = new String[categorylist][2];
-//			NumberFormat formatter = new DecimalFormat("#,###");
 	
 			for(int j=0;j<yearlist.size();j++)
 			{   

@@ -67,10 +67,7 @@
 	       		 var wdate = $(this).datepicker('getDate'),
 	           	 day  = wdate.getDate(),  
 	             month = wdate.getMonth() + 1,              
-	             year =  wdate.getFullYear();
-
-	       		alert(day + '-' + month + '-' + year);
-	       		 
+	             year =  wdate.getFullYear();    		 
 	   		}
 		});
 	});
@@ -248,32 +245,27 @@ $('#sca1').change(function(){
 	lval = document.getElementsByName("scategory").value;
 	
 	document.getElementById("sca").value = lval;
-	alert(document.getElementById("sca").value);
 });
 $('#sca2').change(function(){
 	document.getElementsByName("scategory").value=document.getElementsByName("scategory")[1].value;
 	lval = document.getElementsByName("scategory").value;
 	
 	document.getElementById("sca").value = lval;
-	alert(document.getElementById("sca").value);
 });
 $('#sca3').change(function(){
 	document.getElementsByName("scategory").value=document.getElementsByName("scategory")[2].value;
 	lval = document.getElementsByName("scategory").value;
 	document.getElementById("sca").value = lval;
-	alert(document.getElementById("sca").value);
 });
 $('#sca4').change(function(){
 	document.getElementsByName("scategory").value=document.getElementsByName("scategory")[3].value;
 	lval = document.getElementsByName("scategory").value;
 	document.getElementById("sca").value = lval;
-	alert(document.getElementById("sca").value);
 });
 $('#sca5').change(function(){
 	document.getElementsByName("scategory").value=document.getElementsByName("scategory")[4].value;
 	lval = document.getElementsByName("scategory").value;
 	document.getElementById("sca").value = lval;
-	alert(document.getElementById("sca").value);
 });
 
 
