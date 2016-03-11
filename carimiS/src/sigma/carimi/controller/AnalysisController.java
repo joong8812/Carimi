@@ -42,7 +42,7 @@ public class AnalysisController {
 	}
 	
 
-	@RequestMapping(value = "analysisAF.do", 
+	@RequestMapping(value = "analysisAF1.do", 
 			method = RequestMethod.POST)
 	public String analysisAF(HttpServletRequest request, Model model) throws Exception {
 		logger.info("Welcome AnalysisAFController! "+ new Date());

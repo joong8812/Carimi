@@ -55,14 +55,14 @@ public class CARDDAO {
 			CARDDTOSltd cdsltd = new CARDDTOSltd();
 			cdsltd.setCARDNAME(cddto.getCARDNAME());
 			cdsltd.setIMG(cddto.getIMG());
-			cdsltd.setSel1(ch.getCardBenefit(cddto, ccond.getC11()));
-			cdsltd.setSel2(ch.getCardBenefit(cddto, ccond.getC12()));
-			cdsltd.setSel3(ch.getCardBenefit(cddto, ccond.getC13()));
-			cdsltd.setSel4(ch.getCardBenefit(cddto, ccond.getC14()));
-			cdsltd.setSel5(ch.getCardBenefit(cddto, ccond.getC15()));
-			cdsltd.setSel6(ch.getCardBenefit(cddto, ccond.getC16()));
-			cdsltd.setSel7(cddto.getAFEE());
-			cdsltd.setSel8(cddto.getCRIT());
+			cdsltd.setSel3(ch.getCardBenefit(cddto, ccond.getC11()));
+			cdsltd.setSel4(ch.getCardBenefit(cddto, ccond.getC12()));
+			cdsltd.setSel5(ch.getCardBenefit(cddto, ccond.getC13()));
+			cdsltd.setSel6(ch.getCardBenefit(cddto, ccond.getC14()));
+			cdsltd.setSel7(ch.getCardBenefit(cddto, ccond.getC15()));
+			cdsltd.setSel8(ch.getCardBenefit(cddto, ccond.getC16()));
+			cdsltd.setSel1(cddto.getAFEE());
+			cdsltd.setSel2(cddto.getCRIT());
 			CARDinformList.add(cdsltd);
 		}
 		for(int i=0; i<CARDinformList.size(); i++){
