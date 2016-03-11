@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
-<%@page import="java.util.List" %>
-<%@page import="java.util.ArrayList" %>
-<%@page import="sigma.carimi.service.*" %>
-<%@page import="sigma.carimi.model.*" %>
-<%@page import="sigma.carimi.controller.*" %>
-<%@page import="java.util.*" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<fmt:requestEncoding value="utf-8"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -106,16 +104,199 @@
 	
 
 
-	<!-- ##### ##### ##### ##### ##### analysisAF FROM CARIMI2 ##### ##### ##### ##### ##### -->
-		<H2>집중분석</H2>
-		<div id="analysis">
-    	</div>
-    	<%
-    		// 여기에서 dao의 정보들을 받아온다. 이러한 형태로 컨트롤러의 자료를 받아오면 된다.
-	    	//dao = CARDDAO.getInstance();	// dao의 메소드를 불러오기 위해 인스턴스 형성
-	    	//CARDinformList = dao.getCARDinformlist(strc1[0],strc1[1],strc1[2],strc1[3],strc1[4],strc1[5],stra1[0],strb1[0]);
-	    	// 위의 조건을 불러 일으킨 녀석을 그냥 불러와서 쓰면 될 것 같은데 ...
-    	%>
-		총 ${CARDinformListSize } 개의 카드가 검색되었습니다.
+<!-- ##### ##### ##### ##### ##### analysisAF FROM CARIMI2 ##### ##### ##### ##### ##### -->
+<H2>집중분석</H2>
+<div id="analysis">
+  	</div>
+  	<%
+  		// 여기에서 dao의 정보들을 받아온다. 이러한 형태로 컨트롤러의 자료를 받아오면 된다.
+   	//dao = CARDDAO.getInstance();	// dao의 메소드를 불러오기 위해 인스턴스 형성
+   	//CARDinformList = dao.getCARDinformlist(strc1[0],strc1[1],strc1[2],strc1[3],strc1[4],strc1[5],stra1[0],strb1[0]);
+   	// 위의 조건을 불러 일으킨 녀석을 그냥 불러와서 쓰면 될 것 같은데 ...
+  	%>
+총 ${CARDinformListSize } 개의 카드가 검색되었습니다.
 
+<c:if test="${strc1Length eq 6 }">
+	선택한 혜택 : 
+	<c:forEach items="${strc1 }" var="strc1" varStatus="vs">
+		${vs.count }. ${strc1 }
+	</c:forEach>
+</c:if>
+
+
+<!-- ##### ##### ##### Drawing GRAPHS HERE ##### ##### ##### -->
+<script>
+
+</script>
+<script>										
+$(function () {
+				// ############################################# 1번 혜택 #############################################
+				$('#container1').highcharts({
+					chart: {
+			            type: 'column',
+			            margin: 120,
+			            options3d: {
+			                enabled: true,
+			                alpha: 15,
+			                beta: 15,
+			                viewDistance: 25,
+			                depth: 40
+			            },
+						marginTop: 80,
+			            marginRight: 50,
+			            marginLeft: 50,
+			            colorByPoint: true
+			        },
+			        title: {
+			            text: '<b> ${strc1[0]} 혜택</b>'// 이거도 자동으로 들어가도록				
+			        },
+			        subtitle: {
+			            text: ' --- 텍스트 입력 ---'
+			        },
+			        
+			        tooltip: {
+			            headerFormat: '<b>{point.key}</b><br>',
+			            //pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+			            pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y}'
+			        },
+			        
+			        plotOptions: {
+			            column: {
+			            	stacking: 'normal',
+			            	depth: 25
+			            }
+			        }
+			        ,
+			        
+			        yAxis: {
+			            title: {
+			                text: null
+			            }
+			        },
+			        series: [
+						//#################### 원본값/연회비 자료 ####################
+		                 {
+							colorByPoint:'true',
+						    name: '연회비 1000원 당 혜택',
+						    data: [
+									<c:forEach items="${CARDinformList}" var="CARDinformList" varStatus="vs">
+									<c:choose>
+										<c:when test="${vs.count ne CARDinformListSize}">
+											${sort1[vs.count-1][1]} ,
+										</c:when>
+										<c:otherwise>
+											${sort1[vs.count-1][1]}
+										</c:otherwise>
+									</c:choose>
+									</c:forEach>
+								  ],
+							stack:'secondary'
+						},
+						// #################### 원본값 자료 ####################    
+			            {
+			        	colorByPoint:'true',
+			            name: '${strc1[0]}',
+			            data: [
+								<c:forEach items="${sort1}" var="sort1" varStatus="vs">
+									<c:choose>
+										<c:when test="${vs.count ne sort1Length}">
+											{y:${sort1[0]},color:'#DDDCFE'},
+										</c:when>
+										<c:otherwise>
+											{y:${sort1[0]}}
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
+							  ],
+			        	stack:'primary',
+			        	}
+					], //여기가 시리즈 닫는 곳
+					xAxis: {// 참고로 xAxis항목을 다른 곳으로 옮겨도 아주 잘 작동한다.
+			        	categories: [//문자열, 반드시 작은 따옴표로 안아라
+ 			                       	   
+			        	             <c:forEach items="${CARDinformList}" var="CARDinformList" varStatus="vs">
+				                      	<c:choose>
+										<c:when test="${vs.count ne CARDinformListSize}">
+											'${sortname[sort1[vs.count-1][2].intValue()][0]}',
+										</c:when>
+										<c:otherwise>
+											'${sortname[sort1[vs.count-1][2].intValue()][0]}'
+										</c:otherwise>
+										</c:choose>
+			                      	</c:forEach>
+ 			                       	]
+			        }
+			    });	// 컨테이너1 닫는 곳 
+});
+</script>
+
+<div class="main">
+	<div class="main-inner">
+      	<div class="row">
+		    <div class="span12">      		
+			   <div class="widget widget-table action-table">
+            		<!-- /widget-header -->
+          			<div class="widget-content">
+           				<table class="table table-striped table-bordered">		
+      							<tr align="center" style="font-size:12px;">
+									<td><b>${ strc1[0]}&nbsp 1위</b></td>
+									<td><b>${ strc1[1]}&nbsp 1위</b></td>
+									<td><b>${ strc1[2]}&nbsp 1위</b></td>
+									<td><b>${ strc1[3]}&nbsp 1위</b></td>
+									<td><b>${ strc1[4]}&nbsp 1위</b></td>
+									<td><b>${ strc1[5]}&nbsp 1위</b></td>
+								</tr>
+								<tr align="center" style="font-size:12px;">
+									<td><font color=red><b>${sortname[sort1[0][2]][0])}</b></font></td>
+									<td><font color=orange><b>${sortname[sort2[0][2]][0])}</b></font></td>
+									<td><font color=lightbrown><b>${sortname[sort3[0][2]][0])}</b></font></td>
+									<td><font color=green><b>${sortname[sort4[0][2]][0])}</b></font></td>
+									<td><font color=blue><b>${sortname[sort5[0][2]][0])}</b></font></td>
+									<td><font color=purple><b>${sortname[sort6[0][2]][0])}</b></font></td>
+								</tr>
+								<tr>
+									<c:forEach items="${CARDinformList }" var="CARDinformList" varStatus="vs">
+										<c:if test="${newcard[vs.count][0] eq sortname[sort1[0][2]][0] }">
+											<td>dd<img src="${newcard[i][1]}" style="width:120px"></td>
+										</c:if>
+									</c:forEach>
+									<c:forEach items="${CARDinformList }" var="CARDinformList" varStatus="vs">
+										<c:if test="${newcard[vs.count][0] eq sortname[sort2[0][2]][0] }">
+											<td><img src="${newcard[i][1]}" style="width:120px"></td>
+										</c:if>
+									</c:forEach>
+									<c:forEach items="${CARDinformList }" var="CARDinformList" varStatus="vs">
+										<c:if test="${newcard[vs.count][0] eq sortname[sort3[0][2]][0] }">
+											<td><img src="${newcard[i][1]}" style="width:120px"></td>
+										</c:if>
+									</c:forEach>
+									<c:forEach items="${CARDinformList }" var="CARDinformList" varStatus="vs">
+										<c:if test="${newcard[vs.count][0] eq sortname[sort4[0][2]][0] }">
+											<td><img src="${newcard[i][1]}" style="width:120px"></td>
+										</c:if>
+									</c:forEach>
+									<c:forEach items="${CARDinformList }" var="CARDinformList" varStatus="vs">
+										<c:if test="${newcard[vs.count][0] eq sortname[sort5[0][2]][0] }">
+											<td><img src="${newcard[i][1]}" style="width:120px"></td>
+										</c:if>
+									</c:forEach>
+									<c:forEach items="${CARDinformList }" var="CARDinformList" varStatus="vs">
+										<c:if test="${newcard[vs.count][0] eq sortname[sort6[0][2]][0] }">
+											<td><img src="${newcard[i][1]}" style="width:120px"></td>
+										</c:if>
+									</c:forEach>
+								</tr>
+      						</table>
+      				</div>
+      			</div>
+      		</div>				
+		</div>
+	</div>
+</div>		
+									
+			
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 </body>
+</html>
