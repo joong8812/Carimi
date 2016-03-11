@@ -22,7 +22,11 @@
 }
 </style>
 
-
+	<c:if test="${login.id ne detailplan.id }">
+		<script>
+			location.href="plan.do";
+		</script>
+	</c:if>
 </head>
 <body>
 	<div class=container>

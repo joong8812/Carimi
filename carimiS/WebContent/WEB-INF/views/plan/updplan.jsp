@@ -5,6 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<c:if test="${login.id ne detailplan.id }">
+		<script>
+			location.href="plan.do";
+		</script>
+</c:if>
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
