@@ -80,5 +80,4 @@ public class CARDDTOCond {
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 	
-	
 }

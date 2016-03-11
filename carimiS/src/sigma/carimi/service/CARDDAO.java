@@ -38,24 +38,55 @@ public class CARDDAO {
 //		int h1 = Integer.parseInt(h);
 		// 여기까지 잘 넘어옴
 		
-//		HashMap<String, Object> hm = new HashMap<String, Object>();
-//		hm.put("a1", a1);
-//		hm.put("b1", b1);
-//		hm.put("c1", c1);
-//		hm.put("d1", d1);
-//		hm.put("e1", e1);
-//		hm.put("f1", f1);
-//		hm.put("g1", g1);
-//		hm.put("h1", h1);
-		//List<CARDDTOSltd> CARDinformList = new ArrayList<CARDDTOSltd>();
-		//List<CARDDTOSltd> CARDinformList;
-		//CARDinformList = (List<CARDDTOSltd>)sqlsession.selectList(ns + "getCARDinformList", hm);
-		//CARDinformList = (List<CARDDTOSltd>)sqlsession.selectList(ns + "getCARDinformList", ccond);
-		List<CARDDTOSltd> CARDinformList = sqlsession.selectList(ns + "getCARDinformList", ccond);
-		System.out.println("카드리스트 사이즈가 얼마나 될까???? : "+CARDinformList.size());
-	
+		List<CARDDTOSltd> CARDinformList= new ArrayList<CARDDTOSltd>();
+		//List<CARDDTO> allList = (List<CARDDTO>)sqlsession.selectList(ns + "getCARDinformList", ccond);
 		
+//		List<CARDDTO> allList = (List<CARDDTO>)sqlsession.selectList(ns + "getCARDinformList", ccond);
+		List<CARDDTO> allList = (List<CARDDTO>)sqlsession.selectList(ns + "getCARDinformList", ccond);
+		System.out.println("전체 카드리스트 사이즈가 얼마나 될까???? : "+ allList.size());
+		
+//		
+//		String[][] cols = new String[15][2];
+//		cols[0][0] = "OIL";
+//		cols[1][0] = "SHOP";
+//		cols[2][0] = "MART";
+//		cols[3][0] = "CVS";
+//		cols[4][0] = "EOU";
+//		cols[5][0] = "CAFE";
+//		cols[6][0] = "MOVIE";
+//		cols[7][0] = "TRA";
+//		cols[8][0] = "TEL";
+//		cols[9][0] = "EDU";
+//		cols[10][0] = "CUL";
+//		cols[11][0] = "LEI";
+//		cols[12][0] = "MEDI";
+//		cols[13][0] = "BEA";
+//		cols[14][0] = "POI";
+//		for(int i=0;i<15;i++){
+//			cols[i][1] = Integer.toString(i); // 0~14번까지 부여
+//		}
+//		String[][] names = new String[6][2];
+//		names[0][0]=ccond.getC11();
+//		names[1][0]=ccond.getC12();
+//		names[2][0]=ccond.getC13();
+//		names[3][0]=ccond.getC14();
+//		names[4][0]=ccond.getC15();
+//		names[5][0]=ccond.getC16();
+//		for(int i=0;i<6;i++){
+//			for(int j=0;j<15;j++){
+//				if(cols[j][0].equals(names[i][0])){
+//					names[i][1]=cols[j][1];
+//				}//names에 불러와야 할 혜택들의 번호가 저장됨
+//			}
+//		}
+//		for(int i=0;i<6;i++){
+//			System.out.println(names[i][1]);
+//		}
+//		//CARDNAME IMG Sel1 Sel2 Sel3 Sel4 Sel5 Sel6 Sel7(afee) Sel8(crit)
+//		
+		for(int i=0;i<allList.size();i++){
+			System.out.println(allList.get(i).toString());
+		}
 		return CARDinformList;
 	}
-
 }

@@ -119,7 +119,7 @@
 															offsrc="/CarimiS/image/analysis/an_1.png"
 															onsrc="/CarimiS/image/analysis/an_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only1(this)"
-															type="checkbox" name="a1" value="5000" checked="checked"
+															type="checkbox" name="a1" value="5000" 
 															offsrc="/CarimiS/image/analysis/an_2.png"
 															onsrc="/CarimiS/image/analysis/an_2_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only1(this)"
@@ -131,7 +131,7 @@
 															offsrc="/CarimiS/image/analysis/an_4.png"
 															onsrc="/CarimiS/image/analysis/an_4_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only1(this)"
-															type="checkbox" name="a1" value="20000"
+															type="checkbox" name="a1" value="20000" checked="checked"
 															offsrc="/CarimiS/image/analysis/an_5.png"
 															onsrc="/CarimiS/image/analysis/an_5_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only1(this)"
@@ -153,7 +153,7 @@
 															offsrc="/CarimiS/image/analysis/an_s_1.png"
 															onsrc="/CarimiS/image/analysis/an_s_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only2(this)"
-															type="checkbox" name="b1" value="200000"
+															type="checkbox" name="b1" value="200000" checked="checked"
 															offsrc="/CarimiS/image/analysis/an_s_2.png"
 															onsrc="/CarimiS/image/analysis/an_s_2_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only2(this)"
@@ -166,7 +166,6 @@
 															onsrc="/CarimiS/image/analysis/an_s_4_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only2(this)"
 															type="checkbox" name="b1" value="500000"
-															checked="checked"
 															offsrc="/CarimiS/image/analysis/an_s_5.png"
 															onsrc="/CarimiS/image/analysis/an_s_5_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only2(this)"
@@ -190,63 +189,63 @@
 													<div class="accordion-inner">
 														<p style="text-align: center;">
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="bea" checked="checked"
+																type="checkbox" name="c1" value="BEA" checked="checked"
 																offsrc="/CarimiS/image/benefits/bea_off.png"
 																onsrc="/CarimiS/image/benefits/bea_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="cafe" checked="checked"
+																type="checkbox" name="c1" value="CAFE" checked="checked"
 																offsrc="/CarimiS/image/benefits/cafe_off.png"
 																onsrc="/CarimiS/image/benefits/cafe_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="cul" checked="checked"
+																type="checkbox" name="c1" value="CUL" checked="checked"
 																offsrc="/CarimiS/image/benefits/cul_off.png"
 																onsrc="/CarimiS/image/benefits/cul_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="cvs" checked="checked"
+																type="checkbox" name="c1" value="CVS" checked="checked"
 																offsrc="/CarimiS/image/benefits/cvs_off.png"
 																onsrc="/CarimiS/image/benefits/cvs_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="edu" checked="checked"
+																type="checkbox" name="c1" value="EDU" checked="checked"
 																offsrc="/CarimiS/image/benefits/edu_off.png"
 																onsrc="/CarimiS/image/benefits/edu_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="eou" checked="checked"
+																type="checkbox" name="c1" value="EOU" checked="checked"
 																offsrc="/CarimiS/image/benefits/eou_off.png"
 																onsrc="/CarimiS/image/benefits/eou_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="lei"
+																type="checkbox" name="c1" value="LEI"
 																offsrc="/CarimiS/image/benefits/lei_off.png"
 																onsrc="/CarimiS/image/benefits/lei_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="mart"
+																type="checkbox" name="c1" value="MART"
 																offsrc="/CarimiS/image/benefits/mart_off.png"
 																onsrc="/CarimiS/image/benefits/mart_on.png"></span> <br>
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="medi"
+																type="checkbox" name="c1" value="MEDI"
 																offsrc="/CarimiS/image/benefits/medi_off.png"
 																onsrc="/CarimiS/image/benefits/medi_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="movie"
+																type="checkbox" name="c1" value="MOVIE"
 																offsrc="/CarimiS/image/benefits/movie_off.png"
 																onsrc="/CarimiS/image/benefits/movie_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="oil"
+																type="checkbox" name="c1" value="OIL"
 																offsrc="/CarimiS/image/benefits/oil_off.png"
 																onsrc="/CarimiS/image/benefits/oil_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="poi"
+																type="checkbox" name="c1" value="POI"
 																offsrc="/CarimiS/image/benefits/poi_off.png"
 																onsrc="/CarimiS/image/benefits/poi_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="shop"
+																type="checkbox" name="c1" value="SHOP"
 																offsrc="/CarimiS/image/benefits/shop_off.png"
 																onsrc="/CarimiS/image/benefits/shop_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="tel"
+																type="checkbox" name="c1" value="TEL"
 																offsrc="/CarimiS/image/benefits/tel_off.png"
 																onsrc="/CarimiS/image/benefits/tel_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="tra"
+																type="checkbox" name="c1" value="TRA"
 																offsrc="/CarimiS/image/benefits/tra_off.png"
 																onsrc="/CarimiS/image/benefits/tra_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<script>

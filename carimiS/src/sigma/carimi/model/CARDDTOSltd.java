@@ -4,7 +4,7 @@ public class CARDDTOSltd {
 	private String CARDNAME;
 	private String IMG;
 	private int sel1;
-	private int  sel2;
+	private int sel2;
 	private int sel3;
 	private int sel4;
 	private int sel5;
