@@ -13,8 +13,10 @@
  <link href="<%=request.getContextPath()%>/css/bootstrap-responsive.min.css" rel="stylesheet">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
         rel="stylesheet">
+        
 <link href="<%=request.getContextPath()%>/css/font-awesome.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/font.css" />
 <link href="<%=request.getContextPath()%>/css/pages/dashboard.css" rel="stylesheet">
  <script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script> 
 </head>

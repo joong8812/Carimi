@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@font-face{
+font-family:fcocoa;
+src:url('../fcocoa/hucocoa.eot');
+src:local(※), 
+	url('../fcocoa/hucocoa.woff') format('woff');
+}
+
+body,
+button,
+input,
+text,
+select,
+textarea,
+p,
+body{
+	font-family: fcocoa;
+	font-weight: light;
+	margin: 0;
+
+}

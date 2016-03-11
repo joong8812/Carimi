@@ -9,6 +9,7 @@
 <head>
 <meta charset="utf-8">
 <title>CARIMI</title>
+<link rel="stylesheet" href="/font.css" />
 </head>
 
 <body>

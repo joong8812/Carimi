@@ -133,7 +133,7 @@
 		eventObject.title = "${lp.ptitle}";
 		eventObject.start = "${lp.padate}" + "T"+ "${lp.patime}";
 		eventObject.end = "${lp.pedate}" + "T"+ "${lp.petime}";
-		eventObject.content = ${lp.pcontent};
+		eventObject.content = "${lp.pcontent}";
 		eventObject.local = "${lp.plocal}";
 		eventObject.color= '#00ba8c';
 	 	eventObject.url = "plandetail.do?pseq=${lp.pseq}";  
