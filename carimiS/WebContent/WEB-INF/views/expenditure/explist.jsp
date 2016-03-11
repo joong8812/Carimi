@@ -93,14 +93,14 @@
 							</tr>
 
 							<tbody>
-								<c:if test="${empty explist}">
+							<c:choose>
+							<c:when test="${empty explist}">
 									<tr>
 										<td colspan="9" align="center">작성된 글이 없습니다.</td>
 									</tr>
-								</c:if>
-
-								<c:if test="${not empty explist}">
-									<c:forEach var="exp" items="${explist}" varStatus="vs">
+							</c:when>
+<c:otherwise>
+								<c:forEach begin="${startno-1 }" var="exp" items="${explist}"  varStatus="vs"  end="${endno-1}">
 										<tr>
 											<td>${vs.count}</td>
 											<td>${exp.wdate}</td>
@@ -113,17 +113,42 @@
 											<td style="text-align:center"><a href="explistD.do?seq=${exp.seq}"><i class=icon-remove></i></a></td>
 										</tr>
 									</c:forEach>
-								</c:if>
-
+								</c:otherwise>
+</c:choose>
 							</tbody>
 						</table>
+						
+						<div style="text-align:center;">
+<c:if test="${!empty explist}">
+<a href="explist.do?pageno=1">[맨앞으로]</a>
+
+<a href="explist.do?pageno=${prev_pageno }">[이전]</a> 
+
+<c:forEach var="i" begin="${page_sno}" end="${page_eno }" step="1">
+	<a href="explist.do?pageno=${i }">
+		<c:choose>
+   			<c:when test="${pageno eq i}">
+				[${i}]
+			</c:when>
+			<c:otherwise>
+			${i}
+			</c:otherwise>
+		</c:choose>
+	</a>
+		<c:if test="${i lt page_eno }">
+			,
+		</c:if>
+</c:forEach>
+
+
+<a href="explist.do?pageno=${next_pageno}" >[다음]</a>
+
+<a href="explist.do?pageno=${total_page}">[맨뒤로]</a>
+</c:if>
+</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<%-- <script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
-
-<script src="<%=request.getContextPath()%>/js/signin.js"></script> --%>
