@@ -131,11 +131,11 @@
 															offsrc="/CarimiS/image/analysis/an_4.png"
 															onsrc="/CarimiS/image/analysis/an_4_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only1(this)"
-															type="checkbox" name="a1" value="20000" checked="checked"
+															type="checkbox" name="a1" value="20000"
 															offsrc="/CarimiS/image/analysis/an_5.png"
 															onsrc="/CarimiS/image/analysis/an_5_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only1(this)"
-															type="checkbox" name="a1" value="1"
+															type="checkbox" name="a1" value="18001"
 															offsrc="/CarimiS/image/analysis/an_6.png"
 															onsrc="/CarimiS/image/analysis/an_6_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<script>
@@ -153,7 +153,7 @@
 															offsrc="/CarimiS/image/analysis/an_s_1.png"
 															onsrc="/CarimiS/image/analysis/an_s_1_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only2(this)"
-															type="checkbox" name="b1" value="200000" checked="checked"
+															type="checkbox" name="b1" value="200000"
 															offsrc="/CarimiS/image/analysis/an_s_2.png"
 															onsrc="/CarimiS/image/analysis/an_s_2_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 														<span><input onclick="chk_only2(this)"
@@ -189,27 +189,27 @@
 													<div class="accordion-inner">
 														<p style="text-align: center;">
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="BEA" checked="checked"
+																type="checkbox" name="c1" value="BEA" 
 																offsrc="/CarimiS/image/benefits/bea_off.png"
 																onsrc="/CarimiS/image/benefits/bea_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="CAFE" checked="checked"
+																type="checkbox" name="c1" value="CAFE" 
 																offsrc="/CarimiS/image/benefits/cafe_off.png"
 																onsrc="/CarimiS/image/benefits/cafe_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="CUL" checked="checked"
+																type="checkbox" name="c1" value="CUL" 
 																offsrc="/CarimiS/image/benefits/cul_off.png"
 																onsrc="/CarimiS/image/benefits/cul_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="CVS" checked="checked"
+																type="checkbox" name="c1" value="CVS" 
 																offsrc="/CarimiS/image/benefits/cvs_off.png"
 																onsrc="/CarimiS/image/benefits/cvs_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="EDU" checked="checked"
+																type="checkbox" name="c1" value="EDU" 
 																offsrc="/CarimiS/image/benefits/edu_off.png"
 																onsrc="/CarimiS/image/benefits/edu_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"
-																type="checkbox" name="c1" value="EOU" checked="checked"
+																type="checkbox" name="c1" value="EOU" 
 																offsrc="/CarimiS/image/benefits/eou_off.png"
 																onsrc="/CarimiS/image/benefits/eou_on.png"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															<span><input onclick="chk_six(this)"

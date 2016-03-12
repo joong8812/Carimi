@@ -99,6 +99,7 @@ public class TestController {
 			newcard[i][8]=Double.toString(cards.getSel7());
 			newcard[i][9]=Double.toString(cards.getSel8());
 		}
+   		model.addAttribute("newcard", newcard);
 		
 		// 출력할 때 써먹을 카드이름 제대로 집어 넣기 얘도 전역변수 해놨다.
 		// strc1 위에서 필요한 곳에서 이미 다 써서 아래 처럼 한글로 고쳐도 괜찬다.
@@ -228,6 +229,7 @@ public class TestController {
 		model.addAttribute("sort5Length", sort5.length);
 		model.addAttribute("sort6", sort6);
 		model.addAttribute("sort6Length", sort6.length);
+		
 		// #################################################################
 		
 		//배열에 이름과 숫자를 집어 넣는다. [0][0]:카드이름, [0][1]:인덱스번호
@@ -237,7 +239,7 @@ public class TestController {
 			sortname[i][1]= Integer.toString(i);
         }
         model.addAttribute("sortname", sortname);
-   			
+		
 		return "analysisAF.tiles";
 	}
 }
