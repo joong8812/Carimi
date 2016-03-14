@@ -116,15 +116,14 @@
 
 
 
-<<<<<<< .mine
-<div class="account-container register" >
-=======
-<div class="account-container register" style="width:90%">
->>>>>>> .r40
+
+
+<div class="account-container register">
+
 	
 	<div class="content clearfix">
 		
-		<form name="addjoin" action="signAf.do" method="post">
+		<form name="addjoin" action="signupAf.do" method="post">
 		
 			<h1>Signup for Free Account</h1>			
 			
