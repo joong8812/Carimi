@@ -116,9 +116,9 @@
 						</c:if>
 					
 						</table>
-							
-							 <input type="button" value="일정쓰기" onclick="location='addplan.do'">
-						
+							<div align=center>
+								<input type="button" value="일정쓰기" onclick="location='addplan.do'">
+							</div>
 						</div>
 				</div>
 		</div>
