@@ -29,7 +29,6 @@
 	
 	<tiles:insertAttribute name="content"/>
 	
-	
 	<tiles:insertAttribute name="bottom_menu"/>
 <script src="<%=request.getContextPath()%>/js/excanvas.min.js"></script> 
 <script src="<%=request.getContextPath()%>/js/chart.min.js" type="text/javascript"></script>

@@ -30,7 +30,7 @@ video#bgvid {
 			<div class="container">
 				<video autoplay loop
 					poster="<%=request.getContextPath()%>/image/62.png" id="bgvid">
-					<source src="<%=request.getContextPath()%>/video/video-1.mp4"
+					<source src="<%=request.getContextPath()%>/video/maincf.mp4"
 						type="video/mp4">
 				</video>
 				<div class="row">
