@@ -143,7 +143,7 @@ public class AnalysisController {
 		for(int i=0;i<CARDinformList.size();i++){
 			CARDDTOSltd cards = CARDinformList.get(i);
 			sort1[i][0] = cards.getSel3();						//혜택정보:sort1[0][0]
-			sort1[i][1] = 1000*cards.getSel3()/cards.getSel1();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
+			sort1[i][1] = 50000*1000*(cards.getSel3()/cards.getSel1())/cards.getSel2();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
 			sort1[i][2] = i+0.0;									//인덱스:sort1[0][2]
 		}
 		// 자바스택에서 찾아온 정렬 해보자
@@ -158,7 +158,7 @@ public class AnalysisController {
 		for(int i=0;i<CARDinformList.size();i++){
 			CARDDTOSltd cards = CARDinformList.get(i);
 			sort2[i][0] = cards.getSel4();						//혜택정보:sort1[0][0]
-			sort2[i][1] = 1000*cards.getSel4()/cards.getSel1();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
+			sort2[i][1] = 50000*1000*(cards.getSel4()/cards.getSel1())/cards.getSel2();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
 			sort2[i][2] = i+0.0;									//인덱스:sort1[0][2]
 		}
 		// 자바스택에서 찾아온 정렬 해보자
@@ -173,7 +173,7 @@ public class AnalysisController {
 		for(int i=0;i<CARDinformList.size();i++){
 			CARDDTOSltd cards = CARDinformList.get(i);
 			sort3[i][0] = cards.getSel5();						//혜택정보:sort1[0][0]
-			sort3[i][1] = 1000*cards.getSel5()/cards.getSel1();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
+			sort3[i][1] = 50000*1000*(cards.getSel5()/cards.getSel1())/cards.getSel2();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
 			sort3[i][2] = i+0.0;									//인덱스:sort1[0][2]
 		}
 		// 자바스택에서 찾아온 정렬 해보자
@@ -188,7 +188,7 @@ public class AnalysisController {
 		for(int i=0;i<CARDinformList.size();i++){
 			CARDDTOSltd cards = CARDinformList.get(i);
 			sort4[i][0] = cards.getSel6();						//혜택정보:sort1[0][0]
-			sort4[i][1] = 1000*cards.getSel6()/cards.getSel1();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
+			sort4[i][1] = 50000*1000*(cards.getSel6()/cards.getSel1())/cards.getSel2();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
 			sort4[i][2] = i+0.0;									//인덱스:sort1[0][2]
 		}
 		// 자바스택에서 찾아온 정렬 해보자
@@ -203,7 +203,7 @@ public class AnalysisController {
 		for(int i=0;i<CARDinformList.size();i++){
 			CARDDTOSltd cards = CARDinformList.get(i);
 			sort5[i][0] = cards.getSel7();						//혜택정보:sort1[0][0]
-			sort5[i][1] = 1000*cards.getSel7()/cards.getSel1();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
+			sort5[i][1] = 50000*1000*(cards.getSel7()/cards.getSel1())/cards.getSel2();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
 			sort5[i][2] = i+0.0;									//인덱스:sort1[0][2]
 		}
 		// 자바스택에서 찾아온 정렬 해보자
@@ -218,7 +218,7 @@ public class AnalysisController {
 		for(int i=0;i<CARDinformList.size();i++){
 			CARDDTOSltd cards = CARDinformList.get(i);
 			sort6[i][0] = cards.getSel8();						//혜택정보:sort1[0][0]
-			sort6[i][1] = 1000*cards.getSel8()/cards.getSel1();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
+			sort6[i][1] = 50000*1000*(cards.getSel8()/cards.getSel1())/cards.getSel2();	//혜택정보를 연회비로 나눈 값:sort1[0][1]
 			sort6[i][2] = i+0.0;									//인덱스:sort1[0][2]
 		}
 		// 자바스택에서 찾아온 정렬 해보자
