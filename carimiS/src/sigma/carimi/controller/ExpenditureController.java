@@ -85,7 +85,6 @@ public class ExpenditureController {
 			}
 			
 			String sf3 = syear + "-" + smonth;
-			System.out.println("sf3="+sf3);
 
 			expenditureDTO edto = new expenditureDTO();
 			edto.setId(id);
@@ -234,8 +233,7 @@ public class ExpenditureController {
 		@RequestMapping(value="explistD.do", method={RequestMethod.GET,RequestMethod.POST})
 		public void explistD(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response, int seq)throws Exception{
 			logger.info("Welcome ExpenditureController explistD! "+ new Date());
-		
-			System.out.println("delete_seq="+ seq);
+
 			boolean isS = expenditureService.deleteexp(seq);
 			model.addAttribute("isS", isS);
 			
@@ -287,7 +285,6 @@ public class ExpenditureController {
 				smonth = "0" + smonth;
 			}
 			String sf3 = syear + "-" + smonth;
-			System.out.println("sf3="+sf3);
 
 			String wyear = request.getParameter("year");
 			String wmonth = request.getParameter("month");
@@ -343,8 +340,7 @@ public class ExpenditureController {
 			model.addAttribute("isS", isS);
 			
 			String url = "http://localhost:8090/CarimiS/explist.do?year="+wyear+"&month="+wmonth;
-		      System.out.println(url);
-
+			
 		         response.sendRedirect(url);
 		}
 		
@@ -407,7 +403,7 @@ public class ExpenditureController {
 			int endno = pageno2*page_per_record_cnt;				
 
 			int startno = endno-(page_per_record_cnt-1);
-			System.out.println("startno" + startno);
+
 			if(endno>total_record){
 
 				endno = total_record;

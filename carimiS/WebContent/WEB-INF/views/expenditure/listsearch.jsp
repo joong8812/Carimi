@@ -99,7 +99,7 @@
 											<td>${exp.bcategory}</td>
 											<td>${exp.scategory}</td>
 											<td>${exp.shopname}</td>
-											<td>${exp.price}</td>
+											<td>${exp.price}원</td>
 										</tr>
 										</c:if>
 									</c:forEach>
@@ -124,3 +124,4 @@ $(document).ready(function() {
 	});
 });
 </script>
+<br><br><br><br><br><br><br><br><br><br><br>

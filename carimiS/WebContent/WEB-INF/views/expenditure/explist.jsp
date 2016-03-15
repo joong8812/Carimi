@@ -277,7 +277,7 @@
 												<td></td>
 												</c:if>
 												<td>${exp.shopname}</td>
-												<td>${exp.price}</td>
+												<td>${exp.price}원</td>
 												<td style="text-align: center"><a
 													href="expupdate.do?seq=${exp.seq}&month=${month}&year=${year}"><i
 														class=icon-edit></i></a></td>

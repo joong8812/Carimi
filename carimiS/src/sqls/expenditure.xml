@@ -12,7 +12,7 @@ VALUES (card_expense_seq.nextval, #{id}, #{wdate}, #{moneytype}, #{price}, #{sho
 
 <!-- getexpList *select-->
 <select id="getexpList" parameterType="sigma.carimi.model.expenditureDTO" resultType="sigma.carimi.model.expenditureDTO">
-SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE #{wdates}||'%' ORDER BY WDATE
+SELECT * FROM CARD_EXPENSE WHERE ID = #{id} AND WDATE LIKE #{wdates}||'%' ORDER BY WDATE ASC, PRICE DESC 
 </select>
 
 <!-- e1list *select-->

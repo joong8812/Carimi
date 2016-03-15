@@ -20,8 +20,7 @@
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-credit-card"></i>
-					<h3>${login.id}님의 연간 보고서
-					</h3>
+					<h3>${login.id}님의연간 보고서</h3>
 				</div>
 				<div class="widget-conetent">
 					<div class="widget-content pull-left">
@@ -46,100 +45,278 @@
 							</form>
 						</div>
 					</div>
-				<div class="widget-content pull-left" style="margin-left:25px;" >
+					<div class="widget-content pull-left" style="margin-left: 25px;">
 						<div>
-							<div class ="date-picker-year"></div>
-					
+							<div class="date-picker-year"></div>
+
 						</div>
-		
-					<table>
-					<tr>
-						<td><a href="${sleft }"><img src="/CarimiS/image/left.png" /></a> 
-						${sf2 } 
-						<a href="${sright }"><img src="/CarimiS/image/right.png" /></a></td>
-					</tr>
-				</table> 
-		<br>
-		
-		<script>
+
+						<table>
+							<tr>
+								<td><a href="${sleft }"><img
+										src="/CarimiS/image/left.png" /></a> ${sf2 } <a href="${sright }"><img
+										src="/CarimiS/image/right.png" /></a></td>
+							</tr>
+						</table>
+						<br>
+
+						<script>
 		function ss(){
 			return 60;
 		}
 		</script>
 
-		<div
-			style="width: 200%; padding: 5px; margin: auto;">
-			<script type="text/javascript">
+						<div style="width: 200%; padding: 5px; margin: auto;">
+							<script type="text/javascript">
 				$(function() {
 					var sumshop = new Array();
+					var totalshop = 0;
 					<c:forEach items="${sumshop}" var="sshop">
 						sumshop.push("${sshop}");
+						
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+					  totalshop +=  sumshop[i]*1;
+						
+					} 
 					
 					var sumoil = new Array();
+					var totaloil = 0;
 					<c:forEach items="${sumoil}" var="sshop">
 						sumoil.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totaloil +=  sumoil[i]*1;
+						} 
 					
 					var sumbea = new Array();
+					var totalbea = 0;
 					<c:forEach items="${sumbea}" var="sshop">
 						sumbea.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totalbea +=  sumbea[i]*1;
+							
+						} 
 					
 					var summart = new Array();
+					var totalmart = 0;
 					<c:forEach items="${summart}" var="sshop">
 						summart.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totalmart +=  summart[i]*1;
+							
+						} 
 					
 					var sumcvs = new Array();
+					var totalcvs = 0;
 					<c:forEach items="${sumcvs}" var="sshop">
 						sumcvs.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totalcvs +=  sumcvs[i]*1;
+							
+						} 
 					
 					var sumeou = new Array();
+					var totaleou = 0;
 					<c:forEach items="${sumeou}" var="sshop">
 						sumeou.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totaleou +=  sumeou[i]*1;
+							
+						} 
 					
 					var summovie = new Array();
+					var totalmovie = 0;
 					<c:forEach items="${summovie}" var="sshop">
 						summovie.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totalmovie +=  summovie[i]*1;
+							
+						} 
 					
 					var sumtra = new Array();
+					var totaltra = 0;
 					<c:forEach items="${sumtra}" var="sshop">
 						sumtra.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totaltra +=  sumtra[i]*1;
+							
+						} 
 					
 					var sumtel = new Array();
+					var totaltel = 0;
 					<c:forEach items="${sumtel}" var="sshop">
 						sumtel.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totaltel +=  sumtel[i]*1;
+							
+						} 
 					
 					var sumedu = new Array();
+					var totaledu = 0;
 					<c:forEach items="${sumedu}" var="sshop">
 						sumedu.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totaledu +=  sumedu[i]*1;
+							
+						} 
 					
 					var sumcul = new Array();
+					var totalcul = 0;
 					<c:forEach items="${sumcul}" var="sshop">
 						sumcul.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totalcul +=  sumcul[i]*1;
+							
+						} 
 					
 					var sumlei = new Array();
+					var totallei = 0;
 					<c:forEach items="${sumlei}" var="sshop">
 						sumlei.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totallei +=  sumlei[i]*1;
+							
+						} 
 					
 					var summedi = new Array();
+					var totalmedi = 0;
 					<c:forEach items="${summedi}" var="sshop">
 						summedi.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totalmedi +=  summedi[i]*1;
+							
+						} 
 					
 					var sumcafe = new Array();
+					var totalcafe = 0;
 					<c:forEach items="${sumcafe}" var="sshop">
 						sumcafe.push("${sshop}");
 					</c:forEach>
+					for (var i = 0; i < 12; i++) {
+
+						totalcafe +=  sumcafe[i]*1;
+							
+						} 
+					
+					var score = new Array();
+					score = [totaloil,totalshop,totalmart,totalcvs,totaleou,totalcafe,totalmovie,totaltra,totaltel,totaledu,totalcul,totallei,totalmedi,totalbea];
+					var scorename = new Array(); 
+					scorename = ["주유","쇼핑","대형마트","편의점","외식","카페/베이커리","영화","교통","통신","교육","문화","레저","의료","뷰티"]; 
+
+					var arrIndex=0;
+					var max = score[0];
+					var k = 0;
+					for(k = 1; k < score.length; k++) {
+					    if (score[k] > max){
+					        max = score[k];
+					        arrIndex = k;
+					    }
+					}
+					
+					var cardking = [["OIL","SHOP","MART","CVS","EOU","CAFE","MOVIE","TRA","TEL","EDU","CUL","LEI","MEDI","BEA"],
+				            ["기업 ibk hi","기업 참!좋은친구","기업 참!좋은친구","씨티 클리어","기업 참!좋은친구","기업 참!좋은친구","기업 참!좋은친구","씨티 클리어","씨티 클리어","국민 굿데이","씨티 클리어","기업 ibk hi","우리 가득한할인","롯데 DC Smart"],
+				            ["기업 참!좋은친구","씨티 클리어","씨티 클리어","국민 굿데이","기업 ibk hi","농협 스마티","씨티 클리어","기업 ibk hi","기업 ibk hi","하나 투엑스알파","삼성 S클래스","기업 참!좋은친구","롯데 DC Smart","하나 팝"],
+				            ["국민 굿데이","농협 스마티","씨티 멀티플러스","씨티 멀티플러스","농협 스마티","씨티 클리어","우리 가득한할인","씨티 멀티플러스","국민 굿데이","우리 가득한할인","농협 스마티","씨티 클리어","신한 Love","신한 Love"]];
+					
+					/* alert("지출 내역 중  " + scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다."); */
+					
+					if(scorename[arrIndex]=="주유"){
+						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][0] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","http://www.ibk.co.kr");
+
+					}
+					if(scorename[arrIndex]=="쇼핑"){
+						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][1] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","http://www.ibk.co.kr");
+					}
+ 					if(scorename[arrIndex]=="대형마트"){
+ 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][2] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","http://www.ibk.co.kr");
+ 					}
+ 					if(scorename[arrIndex]=="편의점"){
+ 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][3] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","http://www.citibank.co.kr");
+ 					}
+					if(scorename[arrIndex]=="외식"){
+						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][4] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","http://www.ibk.co.kr");
+					}
+ 					if(scorename[arrIndex]=="카페/베이커리"){
+ 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][5] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","http://www.ibk.co.kr");
+ 					}
+ 					if(scorename[arrIndex]=="영화"){
+ 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][6] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","http://www.ibk.co.kr");
+ 					}
+ 					if(scorename[arrIndex]=="교통"){
+ 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][7] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","http://www.citibank.co.kr");
+ 					}
+ 					if(scorename[arrIndex]=="통신"){
+ 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][8] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","http://www.citibank.co.kr");
+ 					}
+ 					if(scorename[arrIndex]=="교육"){
+ 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][9] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","https://www.kbstar.com");
+ 					}
+ 					if(scorename[arrIndex]=="문화"){
+ 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][10] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","http://www.citibank.co.kr");
+ 					}
+ 					if(scorename[arrIndex]=="레저"){
+ 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][11] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","http://www.ibk.co.kr");
+ 					}
+ 					if(scorename[arrIndex]=="의료"){
+ 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][12] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","https://www.wooribank.com");
+ 					}
+ 					if(scorename[arrIndex]=="뷰티"){
+ 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][13] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").attr("href","https://www.lottecard.co.kr");
+ 					}
+					
 					
 					$('#container').highcharts(
 							{
@@ -283,17 +460,27 @@
 							});
 
 				});
+				
 			</script>
 
-			<script src="https://code.highcharts.com/highcharts.js"></script>
-			<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-			<div id="container"
-				style="min-width: 480px; width: 100%; max-width: 100%; height: 500px;"></div>
+							<script src="https://code.highcharts.com/highcharts.js"></script>
+							<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+							<div id="container"
+								style="min-width: 480px; width: 100%; max-width: 100%; height: 500px;"></div>
+
+						</div>
+						<div id="div1">여기다</div>
+						<div id="div2">여기다</div>
+						<div>
+							<a href="http://www.naver.com" id="div3">카드팡팡</a>
+						</div>
+						<br>
+					</div>
+				</div>
+			</div>
 		</div>
-		<br>
-</div></div></div></div>
 	</div>
 </div>
 
