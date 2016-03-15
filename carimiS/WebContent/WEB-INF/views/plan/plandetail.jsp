@@ -11,7 +11,7 @@
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/Carimi/js/showlocation.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/showlocation.js"></script>
 <style>
 #map{
 	font-size:25px;
@@ -77,7 +77,7 @@
 
 				<br> <input type="hidden" id="locationx" value="${detailplan.plocation_x}" />
 					  <input type="hidden" id="locationy" value="${detailplan.plocation_y}" />
-
+				
 				<div id="map_canvas"></div>
 				<br>
 				<br>
