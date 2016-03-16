@@ -3,6 +3,7 @@ package sigma.carimi.service;
 import java.util.List;
 
 import sigma.carimi.model.expenditureDTO;
+import sigma.carimi.model.memberDTO;
 
 
 public interface expenditureService {

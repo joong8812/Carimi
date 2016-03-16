@@ -74,6 +74,10 @@
 <div class="account-container">
 	
 	<div class="content clearfix">
+	
+								<form action="admin_analysis.do" method="post">
+								<input type="submit" value="admin" id="submit">
+							</form>
 		
 		<form action="loginAf.do" method="post" name="login">
 		

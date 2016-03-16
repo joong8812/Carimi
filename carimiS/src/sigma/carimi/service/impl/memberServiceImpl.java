@@ -1,8 +1,12 @@
 package sigma.carimi.service.impl;
 
+import java.util.HashMap;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import sigma.carimi.model.expenditureDTO;
 import sigma.carimi.model.memberDTO;
 import sigma.carimi.service.memberDAO;
 import sigma.carimi.service.memberService;
@@ -34,5 +38,10 @@ public class memberServiceImpl implements memberService{
 	@Override
 	public boolean memDelete(String id) throws Exception {
 		return memberDAO.memDelete(id);
+	}
+	@Override
+	public List<memberDTO> allList() throws Exception {
+		
+		return memberDAO.allList();
 	}
 }

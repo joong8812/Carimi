@@ -122,4 +122,8 @@
 	<put-attribute name="content" value="/WEB-INF/views/expenditure/exp_3.jsp" />
 </definition>
 
+<definition name="admin_analysis.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/login/admin_analysis.jsp" />
+</definition>
+
 </tiles-definitions> 

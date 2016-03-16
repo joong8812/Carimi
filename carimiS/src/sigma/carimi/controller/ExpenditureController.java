@@ -105,7 +105,7 @@ public class ExpenditureController {
 			int endno = pageno2*page_per_record_cnt;				
 
 			int startno = endno-(page_per_record_cnt-1);
-			System.out.println("startno" + startno);
+
 			if(endno>total_record){
 
 				endno = total_record;

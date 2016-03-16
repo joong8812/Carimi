@@ -1,5 +1,8 @@
 package sigma.carimi.service;
 
+import java.util.HashMap;
+import java.util.List;
+
 import sigma.carimi.model.memberDTO;
 
 public interface memberService {
@@ -9,4 +12,6 @@ public interface memberService {
 	memberDTO memberOne(memberDTO member) throws Exception;
 	boolean memUpdate(memberDTO member) throws Exception;
 	boolean memDelete(String id) throws Exception;
+	List<memberDTO> allList()throws Exception;
+	
 }

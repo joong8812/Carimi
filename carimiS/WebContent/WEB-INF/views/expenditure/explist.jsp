@@ -61,6 +61,7 @@
 							<form action="expwrite.do" method="post">
 								<input type="submit" value="지출내역 쓰기" id="submit">
 							</form>
+							
 						</div>
 					</div>
 					<div class="widget-content pull-left"

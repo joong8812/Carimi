@@ -1,11 +1,14 @@
 package sigma.carimi.controller;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import sigma.carimi.model.expenditureDTO;
 import sigma.carimi.model.memberDTO;
 import sigma.carimi.service.memberService;
 
@@ -263,6 +267,28 @@ public class MemberController {
 			request.getSession().invalidate();
 			return "main.tiles";
 		}
+	}
+		@RequestMapping(value="admin_analysis.do", method={RequestMethod.GET,RequestMethod.POST})
+		public String admin_analysis(Model model, memberDTO mdto, HttpSession session, HttpServletRequest request) throws Exception{
+			logger.info("Welcome MemberController admin_analysis! "+ new Date());
+			
+			List<memberDTO> memberlist = new ArrayList<memberDTO>();
+			
+			model.addAttribute("memberlist",memberlist);
+			
+			// 카드 이름 18개를 변수로 받아와서 넣고 맵으로 받아옴. Map<카드이름을 키값으로,count(*)로 숫자> 받아온후 desc하고 3개 순서대로
+			/*List<Integer> twlist = new ArrayList<Integer>(cardname);
+			
+			int age = 20;
+			
+			allMap = memberService.allList(age);
+			System.out.println(all.size());
+			
+			model.addAttribute("all", all);
+			*/
+			
+			
+			return "admin_analysis.tiles";
 		
 		
 	}

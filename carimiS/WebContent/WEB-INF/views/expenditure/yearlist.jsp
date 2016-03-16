@@ -20,7 +20,7 @@
 			<div class="widget">
 				<div class="widget-header">
 					<i class="icon-credit-card"></i>
-					<h3>${login.id}님의연간 보고서</h3>
+					<h3>${login.id}님의 연간 보고서</h3>
 				</div>
 				<div class="widget-conetent">
 					<div class="widget-content pull-left">
@@ -247,74 +247,102 @@
 					
 					if(scorename[arrIndex]=="주유"){
 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][0] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","http://www.ibk.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][0] + "' 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][0] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][0] + "' 카드입니다.");
+						$("#div5").attr("href","http://www.ibk.co.kr");
 
 					}
 					if(scorename[arrIndex]=="쇼핑"){
 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][1] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","http://www.ibk.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는  1위 카드 " + "'" + cardking[1][1] + "' 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][1] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][1] + "' 카드입니다.");
+						$("#div5").attr("href","http://www.ibk.co.kr");
 					}
  					if(scorename[arrIndex]=="대형마트"){
  						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][2] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","http://www.ibk.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][2] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][2] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][2] + "' 카드입니다.");
+						$("#div5").attr("href","http://www.ibk.co.kr");
  					}
  					if(scorename[arrIndex]=="편의점"){
  						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][3] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","http://www.citibank.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][3] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][3] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][3] + "' 카드입니다.");
+						$("#div5").attr("href","http://www.citibank.co.kr");
  					}
 					if(scorename[arrIndex]=="외식"){
 						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][4] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","http://www.ibk.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][4] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][4] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][4] + "' 카드입니다.");
+						$("#div5").attr("href","http://www.ibk.co.kr");
 					}
  					if(scorename[arrIndex]=="카페/베이커리"){
  						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][5] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","http://www.ibk.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][5] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][5] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][5] + "' 카드입니다.");
+						$("#div5").attr("href","http://www.ibk.co.kr");
  					}
  					if(scorename[arrIndex]=="영화"){
  						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][6] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","http://www.ibk.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][6] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][6] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][6] + "' 카드입니다.");
+						$("#div5").attr("href","http://www.ibk.co.kr");
  					}
  					if(scorename[arrIndex]=="교통"){
  						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][7] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","http://www.citibank.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][7] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][7] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][7] + "' 카드입니다.");
+						$("#div5").attr("href","http://www.citibank.co.kr");
  					}
  					if(scorename[arrIndex]=="통신"){
  						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][8] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","http://www.citibank.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][8] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][8] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][8] + "' 카드입니다.");
+						$("#div5").attr("href","http://www.citibank.co.kr");
  					}
  					if(scorename[arrIndex]=="교육"){
  						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][9] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","https://www.kbstar.com");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][9] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][9] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][9] + "' 카드입니다.");
+						$("#div5").attr("href","https://www.kbstar.com");
  					}
  					if(scorename[arrIndex]=="문화"){
  						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][10] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","http://www.citibank.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][10] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][10] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][10] + "' 카드입니다.");
+						$("#div5").attr("href","http://www.citibank.co.kr");
  					}
  					if(scorename[arrIndex]=="레저"){
  						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][11] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","http://www.ibk.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][11] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][11] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][11] + "' 카드입니다.");
+						$("#div5").attr("href","http://www.ibk.co.kr");
  					}
  					if(scorename[arrIndex]=="의료"){
  						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][12] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","https://www.wooribank.com");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][12] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][12] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][12] + "' 카드입니다.");
+						$("#div5").attr("href","https://www.wooribank.com");
  					}
  					if(scorename[arrIndex]=="뷰티"){
  						$("#div1").text(scorename[arrIndex] + "카테고리에서 가장 많은 지출 " + max + "원을 사용하였습니다.");
-						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 " + "'" + cardking[1][13] + "'" +  " 카드를 추천해드립니다!");
-						$("#div3").attr("href","https://www.lottecard.co.kr");
+						$("#div2").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 1위 카드 " + "'" + cardking[1][13] + "'" +  " 카드를 추천해드립니다!");
+						$("#div3").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 2위 카드는 " + "'" + cardking[2][13] + "' 카드");
+						$("#div4").text(scorename[arrIndex] + "카테고리에서 최대 혜택을 제공하는 3위 카드는 " + "'" + cardking[3][13] + "' 카드입니다.");
+						$("#div5").attr("href","https://www.lottecard.co.kr");
  					}
 					
 					
@@ -473,8 +501,10 @@
 						</div>
 						<div id="div1">여기다</div>
 						<div id="div2">여기다</div>
+						<div id="div3">여기다</div>
+						<div id="div4">여기다</div>
 						<div>
-							<a href="http://www.naver.com" id="div3">카드팡팡</a>
+							<a href="http://www.naver.com" id="div5">1위카드팡팡!</a>
 						</div>
 						<br>
 					</div>

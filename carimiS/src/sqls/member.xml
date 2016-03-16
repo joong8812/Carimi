@@ -33,7 +33,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="memDelete"
 		parameterType="String">
 		DELETE CARD_USER WHERE ID=#{id}
+		
 	</delete>
+	
+	<select id="allList"
+		resultType="sigma.carimi.model.memberDTO">
+		SELECT age, count(*) FROM CARD_USER group by age order by count(*) desc;
+	</select>
 	
 	
  </mapper>

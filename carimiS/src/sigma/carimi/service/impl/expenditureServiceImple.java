@@ -17,8 +17,6 @@ public class expenditureServiceImple implements expenditureService{
 
 		@Override
 		public List<expenditureDTO> getexpList(expenditureDTO edto) throws Exception {
-			System.out.println(edto.getId());
-			System.out.println(edto.getWdates());
 			
 			return expenditureDAO.getexpList(edto);
 		}
@@ -71,4 +69,6 @@ public class expenditureServiceImple implements expenditureService{
 		public List<expenditureDTO> yearList(expenditureDTO edto, int year) throws Exception {
 			return expenditureDAO.yearList(edto, year);
 		}
+		
+		
 }
