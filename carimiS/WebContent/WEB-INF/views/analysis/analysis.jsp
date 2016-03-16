@@ -357,10 +357,6 @@ function check() {
 }
 </script>
 
-	<script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
-	<script src="<%=request.getContextPath()%>/js/signin.js"></script>
-	<script src="<%=request.getContextPath()%>/js/base.js"></script>
 <script src="<%=request.getContextPath()%>/js/guidely/guidely.min.js"></script>
 
 <script>

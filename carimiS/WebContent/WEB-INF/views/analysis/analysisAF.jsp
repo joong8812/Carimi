@@ -16,7 +16,6 @@
 <link href="<%=request.getContextPath()%>/css/font-awesome.css" rel="stylesheet">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css">
-<link href="<%=request.getContextPath()%>/css/pages/signin.css" rel="stylesheet" type="text/css">
 <link href="<%=request.getContextPath()%>/css/pages/dashboard.css" rel="stylesheet">
 
 <!-- ##### ##### ##### ##### ##### Select Menu FROM Analysis.jsp ##### ##### ##### ##### ##### -->
@@ -105,23 +104,7 @@
 
 
 <!-- ##### ##### ##### ##### ##### analysisAF FROM CARIMI2 ##### ##### ##### ##### ##### -->
-<H2>집중분석</H2>
-<div id="analysis">
-  	</div>
-  	<%
-  		// 여기에서 dao의 정보들을 받아온다. 이러한 형태로 컨트롤러의 자료를 받아오면 된다.
-   	//dao = CARDDAO.getInstance();	// dao의 메소드를 불러오기 위해 인스턴스 형성
-   	//CARDinformList = dao.getCARDinformlist(strc1[0],strc1[1],strc1[2],strc1[3],strc1[4],strc1[5],stra1[0],strb1[0]);
-   	// 위의 조건을 불러 일으킨 녀석을 그냥 불러와서 쓰면 될 것 같은데 ...
-  	%>
-총 ${CARDinformListSize } 개의 카드가 검색되었습니다.
 
-<c:if test="${strc1Length eq 6 }">
-	선택한 혜택 : 
-	<c:forEach items="${strc1 }" var="strc1" varStatus="vs">
-		${vs.count }. ${strc1 }
-	</c:forEach>
-</c:if>
 
 
 <!-- ##### ##### ##### Drawing GRAPHS HERE ##### ##### ##### -->
@@ -726,8 +709,26 @@ $(function () {
 
 <div class="main">
 	<div class="main-inner">
+	<div class="container">
       	<div class="row">
-		    <div class="span12">      		
+		    <div class="span12">    
+			    <H2>집중분석</H2>
+				<div id="analysis">
+				  	</div>
+				  	<%
+				  		// 여기에서 dao의 정보들을 받아온다. 이러한 형태로 컨트롤러의 자료를 받아오면 된다.
+				   	//dao = CARDDAO.getInstance();	// dao의 메소드를 불러오기 위해 인스턴스 형성
+				   	//CARDinformList = dao.getCARDinformlist(strc1[0],strc1[1],strc1[2],strc1[3],strc1[4],strc1[5],stra1[0],strb1[0]);
+				   	// 위의 조건을 불러 일으킨 녀석을 그냥 불러와서 쓰면 될 것 같은데 ...
+				  	%>
+				총 ${CARDinformListSize } 개의 카드가 검색되었습니다.
+				
+				<c:if test="${strc1Length eq 6 }">
+					선택한 혜택 : 
+					<c:forEach items="${strc1 }" var="strc1" varStatus="vs">
+						${vs.count }. ${strc1 }
+					</c:forEach>
+				</c:if>  		
 			   <div class="widget widget-table action-table">
 <!--             		/widget-header -->
           			<div class="widget-content">
@@ -977,6 +978,7 @@ $(function () {
            		</div>
         	</div>			
 		</div>
+	</div>	
 	</div>
 </div>		
 									

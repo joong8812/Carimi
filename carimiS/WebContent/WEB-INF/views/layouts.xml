@@ -8,6 +8,7 @@
 	<put-attribute name="top_menu" value="/WEB-INF/views/common/top.jsp" />
 	<put-attribute name="nav_menu" value="/WEB-INF/views/common/nav.jsp" />
 	<put-attribute name="content" value="/WEB-INF/views/common/content.jsp" />
+	<put-attribute name="content_below" value="/WEB-INF/views/common/nothing.jsp" />
 	<put-attribute name="bottom_menu" value="/WEB-INF/views/common/bottom.jsp"/>
 </definition>
 
