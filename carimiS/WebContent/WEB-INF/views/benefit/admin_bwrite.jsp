@@ -42,7 +42,7 @@
     				<div class="controls">
     					<select name="cardname" style="width:150px">
     						<c:forEach items="${cardnames }" var="cardnames" varStatus="vs" >
-								<option value="${cardvalues[vs.count] }">${cardnames }</option>
+								<option value="${cardvalues[vs.count-1] }">${cardnames }</option>
 							</c:forEach>
 						</select>
     				</div>
