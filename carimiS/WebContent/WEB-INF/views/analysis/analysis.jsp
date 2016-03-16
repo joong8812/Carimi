@@ -385,12 +385,7 @@ $(function () {
 		
 	});
 	
-/* 	guidely.add ({
-		attachTo: '#target-4'
-		, anchor: 'top-right'
-		, title: 'Guide Title'
-		, text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.'
-	}); */
+
 	
 	guidely.init ({ welcome: true, startTrigger: false });
 
