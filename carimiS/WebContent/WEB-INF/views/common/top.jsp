@@ -23,9 +23,9 @@
         <ul class="nav pull-right"> 
 			<c:if test="${!empty login.id}">
 	          <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i
-	                            class="icon-cog"></i> Account <b class="caret"></b></a>
+	                            class="icon-cog"></i> 계정 <b class="caret"></b></a>
 	            <ul class="dropdown-menu">
-	              <li><a href="meminfo.do">Settings</a></li>  
+	              <li><a href="meminfo.do">내정보 확인</a></li>  
 	            </ul>
 	          </li>
 	        </c:if>
@@ -35,7 +35,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
 		                   class="icon-user"></i>${login.id} 로그인중 <b class="caret"></b></a>
 		              	<ul class="dropdown-menu">
-							<li><a href="logout.do">logout</a></li>
+							<li><a href="logout.do">로그아웃</a></li>
 						</ul>
 					</li>
 				</c:when>
@@ -44,8 +44,8 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
 		                            class="icon-user"></i> 로그인해주세요 <b class="caret"></b></a>
 		            	<ul class="dropdown-menu">
-		             		<li><a href="login.do">Login</a></li>
-		            		<li><a href="sign.do">Sign Up</a></li>
+		             		<li><a href="login.do">로그인</a></li>
+		            		<li><a href="sign.do">회원가입</a></li>
 			            </ul>
 		    	    </li>
 				</c:otherwise>

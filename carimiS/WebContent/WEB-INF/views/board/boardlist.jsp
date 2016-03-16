@@ -65,12 +65,12 @@ List<boardDTO> boardlist = bdao.boardList(cardvalue);
                 <thead>
   					<tr >
    					<th >#</th>
-  					<th >Notice Date</th>
-  					<th >ID</th>
-  					<th >TITLE</th>
-  					<th >Notice Start</th>
-  					<th >Notice End</th>
-  					<th >Coupon</th>
+  					<th >공지날짜</th>
+  					<th >작성자</th>
+  					<th >제목</th>
+  					<th >공지 시작일</th>
+  					<th >공지 종료일</th>
+  					<th >쿠폰</th>
   				  </tr>
  			</thead>
      	<tbody>

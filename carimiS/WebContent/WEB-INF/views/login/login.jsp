@@ -46,8 +46,8 @@
 				<ul class="nav pull-right">
 					
 					<li class="">						
-						<a href="signup.do" class="">
-							Don't have an account?
+						<a href="sign.do" class="">
+							계정이 없으신가요? 회원가입을 해주세요.
 						</a>
 						
 					</li>
@@ -55,7 +55,7 @@
 					<li class="">						
 						<a href="javascript:navClick('nav_main', 'main.do')" class="">
 							<i class="icon-chevron-left"></i>
-							Back to Homepage
+							메인으로 돌아가기
 						</a>
 						
 					</li>
@@ -81,15 +81,15 @@
 		
 		<form action="loginAf.do" method="post" name="login">
 		
-			<h1>Member Login</h1>		
+			<h1>로그인</h1>		
 			
 			<div class="login-fields">
 				
-				<p>Please provide your details</p>
+				<p>아이디와 비밀번호를 입력하세요</p>
 				
 				<div class="field">
-					<label for="username">Username:</label>
-					<input type="text" id="id" name="id" value="" placeholder="Username" class="login username-field" />
+					<label for="ID">ID:</label>
+					<input type="text" id="id" name="id" value="" placeholder="ID" class="login username-field" />
 				</div> <!-- /field -->
 				
 				<div class="field">
@@ -105,11 +105,11 @@
 				
 				<span class="login-checkbox" style="margin-top: 32px;">
 					<input id="saveid" name="saveid" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
-					<label class="choice" for="saveid" >Save ID</label>
+					<label class="choice" for="saveid" >아이디 저장</label>
 				</span>
 				<input type="hidden" name="prevurl" value="${prevurl }">
 													
-				<button type="button" onclick="checkfield()" class="button btn btn-success btn-large">Login</button>
+				<button type="button" onclick="checkfield()" class="button btn btn-success btn-large">로그인</button>
 				
 			</div> <!-- .actions -->
 			
@@ -120,6 +120,7 @@
 	</div> <!-- /content -->
 	
 </div> <!-- /account-container -->
+
 <script>
 function checkfield(){
 	

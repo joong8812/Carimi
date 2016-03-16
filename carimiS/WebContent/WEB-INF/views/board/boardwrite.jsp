@@ -74,7 +74,7 @@ action="boardwriteAf.do" method="post">
 									<fieldset>
 										
 										<div class="control-group">											
-											<label class="control-label" for="username">Writer</label>
+											<label class="control-label" for="username">작성자</label>
 											<div class="controls">
 												<input type="text" class="span7 disabled" id="id"  value="${sessionScope.login.id}" disabled>
 												<input type="hidden" name="id" value="${sessionScope.login.id}"/>
@@ -83,7 +83,7 @@ action="boardwriteAf.do" method="post">
 										</div> <!-- /control-group -->
 										
 										<div class="control-group">
-							 		<label class="control-label">Card</label>											 	   
+							 		<label class="control-label">카드</label>											 	   
 									 <div class="controls">
 									
                                       <label class="checkbox-inline">
@@ -117,7 +117,7 @@ action="boardwriteAf.do" method="post">
 										</div>
 										</div>
 										<div class="control-group">											
-											<label class="control-label" for="btitle">Title</label>
+											<label class="control-label" for="btitle">제목</label>
 											<div class="controls">
 												<input type="text" class="span7" name="btitle" id="btitle" placeholder="Title">
 											</div> <!-- /controls -->				
@@ -125,13 +125,13 @@ action="boardwriteAf.do" method="post">
 										
 										
 										<div class="control-group">											
-											<label class="control-label" for="bcontent">Content</label>
+											<label class="control-label" for="bcontent">내용</label>
 											<div class="controls">
 												 <textarea name="bcontent" id="bcontent" class="span7" ></textarea>
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 										<div class="control-group">											
-											<label class="control-label" for="Notice S-E">Notice S-E</label>
+											<label class="control-label" for="Notice S-E">공지 시작일-종료일</label>
 											<div class="controls">
 												<input id="datepicker1" type="text" name="bsdate" placeholder="Start Date"/>
 												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -146,7 +146,7 @@ action="boardwriteAf.do" method="post">
 										</div>
 										
 										<div class="control-group">											
-											<label class="control-label" for="btitle">Coupon</label>
+											<label class="control-label" for="btitle">쿠폰</label>
 											<div class="controls">
 												<input type="file" name='fileload' style="width:400px;"/>
 											</div> <!-- /controls -->				
@@ -156,8 +156,8 @@ action="boardwriteAf.do" method="post">
 
 										
 								<div class="form-actions">
-											<button type="submit" class="btn btn-primary">Upload</button> 
-											<button class="btn">Cancel</button>
+											<button style="width:100%" type="submit" class="btn btn-primary">쓰기</button> 
+											
 										</div> <!-- /form-actions -->
 									</fieldset>
 								</form>

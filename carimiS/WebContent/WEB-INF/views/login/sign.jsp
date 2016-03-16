@@ -45,14 +45,14 @@
 				<ul class="nav pull-right">
 					<li class="">						
 						<a href="login.do" class="">
-							Already have an account? Login now
+							계정이 있으신가요? 바로 로그인 하세요.
 						</a>
 						
 					</li>
 					<li class="">						
 						<a href="javascript:navClick('nav_main', 'main.do')" class="">
 							<i class="icon-chevron-left"></i>
-							Back to Homepage
+							메인으로 돌아가기
 						</a>
 						
 					</li>
@@ -74,11 +74,11 @@
 		
 		<form name="addjoin" action="signup.do" method="post">
 		
-			<h1 style="text-align:center">Signup for Free Account</h1>			
+			<h1 style="text-align:center">회원 가입</h1>			
 			
 			<div class="login-fields">
 				
-				<p style="text-align:center">membership clause(회원약관)</p>
+				<p style="text-align:center">회원약관</p>
 				
 						
 				<div class="field" >
@@ -255,7 +255,7 @@
 					<label class="choice" for="Field1"> 동의합니다.</label>
 		</span> <br><br><br>
 		
-				<p style="text-align:center">Personal Data (개인정보처리 방침)</p>
+				<p style="text-align:center">개인정보처리 방침</p>
 		<div class="field" >
 					<label for="check2">check2:</label>
 					
@@ -296,7 +296,7 @@ ID, 닉네임, 비밀번호(단방향암호화), 휴대폰번호, 사업장소�
 
 <!-- Text Under Box -->
 <div class="login-extra">
-	Already have an account? <a href="login.do">Login to your account</a>
+	계정이 있으신가요? <a href="login.do">바로 로그인 하세요.</a>
 </div> <!-- /login-extra -->
 <script>
 function chkAll(chk){								

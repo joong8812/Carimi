@@ -27,7 +27,8 @@
 	      		<div class="widget ">
 	      			
 	      			<div class="widget-header">
-	      				<i class="icon-User"></i>
+	      				<i class="icon-th-list"></i>
+
 	      				<h3>Notice Read</h3>
 	  				</div> <!-- /widget-header -->
 					
@@ -40,32 +41,32 @@
 action="boardupload.jsp" method="post" enctype="multipart/form-data">
 									<fieldset>
 										
-										<div class="control-group">											
-											<label class="control-label" for="username">Writer</label>
+										<div class="control-group ">											
+											<label class="control-label" for="username">작성자</label>
 											<div class="controls">
 												<input type="text" class="span3 disabled" id="username" value="${boardDetail.id }" disabled/>
 										
 												
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
-										
-										
-										<div class="control-group">											
-											<label class="control-label" for="firstname">Title</label>
-											<div class="controls">
-													<input type="text" class="span3 disabled"  value="${boardDetail.btitle }" disabled/>
-											</div> <!-- /controls -->				
-										</div> <!-- /control-group -->
-										
-										<div class="control-group">											
-											<label class="control-label" for="Notice S-E">Notice S-E</label>
+										<div class="control-group pull-right">											
+											<label class="control-label" for="Notice S-E">공지 시작일-종료일</label>
 											<div class="controls">
 													<input type="text" class="span3 disabled"  id="Notice S-E" value="${boardDetail.bsdate } - ${boardDetail.bedate } " disabled/>
 											</div> <!-- /controls -->				
 										</div>
 										
+										<div class="control-group ">											
+											<label class="control-label" for="firstname">제목</label>
+											<div class="controls">
+													<input type="text" class="span3 disabled"  value="${boardDetail.btitle }" disabled/>
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										
+										
+										
 										<div class="control-group">											
-											<label class="control-label" for="lastname">Content</label>
+											<label class="control-label" for="lastname">내용</label>
 											<div class="controls" >
 												<pre>	${boardDetail.bcontent }</pre>
 											
@@ -74,7 +75,7 @@ action="boardupload.jsp" method="post" enctype="multipart/form-data">
 										
 										
 										<div class="control-group">											
-											<label class="control-label" for="coupon">Coupon</label>
+											<label class="control-label" for="coupon">쿠폰</label>
 											<div class="controls">
 											
 											<c:choose>
@@ -93,7 +94,7 @@ action="boardupload.jsp" method="post" enctype="multipart/form-data">
 									<div class="form-actions">
 										<c:choose>
 											<c:when test="${login.auth eq 1 }">
-										 <button class="btn btn-success btn-block"
+										 <button class="btn btn-primary" style="width:100%"
 																 type="button" name="btnDown" 
 										onclick="javascript:document.location.href=
 										'boarddelete.do?bseq=${boardDetail.bseq }&id=${boardDetail.id }'"><span class="glyphicon glyphicon-off"></span>삭제</button>

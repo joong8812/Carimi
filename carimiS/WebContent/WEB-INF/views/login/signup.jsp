@@ -93,14 +93,14 @@
 				<ul class="nav pull-right">
 					<li class="">						
 						<a href="login.do" class="">
-							Already have an account? Login now
+							계정이 있으신가요? 바로 로그인 하세요.
 						</a>
 						
 					</li>
 					<li class="">						
 						<a href="javascript:navClick('nav_main', 'main.do')" class="">
 							<i class="icon-chevron-left"></i>
-							Back to Homepage
+							메인으로 돌아가기
 						</a>
 						
 					</li>
@@ -125,11 +125,11 @@
 		
 		<form name="addjoin" action="signupAf.do" method="post">
 		
-			<h1>Signup for Free Account</h1>			
+			<h1>회원가입</h1>			
 			
 			<div class="login-fields">
 				
-				<p>Create your free account:</p>
+				<p>무료 계정 생성:</p>
 				
 						
 				<div class="field">
@@ -174,24 +174,24 @@
     							<div class="pull-right">
 								<select class="form-control" id="mycard1" name="mycard1" >
 									<option>미보유</option>
-									<option value="shin1">신한1</option>
-									<option value="shin2">신한2</option>
-									<option value="guk1">국민1</option>
-									<option value="guk2">국민2</option>
-									<option value="uri1">우리1</option>
-									<option value="uri2">우리2</option>
-									<option value="ha1">하나1</option>
-									<option value="ha2">하나2</option>
-									<option value="lot1">롯데1</option>
-									<option value="lot2">롯데2</option>
-									<option value="sam1">삼성1</option>
-									<option value="sam2">삼성2</option>
-									<option value="nong1">농협1</option>
-									<option value="nong2">농협2</option>
-									<option value="gi1">기업1</option>
-									<option value="gi2">기업2</option>
-									<option value="ci1">씨티1</option>
-									<option value="ci2">씨티2</option>
+									<option value="shin1">신한 Love</option>
+									<option value="shin2">신한 Tasty</option>
+									<option value="guk1">국민 굿데이</option>
+									<option value="guk2">국민 다담</option>
+									<option value="uri1">우리 다모아할인</option>
+									<option value="uri2">우리 가득한할인</option>
+									<option value="ha1">하나 팝</option>
+									<option value="ha2">하나 투엑스알파</option>
+									<option value="lot1">롯데 DC Supreme</option>
+									<option value="lot2">롯데 DC Smart</option>
+									<option value="sam1">삼성 S클래스</option>
+									<option value="sam2">삼성 2V2</option>
+									<option value="nong1">농협 스마티</option>
+									<option value="nong2">농협 Take5</option>
+									<option value="gi1">기업 ibk hi</option>
+									<option value="gi2">기업 참!좋은친구</option>
+									<option value="ci1">씨티 멀티플러스</option>
+									<option value="ci2">씨티 클리어</option>
 								</select>
 								</div>
 							</div>
@@ -204,24 +204,24 @@
     							<div class="pull-right">
 								<select class="form-control" id="mycard2" name="mycard2" >
 									<option>미보유</option>
-									<option value="shin1">신한1</option>
-									<option value="shin2">신한2</option>
-									<option value="guk1">국민1</option>
-									<option value="guk2">국민2</option>
-									<option value="uri1">우리1</option>
-									<option value="uri2">우리2</option>
-									<option value="ha1">하나1</option>
-									<option value="ha2">하나2</option>
-									<option value="lot1">롯데1</option>
-									<option value="lot2">롯데2</option>
-									<option value="sam1">삼성1</option>
-									<option value="sam2">삼성2</option>
-									<option value="nong1">농협1</option>
-									<option value="nong2">농협2</option>
-									<option value="gi1">기업1</option>
-									<option value="gi2">기업2</option>
-									<option value="ci1">씨티1</option>
-									<option value="ci2">씨티2</option>
+									<option value="shin1">신한 Love</option>
+									<option value="shin2">신한 Tasty</option>
+									<option value="guk1">국민 굿데이</option>
+									<option value="guk2">국민 다담</option>
+									<option value="uri1">우리 다모아할인</option>
+									<option value="uri2">우리 가득한할인</option>
+									<option value="ha1">하나 팝</option>
+									<option value="ha2">하나 투엑스알파</option>
+									<option value="lot1">롯데 DC Supreme</option>
+									<option value="lot2">롯데 DC Smart</option>
+									<option value="sam1">삼성 S클래스</option>
+									<option value="sam2">삼성 2V2</option>
+									<option value="nong1">농협 스마티</option>
+									<option value="nong2">농협 Take5</option>
+									<option value="gi1">기업 ibk hi</option>
+									<option value="gi2">기업 참!좋은친구</option>
+									<option value="ci1">씨티 멀티플러스</option>
+									<option value="ci2">씨티 클리어</option>
 								</select>
 								</div>
 								</div>
@@ -682,13 +682,13 @@
 								
 					
 							<input type="hidden" id="goo" name="goo" />
- 				
+ 				<input type="hidden" id="test" name="test" />
 				
 	
 				
 			</div> <!-- /login-fields -->
 			<div class="login-actions">
-				<button style="width:100%" type="button" onclick="checkfield()" class="button btn btn-success btn-large">Sign In</button>				
+				<button style="width:100%" type="button" onclick="checkfield()" class="button btn btn-success btn-large">가입하기</button>				
 			</div> 
 			
 		</form>
@@ -700,7 +700,7 @@
 
 <!-- Text Under Box -->
 <div class="login-extra">
-	Already have an account? <a href="login.do">Login to your account</a>
+	계정이 있으신가요?<a href="login.do">바로 로그인 하세요.</a>
 </div> <!-- /login-extra -->
 <script>
 function chk_only2(chk){								
@@ -959,6 +959,7 @@ function chk_six(chk){
 	</script>
 	<script>
 function checkfield(){
+	/* (document.getElementsByName("sex").value); */
 	
 	if(document.addjoin.id.value==""){ //id값이 없을 경우
 		alert("아이디를 입력하세요");
@@ -971,10 +972,26 @@ function checkfield(){
 	}else if(document.addjoin.name.value==""){
 		alert("이름을 입력하세요");
 		document.addjoin.name.focus();
+		exit
+	}else if(document.addjoin.age.value==""){
+		alert("나이를 입력하세요");
+		document.addjoin.age.focus();
 		exit;
 	}else if(document.addjoin.email.value==""){
 		alert("이메일을 입력하세요");
 		document.addjoin.email.focus();
+		exit;
+	}else if(document.getElementsByName("sex").value==null){
+		alert("성별을 선택하세요");
+		document.addjoin.sex.focus();     // id 텍스트박스에 커서를 위치
+		exit;
+	}else if(document.addjoin.goo.value==""){
+		alert("지역과 구를 선택하세요");
+		document.addjoin.locaion.focus();
+		exit;
+	}else if(document.getElementsByName("fav").value==null){
+		alert("관심사를 선택하세요");
+		document.addjoin.fav.focus();     // id 텍스트박스에 커서를 위치
 		exit;
 	}
 	var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;

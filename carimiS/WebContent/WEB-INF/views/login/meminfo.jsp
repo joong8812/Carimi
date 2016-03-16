@@ -93,7 +93,7 @@
 									<fieldset>
 									
 										<div class="control-group">											
-											<label class="control-label" for="id">ID</label>
+											<label class="control-label" for="id">아이디</label>
 											<div class="controls">
 												<input type="text" id="id" class="span2 " name="bbb"  value="${sessionScope.login.id}" disabled="disabled"/>
 												<input type="hidden"  name="id"  value="${sessionScope.login.id}" />
@@ -102,31 +102,31 @@
 										
 										
 										<div class="control-group">											
-											<label class="control-label" for="pwd">Password</label>
+											<label class="control-label" for="pwd">비밀번호</label>
 											<div class="controls">
 												<input type="password" class="span2" id="pwd" name="pwd" value="${mdto.pwd}"/>
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 										<div class="control-group">											
-											<label class="control-label" for="username">Name</label>
+											<label class="control-label" for="username">이름</label>
 											<div class="controls">
 												<input type="text" class="span2" id="name" name="name" value="${mdto.name }"/>
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->							
 										<div class="control-group">											
-											<label class="control-label" for="username">Age</label>
+											<label class="control-label" for="username">나이</label>
 											<div class="controls">
 												<input type="text" class="span2" id="age" name="age" value="${mdto.age }"/>
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->							
 										<div class="control-group">											
-											<label class="control-label" for="username">Email</label>
+											<label class="control-label" for="username">이메일</label>
 											<div class="controls">
 												<input type="text" class="span2" id="email" name="email" value="${mdto.email }"/>
 											</div> <!-- /controls -->				
 										</div> <!-- /control-group -->		
 										 <div class="control-group">											
-											<label class="control-label">Sex</label>
+											<label class="control-label">성별</label>
 											
                                             
                                             <div class="controls">
@@ -691,7 +691,7 @@
 							<input type="hidden" id="goo" name="goo" />
 							<div class="form-actions">
 							  <div class="control-group">											
-											<label class="control-label" for="radiobtns">Update/Delete</label>
+											<label class="control-label" for="radiobtns">수정/탈퇴</label>
 											
                                             <div class="controls">
                                               <div class="btn-group">                                            
@@ -700,11 +700,11 @@
                                               <span class="caret"></span></a>
                                               <ul class="dropdown-menu" id="probtn">
                                                 <li>
-                                                	<button class="btn" type="submit" value="update" name="mode"><i class="icon-pencil" ></i>Update</button>
+                                                	<button class="btn" type="submit" value="update" name="mode"><i class="icon-pencil" ></i>수정!</button>
                                                 </li>
                                               	
                                                 <li>
-                                                	<button class="btn" type="submit" value="delete" name="mode"><i class="icon-trash"></i>Delete</button>
+                                                	<button class="btn" type="submit" value="delete" name="mode"><i class="icon-trash"></i>탈퇴!</button>
                                                 </li>
                                               
                                             
