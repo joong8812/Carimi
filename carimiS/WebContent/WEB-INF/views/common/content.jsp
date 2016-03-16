@@ -34,6 +34,8 @@ video#bgvid {
 						type="video/mp4">
 				</video>
 				<div class="row">
+					방문자수 : ${count }
+					IP : ${ip }
 					<br><br><br><br><br><br><br><br><br><br><br><br>
 					<br><br><br><br><br><br><br><br><br><br><br><br>
 					<br><br><br><br><br><br><br><br><br><br><br><br>

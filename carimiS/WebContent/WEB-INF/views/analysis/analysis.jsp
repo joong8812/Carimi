@@ -13,6 +13,8 @@
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css">
 <link href="<%=request.getContextPath()%>/css/pages/signin.css" rel="stylesheet" type="text/css">
+ <link href="<%=request.getContextPath()%>/js/guidely/guidely.css" rel="stylesheet"> 
+
 <script>
 function imgCbox(N, tabstop) {
 	var objs, cboxes, Img, Span, A;
@@ -95,6 +97,7 @@ imgCbox.ImgObjs = {};
 		<div class="container">
 			<div class="row">
 				<div class="span12">
+				<div id="target-1">
 					<div class="widget">
 						<div class="widget-header">
 							<i class="icon-th-list"></i>
@@ -178,6 +181,7 @@ imgCbox.ImgObjs = {};
 												</div>
 											</div>
 										</div>
+										<div id="target-2">
 										<div class="accordion-group">
 											<div class="accordion-heading">
 												<a class="accordion-toggle" data-toggle="collapse"
@@ -256,6 +260,7 @@ imgCbox.ImgObjs = {};
 											</div>
 										</div>
 									</div>
+									</div>
 								</div>
 								<!-- /controls -->
 							</FORM>
@@ -263,8 +268,14 @@ imgCbox.ImgObjs = {};
 						<!-- /control-group -->
 					</div>
 					<!--/span5  -->
+					</div>
 				</div>
+				
+				
 			</div>
+			<div id="target-3">
+				
+				</div>
 			<!-- /row -->
 		</div>
 		<!-- /container -->
@@ -349,7 +360,47 @@ function check() {
 	<script src="<%=request.getContextPath()%>/js/jquery-1.7.2.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
 	<script src="<%=request.getContextPath()%>/js/signin.js"></script>
+	<script src="<%=request.getContextPath()%>/js/base.js"></script>
+<script src="<%=request.getContextPath()%>/js/guidely/guidely.min.js"></script>
 
+<script>
+
+$(function () {
+	
+	guidely.add ({
+		attachTo: '#target-1'
+		, anchor: 'top-left'
+		, title: '연회비, 실적기준'
+		, text: '연회비(상)와 실적기준(하)을 선택해주세요. 각 항목은 하나만 선택 가능합니다.<br> <img src="/CarimiS/img/se1.JPG"/>'
+	});
+	
+	guidely.add ({
+		attachTo: '#target-2'
+		, anchor: 'top-right'
+		, title: '혜택 6개'
+		, text: '가장 많이 사용하시는 혜택 6개를 선택해주세요. 무조건 6개 선택하셔야합니다. <br><img src="/CarimiS/img/se2.JPG"/>'
+	});
+	
+	guidely.add ({
+		attachTo: '#target-3'
+		, anchor: 'bottom-middle'
+		, title: '결과 딱!'
+		, text: '이렇게 결과가 차트형식으로 보여집니다.  <br>이제 시작하세요.!!! <br> <img src="/CarimiS/img/se3.JPG"/>'
+		
+	});
+	
+/* 	guidely.add ({
+		attachTo: '#target-4'
+		, anchor: 'top-right'
+		, title: 'Guide Title'
+		, text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.'
+	}); */
+	
+	guidely.init ({ welcome: true, startTrigger: false });
+
+});
+
+</script>
 
 </body>
 </html>

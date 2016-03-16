@@ -18,6 +18,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 					#{location}, #{job}, #{email}, #{fav1}, #{fav2}, 
 					#{fav3}, #{fav4}, #{fav5}, #{fav6}, #{mycard1}, #{mycard2})
 	</insert>
+	<insert id="addVisit"
+		parameterType="sigma.carimi.model.visitDTO">
+		INSERT INTO CARD_VISIT(IP, VDATE) VALUES (#{ip}, sysdate)
+	</insert>
+	<select id="visitAll"
+		resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM CARD_VISIT
+	</select>
+	
 	<select id="memberOne"
 		parameterType="sigma.carimi.model.memberDTO"
 		resultType="sigma.carimi.model.memberDTO">

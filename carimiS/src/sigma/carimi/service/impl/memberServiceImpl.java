@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import sigma.carimi.model.expenditureDTO;
 import sigma.carimi.model.memberDTO;
+import sigma.carimi.model.visitDTO;
 import sigma.carimi.service.memberDAO;
 import sigma.carimi.service.memberService;
 
@@ -26,7 +27,14 @@ public class memberServiceImpl implements memberService{
 	public boolean addMember(memberDTO member) throws Exception {
 		return memberDAO.addMember(member);
 	}
-	
+	@Override
+	public boolean addVisit(visitDTO visit) throws Exception {
+		return memberDAO.addVisit(visit);
+	}
+	@Override
+	public int visitAll() throws Exception {
+		return memberDAO.visitAll();
+	}
 	@Override
 	public memberDTO memberOne(memberDTO member) throws Exception {
 		return memberDAO.memberOne(member);

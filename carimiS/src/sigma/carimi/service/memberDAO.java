@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import sigma.carimi.model.expenditureDTO;
 import sigma.carimi.model.memberDTO;
+import sigma.carimi.model.visitDTO;
 
 @Repository
 public class memberDAO {
@@ -28,6 +29,15 @@ public class memberDAO {
 	public boolean addMember(memberDTO member) throws Exception{
 		sqlSession.insert(ns+"addMember",member);
 		return true;
+	}
+	public boolean addVisit(visitDTO visit) throws Exception{
+		sqlSession.insert(ns+"addVisit",visit);
+		return true;
+	}
+	public int  visitAll() throws Exception{
+		
+		int count= (int) sqlSession.selectOne(ns+"visitAll");	
+		return count;
 	}
 	public memberDTO memberOne(memberDTO member) throws Exception{
 		memberDTO mdto = null;

@@ -22,34 +22,52 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+
+import jdk.nashorn.internal.ir.RuntimeNode.Request;
+
 import sigma.carimi.model.expenditureDTO;
+
 import sigma.carimi.model.memberDTO;
+import sigma.carimi.model.visitDTO;
 import sigma.carimi.service.memberService;
 
 @Controller
 public class MemberController {
-
+	
 	private static final Logger logger = 
 	LoggerFactory.getLogger(MemberController.class);
+	
+	
 	
 	@Autowired
 	private memberService memberService;
 	
+	
+
 	@RequestMapping(value = "main.do", method = RequestMethod.GET)
-	public String main(Model model) {		
+	public String main(Model model,HttpServletRequest request, visitDTO visit ) throws Exception {		
 		logger.info("Welcome MemberController main! "+ new Date());
 		  HttpServletRequest req = ((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes()).getRequest();
-
-	        String ip = req.getHeader("X-FORWARDED-FOR");
+		  String ip = req.getHeader("X-FORWARDED-FOR");
 
 	        if (ip == null)
 
 	            ip = req.getRemoteAddr();
-
+		 HttpSession session = request.getSession(); 
+		 visit.setIp(ip);
+		 System.out.println(ip);
+		
+		  if(session.isNew()){//새로운 브라우저의 요청이 발생한다면
+				
+				 System.out.println(memberService.addVisit(visit));
+		  }
+		 
+			int count= memberService.visitAll();
+			
 	         
 
-	        model.addAttribute("clientIP", ip);
-
+	        model.addAttribute("ip", ip);
+	        model.addAttribute("count",count);
 	       
 		return "main.tiles";
 	}
