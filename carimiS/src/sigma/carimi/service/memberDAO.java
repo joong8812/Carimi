@@ -68,6 +68,20 @@ public class memberDAO {
 		
 		return allmap;
 	}
+	
+	public int cntPerCardAge(String card1, String card2, int min, int max) throws Exception{
+		
+		HashMap<String, Object> hm = new HashMap<String, Object>();
+		hm.put("card1", card1);
+		hm.put("card2", card2);
+		hm.put("min", min);
+		hm.put("max", max);
+		
+		int result = (int)sqlSession.selectOne(ns+"cntPerCardAge", hm);
+		
+		return result;
+		
+	}
 
 	
 }

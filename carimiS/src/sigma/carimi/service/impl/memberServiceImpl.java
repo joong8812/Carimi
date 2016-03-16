@@ -52,4 +52,9 @@ public class memberServiceImpl implements memberService{
 		
 		return memberDAO.allList();
 	}
+
+	@Override
+	public int cntPerCardAge(String card1, String card2, int min, int max) throws Exception {
+		return memberDAO.cntPerCardAge(card1, card2, min, max);
+	}
 }
