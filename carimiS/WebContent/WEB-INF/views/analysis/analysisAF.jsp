@@ -134,7 +134,7 @@ $(function () {
             text: '<b> ${strc1[0]} 혜택</b>'// 이거도 자동으로 들어가도록				
         },
         subtitle: {
-            text: ' --- 텍스트 입력 ---'
+            text: ''
         },
         
         tooltip: {
@@ -232,7 +232,7 @@ $(function () {
             text: '<b> ${strc1[1]} 혜택</b>'// 이거도 자동으로 들어가도록				
         },
         subtitle: {
-            text: ' --- 텍스트 입력 ---'
+            text: ''
         },
         
         tooltip: {
@@ -330,7 +330,7 @@ $(function () {
             text: '<b> ${strc1[2]} 혜택</b>'// 이거도 자동으로 들어가도록				
         },
         subtitle: {
-            text: ' --- 텍스트 입력 ---'
+            text: ''
         },
         
         tooltip: {
@@ -428,7 +428,7 @@ $(function () {
             text: '<b> ${strc1[3]} 혜택</b>'// 이거도 자동으로 들어가도록				
         },
         subtitle: {
-            text: ' --- 텍스트 입력 ---'
+            text: ''
         },
         
         tooltip: {
@@ -526,7 +526,7 @@ $(function () {
             text: '<b> ${strc1[4]} 혜택</b>'// 이거도 자동으로 들어가도록				
         },
         subtitle: {
-            text: ' --- 텍스트 입력 ---'
+            text: ''
         },
         
         tooltip: {
@@ -624,7 +624,7 @@ $(function () {
             text: '<b> ${strc1[5]} 혜택</b>'// 이거도 자동으로 들어가도록				
         },
         subtitle: {
-            text: ' --- 텍스트 입력 ---'
+            text: ''
         },
         
         tooltip: {
