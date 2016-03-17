@@ -73,11 +73,11 @@ public class planController {
 			
 			
 		for(int i=0; i<cardevent.size(); i++){
-			if(cardevent.get(i).getBtitle().contains(mc1_shot)) {
+			if(cardevent.get(i).getBtitle().contains(mc1_shot+"카드")) {
 				model.addAttribute("cardevent1", cardevent.get(i));
 				System.out.println("cardevent1= " + cardevent.get(i));
 			}
-			if(cardevent.get(i).getBtitle().contains(mc2_shot)) {
+			if(cardevent.get(i).getBtitle().contains(mc2_shot+"카드")) {
 				model.addAttribute("cardevent2", cardevent.get(i));
 				System.out.println("cardevent2= " + cardevent.get(i));
 			}

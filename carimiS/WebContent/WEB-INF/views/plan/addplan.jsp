@@ -166,7 +166,7 @@
 				</tr>
 				<tr>
 					<td>위치저장</td>
-					<td>
+					<td style="display:inline-flex">
 						<div class="col-sm-7 col-md-7 col-lg-7">
 							<div id="map_canvas"></div>
 							<div id="infoPanel">
@@ -175,13 +175,14 @@
 								<b>Closest matching address:</b>
 								<div id="address"></div>
 							</div>
-						</div>
-						<div class="col-sm-4 col-md-4 col-lg-4">
-							<input class="form-control input-sm" type="text" size="10px"
+						</div>&nbsp;&nbsp;&nbsp;
+						<div class="col-sm-5 col-md-5 col-lg-5">
+							<input class="form-control input-lg" type="text" size="50px"
 								id="saddress">
-							<button type="button" style="width: 100%" onclick="codeAddress()">검색</button>
+							<button type="button"onclick="codeAddress()">검색</button>
 							<div id="r"></div>
 						</div>
+					
 					</td>
 				</tr>
 				<tr>

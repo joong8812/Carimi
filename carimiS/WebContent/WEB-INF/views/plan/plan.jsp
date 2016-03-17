@@ -37,7 +37,7 @@
 		<div class="main-inner">
 			<div class="container">
 				<div class="row">
-					<div class="span9">
+					<div class="span8">
 						<div class="widget">
 						<div class="widget-header">
 							<i class="icon-calendar"></i>
@@ -48,7 +48,7 @@
 						</div>
 						</div>
 					</div>
-					<div class="span3">
+					<div class="span4">
 						
 						<div class="widget-header"> <i class="icon-credit-card"></i>
               				<h3>${login.id } &nbsp;님의 카드 목록</h3>
@@ -89,7 +89,7 @@
 						
 						<c:if test="${!empty cardevent2 }">
 							<c:choose>
-							<c:when test="${cardevent2.btitle ne '미보유 고객을 위한 연중행사' }">	
+							<c:when test="${cardevent2.btitle ne '미보유 고객을 위한 안내' }">	
 								<script>
 									cardEventArray2 = [];
 									var cardEvent2 = {};					
@@ -120,6 +120,7 @@
 								<input type="button" value="일정쓰기" onclick="location='addplan.do'">
 							</div>
 						</div>
+						
 				</div>
 		</div>
 	</div>
