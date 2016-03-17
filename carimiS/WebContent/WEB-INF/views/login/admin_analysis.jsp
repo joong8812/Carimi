@@ -180,12 +180,12 @@ $(function () {
 });
 
 $(function () {
-    $('#container').highcharts({
+    $('#hmXage').highcharts({
         chart: {
             type: 'column'
         },
         title: {
-            text: '나이대별 회원수'
+            text: '나이대 별 고객 수'
         },
         subtitle: {
             text: '출처: www.carimi.com'
@@ -228,6 +228,85 @@ $(function () {
                    '${ctmXage[2]}'*1,
                    '${ctmXage[3]}'*1,
                    '${ctmXage[4]}'*1,
+                   ]
+        }]
+    });
+});
+
+$(function () {
+    $('#hmXcard').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: '카드 별 고객 수'
+        },
+        subtitle: {
+            text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">www.carimi.com</a>'
+        },
+        xAxis: {
+            categories: ["신한love", "신한tasty", "국민goodday", "국민ddam", "우리damoa",
+     					"우리gadeuk", "하나pop", "하나2xa", "롯데dcsu", "롯데dcsm", "삼성sclass",
+    					"삼성2v2", "농협smarty", "농협take5", "기업ibkhi", "기업cham", "씨티mul",
+    					"씨티cle"],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '인원 (명)',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' 명'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 0,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: '남자',
+            data: [
+                   <c:forEach begin="1" end="18" var="i" step="1">
+                   	${hmXcard[i-1][0]},
+                   </c:forEach>
+                   ]
+        }, {
+            name: '여자',
+            data: [
+					<c:forEach begin="1" end="18" var="i" step="1">
+						${hmXcard[i-1][1]},
+					</c:forEach>
+                   ]
+        }, {
+            name: '전체',
+            data: [
+					<c:forEach begin="1" end="18" var="i" step="1">
+						${hmXcard[i-1][2]},
+					</c:forEach>
                    ]
         }]
     });
@@ -314,9 +393,13 @@ $(function () {
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/heatmap.js"></script>
 
-<div id="container" style=" width: 50%;  height: 500px; margin-left:10px" ></div>
+<br>
+<div style="display:inline-flex; width:100%; text-align:center">
+<div id="hmXage" style=" width: 50%;  height: 500px; margin-left:10px; margin-right:10px; float:left" ></div>
+<div id="ageXcard" style=" width: 50%;  height: 500px; margin-right:10px; float:right" ></div>
+</div>
 <br><br><br><br>
-<div id="ageXcard" style=" width: 90%;  height: 500px; margin:auto" ></div>
+<div id="hmXcard" style=" width: 90%;  height: 800px; margin:auto;" ></div>
 <br><br><br><br>
 <div id="bnfXcard" style="height:500px;width:90%;margin:auto"></div>
 <br><br><br><br>

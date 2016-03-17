@@ -64,4 +64,9 @@ public class memberServiceImpl implements memberService{
 	public int cntHumanXAge(int min, int max) throws Exception {
 		return memberDAO.cntHumanXAge(min, max);
 	}
+
+	@Override
+	public int cntHumanXCard(String card, String sex) throws Exception {
+		return memberDAO.cntHumanXCard(card, sex);
+	}
 }

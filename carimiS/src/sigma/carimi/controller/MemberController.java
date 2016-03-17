@@ -295,6 +295,7 @@ public class MemberController {
 					"삼성2v2", "농협smarty", "농협take5", "기업ibkhi", "기업cham", "씨티mul",
 					"씨티cle"};
 			int[] humanage = {20, 30, 40, 50, 60};
+			String[] sex  = {"man", "woman", "all"};
 			
 			// The number of customer per age
 			int[] ctmXage = new int[humanage.length+1];
@@ -336,6 +337,16 @@ public class MemberController {
 			model.addAttribute("sort_ageXcard", sort_ageXcard);
 			model.addAttribute("top3", top3);
 			model.addAttribute("k_cardname", k_cardname);
+			
+			// The number of customer per card
+			int[][] hmXcard = new int[cardname.length][sex.length];
+			for(int i=0; i<cardname.length; i++){
+				for(int j=0; j<sex.length; j++){
+					hmXcard[i][j] = memberService.cntHumanXCard(cardname[i], sex[j]);
+				}
+			}
+			
+			model.addAttribute("hmXcard", hmXcard);
 			
 			// benefit preference per card
 			String[] benefit = {"oil", "shop", "mart", "cvs", "eou",

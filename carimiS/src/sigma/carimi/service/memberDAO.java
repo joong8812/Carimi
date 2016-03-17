@@ -95,4 +95,12 @@ public class memberDAO {
 		
 		return result;
 	}
+	
+	public int cntHumanXCard(String card, String sex) throws Exception {
+		HashMap<String, Object> hm = new HashMap<String, Object>();
+		hm.put("card", card);
+		hm.put("sex", sex);
+		int result = (int)sqlSession.selectOne(ns+"cntHumanXCard", hm);
+		return result;
+	}
 }

@@ -67,5 +67,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE AGE <![CDATA[>]]> #{min} AND AGE <![CDATA[<]]> #{max}
 	</select>
 	
+	<select id="cntHumanXCard" parameterType="hashmap"
+		resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM 
+		(SELECT * FROM CARD_USER WHERE MYCARD1 = #{card} OR MYCARD2 = #{card})
+		<if test="sex != 'all'">
+		WHERE SEX = #{sex}
+		</if>
+	</select>
 	
  </mapper>
