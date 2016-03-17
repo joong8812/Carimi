@@ -153,7 +153,7 @@ $(function () {
 			//#################### 원본값/연회비 자료 ####################
                 {
 				colorByPoint:'true',
-			    name: '연회비 1000원 당 혜택',
+			    name: '연회비 천원당, 실적 5만원당 혜택',
 			    data: [
 						<c:forEach items="${CARDinformList}" var="CARDinformList" varStatus="vs">
 						<c:choose>
@@ -251,7 +251,7 @@ $(function () {
 			//#################### 원본값/연회비 자료 ####################
                 {
 				colorByPoint:'true',
-			    name: '연회비 1000원 당 혜택',
+			    name: '연회비 천원당, 실적 5만원당 혜택',
 			    data: [
 						<c:forEach items="${CARDinformList}" var="CARDinformList" varStatus="vs">
 						<c:choose>
@@ -349,7 +349,7 @@ $(function () {
 			//#################### 원본값/연회비 자료 ####################
                 {
 				colorByPoint:'true',
-			    name: '연회비 1000원 당 혜택',
+			    name: '연회비 천원당, 실적 5만원당 혜택',
 			    data: [
 						<c:forEach items="${CARDinformList}" var="CARDinformList" varStatus="vs">
 						<c:choose>
@@ -447,7 +447,7 @@ $(function () {
 			//#################### 원본값/연회비 자료 ####################
                 {
 				colorByPoint:'true',
-			    name: '연회비 1000원 당 혜택',
+			    name: '연회비 천원당, 실적 5만원당 혜택',
 			    data: [
 						<c:forEach items="${CARDinformList}" var="CARDinformList" varStatus="vs">
 						<c:choose>
@@ -545,7 +545,7 @@ $(function () {
 			//#################### 원본값/연회비 자료 ####################
                 {
 				colorByPoint:'true',
-			    name: '연회비 1000원 당 혜택',
+			    name: '연회비 천원당, 실적 5만원당 혜택',
 			    data: [
 						<c:forEach items="${CARDinformList}" var="CARDinformList" varStatus="vs">
 						<c:choose>
@@ -643,7 +643,7 @@ $(function () {
 			//#################### 원본값/연회비 자료 ####################
                 {
 				colorByPoint:'true',
-			    name: '연회비 1000원 당 혜택',
+			    name: '연회비 천원당, 실적 5만원당 혜택',
 			    data: [
 						<c:forEach items="${CARDinformList}" var="CARDinformList" varStatus="vs">
 						<c:choose>
@@ -802,7 +802,7 @@ $(function () {
 											연회비 : ${anfee } <br>
 											기준실적 : ${earning }<br>
 											${strc1[0]} 혜택 : ${traben}<br>
-											연회비 1000원당 혜택 : ${1000*newcard[vs.count-1][4]/newcard[vs.count-1][2] }
+											연회비 천원당, 실적 5만원당 혜택 : ${1000*newcard[vs.count-1][4]/newcard[vs.count-1][2] }
 										</c:if>
 									</c:forEach>
 						 		</th>
@@ -831,7 +831,7 @@ $(function () {
 											연회비 : ${anfee } <br>
 											기준실적 : ${earning }<br>
 											${strc1[1]} 혜택 : ${traben}<br>
-											연회비 1000원당 혜택 : ${1000*newcard[vs.count-1][5]/newcard[vs.count-1][2] }
+											연회비 천원당, 실적 5만원당 혜택 : ${1000*newcard[vs.count-1][5]/newcard[vs.count-1][2] }
 										</c:if>
 									</c:forEach>
 						 		</th>
@@ -860,7 +860,7 @@ $(function () {
 											연회비 : ${anfee } <br>
 											기준실적 : ${earning }<br>
 											${strc1[2]} 혜택 : ${traben}<br>
-											연회비 1000원당 혜택 : ${1000*newcard[vs.count-1][6]/newcard[vs.count-1][2] }
+											연회비 천원당, 실적 5만원당 혜택 : ${1000*newcard[vs.count-1][6]/newcard[vs.count-1][2] }
 										</c:if>
 									</c:forEach>
 						 		</th>
@@ -898,7 +898,7 @@ $(function () {
 											연회비 : ${anfee } <br>
 											기준실적 : ${earning }<br>
 											${strc1[3]} 혜택 : ${traben}<br>
-											연회비 1000원당 혜택 : ${1000*newcard[vs.count-1][7]/newcard[vs.count-1][2] }
+											연회비 천원당, 실적 5만원당 혜택 : ${1000*newcard[vs.count-1][7]/newcard[vs.count-1][2] }
 										</c:if>
 									</c:forEach>
 						 		</th>
@@ -927,7 +927,7 @@ $(function () {
 											연회비 : ${anfee } <br>
 											기준실적 : ${earning }<br>
 											${strc1[4]} 혜택 : ${traben}<br>
-											연회비 1000원당 혜택 : ${1000*newcard[vs.count-1][8]/newcard[vs.count-1][2] }
+											연회비 천원당, 실적 5만원당 혜택 : ${1000*newcard[vs.count-1][8]/newcard[vs.count-1][2] }
 										</c:if>
 									</c:forEach>
 						 		</th>
@@ -956,7 +956,7 @@ $(function () {
 											연회비 : ${anfee } <br>
 											기준실적 : ${earning }<br>
 											${strc1[5]} 혜택 : ${traben}<br>
-											연회비 1000원당 혜택 : ${1000*newcard[vs.count-1][9]/newcard[vs.count-1][2] }
+											연회비 천원당, 실적 5만원당 혜택 : ${1000*newcard[vs.count-1][9]/newcard[vs.count-1][2] }
 										</c:if>
 									</c:forEach>
 						 		</th>
