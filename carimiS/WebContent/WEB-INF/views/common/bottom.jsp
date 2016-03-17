@@ -16,7 +16,7 @@
                         <h4>
                             Card Reports</h4>
                         <ul>
-                            <li><a href="javascript:navClick('nav_analysis', 'analysis.do');">Card Reports</a></li>
+                            <li><a href="javascript:navClick('nav_analysis', 'analysis.do');">카드혜택비교</a></li>
                         </ul>
                     </div>
                     <!-- /span3 -->
@@ -24,7 +24,7 @@
                         <h4>
                             Card Benefit Tour</h4>
                         <ul>
-                            <li><a href="javascript:navClick('nav_benefit', 'benefit.do');">Card Benefit Tour</a></li>
+                            <li><a href="javascript:navClick('nav_benefit', 'benefit.do');">주변혜택찾기</a></li>
                         </ul>
                     </div>
                     <!-- /span3 -->
@@ -32,7 +32,7 @@
                         <h4>
                             Card Expenditure</h4>
                         <ul>
-                            <li><a href="javascript:navClick('nav_explist', 'explist.do');">Card Expenditure</a></li>
+                            <li><a href="javascript:navClick('nav_explist', 'explist.do');">지출관리</a></li>
                         </ul>
                     </div>
                     <!-- /span3 -->
@@ -40,7 +40,7 @@
                         <h4>
                            Schedule</h4>
                         <ul>
-                            <li><a href="javascript:navClick('nav_plan', 'plan.do');">Schedule</a></li>
+                            <li><a href="javascript:navClick('nav_plan', 'plan.do');">일정관리</a></li>
                         </ul>
                     </div>
                     <!-- /span3 -->
@@ -48,7 +48,7 @@
                         <h4>
                            Notice</h4>
                         <ul>
-                            <li><a href="javascript:navClick('nav_notice', 'boardlist.do');">Notice</a></li>
+                            <li><a href="javascript:navClick('nav_notice', 'boardlist.do');">카드행사목록</a></li>
                         </ul>
                     </div>
                     <!-- /span3 -->
