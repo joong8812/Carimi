@@ -76,4 +76,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</if>
 	</select>
 	
+	<select id="sumBenefitXCard" parameterType="hashmap"
+		resultType="java.lang.Integer">
+		SELECT SUM(PRICE) FROM CARD_EXPENSE 
+		WHERE MONEYTYPE=#{card} AND BCATEGORY=#{benefit}
+	</select>
+	
  </mapper>

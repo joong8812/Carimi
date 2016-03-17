@@ -382,5 +382,32 @@ public class MemberController {
 		}
 		return tt;
 	}
+	
+	@RequestMapping(value="admin_exanalysis.do", method={RequestMethod.GET,RequestMethod.POST})
+	public String admin_exanalysis(Model model, memberDTO mdto, HttpSession session, HttpServletRequest request) throws Exception{
+		logger.info("Welcome MemberController admin_exanalysis! "+ new Date());
+		
+		String[] cardname = {"shin1", "shin2", "guk1", "guk2", "uri1", "uri2", "ha1", "ha2", 
+				"lot1", "lot2", "sam1", "sam2", "nong1", "nong2", "gi1", "gi2", "ci1", "ci2"};
+		String[] benefit = {"oil", "shop", "mart", "cvs", "eou",
+				"cafe", "movie", "tra", "tel", "edu", "cul", "lei",
+				"medi", "bea"};
+		int[][] sum_bnfXcard = new int[cardname.length][benefit.length];
+		
+		for(int i=0; i<cardname.length; i++){
+			for(int j=0; j<benefit.length; j++){
+				sum_bnfXcard[i][j] = memberService.sumBenefitXCard(cardname[i], benefit[j]);
+			}
+		}
+		model.addAttribute("sum_bnfXcard", sum_bnfXcard);
+		for(int i=0; i<cardname.length; i++){
+			for(int j=0; j<benefit.length; j++){
+				System.out.println(cardname[i] + " / " + benefit[j] + " = " +sum_bnfXcard[i][j]);
+			}
+		}
+		
+		
+		return "admin_exanalysis.tiles";
+	}
 
 }

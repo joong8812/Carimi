@@ -19,4 +19,5 @@ public interface memberService {
 	int cntBenefitXCard(String card, String benefit) throws Exception;
 	int cntHumanXAge(int min, int max) throws Exception;
 	int cntHumanXCard(String card, String sex) throws Exception;
+	int sumBenefitXCard(String card, String benefit) throws Exception;
 }

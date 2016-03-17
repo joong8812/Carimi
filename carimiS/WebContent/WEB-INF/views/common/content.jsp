@@ -34,7 +34,7 @@ video#bgvid {
 	width:30%;
 	height:30%;
 	background-color:#FFF;
-	opacity:0.4;
+	opacity:0.6;
 }
 .upText{
 	color:black;
@@ -46,7 +46,7 @@ video#bgvid {
 	width:30%;
 	height:30%;
 	background-color:#FFF;
-	opacity:0.4;
+	opacity:0.6;
 }
 .botText{
 	font-size:24px;

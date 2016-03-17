@@ -69,4 +69,9 @@ public class memberServiceImpl implements memberService{
 	public int cntHumanXCard(String card, String sex) throws Exception {
 		return memberDAO.cntHumanXCard(card, sex);
 	}
+
+	@Override
+	public int sumBenefitXCard(String card, String benefit) throws Exception {
+		return memberDAO.sumBenefitXCard(card, benefit);
+	}
 }

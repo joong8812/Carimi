@@ -1,19 +1,11 @@
 <%@page import="javafx.scene.control.DatePicker"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.Calendar"%>
-<%@ page import="sigma.carimi.model.memberDTO"%>
-<%@ page import="sigma.carimi.model.memberDTO"%>
-<%@ page import="sigma.carimi.service.memberDAO"%>
-<%@ page import="sigma.carimi.service.memberService"%>
-<%@ page import="java.util.*"%>
-<%@ page import="java.text.*"%>
-<%@ page import="java.util.List"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
 
 <fmt:requestEncoding value="UTF-8" />
 <link rel="stylesheet"
@@ -25,6 +17,8 @@
 	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
 <script type="text/javascript">
 
 var agecnt = 0;
@@ -300,14 +294,16 @@ $(function () {
 					<c:forEach begin="1" end="18" var="i" step="1">
 						${hmXcard[i-1][1]},
 					</c:forEach>
-                   ]
+                   ],
+            color: '#ff6666'
         }, {
             name: '전체',
             data: [
 					<c:forEach begin="1" end="18" var="i" step="1">
 						${hmXcard[i-1][2]},
 					</c:forEach>
-                   ]
+                   ],
+            color: '#747474'
         }]
     });
 });
@@ -376,10 +372,10 @@ $(function () {
             data: [
                    <c:forEach begin="1" end="18" step="1" var="i">
                    	<c:forEach begin="1" end="15" step="1" var="j">
-                   		[${i-1}, ${j-1}, ${benefitXcard[i-1][j-1]}],
+                   		[${i-1}, ${j-1}, ${benefitXcard[i-1][j-1]}],	// (x좌표, y좌표, 값)
                    	</c:forEach>
                    </c:forEach>                   
-                  ],
+                  ],	
             dataLabels: {
                 enabled: true,
                 color: '#000000'

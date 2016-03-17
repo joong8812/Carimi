@@ -28,7 +28,7 @@
 				myLatlng = new google.maps.LatLng(nlocationy*1, nlocationx*1);
 			}
 			if(mzoom === ""){
-				initZoom = 16;
+				initZoom = 14;
 			} else {
 				initZoom = mzoom*1;
 			}

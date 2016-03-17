@@ -103,4 +103,15 @@ public class memberDAO {
 		int result = (int)sqlSession.selectOne(ns+"cntHumanXCard", hm);
 		return result;
 	}
+	
+	public int sumBenefitXCard(String card, String benefit) throws Exception {
+		HashMap<String, String> hm = new HashMap<String, String>();
+		hm.put("card", card);
+		hm.put("benefit", benefit);
+		Object result = sqlSession.selectOne(ns+"sumBenefitXCard", hm);
+		if(result == null){
+			result = 0;
+		}
+		return (int)result;
+	}
 }
