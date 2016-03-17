@@ -32,7 +32,7 @@
 	        </ul>
         </li>
 
-		<li id="nav_explist"><a href="javascript:navClick('nav_explist', 'explist.do')"><i class="icon-bar-chart"></i><span>가계부</span></a></li>
+		<li id="nav_explist"><a href="javascript:navClick('nav_explist', 'explist.do')"><i class="icon-bar-chart"></i><span>지출관리</span></a></li>
 		<li id="nav_plan"><a href="javascript:navClick('nav_plan', 'plan.do')"><i class="icon-calendar"></i><span>일정관리</span> </a> </li>
 		
         <li class="dropdown" id="nav_boardlist"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-bell"></i><span>공지사항</span> <b class="caret"></b></a>

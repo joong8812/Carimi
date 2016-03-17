@@ -293,13 +293,13 @@
 
 						<div style="text-align: center;">
 							<c:if test="${!empty explist}">
-								<a href="explist.do?pageno=1">[맨앞으로]</a>
+								<a href="explist.do?month=${month}&year=${year}&pageno=1">[맨앞으로]</a>
 
-								<a href="explist.do?pageno=${prev_pageno }">[이전]</a>
+								<a href="explist.do?month=${month}&year=${year}&pageno=${prev_pageno }">[이전]</a>
 
 								<c:forEach var="i" begin="${page_sno}" end="${page_eno }"
 									step="1">
-									<a href="explist.do?pageno=${i }"> <c:choose>
+									<a href="explist.do?month=${month}&year=${year}&pageno=${i }"> <c:choose>
 											<c:when test="${pageno eq i}">
 												[${i}]
 											</c:when>
@@ -312,9 +312,9 @@
 											</c:if>
 								</c:forEach>
 
-								<a href="explist.do?pageno=${next_pageno}">[다음]</a>
+								<a href="explist.do?month=${month}&year=${year}&pageno=${next_pageno}">[다음]</a>
 
-								<a href="explist.do?pageno=${total_page}">[맨뒤로]</a>
+								<a href="explist.do?month=${month}&year=${year}&pageno=${total_page}">[맨뒤로]</a>
 							</c:if>
 						</div>
 					</div>
