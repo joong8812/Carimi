@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Admin"> 
+	<select id="loglist"
+		resultType="sigma.carimi.model.logDTO">
+		SELECT IP, VDATE FROM CARD_VISIT ORDER BY VDATE DESC 
+	</select>
+	<select id="logAll"
+		resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM CARD_VISIT
+	</select>
+	<select id="logToday"
+		resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM CARD_VISIT WHERE SUBSTR(TO_CHAR(VDATE), 1, 9) = TO_DATE(SYSDATE, 'YY/MM/DD')
+	</select>
+ </mapper>

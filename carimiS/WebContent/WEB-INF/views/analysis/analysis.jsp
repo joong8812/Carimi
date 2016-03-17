@@ -5,14 +5,8 @@
 <head>
 <meta charset="utf-8">
 <title>Analysis</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="<%=request.getContextPath()%>/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
-<link href="<%=request.getContextPath()%>/css/font-awesome.css" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css">
-<link href="<%=request.getContextPath()%>/css/pages/signin.css" rel="stylesheet" type="text/css">
+
+
  <link href="<%=request.getContextPath()%>/js/guidely/guidely.css" rel="stylesheet"> 
 
 <script>
@@ -181,11 +175,13 @@ imgCbox.ImgObjs = {};
 												</div>
 											</div>
 										</div>
+									</div>
 										<div id="target-2">
+										<div class="accordion" id="accordion3">
 										<div class="accordion-group">
 											<div class="accordion-heading">
 												<a class="accordion-toggle" data-toggle="collapse"
-													data-parent="#accordion2" href="#collapseTwo"> 비교하고 싶은
+													data-parent="#accordion3" href="#collapseTwo"> 비교하고 싶은
 													혜택 6개를 선택하세요 </a>
 											</div>
 											<div id="collapseTwo" class="accordion-body collapse in">
@@ -259,6 +255,7 @@ imgCbox.ImgObjs = {};
 												</div>
 											</div>
 										</div>
+									</div>
 									</div>
 									</div>
 								</div>
@@ -367,21 +364,21 @@ $(function () {
 		attachTo: '#target-1'
 		, anchor: 'top-left'
 		, title: '연회비, 실적기준'
-		, text: '연회비(상)와 실적기준(하)을 선택해주세요. 각 항목은 하나만 선택 가능합니다.<br> <img src="/CarimiS/img/se1.JPG"/>'
+		, text: '연회비(상)와 실적기준(하)을 선택해주세요.<br> 각 항목은 하나만 선택 가능합니다.<br> <img src="/CarimiS/img/se1.JPG"/>'
 	});
 	
 	guidely.add ({
 		attachTo: '#target-2'
 		, anchor: 'top-right'
 		, title: '혜택 6개'
-		, text: '가장 많이 사용하시는 혜택 6개를 선택해주세요. 무조건 6개 선택하셔야합니다. <br><img src="/CarimiS/img/se2.JPG"/>'
+		, text: '가장 많이 사용하시는 혜택 6개를 선택해주세요.<br> 무조건 6개 선택하셔야합니다. <br><img src="/CarimiS/img/se2.JPG"/>'
 	});
 	
 	guidely.add ({
 		attachTo: '#target-3'
 		, anchor: 'bottom-middle'
 		, title: '결과 딱!'
-		, text: '이렇게 결과가 차트형식으로 보여집니다.  <br>이제 시작하세요.!!! <br> <img src="/CarimiS/img/se3.JPG"/>'
+		, text: '이렇게 결과가 차트형식으로 보여집니다.<br>이제 시작하세요.!!! <br> <img src="/CarimiS/img/se3.JPG"/>'
 		
 	});
 	

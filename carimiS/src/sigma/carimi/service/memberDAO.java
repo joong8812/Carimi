@@ -34,11 +34,7 @@ public class memberDAO {
 		sqlSession.insert(ns+"addVisit",visit);
 		return true;
 	}
-	public int  visitAll() throws Exception{
-		
-		int count= (int) sqlSession.selectOne(ns+"visitAll");	
-		return count;
-	}
+	
 	public memberDTO memberOne(memberDTO member) throws Exception{
 		memberDTO mdto = null;
 		mdto = (memberDTO)sqlSession.selectOne(ns+"memberOne", member);

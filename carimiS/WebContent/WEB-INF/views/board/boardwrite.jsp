@@ -61,7 +61,7 @@
 	      			
 	      			<div class="widget-header">
 	      				<i class="icon-th-list"></i>
-	      				<h3>Notice Upload</h3>
+	      				<h3>공지작성</h3>
 	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">

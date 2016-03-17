@@ -29,7 +29,7 @@
 	      			<div class="widget-header">
 	      				<i class="icon-th-list"></i>
 
-	      				<h3>Notice Read</h3>
+	      				<h3>공지사항</h3>
 	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">

@@ -127,4 +127,7 @@
 	<put-attribute name="content" value="/WEB-INF/views/login/admin_analysis.jsp" />
 </definition>
 
+<definition name="loglist.tiles" extends="main.tiles">
+	<put-attribute name="content" value="/WEB-INF/views/admin/loglist.jsp" />
+</definition>
 </tiles-definitions> 

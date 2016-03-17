@@ -64,12 +64,7 @@ public class MemberController {
 				 System.out.println(memberService.addVisit(visit));
 		  }
 		 
-			int count= memberService.visitAll();
-			
-	         
-
-	        model.addAttribute("ip", ip);
-	        model.addAttribute("count",count);
+			/**/
 	       
 		return "main.tiles";
 	}

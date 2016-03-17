@@ -48,6 +48,16 @@
 	        	</c:choose>
            </ul>
         </li> 
+        <c:if test="${login.auth eq 1 }">
+      <li class="dropdown" id="nav_admin"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>관리자</span> <b class="caret"></b></a>
+           <ul class="dropdown-menu">
+   		  
+	        			<li><a href="javascript:navClick('nav_admin', 'loglist.do')">로그 기록</a></li>
+            		
+	        		
+           </ul>
+        </li> 
+        </c:if>
       </ul>
     </div>
     <!-- /container --> 
@@ -57,7 +67,7 @@
 <script>
 var navname = window.name;
 var id = document.getElementById(navname);
-if(navname === 'nav_benefit' || navname === 'nav_boardlist'){
+if(navname === 'nav_benefit' || navname === 'nav_boardlist' || navname === 'nav_admin'){
 	id.setAttribute('class', 'active dropdown');	
 } else {
 	id.setAttribute('class', 'active');

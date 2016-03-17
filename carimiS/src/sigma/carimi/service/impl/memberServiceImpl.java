@@ -31,10 +31,7 @@ public class memberServiceImpl implements memberService{
 	public boolean addVisit(visitDTO visit) throws Exception {
 		return memberDAO.addVisit(visit);
 	}
-	@Override
-	public int visitAll() throws Exception {
-		return memberDAO.visitAll();
-	}
+	
 	@Override
 	public memberDTO memberOne(memberDTO member) throws Exception {
 		return memberDAO.memberOne(member);

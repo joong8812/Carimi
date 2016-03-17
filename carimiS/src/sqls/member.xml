@@ -22,10 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		parameterType="sigma.carimi.model.visitDTO">
 		INSERT INTO CARD_VISIT(IP, VDATE) VALUES (#{ip}, sysdate)
 	</insert>
-	<select id="visitAll"
-		resultType="java.lang.Integer">
-		SELECT COUNT(*) FROM CARD_VISIT
-	</select>
+	
 	
 	<select id="memberOne"
 		parameterType="sigma.carimi.model.memberDTO"

@@ -39,7 +39,7 @@ List<boardDTO> boardlist = bdao.boardList(cardvalue);
     <div class="widget widget-table action-table">
       
             <div class="widget-header"> <i class="icon-th-list"></i>
-              <h3>Notice List</h3> 
+              <h3>공지사항</h3> 
             
               <div class="pull-right">
               <form action="boardlist.do" method="post" id="searchlist" name="searchlist" style="margin-bottom: -20px">   

@@ -62,8 +62,8 @@ video#bgvid {
 						type="video/mp4" >
 				</video>
 				<div class="row">
-					방문자수 : ${count }
-					IP : ${ip }
+				<%-- 	방문자수 : ${count }
+					IP : ${ip } --%>
 					<div class="intro_text">
 						<div class="upper">
 							<div class="upText">
