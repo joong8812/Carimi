@@ -54,4 +54,14 @@ public class memberServiceImpl implements memberService{
 	public int cntPerCardAge(String card1, String card2, int min, int max) throws Exception {
 		return memberDAO.cntPerCardAge(card1, card2, min, max);
 	}
+
+	@Override
+	public int cntBenefitXCard(String card1, String benefit) throws Exception {
+		return memberDAO.cntBenefitXCard(card1, benefit);
+	}
+
+	@Override
+	public int cntHumanXAge(int min, int max) throws Exception {
+		return memberDAO.cntHumanXAge(min, max);
+	}
 }

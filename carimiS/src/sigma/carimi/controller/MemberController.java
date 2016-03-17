@@ -287,100 +287,78 @@ public class MemberController {
 		public String admin_analysis(Model model, memberDTO mdto, HttpSession session, HttpServletRequest request) throws Exception{
 			logger.info("Welcome MemberController admin_analysis! "+ new Date());
 			
+			
 			String[] cardname = {"shin1", "shin2", "guk1", "guk2", "uri1", "uri2", "ha1", "ha2", 
-					"lot1", "lot2", "sam1", "sam2", "nong1", "nong2", "gi1", "gi2", "ci", "ci2"};
-			int[] n_cardname = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17};
+					"lot1", "lot2", "sam1", "sam2", "nong1", "nong2", "gi1", "gi2", "ci1", "ci2"};
+			String[] k_cardname = {"신한love", "신한tasty", "국민goodday", "국민ddam", "우리damoa",
+					"우리gadeuk", "하나pop", "하나2xa", "롯데dcsu", "롯데dcsm", "삼성sclass",
+					"삼성2v2", "농협smarty", "농협take5", "기업ibkhi", "기업cham", "씨티mul",
+					"씨티cle"};
 			int[] humanage = {20, 30, 40, 50, 60};
+			
+			// The number of customer per age
+			int[] ctmXage = new int[humanage.length+1];
+			for(int i=0; i<humanage.length; i++){
+				ctmXage[i] = memberService.cntHumanXAge(humanage[i]-1, humanage[i]+10);
+			}
+			ctmXage[humanage.length] = memberService.cntHumanXAge(19, 70);
+			model.addAttribute("ctmXage", ctmXage);
+			
+			// How many cards per age
 			int[][] ageXcard = new int[humanage.length][cardname.length];
 			int[][] sort_ageXcard = new int[humanage.length][cardname.length];
+			int[][] top3 = new int[humanage.length][3];
 			
 			for(int i=0; i<humanage.length; i++){
 				for(int j=0; j<cardname.length; j++){
 					ageXcard[i][j] = memberService.cntPerCardAge(cardname[j], cardname[j], humanage[i]-1, humanage[i]+10);
-					System.out.println(humanage[i] + " / " + cardname[j] + " = " + ageXcard[i][j]);
+//					System.out.println(humanage[i] + " / " + cardname[j] + " = " + ageXcard[i][j]);
 				}
 			}
 			
-			
 			for(int i=0; i<humanage.length; i++){
-				//sort_ageXcard[i] = j_sort(ageXcard[i], n_cardname);
 				sort_ageXcard[i] = j_sort(ageXcard[i]);
 			}
 			
-			System.out.println("cpcpcpcpcpcp");
 			for(int i=0; i<humanage.length; i++){
-				for(int j=0; j<cardname.length; j++){
-					System.out.println(humanage[i] + " / " + cardname[j] + " = " + ageXcard[i][j]);
-				}
-			}
-			System.out.println("cpcpcpcpcpcp");
-			
-			for(int i=0; i<humanage.length; i++){
-				for(int j=0; j<cardname.length; j++){
+				for(int j=0; j<3; j++){
+					int cnt = 0;
 					for(int k=0; k<cardname.length; k++){
-						if(sort_ageXcard[i][j] == ageXcard[i][k]){
-							System.out.println("k = " + k);
-							System.out.println(humanage[i] + " / " + cardname[k] + " = " + sort_ageXcard[i][j]);
+						if(sort_ageXcard[i][j] == ageXcard[i][k] && cnt<1){
+							top3[i][j] = k;
+							cnt++;
+//							System.out.println(humanage[i] + " / " + cardname[k] + " = " + sort_ageXcard[i][j]);
 						}
 					}
 				}
 			}
+
+			model.addAttribute("sort_ageXcard", sort_ageXcard);
+			model.addAttribute("top3", top3);
+			model.addAttribute("k_cardname", k_cardname);
 			
+			// benefit preference per card
+			String[] benefit = {"oil", "shop", "mart", "cvs", "eou",
+					"cafe", "movie", "tra", "tel", "edu", "cul", "lei",
+					"medi", "bea", "poi"};
+			int[][] benefitXcard = new int[cardname.length][benefit.length];
+			for(int i=0; i<cardname.length; i++){
+				for(int j=0; j<benefit.length; j++){
+					benefitXcard[i][j] = memberService.cntBenefitXCard(cardname[i], benefit[j]);
+				}
+			}
 			
-			
-			
-			List<memberDTO> memberlist = new ArrayList<memberDTO>();
-			
-			model.addAttribute("memberlist",memberlist);
-			
-			// 카드 이름 18개를 변수로 받아와서 넣고 맵으로 받아옴. Map<카드이름을 키값으로,count(*)로 숫자> 받아온후 desc하고 3개 순서대로
-			/*List<Integer> twlist = new ArrayList<Integer>(cardname);
-			
-			int age = 20;
-			
-			allMap = memberService.allList(age);
-			System.out.println(all.size());
-			
-			model.addAttribute("all", all);
-			*/
-			
+			model.addAttribute("benefitXcard", benefitXcard);
 			
 			return "admin_analysis.tiles";
-		
-		
 	}
 		
-//	public int[] j_sort(int[] t_sort, int cardname[]){
-////		int tmp;
-//		int s_tmp;
-//		
-//		for(int j=0; j<t_sort.length; j++){
-//			for(int i=0; i<t_sort.length-1; i++){
-//				if(t_sort[i]<t_sort[i+1]){
-////					tmp = t_sort[i];
-//					System.out.println("before : [" + i + "] = " + cardname[i] +" / " + t_sort[i]);
-//					s_tmp = cardname[i];
-////					t_sort[i] = t_sort[i+1];
-//					cardname[i] = cardname[i+1];
-////					t_sort[i+1] = tmp;
-//					cardname[i+1] = s_tmp;
-//					System.out.println("after : [" + i + "] = " + cardname[i] +" / " + t_sort[i]);
-//				}
-//			}
-//		}
-//	
-//		System.out.println("-------------------");
-//		for(int i=0; i<cardname.length; i++){
-//			System.out.println(cardname[i]);
-//		}
-//		System.out.println("-------------------");
-//		
-//		return cardname;
-//	}
-	
 	public int[] j_sort(int[] t_sort){
 		int tmp;
-		int tt[] = t_sort;
+		int tt[] = new int[18];
+		for(int i=0; i<t_sort.length; i++){
+			tt[i] = t_sort[i];
+		}
 		
 		for(int j=0; j<tt.length; j++){
 			for(int i=0; i<tt.length-1; i++){

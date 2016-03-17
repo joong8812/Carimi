@@ -53,6 +53,7 @@
            <ul class="dropdown-menu">
    		  
 	        			<li><a href="javascript:navClick('nav_admin', 'loglist.do')">로그 기록</a></li>
+	        			<li><a href="javascript:navClick('nav_admin', 'admin_analysis.do')">통계</a></li>
             		
 	        		
            </ul>

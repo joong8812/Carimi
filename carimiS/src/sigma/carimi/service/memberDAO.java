@@ -76,8 +76,23 @@ public class memberDAO {
 		int result = (int)sqlSession.selectOne(ns+"cntPerCardAge", hm);
 		
 		return result;
-		
 	}
-
 	
+	public int cntBenefitXCard(String card, String benefit) throws Exception {
+		HashMap<String, String> hm = new HashMap<String, String>();
+		hm.put("card", card);
+		hm.put("benefit", benefit);
+		
+		int result = (int)sqlSession.selectOne(ns+"cntBenefitXCard", hm);
+		return result;
+	}	
+	
+	public int cntHumanXAge(int min, int max) throws Exception {
+		HashMap<String, Object> hm = new HashMap<String, Object>();
+		hm.put("min", min);
+		hm.put("max", max);
+		int result = (int)sqlSession.selectOne(ns+"cntHumanXAge", hm);
+		
+		return result;
+	}
 }

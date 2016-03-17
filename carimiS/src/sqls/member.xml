@@ -54,5 +54,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE AGE <![CDATA[>]]> #{min} AND AGE <![CDATA[<]]> #{max}
 	</select>
 	
+	<select id="cntBenefitXCard" parameterType="hashmap"
+		resultType="java.lang.Integer">
+		SELECT count(*) FROM (SELECT * FROM CARD_USER WHERE MYCARD1=#{card} OR MYCARD2=#{card})
+		WHERE FAV1 = #{benefit} OR FAV2 = #{benefit} OR FAV3 = #{benefit} OR FAV4 = #{benefit} 
+		OR FAV5 = #{benefit} OR FAV6 = #{benefit}
+	</select>
+	
+	<select id="cntHumanXAge" parameterType="hashmap"
+		resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM CARD_USER
+		WHERE AGE <![CDATA[>]]> #{min} AND AGE <![CDATA[<]]> #{max}
+	</select>
+	
 	
  </mapper>

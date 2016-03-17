@@ -16,4 +16,6 @@ public interface memberService {
 	boolean memDelete(String id) throws Exception;
 	List<memberDTO> allList()throws Exception;
 	int cntPerCardAge(String card1, String card2, int min, int max) throws Exception;
+	int cntBenefitXCard(String card, String benefit) throws Exception;
+	int cntHumanXAge(int min, int max) throws Exception;
 }
