@@ -77,9 +77,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="sumBenefitXCard" parameterType="hashmap"
-		resultType="java.lang.Integer">
+		resultType="java.lang.Double">
 		SELECT SUM(PRICE) FROM CARD_EXPENSE 
 		WHERE MONEYTYPE=#{card} AND BCATEGORY=#{benefit}
+	</select>
+	
+	<select id="sumExpenseXBenefit" parameterType="java.lang.String"
+		resultType="java.lang.Double">
+		SELECT SUM(PRICE) FROM CARD_EXPENSE WHERE BCATEGORY= #{benefit}
+	</select>
+	
+	<select id="sumExpenseXMonth" parameterType="hashmap"
+		resultType="java.lang.Double">
+		SELECT SUM(PRICE) FROM CARD_EXPENSE WHERE WDATE LIKE #{wdate}||'%' AND MONEYTYPE= #{card}
 	</select>
 	
  </mapper>

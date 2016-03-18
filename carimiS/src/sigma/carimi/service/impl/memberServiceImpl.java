@@ -71,7 +71,17 @@ public class memberServiceImpl implements memberService{
 	}
 
 	@Override
-	public int sumBenefitXCard(String card, String benefit) throws Exception {
+	public double sumBenefitXCard(String card, String benefit) throws Exception {
 		return memberDAO.sumBenefitXCard(card, benefit);
+	}
+
+	@Override
+	public double sumExpenseXBenefit(String benefit) throws Exception {
+		return memberDAO.sumExpenseXBenefit(benefit);
+	}
+
+	@Override
+	public double sumExpenseXMonth(String wdate, String card) throws Exception {
+		return memberDAO.sumExpenseXMonth(wdate, card);
 	}
 }

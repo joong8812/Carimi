@@ -104,7 +104,7 @@ public class memberDAO {
 		return result;
 	}
 	
-	public int sumBenefitXCard(String card, String benefit) throws Exception {
+	public double sumBenefitXCard(String card, String benefit) throws Exception {
 		HashMap<String, String> hm = new HashMap<String, String>();
 		hm.put("card", card);
 		hm.put("benefit", benefit);
@@ -112,6 +112,25 @@ public class memberDAO {
 		if(result == null){
 			result = 0;
 		}
-		return (int)result;
+		return (double)result;
+	}
+	
+	public double sumExpenseXBenefit(String benefit) throws Exception {
+		Object result = sqlSession.selectOne(ns+"sumExpenseXBenefit", benefit);
+		if(result == null){
+			result = 0;
+		}
+		return (double)result;
+	}
+	
+	public double sumExpenseXMonth(String wdate, String card) throws Exception {
+		HashMap<String, String> hm = new HashMap<String, String>();
+		hm.put("card", card);
+		hm.put("wdate", wdate);
+		Object result = sqlSession.selectOne(ns+"sumExpenseXMonth", hm);
+		if(result == null){
+			result = 0.0;
+		}
+		return (double)result;
 	}
 }

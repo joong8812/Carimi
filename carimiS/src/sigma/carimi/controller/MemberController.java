@@ -3,6 +3,7 @@ package sigma.carimi.controller;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
@@ -384,7 +385,8 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="admin_exanalysis.do", method={RequestMethod.GET,RequestMethod.POST})
-	public String admin_exanalysis(Model model, memberDTO mdto, HttpSession session, HttpServletRequest request) throws Exception{
+	public String admin_exanalysis(Model model, memberDTO mdto, HttpSession session, HttpServletRequest request,
+			String year, HttpServletResponse response) throws Exception{
 		logger.info("Welcome MemberController admin_exanalysis! "+ new Date());
 		
 		String[] cardname = {"shin1", "shin2", "guk1", "guk2", "uri1", "uri2", "ha1", "ha2", 
@@ -392,20 +394,89 @@ public class MemberController {
 		String[] benefit = {"oil", "shop", "mart", "cvs", "eou",
 				"cafe", "movie", "tra", "tel", "edu", "cul", "lei",
 				"medi", "bea"};
-		int[][] sum_bnfXcard = new int[cardname.length][benefit.length];
+		String[] k_cardname = {"신한love", "신한tasty", "국민goodday", "국민ddam", "우리damoa",
+				"우리gadeuk", "하나pop", "하나2xa", "롯데dcsu", "롯데dcsm", "삼성sclass",
+				"삼성2v2", "농협smarty", "농협take5", "기업ibkhi", "기업cham", "씨티mul",
+				"씨티cle"};
+		double[][] sum_bnfXcard = new double[cardname.length][benefit.length];
+		
+//		PrintWriter pw = response.getWriter();
+//		pw.println("<!DOCTYPE html>");
+//		pw.println("<html>");
+//		pw.println("<head>");
+//		pw.println("<meta charset='UTF-8'>");
+//		pw.println("<style type='text/css'>");
+//		pw.println("#loading {");
+//		pw.println("width: 100%;");   
+//		pw.println("height: 100%;");   
+//		pw.println("top: 0px;");
+//		pw.println("left: 0px;");
+//		pw.println("position: fixed;");   
+//		pw.println("display: block;");   
+//		pw.println("opacity: 0.7;");   
+//		pw.println("background-color: #fff;");   
+//		pw.println("z-index: 99;");   
+//		pw.println("text-align: center; }");  
+// 
+//		pw.println("#loading-image {");   
+//		pw.println("position: absolute;");   
+//		pw.println("top: 100px;");  
+//		pw.println("left: 50%;");   
+//		pw.println("z-index: 100; }"); 
+//		pw.println("</style>");
+//		pw.println("</head>");
+//		
+//		pw.println("<body>");
+//		pw.println("<div id='loading'>");
+//		pw.println("<img id='loading-image' src='/CarimiS/image/loading.gif' alt='Loading...' />");
+//		pw.println("</div>");
+//		pw.println("</body>");
+//		pw.println("</html>");
+//		
+//		pw.flush();
+		
 		
 		for(int i=0; i<cardname.length; i++){
 			for(int j=0; j<benefit.length; j++){
-				sum_bnfXcard[i][j] = memberService.sumBenefitXCard(cardname[i], benefit[j]);
+				sum_bnfXcard[i][j] = memberService.sumBenefitXCard(cardname[i], benefit[j]) / 1000000 ;
 			}
 		}
 		model.addAttribute("sum_bnfXcard", sum_bnfXcard);
+		
+		// expense per benefit
+		double[] sum_exXbnf = new double[benefit.length];
+		for(int i=0; i<benefit.length; i++){
+			sum_exXbnf[i] = memberService.sumExpenseXBenefit(benefit[i]);
+		}
+		for(int i=0; i<benefit.length; i++){
+			System.out.println(benefit[i] + " = " +sum_exXbnf[i]);
+		}
+		model.addAttribute("sum_exXbnf", sum_exXbnf);
+		
+		// expense per month
+		String[] month= {"01","02","03","04","05","06","07",
+				"08","09","10","11","12"};
+		double[][] sum_exXmonth = new double[cardname.length][month.length];
+		
+		Calendar cal = Calendar.getInstance();
+		int int_year = cal.get(Calendar.YEAR);
+		
+		if (year != null && !year.equals("")) {
+			int_year = Integer.parseInt(year); 
+		}			
+		String syear = Integer.toString(int_year);
+		
+		model.addAttribute("syear", syear);
+		
 		for(int i=0; i<cardname.length; i++){
-			for(int j=0; j<benefit.length; j++){
-				System.out.println(cardname[i] + " / " + benefit[j] + " = " +sum_bnfXcard[i][j]);
+			for(int k=0; k<month.length; k++){
+				String t_wdate = syear + "-" + month[k];
+				sum_exXmonth[i][k] = memberService.sumExpenseXMonth(t_wdate, cardname[i]);
 			}
 		}
 		
+		model.addAttribute("sum_exXmonth", sum_exXmonth);
+		model.addAttribute("k_cardname", k_cardname);
 		
 		return "admin_exanalysis.tiles";
 	}
