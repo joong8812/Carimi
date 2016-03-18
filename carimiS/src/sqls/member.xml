@@ -10,7 +10,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM CARD_USER 
 		WHERE ID=#{id} AND PWD=#{pwd}
 	</select>
-	
+	<select id="loginMember2"
+		parameterType="String"
+		resultType="sigma.carimi.model.memberDTO">
+		SELECT * FROM CARD_USER 
+		WHERE EMAIL=#{email}
+	</select>
 	<insert id="addMember"
 		parameterType="sigma.carimi.model.memberDTO">
 		INSERT INTO CARD_USER(ID,PWD,NAME,AGE,SEX,LOCAL,LOCATION,JOB,EMAIL,FAV1,FAV2,FAV3,FAV4,FAV5,FAV6,MYCARD1,MYCARD2)

@@ -9,6 +9,7 @@ import sigma.carimi.model.visitDTO;
 public interface memberService {
 	
 	memberDTO loginMember(memberDTO member) throws Exception ;
+	memberDTO loginMember2(String email) throws Exception ;
 	boolean addMember(memberDTO member) throws Exception;
 	boolean addVisit(visitDTO visit) throws Exception;
 	memberDTO memberOne(memberDTO member) throws Exception;

@@ -25,7 +25,9 @@ public class memberDAO {
 	public memberDTO loginMember(memberDTO member) throws Exception{
 		return (memberDTO)sqlSession.selectOne(ns+"loginMember", member);
 	}
-	
+	public memberDTO loginMember2(String email) throws Exception{
+		return (memberDTO)sqlSession.selectOne(ns+"loginMember2", email);
+	}
 	public boolean addMember(memberDTO member) throws Exception{
 		sqlSession.insert(ns+"addMember",member);
 		return true;

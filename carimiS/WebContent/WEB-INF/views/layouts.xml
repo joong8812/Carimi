@@ -26,6 +26,11 @@
 	<put-attribute name="content" value="/WEB-INF/views/login/meminfo.jsp" />
 </definition>
 
+<definition name="findpass.tiles" extends="main.tiles">
+
+	<put-attribute name="content" value="/WEB-INF/views/login/findpass.jsp" />
+</definition>
+
 <definition name="benefit.tiles" extends="main.tiles">
 	<put-attribute name="content" value="/WEB-INF/views/benefit/bnf_main.jsp" />
 </definition>

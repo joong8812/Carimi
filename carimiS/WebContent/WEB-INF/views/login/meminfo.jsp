@@ -81,7 +81,7 @@
 	      			
 	      			<div class="widget-header">
 	      				<i class="icon-user"></i>
-	      				<h3>User Info</h3>
+	      				<h3>유저 정보</h3>
 	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">
@@ -543,24 +543,24 @@
     							
 								<select class="form-control" id="mycard1" name="mycard1" >
 									<option>미보유</option>
-									<option value="shin1">신한1</option>
-									<option value="shin2">신한2</option>
-									<option value="guk1">국민1</option>
-									<option value="guk2">국민2</option>
-									<option value="uri1">우리1</option>
-									<option value="uri2">우리2</option>
-									<option value="ha1">하나1</option>
-									<option value="ha2">하나2</option>
-									<option value="lot1">롯데1</option>
-									<option value="lot2">롯데2</option>
-									<option value="sam1">삼성1</option>
-									<option value="sam2">삼성2</option>
-									<option value="nong1">농협1</option>
-									<option value="nong2">농협2</option>
-									<option value="gi1">기업1</option>
-									<option value="gi2">기업2</option>
-									<option value="ci1">씨티1</option>
-									<option value="ci2">씨티2</option>
+									<option value="shin1">신한 Love</option>
+									<option value="shin2">신한 Tasty</option>
+									<option value="guk1">국민 굿데이</option>
+									<option value="guk2">국민 다담</option>
+									<option value="uri1">우리 다모아할인</option>
+									<option value="uri2">우리 가득한할인</option>
+									<option value="ha1">하나 팝</option>
+									<option value="ha2">하나 투엑스알파</option>
+									<option value="lot1">롯데 DC Supreme</option>
+									<option value="lot2">롯데 DC Smart</option>
+									<option value="sam1">삼성 S클래스</option>
+									<option value="sam2">삼성 2V2</option>
+									<option value="nong1">농협 스마티</option>
+									<option value="nong2">농협 Take5</option>
+									<option value="gi1">기업 ibk hi</option>
+									<option value="gi2">기업 참!좋은친구</option>
+									<option value="ci1">씨티 멀티플러스</option>
+									<option value="ci2">씨티 클리어</option>
 								</select>
 								</div>
 								</div>
@@ -570,24 +570,24 @@
     							
 								<select class="form-control" id="mycard2" name="mycard2" >
 									<option>미보유</option>
-									<option value="shin1">신한1</option>
-									<option value="shin2">신한2</option>
-									<option value="guk1">국민1</option>
-									<option value="guk2">국민2</option>
-									<option value="uri1">우리1</option>
-									<option value="uri2">우리2</option>
-									<option value="ha1">하나1</option>
-									<option value="ha2">하나2</option>
-									<option value="lot1">롯데1</option>
-									<option value="lot2">롯데2</option>
-									<option value="sam1">삼성1</option>
-									<option value="sam2">삼성2</option>
-									<option value="nong1">농협1</option>
-									<option value="nong2">농협2</option>
-									<option value="gi1">기업1</option>
-									<option value="gi2">기업2</option>
-									<option value="ci1">씨티1</option>
-									<option value="ci2">씨티2</option>
+									<option value="shin1">신한 Love</option>
+									<option value="shin2">신한 Tasty</option>
+									<option value="guk1">국민 굿데이</option>
+									<option value="guk2">국민 다담</option>
+									<option value="uri1">우리 다모아할인</option>
+									<option value="uri2">우리 가득한할인</option>
+									<option value="ha1">하나 팝</option>
+									<option value="ha2">하나 투엑스알파</option>
+									<option value="lot1">롯데 DC Supreme</option>
+									<option value="lot2">롯데 DC Smart</option>
+									<option value="sam1">삼성 S클래스</option>
+									<option value="sam2">삼성 2V2</option>
+									<option value="nong1">농협 스마티</option>
+									<option value="nong2">농협 Take5</option>
+									<option value="gi1">기업 ibk hi</option>
+									<option value="gi2">기업 참!좋은친구</option>
+									<option value="ci1">씨티 멀티플러스</option>
+									<option value="ci2">씨티 클리어</option>
 								</select>
 								</div></div>
 								

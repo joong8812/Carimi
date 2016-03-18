@@ -13,26 +13,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
+import javax.servlet.ServletException;
 
-import sigma.carimi.model.expenditureDTO;
 
 import sigma.carimi.model.memberDTO;
 import sigma.carimi.model.visitDTO;
 import sigma.carimi.service.memberService;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
 
 @Controller
 public class MemberController {
@@ -45,8 +53,48 @@ public class MemberController {
 	@Autowired
 	private memberService memberService;
 	
-	
-
+	@RequestMapping(value = "mailCodeSend.do", method = {RequestMethod.GET, RequestMethod.POST})
+	@ResponseBody
+	public void mailCodeSend(Model model, HttpServletRequest request)throws MessagingException, ServletException {		
+		logger.info("Welcome MemberController mailCodeSend! "+ new Date());
+		
+			String host = "smtp.gmail.com";
+	        String username = "tkdfkr000@gmail.com";
+	        String password = "rlatkd9151";
+	         
+	        // 메일 내용
+	        String recipient = request.getParameter("receive");
+	        String subject = "좀 가라.";
+	        String body = "인증 번호 : ";
+	        String userNum = "1234";
+	        //properties 설정
+	        Properties props = new Properties();
+	        props.put("mail.smtps.auth", "true");
+	        // 메일 세션
+	        Session session = Session.getDefaultInstance(props);
+	        MimeMessage msg = new MimeMessage(session);
+	 
+	        // 메일 관련
+	        msg.setSubject(subject);
+	        msg.setText(body + "" + userNum);
+	        msg.setFrom(new InternetAddress(username));
+	        msg.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+	 
+	        // 발송 처리
+	        Transport transport = session.getTransport("smtps");
+	        transport.connect(host, username, password);
+	        transport.sendMessage(msg, msg.getAllRecipients());
+	        transport.close();
+	       
+	       
+	      
+	}
+	@RequestMapping(value = "findpass.do", method = RequestMethod.GET)
+	public String findpass(Model model,HttpServletRequest request) throws Exception {		
+		logger.info("Welcome MemberController findpass! "+ new Date());
+		return "findpass.tiles";
+		
+	}
 	@RequestMapping(value = "main.do", method = RequestMethod.GET)
 	public String main(Model model,HttpServletRequest request, visitDTO visit ) throws Exception {		
 		logger.info("Welcome MemberController main! "+ new Date());
@@ -105,6 +153,21 @@ public class MemberController {
 			
 		
 	}
+	@RequestMapping(value = "loginAf2.do", 
+			method = {RequestMethod.GET, RequestMethod.POST})
+	public String loginAf2(HttpServletRequest request, HttpServletResponse res, 
+			String email, Model model, String prevurl) throws Exception {
+		logger.info("Welcome MemberController loginAf2! "+ new Date());
+	
+		memberDTO login = null;
+		System.out.println(email);
+		login = memberService.loginMember2(email);
+		request.getSession().setAttribute("login", login);
+			return "main.tiles";
+	}
+			
+		
+	
 	@RequestMapping(value = "logout.do", 
 			method = RequestMethod.GET)
 	public String logout(HttpServletRequest request, Model model) {		

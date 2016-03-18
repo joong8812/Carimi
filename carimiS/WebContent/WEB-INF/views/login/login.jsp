@@ -116,7 +116,9 @@
 			
 			
 		</form>
-		
+		비밀번호 인증 <a href="findpass.do" class="">
+							비밀번호 찾기
+						</a>
 	</div> <!-- /content -->
 	
 </div> <!-- /account-container -->
