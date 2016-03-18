@@ -72,7 +72,7 @@ $(document).ready( function() {
 		http = jQuery.ajax({
 	   		url		: "./mailCodeSend.do",
 	   		type	: "POST",
-			data 	: 'receive='+$("#receive").val(),
+			data 	: 'email='+$("#email").val(),
 			dataType: 'html',
 	   		async	: true,
 			success : function(msg) {
