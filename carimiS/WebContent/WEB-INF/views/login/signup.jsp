@@ -981,17 +981,9 @@ function checkfield(){
 		alert("이메일을 입력하세요");
 		document.addjoin.email.focus();
 		exit;
-	}else if(document.getElementsByName("sex").value==null){
-		alert("성별을 선택하세요");
-		document.addjoin.sex.focus();     // id 텍스트박스에 커서를 위치
-		exit;
 	}else if(document.addjoin.goo.value==""){
 		alert("지역과 구를 선택하세요");
 		document.addjoin.locaion.focus();
-		exit;
-	}else if(document.getElementsByName("fav").value==null){
-		alert("관심사를 선택하세요");
-		document.addjoin.fav.focus();     // id 텍스트박스에 커서를 위치
 		exit;
 	}
 	var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
