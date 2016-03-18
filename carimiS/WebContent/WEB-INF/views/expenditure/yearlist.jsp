@@ -496,7 +496,7 @@
 							<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 							<div id="container"
-								style="min-width: 480px; width: 100%; max-width: 100%; height: 500px;"></div>
+								style="min-width: 480px; width: 95%; max-width: 95%; height: 500px;"></div>
 
 						</div>
 						<div id="div1">여기다</div>
